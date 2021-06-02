@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+    <information>
+        <name>Berry 0.0.1</name>
+        <version>0.0.1</version>
+        <description>
+            <![CDATA[티스토리 Berry 스킨]]>
+        </description>
+        <license>
+            <![CDATA[개인적으로 수정하여 사용 가능. 단, 저작권 명시 수정 불가. 또한 재배포 및 상업적 이용 불가]]>
+        </license>
+    </information>
+    <author>
+        <name>Taehong Kim</name>
+        <homepage>https://memostack.tistory.com/</homepage>
+        <email>public.devhong@gmail.com</email>
+    </author>
+    <default>
+        <recentEntries>5</recentEntries>
+        <recentComments>5</recentComments>
+        <recentTrackbacks>5</recentTrackbacks>
+        <itemsOnGuestbook>10</itemsOnGuestbook>
+        <tagsInCloud>30</tagsInCloud>
+        <sortInCloud>3</sortInCloud>
+        <expandComment>0</expandComment>
+        <expandTrackback>0</expandTrackback>
+        <lengthOfRecentNotice>25</lengthOfRecentNotice>
+        <lengthOfRecentEntry>27</lengthOfRecentEntry>
+        <lengthOfRecentComment>30</lengthOfRecentComment>
+        <lengthOfRecentTrackback>30</lengthOfRecentTrackback>
+        <lengthOfLink>30</lengthOfLink>
+        <showListOnCategory>1</showListOnCategory>
+        <showListOnArchive>1</showListOnArchive>
+        <commentMessage>
+            <none>댓글이 없습니다.</none>
+            <single>댓글 &lt;span class="cnt"&gt;하나&lt;/span&gt; 달렸습니다.</single>
+        </commentMessage>
+        <trackbackMessage>
+            <none>받은 트랙백이 없고</none>
+            <single>트랙백이 &lt;span class="cnt"&gt;하나&lt;/span&gt;이고</single>
+        </trackbackMessage>
+        <tree>
+            <color>000000</color>
+            <bgColor>ffffff</bgColor>
+            <activeColor>000000</activeColor>
+            <activeBgColor>eeeeee</activeBgColor>
+            <labelLength>27</labelLength>
+            <showValue>1</showValue>
+        </tree>
+        <contentWidth>500</contentWidth>
+    </default>
+    <!-- Legacy -->
+    <liststyle>
+        <item>
+            <label>기본 타입</label>
+            <value>thumbnail</value>
+        </item>
+    </liststyle>
+    <!-- Cover -->
+    <cover>
+        <item>
+            <name>thumbnail</name>
+            <label>
+                <![CDATA[ 기본 타입 ]]>
+            </label>
+            <description>
+                <![CDATA[ 이미지 썸네일과 제목, 본문으로 구성된 리스트 ]]>
+            </description>
+        </item>
+    </cover>
+    <!-- Variable -->
+    <variables>
+        <variablegroup name="구성 요소 보이기/숨기기">
+            <variable>
+                <name>displayProfileImage</name>
+                <label>프로필 사진 보이기</label>
+                <description></description>
+                <type>BOOL</type>
+                <option></option>
+                <default>true</default>
+            </variable>
+            <variable>
+                <name>displayBlogger</name>
+                <label>블로거 이름 보이기</label>
+                <description></description>
+                <type>BOOL</type>
+                <option></option>
+                <default>true</default>
+            </variable>
+            <variable>
+                <name>displayBlogDesc</name>
+                <label>블로그 소개글 보이기</label>
+                <description></description>
+                <type>BOOL</type>
+                <option></option>
+                <default>true</default>
+            </variable>
+            <variable>
+                <name>displayVisitChart</name>
+                <label>방문자 차트 보이기</label>
+                <description></description>
+                <type>BOOL</type>
+                <option></option>
+                <default>true</default>
+            </variable>
+        </variablegroup>
+        <variablegroup name="프로필 설정">
+            <variable>
+                <name>profileImageFeature</name>
+                <label>프로필 사진 형태 선택</label>
+                <description></description>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[
+                        [
+                        {"name":"circleImage", "label":"원형 프로필 사진", "value":"circleImage"},
+                        {"name":"rectImage", "label":"사각형 프로필 사진", "value":"rectImage"},
+                        {"name":"roundRectImage", "label":"둥근 사각형 프로필 사진", "value":"roundRectImage"}
+                        ]
+                    ]]>
+                </option>
+                <default>circleImage</default>
+            </variable>
+            <variable>
+                <name>profileBorderWeight</name>
+                <label>프로필 테두리 굵기</label>
+                <description></description>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[
+                        [
+                        {"name":"none", "label":"테두리 없음", "value":"none"},
+                        {"name":"low", "label":"얇은 굵기", "value":"low"},
+                        {"name":"middle", "label":"중간 굵기", "value":"middle"},
+                        {"name":"high", "label":"두꺼운 굵기", "value":"high"}
+                        ]
+                    ]]>
+                </option>
+                <default>none</default>
+            </variable>
+        </variablegroup>
+    </variables>
+</skin>
