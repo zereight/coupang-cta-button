@@ -195,20 +195,26 @@ li.nav__item > a:hover {
   flex-direction: row;
   border: 1px solid var(--gray-color2);
 }
-.search__group > input {
+.search__group > input,
+.search__group > button {
   border: none;
   padding: 10px;
+  margin: 0;
 }
-.search__group > .search__input {
+.search__group .search__input {
   flex: 1;
   background-color: inherit;
 }
-.search__group > .search__submit {
+.search__group .search__input:focus {
+  outline: none;
+}
+.search__group .search__submit {
   width: 80px;
+  height: 100%;
   color: var(--black-color);
   background-color: var(--gray-color2);
 }
-.search__group > .search__submit:hover {
+.search__group .search__submit:hover {
   cursor: pointer;
 }
 
