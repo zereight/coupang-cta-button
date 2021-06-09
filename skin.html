@@ -22,10 +22,15 @@
 
     <!--============= CSS =============-->
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
   </head>
   <body id="[##_body_id_##]">
     <!--============= HEADER =============-->
     <header class="header" id="header">
+      <!-- Navigation -->
       <nav class="nav">
         <a class="nav__logo" href="/"> [##_title_##] </a>
         <div class="nav__menu">
@@ -36,9 +41,41 @@
               <a href="[##_guestbook_link_##]">GUESTBOOK</a>
             </li>
             <li class="nav__item"><a href="/manage">ADMIN</a></li>
+            <li class="nav__item">
+              <a href="#" class="search__toggle">
+                <i class="uil uil-search"></i>
+                <i class="uil uil-times"></i>
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
+
+      <!-- Search -->
+      <s_sidebar>
+        <s_sidebar_element>
+          <!-- 검색 -->
+          <div class="search">
+            <s_search>
+              <div class="search__group">
+                <input
+                  type="text"
+                  name="[##_search_name_##]"
+                  value="[##_search_text_##]"
+                  class="search__input"
+                  onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"
+                />
+                <input
+                  value="Search"
+                  type="button"
+                  onclick="[##_search_onclick_submit_##]"
+                  class="search__submit"
+                />
+              </div>
+            </s_search>
+          </div>
+        </s_sidebar_element>
+      </s_sidebar>
     </header>
 
     <!--============= MAIN =============-->
@@ -49,5 +86,31 @@
 
     <!--============= FOOTER =============-->
     <footer class="footer" id="footer">푸터</footer>
+
+    <script type="text/javascript">
+      // document loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        // search button toggle event
+        const searchToggleBtn = document.querySelector(".search__toggle");
+        searchToggleBtn.addEventListener("click", () => toggle_search());
+      });
+
+      function toggle_search() {
+        const search = document.querySelector(".search");
+        const searchIcon = document.querySelector(
+          ".search__toggle .uil-search"
+        );
+        const closeIcon = document.querySelector(".search__toggle .uil-times");
+        if (search.style.display === "none" || search.style.display === "") {
+          search.style.display = "block";
+          searchIcon.style.display = "none";
+          closeIcon.style.display = "block";
+        } else {
+          search.style.display = "none";
+          searchIcon.style.display = "block";
+          closeIcon.style.display = "none";
+        }
+      }
+    </script>
   </body>
 </html>
