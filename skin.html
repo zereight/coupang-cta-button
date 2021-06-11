@@ -35,12 +35,30 @@
         <a class="nav__logo" href="/"> [##_title_##] </a>
         <div class="nav__menu">
           <ul class="nav__list">
-            <li class="nav__item"><a href="/">HOME</a></li>
-            <li class="nav__item"><a href="[##_taglog_link_##]">TAG</a></li>
             <li class="nav__item">
-              <a href="[##_guestbook_link_##]">GUESTBOOK</a>
+              <a href="/">
+                <i class="uil uil-estate"></i>
+                <span>HOME</span>
+              </a>
             </li>
-            <li class="nav__item"><a href="/manage">ADMIN</a></li>
+            <li class="nav__item">
+              <a href="[##_taglog_link_##]">
+                <i class="uil uil-tag"></i>
+                <span>TAG</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="[##_guestbook_link_##]">
+                <i class="uil uil-book-open"></i>
+                <span>GUESTBOOK</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="/manage">
+                <i class="uil uil-setting"></i>
+                <span>ADMIN</span>
+              </a>
+            </li>
             <li class="nav__item">
               <a href="#" class="search__toggle">
                 <i class="uil uil-search"></i>
@@ -68,7 +86,9 @@
                 <button
                   onclick="[##_search_onclick_submit_##]"
                   class="search__submit"
-                >Search</button/>
+                >
+                  Search
+                </button>
               </div>
             </s_search>
           </div>
