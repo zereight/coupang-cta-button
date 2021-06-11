@@ -74,6 +74,12 @@
         <s_sidebar_element>
           <!-- 검색 -->
           <div class="search">
+            <div>
+              <a href="#" class="search__toggle">
+                d
+                <i class="uil uil-times"></i>
+              </a>
+            </div>
             <s_search>
               <div class="search__group">
                 <input
@@ -120,7 +126,7 @@
         );
         const closeIcon = document.querySelector(".search__toggle .uil-times");
         if (search.style.display === "none" || search.style.display === "") {
-          search.style.display = "block";
+          search.style.display = "flex";
           searchIcon.style.display = "none";
           closeIcon.style.display = "block";
         } else {
