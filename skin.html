@@ -74,12 +74,6 @@
         <s_sidebar_element>
           <!-- 검색 -->
           <div class="search">
-            <div>
-              <a href="#" class="search__toggle">
-                d
-                <i class="uil uil-times"></i>
-              </a>
-            </div>
             <s_search>
               <div class="search__group">
                 <input
@@ -115,26 +109,42 @@
       // document loaded
       document.addEventListener("DOMContentLoaded", () => {
         // search button toggle event
-        const searchToggleBtn = document.querySelector(".search__toggle");
-        searchToggleBtn.addEventListener("click", () => toggle_search());
+        constants.header.components.searchToggleButton.addEventListener(
+          "click",
+          constants.header.toggle_search
+        );
       });
 
-      function toggle_search() {
-        const search = document.querySelector(".search");
-        const searchIcon = document.querySelector(
-          ".search__toggle .uil-search"
-        );
-        const closeIcon = document.querySelector(".search__toggle .uil-times");
-        if (search.style.display === "none" || search.style.display === "") {
-          search.style.display = "flex";
-          searchIcon.style.display = "none";
-          closeIcon.style.display = "block";
-        } else {
-          search.style.display = "none";
-          searchIcon.style.display = "block";
-          closeIcon.style.display = "none";
-        }
-      }
+      const constants = {
+        header: {
+          components: {
+            search: document.querySelector(".search"),
+            searchIcon: document.querySelector(".search__toggle .uil-search"),
+            searchCloseIcon: document.querySelector(
+              ".search__toggle .uil-times"
+            ),
+            searchToggleButton: document.querySelector(".search__toggle"),
+          },
+          toggle_search: () => {
+            const search = constants.header.components.search;
+            const searchIcon = constants.header.components.searchIcon;
+            const searchCloseIcon = constants.header.components.searchCloseIcon;
+
+            if (
+              search.style.display === "none" ||
+              search.style.display === ""
+            ) {
+              search.style.display = "flex";
+              searchIcon.style.display = "none";
+              searchCloseIcon.style.display = "block";
+            } else {
+              search.style.display = "none";
+              searchIcon.style.display = "block";
+              searchCloseIcon.style.display = "none";
+            }
+          },
+        },
+      };
     </script>
   </body>
 </html>

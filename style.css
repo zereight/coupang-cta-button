@@ -226,10 +226,6 @@ li.nav__item > a > span {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1300px) {
-}
-@media screen and (max-width: 960px) {
-}
 @media screen and (max-width: 720px) {
   .nav__menu {
     display: flex;
@@ -266,3 +262,8 @@ li.nav__item > a > span {
 }
 
 /* ========== Footer ========== */
+
+@media screen and (max-width: 1300px) {
+}
+@media screen and (max-width: 960px) {
+}
