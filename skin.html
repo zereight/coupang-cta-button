@@ -102,8 +102,30 @@
       <section class="sidebar" id="sidebar">
         <s_sidebar>
           <s_sidebar_element>
+            <!-- 공지사항 -->
+            <div class="sidebar__item notice">
+              <h3 class="sidebar__title">
+                <i class="uil uil-info-circle"></i>
+                <span>Notice</span>
+              </h3>
+              <div class="sidebar__contents">
+                <s_rct_notice>
+                  <ul>
+                    <s_rct_notice_rep>
+                      <li>
+                        <a href="[##_notice_rep_link_##]">
+                          [##_notice_rep_title_##]
+                        </a>
+                      </li>
+                    </s_rct_notice_rep>
+                  </ul>
+                </s_rct_notice>
+              </div>
+            </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
             <!-- 카테고리 -->
-            <div class="sidebar__item">
+            <div class="sidebar__item category">
               <h3 class="sidebar__title">
                 <i class="uil uil-list-ul"></i>
                 <span>Category</span>
@@ -112,23 +134,40 @@
             </div>
           </s_sidebar_element>
           <s_sidebar_element>
-            <!-- 공지사항 -->
-            <div class="sidebar__item">
-              <h3 class="sidebar__title">
-                <i class="uil uil-info-circle"></i>
-                <span>Notice</span>
-              </h3>
-              <div class="sidebar__contents">contents</div>
-            </div>
-          </s_sidebar_element>
-          <s_sidebar_element>
             <!--최근 글 -->
-            <div class="sidebar__item">
+            <div class="sidebar__item recent__post">
               <h3 class="sidebar__title">
                 <i class="uil uil-document-layout-left"></i>
-                <span>Recent Article</span>
+                <span>Recent Post</span>
               </h3>
-              <div class="sidebar__contents">contents</div>
+              <div class="sidebar__contents">
+                <ul>
+                  <s_rctps_rep>
+                    <li>
+                      <s_rctps_rep_thumbnail>
+                        <div class="post__image">
+                          <img
+                            alt="recent post image"
+                            src="[##_rctps_rep_thumbnail_##]"
+                          />
+                        </div>
+                      </s_rctps_rep_thumbnail>
+                      <div class="post__content">
+                        <a href="[##_rctps_rep_link_##]" class="post__tit">
+                          [##_rctps_rep_title_##]
+                        </a>
+                        <a
+                          href="[##_rctps_rep_category_link_##]"
+                          class="post__ctg"
+                        >
+                          <i class="uil uil-bookmark-full"></i>
+                          [##_rctps_rep_category_##]
+                        </a>
+                      </div>
+                    </li>
+                  </s_rctps_rep>
+                </ul>
+              </div>
             </div>
           </s_sidebar_element>
           <s_sidebar_element>
@@ -136,7 +175,7 @@
             <div class="sidebar__item">
               <h3 class="sidebar__title">
                 <i class="uil uil-document-layout-left"></i>
-                <span>Popular Article</span>
+                <span>Popular Post</span>
               </h3>
               <div class="sidebar__contents">contents</div>
             </div>

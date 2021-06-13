@@ -9,6 +9,7 @@
   --secondary-sub-color: #f783ac;
   --white-color: #ffffff;
   --black-color: #212529;
+  --black-sub-color: #495057;
   --gray-color1: #dee2e6;
   --gray-color2: #d9d9d9;
 
@@ -159,7 +160,13 @@ header {
 }
 .nav a.nav__logo {
   font-weight: bold;
-  color: var(--primary-color);
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .nav a.nav__logo:hover {
   cursor: pointer;
@@ -264,7 +271,6 @@ li.nav__item > a > span {
 
 /* ========== Main ========== */
 main {
-  margin-top: 10px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -274,18 +280,19 @@ main {
 /* ========== Sidebar ========== */
 #sidebar {
   width: 300px;
-  margin-right: 10px;
+  padding: 20px;
 }
 .sidebar__item {
   margin-bottom: 20px;
+  font-size: 0.9em;
 }
 .sidebar__item .sidebar__title {
-  font-size: 0.9em;
   font-weight: bold;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: var(--primary-color);
 }
 .sidebar__item .sidebar__title > i {
   margin-right: 3px;
@@ -293,17 +300,91 @@ main {
 .sidebar__item .sidebar__title > span {
   flex: 1;
 }
+.sidebar__item .sidebar__contents {
+  padding: 0 5px;
+}
+/* Notice */
+.notice a {
+  color: var(--black-color);
+  display: inline-block;
+  padding: 10px 0;
+  transition: color 0.2s ease-in-out;
+}
+.notice a::before {
+  content: ">";
+  font-weight: bold;
+}
+.notice a:hover {
+  color: var(--secondary-color);
+}
 /* Category */
 .category .tt_category a {
   color: var(--black-color);
   display: inline-block;
-  padding: 5px 0;
+  padding: 10px 0;
+  transition: color 0.2s ease-in-out;
+}
+.category .tt_category a:hover {
+  color: var(--secondary-color);
+}
+.category .tt_category .sub_category_list a {
+  padding-left: 10px;
 }
 .category .tt_category .sub_category_list a::before {
-  content: "-";
+  content: ">";
   font-weight: bold;
 }
-
+.category_list > li {
+  border-top: 1px dashed var(--gray-color1);
+}
+.category .c_cnt {
+  display: none;
+}
+/* Recent Post */
+.recent__post .sidebar__contents > ul > li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.recent__post .post__image {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.recent__post .post__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50, 50);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+.recent__post .post__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.recent__post .post__content a {
+  color: var(--black-color);
+  transition: color 0.2s ease-in-out;
+}
+.recent__post .post__content a:hover {
+  color: var(--secondary-color);
+}
+.recent__post .post__content .post__tit {
+  font-size: 0.9em;
+  margin-bottom: 7px;
+}
+.recent__post .post__content .post__ctg {
+  font-size: 0.8em;
+  color: var(--black-sub-color);
+}
 /* ========== Content ========== */
 #content {
   flex: 1;
