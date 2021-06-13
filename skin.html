@@ -99,8 +99,91 @@
 
     <!--============= MAIN =============-->
     <main class="main" id="main">
-      <section>사이드 메뉴</section>
-      <section>본문</section>
+      <section class="sidebar" id="sidebar">
+        <s_sidebar>
+          <s_sidebar_element>
+            <!-- 카테고리 -->
+            <div class="sidebar__item">
+              <h3 class="sidebar__title">
+                <i class="uil uil-list-ul"></i>
+                <span>Category</span>
+              </h3>
+              <div class="sidebar__contents">[##_category_list_##]</div>
+            </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+            <!-- 공지사항 -->
+            <div class="sidebar__item">
+              <h3 class="sidebar__title">
+                <i class="uil uil-info-circle"></i>
+                <span>Notice</span>
+              </h3>
+              <div class="sidebar__contents">contents</div>
+            </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+            <!--최근 글 -->
+            <div class="sidebar__item">
+              <h3 class="sidebar__title">
+                <i class="uil uil-document-layout-left"></i>
+                <span>Recent Article</span>
+              </h3>
+              <div class="sidebar__contents">contents</div>
+            </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+            <!-- 인기 글 -->
+            <div class="sidebar__item">
+              <h3 class="sidebar__title">
+                <i class="uil uil-document-layout-left"></i>
+                <span>Popular Article</span>
+              </h3>
+              <div class="sidebar__contents">contents</div>
+            </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+            <!-- 최근 댓글 -->
+            <div class="sidebar__item">
+              <h3 class="sidebar__title">
+                <i class="uil uil-comment-dots"></i>
+                <span>Recent Reply</span>
+              </h3>
+              <div class="sidebar__contents">contents</div>
+            </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+            <!-- 인기 댓글 -->
+            <div class="sidebar__item">
+              <h3 class="sidebar__title">
+                <i class="uil uil-comment-dots"></i>
+                <span>Popular Reply</span>
+              </h3>
+              <div class="sidebar__contents">contents</div>
+            </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+            <!-- 태그 -->
+            <div class="sidebar__item">
+              <h3 class="sidebar__title">
+                <i class="uil uil-tag-alt"></i>
+                <span>Tags</span>
+              </h3>
+              <div class="sidebar__contents">contents</div>
+            </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+            <!-- 카운터 -->
+            <div class="sidebar__item">
+              <h3 class="sidebar__title">
+                <i class="uil uil-arrow-growth"></i>
+                <span>Visitor Counter</span>
+              </h3>
+              <div class="sidebar__contents">contents</div>
+            </div>
+          </s_sidebar_element>
+        </s_sidebar>
+      </section>
+      <section class="content" id="content">본문</section>
     </main>
 
     <!--============= FOOTER =============-->
@@ -117,6 +200,7 @@
       });
 
       const constants = {
+        // header constants
         header: {
           components: {
             search: document.querySelector(".search"),
@@ -148,6 +232,8 @@
             }
           },
         },
+        // sidebar contants
+        sidebar: {},
       };
     </script>
   </body>
