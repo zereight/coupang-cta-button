@@ -361,6 +361,7 @@ main {
   border-radius: 100%;
   position: relative;
   overflow: hidden;
+  transition: opacity 0.2s ease-in-out;
 }
 .recent__post .post__image img,
 .popular__post .post__image img {
@@ -372,10 +373,9 @@ main {
   height: 100%;
   object-fit: cover;
   margin: auto;
-  transition: opacity 0.2s ease-in-out;
 }
-.recent__post .post__image img:hover,
-.popular__post .post__image img:hover {
+.recent__post .post__image:hover,
+.popular__post .post__image:hover {
   opacity: 0.5;
   cursor: pointer;
 }
