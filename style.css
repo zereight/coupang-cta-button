@@ -138,6 +138,8 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   font-size: 18px;
+  /* font */
+  font-family: "Ubuntu", sans-serif;
 }
 
 /* ========== Header ========== */
@@ -236,6 +238,9 @@ li.nav__item > a > span {
 }
 
 @media screen and (max-width: 720px) {
+  body {
+    margin-bottom: 110px;
+  }
   .nav__menu,
   .search {
     box-shadow: 0px -3px 5px -2px var(--gray-color1);
@@ -245,7 +250,7 @@ li.nav__item > a > span {
   .nav__menu {
     display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -259,7 +264,7 @@ li.nav__item > a > span {
     display: none;
   }
   .search {
-    position: absolute;
+    position: fixed;
     bottom: 50px;
     left: 0;
     width: 100%;
