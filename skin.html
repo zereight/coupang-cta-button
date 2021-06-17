@@ -134,7 +134,7 @@
             </div>
           </s_sidebar_element>
           <s_sidebar_element>
-            <!--최근 글 -->
+            <!-- 최근 글 -->
             <div class="sidebar__item recent__post">
               <h3 class="sidebar__title">
                 <i class="uil uil-document-layout-left"></i>
@@ -149,6 +149,7 @@
                           <img
                             alt="recent post image"
                             src="[##_rctps_rep_thumbnail_##]"
+                            onclick="location.href='[##_rctps_rep_link_##]'"
                           />
                         </div>
                       </s_rctps_rep_thumbnail>
@@ -172,12 +173,40 @@
           </s_sidebar_element>
           <s_sidebar_element>
             <!-- 인기 글 -->
-            <div class="sidebar__item">
+            <div class="sidebar__item popular__post">
               <h3 class="sidebar__title">
                 <i class="uil uil-document-layout-left"></i>
                 <span>Popular Post</span>
               </h3>
-              <div class="sidebar__contents">contents</div>
+              <div class="sidebar__contents">
+                <ul>
+                  <s_rctps_popular_rep>
+                    <li>
+                      <s_rctps_rep_thumbnail>
+                        <div class="post__image">
+                          <img
+                            alt="recent post image"
+                            src="[##_rctps_rep_thumbnail_##]"
+                            onclick="location.href='[##_rctps_rep_link_##]'"
+                          />
+                        </div>
+                      </s_rctps_rep_thumbnail>
+                      <div class="post__content">
+                        <a href="[##_rctps_rep_link_##]" class="post__tit">
+                          [##_rctps_rep_title_##]
+                        </a>
+                        <a
+                          href="[##_rctps_rep_category_link_##]"
+                          class="post__ctg"
+                        >
+                          <i class="uil uil-bookmark-full"></i>
+                          [##_rctps_rep_category_##]
+                        </a>
+                      </div>
+                    </li>
+                  </s_rctps_popular_rep>
+                </ul>
+              </div>
             </div>
           </s_sidebar_element>
           <s_sidebar_element>

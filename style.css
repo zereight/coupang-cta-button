@@ -289,12 +289,12 @@ main {
   padding: 20px;
 }
 .sidebar__item {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 0.9em;
 }
 .sidebar__item .sidebar__title {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -317,7 +317,7 @@ main {
   transition: color 0.2s ease-in-out;
 }
 .notice a::before {
-  content: ">";
+  content: "*";
   font-weight: bold;
 }
 .notice a:hover {
@@ -337,7 +337,7 @@ main {
   padding-left: 10px;
 }
 .category .tt_category .sub_category_list a::before {
-  content: ">";
+  content: "-";
   font-weight: bold;
 }
 .category_list > li {
@@ -346,13 +346,15 @@ main {
 .category .c_cnt {
   display: none;
 }
-/* Recent Post */
-.recent__post .sidebar__contents > ul > li {
+/* Recent & Popular Post */
+.recent__post .sidebar__contents > ul > li,
+.popular__post .sidebar__contents > ul > li {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
-.recent__post .post__image {
+.recent__post .post__image,
+.popular__post .post__image {
   width: 50px;
   height: 50px;
   margin-right: 5px;
@@ -360,7 +362,8 @@ main {
   position: relative;
   overflow: hidden;
 }
-.recent__post .post__image img {
+.recent__post .post__image img,
+.popular__post .post__image img {
   position: absolute;
   top: 0;
   left: 0;
@@ -369,25 +372,36 @@ main {
   height: 100%;
   object-fit: cover;
   margin: auto;
+  transition: opacity 0.2s ease-in-out;
 }
-.recent__post .post__content {
+.recent__post .post__image img:hover,
+.popular__post .post__image img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.recent__post .post__content,
+.popular__post .post__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-.recent__post .post__content a {
+.recent__post .post__content a,
+.popular__post .post__content a {
   color: var(--black-color);
   transition: color 0.2s ease-in-out;
 }
-.recent__post .post__content a:hover {
+.recent__post .post__content a:hover,
+.popular__post .post__content a:hover {
   color: var(--secondary-color);
 }
-.recent__post .post__content .post__tit {
+.recent__post .post__content .post__tit,
+.popular__post .post__content .post__tit {
   font-size: 0.9em;
   margin-bottom: 7px;
 }
-.recent__post .post__content .post__ctg {
+.recent__post .post__content .post__ctg,
+.popular__post .post__content .post__ctg {
   font-size: 0.8em;
   color: var(--black-sub-color);
 }
