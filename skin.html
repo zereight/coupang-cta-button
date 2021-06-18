@@ -123,6 +123,7 @@
               </div>
             </div>
           </s_sidebar_element>
+
           <s_sidebar_element>
             <!-- 카테고리 -->
             <div class="sidebar__item category">
@@ -133,9 +134,10 @@
               <div class="sidebar__contents">[##_category_list_##]</div>
             </div>
           </s_sidebar_element>
+
           <s_sidebar_element>
             <!-- 최근 글 -->
-            <div class="sidebar__item recent__post">
+            <div class="sidebar__item sidebar__post">
               <h3 class="sidebar__title">
                 <i class="uil uil-document-layout-left"></i>
                 <span>Recent Post</span>
@@ -144,15 +146,15 @@
                 <ul>
                   <s_rctps_rep>
                     <li>
-                      <s_rctps_rep_thumbnail>
-                        <div class="post__image">
+                      <div class="post__image">
+                        <s_rctps_rep_thumbnail>
                           <img
                             alt="recent post image"
                             src="[##_rctps_rep_thumbnail_##]"
                             onclick="location.href='[##_rctps_rep_link_##]'"
                           />
-                        </div>
-                      </s_rctps_rep_thumbnail>
+                        </s_rctps_rep_thumbnail>
+                      </div>
                       <div class="post__content">
                         <a href="[##_rctps_rep_link_##]" class="post__tit">
                           [##_rctps_rep_title_##]
@@ -171,9 +173,10 @@
               </div>
             </div>
           </s_sidebar_element>
+
           <s_sidebar_element>
             <!-- 인기 글 -->
-            <div class="sidebar__item popular__post">
+            <div class="sidebar__item sidebar__post">
               <h3 class="sidebar__title">
                 <i class="uil uil-document-layout-left"></i>
                 <span>Popular Post</span>
@@ -182,15 +185,15 @@
                 <ul>
                   <s_rctps_popular_rep>
                     <li>
-                      <s_rctps_rep_thumbnail>
-                        <div class="post__image">
+                      <div class="post__image">
+                        <s_rctps_rep_thumbnail>
                           <img
                             alt="recent post image"
                             src="[##_rctps_rep_thumbnail_##]"
                             onclick="location.href='[##_rctps_rep_link_##]'"
                           />
-                        </div>
-                      </s_rctps_rep_thumbnail>
+                        </s_rctps_rep_thumbnail>
+                      </div>
                       <div class="post__content">
                         <a href="[##_rctps_rep_link_##]" class="post__tit">
                           [##_rctps_rep_title_##]
@@ -209,44 +212,96 @@
               </div>
             </div>
           </s_sidebar_element>
+
           <s_sidebar_element>
-            <!-- 최근 댓글 -->
-            <div class="sidebar__item">
+            <!-- 댓글 -->
+            <div class="sidebar__item comment">
               <h3 class="sidebar__title">
                 <i class="uil uil-comment-dots"></i>
-                <span>Recent Reply</span>
+                <span>Comment</span>
               </h3>
-              <div class="sidebar__contents">contents</div>
+              <div class="sidebar__contents">
+                <ul>
+                  <s_rctrp_rep>
+                    <li class="balloon">
+                      <a class="comment__link" href="[##_rctrp_rep_link_##]">
+                        [##_rctrp_rep_desc_##]
+                      </a>
+                      <span class="comment__info">
+                        <div class="comment__name">
+                          <i class="uil uil-user"></i>
+                          <span class="comment__txt">
+                            [##_rctrp_rep_name_##]
+                          </span>
+                        </div>
+                        <div class="comment__date">
+                          <i class="uil uil-calender"></i>
+                          <span class="comment__txt">
+                            [##_rctrp_rep_time_##]
+                          </span>
+                        </div>
+                      </span>
+                    </li>
+                  </s_rctrp_rep>
+                </ul>
+              </div>
             </div>
           </s_sidebar_element>
-          <s_sidebar_element>
-            <!-- 인기 댓글 -->
-            <div class="sidebar__item">
-              <h3 class="sidebar__title">
-                <i class="uil uil-comment-dots"></i>
-                <span>Popular Reply</span>
-              </h3>
-              <div class="sidebar__contents">contents</div>
-            </div>
-          </s_sidebar_element>
+
           <s_sidebar_element>
             <!-- 태그 -->
-            <div class="sidebar__item">
+            <div class="sidebar__item tag">
               <h3 class="sidebar__title">
                 <i class="uil uil-tag-alt"></i>
                 <span>Tags</span>
               </h3>
-              <div class="sidebar__contents">contents</div>
+              <div class="sidebar__contents">
+                <ul>
+                  <s_random_tags>
+                    <li>
+                      <a href="[##_tag_link_##]" class="[##_tag_class_##]">
+                        [##_tag_name_##]
+                      </a>
+                    </li>
+                  </s_random_tags>
+                </ul>
+              </div>
             </div>
           </s_sidebar_element>
+
           <s_sidebar_element>
             <!-- 카운터 -->
-            <div class="sidebar__item">
+            <div class="sidebar__item counter">
               <h3 class="sidebar__title">
                 <i class="uil uil-arrow-growth"></i>
                 <span>Visitor Counter</span>
               </h3>
-              <div class="sidebar__contents">contents</div>
+              <div class="sidebar__contents">
+                <div class="counter__item">
+                  <p class="counter__tit">어제</p>
+                  <p
+                    class="counter__yesterday"
+                    data-value="[##_count_yesterday_##]"
+                  >
+                    [##_count_yesterday_##]
+                  </p>
+                </div>
+                <div class="counter__item">
+                  <p class="counter__tit">오늘</p>
+                  <p class="counter__today" data-value="[##_count_today_##]">
+                    [##_count_today_##]
+                  </p>
+                  <div class="counter__deltagroup">
+                    <i class="uil uil-angle-double-up"></i>
+                    <i class="uil uil-angle-double-down"></i>
+                    <span class="counter__delta"></span>
+                  </div>
+                </div>
+                <div class="counter__item">
+                  <p class="counter__tit">전체</p>
+                  <p class="counter__total">[##_count_total_##]</p>
+                </div>
+              </div>
             </div>
           </s_sidebar_element>
         </s_sidebar>
@@ -265,6 +320,8 @@
           "click",
           constants.header.toggle_search
         );
+
+        constants.sidebar.compareCounterTodayAndYesterday();
       });
 
       const constants = {
@@ -280,10 +337,8 @@
             searchInput: document.querySelector(".search__input"),
           },
           toggle_search: () => {
-            const search = constants.header.components.search;
-            const searchIcon = constants.header.components.searchIcon;
-            const searchCloseIcon = constants.header.components.searchCloseIcon;
-            const searchInput = constants.header.components.searchInput;
+            const { search, searchIcon, searchCloseIcon, searchInput } =
+              constants.header.components;
 
             if (
               search.style.display === "none" ||
@@ -300,8 +355,49 @@
             }
           },
         },
-        // sidebar contants
-        sidebar: {},
+        // sidebar constants
+        sidebar: {
+          components: {
+            counterYesterday: document.querySelector(".counter__yesterday"),
+            counterToday: document.querySelector(".counter__today"),
+            counterTotal: document.querySelector(".counter__total"),
+            counterDelta: document.querySelector(".counter__delta"),
+            counterDeltaGroup: document.querySelector(".counter__deltagroup"),
+            counterUpIcon: document.querySelector(
+              ".counter .uil-angle-double-up"
+            ),
+            counterDownIcon: document.querySelector(
+              ".counter .uil-angle-double-down"
+            ),
+          },
+          compareCounterTodayAndYesterday: () => {
+            const {
+              counterYesterday,
+              counterToday,
+              counterDelta,
+              counterDeltaGroup,
+              counterUpIcon,
+              counterDownIcon,
+            } = constants.sidebar.components;
+
+            const yesterday = counterYesterday.getAttribute("data-value");
+            const today = counterToday.getAttribute("data-value");
+            const delta = today - yesterday;
+
+            if (delta === 0) {
+              counterDownIcon.style.display = "none";
+              counterUpIcon.style.display = "none";
+            } else if (delta > 0) {
+              counterDownIcon.style.display = "none";
+              counterDeltaGroup.style.color = "#f03e3e";
+              counterDelta.innerHTML = delta;
+            } else if (delta < 0) {
+              counterUpIcon.style.display = "none";
+              counterDeltaGroup.style.color = "#4263eb";
+              counterDelta.innerHTML = delta * -1;
+            }
+          },
+        },
       };
     </script>
   </body>
