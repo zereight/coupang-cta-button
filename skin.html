@@ -32,6 +32,7 @@
     <header class="header" id="header">
       <!-- Navigation -->
       <nav class="nav">
+        <i class="sidebar__open uil uil-bars"></i>
         <a class="nav__logo" href="/"> [##_title_##] </a>
         <div class="nav__menu">
           <ul class="nav__list">
@@ -100,6 +101,11 @@
     <!--============= MAIN =============-->
     <main class="main" id="main">
       <section class="sidebar" id="sidebar">
+        <div class="sidebar__close">
+          <i class="uil uil-multiply"></i>
+          <span>Close</span>
+        </div>
+
         <s_sidebar>
           <s_sidebar_element>
             <!-- 공지사항 -->
@@ -315,13 +321,29 @@
     <script type="text/javascript">
       // document loaded
       document.addEventListener("DOMContentLoaded", () => {
-        // search button toggle event
-        constants.header.components.searchToggleButton.addEventListener(
-          "click",
-          constants.header.toggle_search
-        );
+        // constants
+        const { header, sidebar } = constants;
 
-        constants.sidebar.compareCounterTodayAndYesterday();
+        // header
+        const { toggleSearchHandler, openSidebarHandler } = header;
+        const { searchToggleButton, sidebarOpenButton } = header.components;
+
+        // sidebar
+        const { compareCounterTodayAndYesterdayHandler, closeSidebarHandler } =
+          sidebar;
+        const { sidebarCloseButton } = sidebar.components;
+
+        // search button toggle event
+        searchToggleButton.addEventListener("click", toggleSearchHandler);
+
+        // sidebar open event
+        sidebarOpenButton.addEventListener("click", openSidebarHandler);
+
+        // sidebar close event
+        sidebarCloseButton.addEventListener("click", closeSidebarHandler);
+
+        // Compare visitor counter.
+        compareCounterTodayAndYesterdayHandler();
       });
 
       const constants = {
@@ -333,10 +355,11 @@
             searchCloseIcon: document.querySelector(
               ".search__toggle .uil-times"
             ),
+            sidebarOpenButton: document.querySelector(".sidebar__open"),
             searchToggleButton: document.querySelector(".search__toggle"),
             searchInput: document.querySelector(".search__input"),
           },
-          toggle_search: () => {
+          toggleSearchHandler: () => {
             const { search, searchIcon, searchCloseIcon, searchInput } =
               constants.header.components;
 
@@ -354,10 +377,17 @@
               searchCloseIcon.style.display = "none";
             }
           },
+          openSidebarHandler: () => {
+            constants.sidebar.components.sidebarCloseButton.style.display =
+              "block";
+            constants.sidebar.components.sidebar.style.display = "block";
+          },
         },
         // sidebar constants
         sidebar: {
           components: {
+            sidebar: document.querySelector("#sidebar"),
+            sidebarCloseButton: document.querySelector(".sidebar__close"),
             counterYesterday: document.querySelector(".counter__yesterday"),
             counterToday: document.querySelector(".counter__today"),
             counterTotal: document.querySelector(".counter__total"),
@@ -370,7 +400,7 @@
               ".counter .uil-angle-double-down"
             ),
           },
-          compareCounterTodayAndYesterday: () => {
+          compareCounterTodayAndYesterdayHandler: () => {
             const {
               counterYesterday,
               counterToday,
@@ -396,6 +426,9 @@
               counterDeltaGroup.style.color = "#4263eb";
               counterDelta.innerHTML = delta * -1;
             }
+          },
+          closeSidebarHandler: () => {
+            constants.sidebar.components.sidebar.style.display = "none";
           },
         },
       };
