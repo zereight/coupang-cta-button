@@ -230,9 +230,6 @@
                 <ul>
                   <s_rctrp_rep>
                     <li class="balloon">
-                      <a class="comment__link" href="[##_rctrp_rep_link_##]">
-                        [##_rctrp_rep_desc_##]
-                      </a>
                       <span class="comment__info">
                         <div class="comment__name">
                           <i class="uil uil-user"></i>
@@ -247,6 +244,9 @@
                           </span>
                         </div>
                       </span>
+                      <a class="comment__link" href="[##_rctrp_rep_link_##]">
+                        [##_rctrp_rep_desc_##]
+                      </a>
                     </li>
                   </s_rctrp_rep>
                 </ul>
@@ -325,25 +325,31 @@
         const { header, sidebar } = constants;
 
         // header
-        const { toggleSearchHandler, openSidebarHandler } = header;
+        const { _handlerToggleSearch, _handlerOpenSidebar } = header;
         const { searchToggleButton, sidebarOpenButton } = header.components;
 
         // sidebar
-        const { compareCounterTodayAndYesterdayHandler, closeSidebarHandler } =
-          sidebar;
+        const {
+          _handlerCompareCounterTodayAndYesterday,
+          _handlerCloseSidebar,
+          _hanlderShowSidebarByWindowResizing,
+        } = sidebar;
         const { sidebarCloseButton } = sidebar.components;
 
         // search button toggle event
-        searchToggleButton.addEventListener("click", toggleSearchHandler);
+        searchToggleButton.addEventListener("click", _handlerToggleSearch);
 
         // sidebar open event
-        sidebarOpenButton.addEventListener("click", openSidebarHandler);
+        sidebarOpenButton.addEventListener("click", _handlerOpenSidebar);
 
         // sidebar close event
-        sidebarCloseButton.addEventListener("click", closeSidebarHandler);
+        sidebarCloseButton.addEventListener("click", _handlerCloseSidebar);
+
+        // window resize
+        window.addEventListener("resize", _hanlderShowSidebarByWindowResizing);
 
         // Compare visitor counter.
-        compareCounterTodayAndYesterdayHandler();
+        _handlerCompareCounterTodayAndYesterday();
       });
 
       const constants = {
@@ -359,7 +365,7 @@
             searchToggleButton: document.querySelector(".search__toggle"),
             searchInput: document.querySelector(".search__input"),
           },
-          toggleSearchHandler: () => {
+          _handlerToggleSearch: () => {
             const { search, searchIcon, searchCloseIcon, searchInput } =
               constants.header.components;
 
@@ -377,7 +383,7 @@
               searchCloseIcon.style.display = "none";
             }
           },
-          openSidebarHandler: () => {
+          _handlerOpenSidebar: () => {
             constants.sidebar.components.sidebarCloseButton.style.display =
               "block";
             constants.sidebar.components.sidebar.style.display = "block";
@@ -400,7 +406,7 @@
               ".counter .uil-angle-double-down"
             ),
           },
-          compareCounterTodayAndYesterdayHandler: () => {
+          _handlerCompareCounterTodayAndYesterday: () => {
             const {
               counterYesterday,
               counterToday,
@@ -427,8 +433,17 @@
               counterDelta.innerHTML = delta * -1;
             }
           },
-          closeSidebarHandler: () => {
+          _handlerCloseSidebar: () => {
             constants.sidebar.components.sidebar.style.display = "none";
+          },
+          _hanlderShowSidebarByWindowResizing: () => {
+            if (960 <= window.innerWidth) {
+              constants.sidebar.components.sidebar.style.display = "block";
+              constants.sidebar.components.sidebarCloseButton.style.display =
+                "none";
+            } else {
+              constants.sidebar.components.sidebar.style.display = "none";
+            }
           },
         },
       };
