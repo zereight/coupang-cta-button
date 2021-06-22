@@ -519,6 +519,7 @@ main {
   padding: 10px;
   color: var(--black-color);
   border: 1px solid var(--gray-color2);
+  transition: all 0.1s ease-in-out;
 }
 .tag__cloud .tag__list .tag__item a:hover {
   color: var(--white-color);
