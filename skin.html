@@ -325,31 +325,31 @@
         const { header, sidebar } = constants;
 
         // header
-        const { _handlerToggleSearch, _handlerOpenSidebar } = header;
+        const { _handleToggleSearch, _handleOpenSidebar } = header;
         const { searchToggleButton, sidebarOpenButton } = header.components;
 
         // sidebar
         const {
-          _handlerCompareCounterTodayAndYesterday,
-          _handlerCloseSidebar,
-          _hanlderShowSidebarByWindowResizing,
+          _handleCompareCounterTodayAndYesterday,
+          _handleCloseSidebar,
+          _handleShowSidebarByWindowResizing,
         } = sidebar;
         const { sidebarCloseButton } = sidebar.components;
 
         // search button toggle event
-        searchToggleButton.addEventListener("click", _handlerToggleSearch);
+        searchToggleButton.addEventListener("click", _handleToggleSearch);
 
         // sidebar open event
-        sidebarOpenButton.addEventListener("click", _handlerOpenSidebar);
+        sidebarOpenButton.addEventListener("click", _handleOpenSidebar);
 
         // sidebar close event
-        sidebarCloseButton.addEventListener("click", _handlerCloseSidebar);
+        sidebarCloseButton.addEventListener("click", _handleCloseSidebar);
 
         // window resize
-        window.addEventListener("resize", _hanlderShowSidebarByWindowResizing);
+        window.addEventListener("resize", _handleShowSidebarByWindowResizing);
 
         // Compare visitor counter.
-        _handlerCompareCounterTodayAndYesterday();
+        _handleCompareCounterTodayAndYesterday();
       });
 
       const constants = {
@@ -365,7 +365,7 @@
             searchToggleButton: document.querySelector(".search__toggle"),
             searchInput: document.querySelector(".search__input"),
           },
-          _handlerToggleSearch: () => {
+          _handleToggleSearch: () => {
             const { search, searchIcon, searchCloseIcon, searchInput } =
               constants.header.components;
 
@@ -383,7 +383,7 @@
               searchCloseIcon.style.display = "none";
             }
           },
-          _handlerOpenSidebar: () => {
+          _handleOpenSidebar: () => {
             constants.sidebar.components.sidebarCloseButton.style.display =
               "block";
             constants.sidebar.components.sidebar.style.display = "block";
@@ -406,7 +406,7 @@
               ".counter .uil-angle-double-down"
             ),
           },
-          _handlerCompareCounterTodayAndYesterday: () => {
+          _handleCompareCounterTodayAndYesterday: () => {
             const {
               counterYesterday,
               counterToday,
@@ -433,10 +433,10 @@
               counterDelta.innerHTML = delta * -1;
             }
           },
-          _handlerCloseSidebar: () => {
+          _handleCloseSidebar: () => {
             constants.sidebar.components.sidebar.style.display = "none";
           },
-          _hanlderShowSidebarByWindowResizing: () => {
+          _handleShowSidebarByWindowResizing: () => {
             if (960 <= window.innerWidth) {
               constants.sidebar.components.sidebar.style.display = "block";
               constants.sidebar.components.sidebarCloseButton.style.display =

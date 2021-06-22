@@ -418,7 +418,7 @@ main {
 }
 .sidebar .comment .sidebar__contents .comment__link {
   color: var(--black-color);
-  margin-bottom: 5px;
+  margin-top: 5px;
   transition: color 0.1s ease-in-out;
 }
 .sidebar .comment .sidebar__contents .comment__link:hover {
