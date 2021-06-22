@@ -566,7 +566,90 @@ main {
 }
 
 /* Guestbook */
-
+.guestbook__form .guestbook__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.guestbook__info .guestbook__info__item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.guestbook__info .guestbook__info__item > i {
+  margin-right: 5px;
+}
+.guestbook__info .guestbook__info__item > input {
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--gray-color2);
+  border-radius: 0;
+  width: 100%;
+}
+.guestbook__info .guestbook__info__item > input:focus {
+  outline: none;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.guestbook__form .guestbook__textarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.guestbook__form .guestbook__textarea > textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--gray-color2);
+  border-radius: 0;
+  height: 50px;
+  transition: height 0.1s ease-in-out;
+}
+.guestbook__form .guestbook__textarea > textarea:focus {
+  outline: none;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  height: 100px;
+}
+.guestbook__textarea > button {
+  margin-top: 10px;
+  width: 100px;
+}
+#tt_captChaBottom {
+  margin-top: 10px;
+}
+#tt_captChaBottom {
+  display: block !important;
+  position: static !important;
+}
+#tt_captChaBottom .inner_captcha_box {
+  display: flex;
+  position: static !important;
+  flex-direction: row;
+}
+#tt_captChaBottom .inner_captcha_box .wrap_captcha_inner {
+  flex: 1;
+}
+#tt_captChaBottom #inputCaptcha {
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--gray-color2);
+  border-radius: 0;
+}
+#tt_captChaBottom #inputCaptcha:focus {
+  outline: none;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+#tt_captChaBottom .wrap_box_border {
+  display: none;
+}
 /* ========== Footer ========== */
 footer {
   display: flex;

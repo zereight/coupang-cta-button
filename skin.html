@@ -319,8 +319,8 @@
       <!--============= MAIN CONTENT =============-->
       <section class="content" id="content">
         <!-- Tag Cloud -->
-        <div class="content__item tag__cloud">
-          <s_tag>
+        <s_tag>
+          <div class="content__item tag__cloud">
             <h3 class="content__tit">
               <i class="uil uil-tag-alt"></i>
               <span>Tag Cloud</span>
@@ -337,10 +337,66 @@
                 </li>
               </s_tag_rep>
             </ul>
-          </s_tag>
-        </div>
+          </div>
+        </s_tag>
 
         <!-- Guestbook -->
+        <s_guest>
+          <div class="content__item guestbook">
+            <h3 class="content__tit">
+              <i class="uil uil-book-open"></i>
+              <span>Guestbook</span>
+            </h3>
+            <div class="guestbook__form">
+              <s_guest_input_form>
+                <div class="guestbook__info">
+                  <s_guest_member>
+                    <s_guest_form>
+                      <div class="guestbook__info__item">
+                        <i class="uil uil-user"></i>
+                        <input
+                          type="text"
+                          placeholder="username"
+                          name="[##_guest_input_name_##]"
+                          value="[##_guest_name_##]"
+                        />
+                      </div>
+                      <div class="guestbook__info__item">
+                        <i class="uil uil-key-skeleton"></i>
+                        <input
+                          type="password"
+                          placeholder="password"
+                          maxlength="8"
+                          name="[##_guest_input_password_##]"
+                          value="[##_guest_password_##]"
+                        />
+                      </div>
+                      <div class="guestbook__info__item">
+                        <i class="uil uil-window"></i>
+                        <input
+                          type="text"
+                          placeholder="homepage"
+                          name="[##_guest_input_homepage_##]"
+                          value="[##_guest_homepage_##]"
+                        />
+                      </div>
+                    </s_guest_form>
+                  </s_guest_member>
+                </div>
+                <div class="guestbook__textarea">
+                  <textarea name="[##_guest_textarea_body_##]"></textarea>
+                  <button
+                    class="btn btn-sm btn-primary"
+                    onclick="[##_guest_onclick_submit_##]"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </s_guest_input_form>
+            </div>
+            <div class="guestbook__list">리스트</div>
+          </div>
+        </s_guest>
       </section>
     </main>
 
