@@ -399,55 +399,85 @@
               </div>
               <div class="guestbook__list">
                 <s_guest_container>
-                  <div class="guestList">
-                    <ol>
-                      <s_guest_rep>
-                        <li id="[##_guest_rep_id_##]">
-                          <div class="[##_guest_rep_class_##]">
-                            <span class="name">[##_guest_rep_name_##]</span>
-                            <span class="date"> [##_guest_rep_date_##]</span>
-                            <span class="control">
+                  <ul>
+                    <s_guest_rep>
+                      <li id="[##_guest_rep_id_##]">
+                        <div class="[##_guest_rep_class_##] guestbook__item">
+                          <div class="guestbook__header">
+                            <div class="guestbook__header-avatar">
+                              <i class="uil uil-comment-notes"></i>
+                            </div>
+
+                            <div class="guestbook__header-info">
+                              <div class="name">[##_guest_rep_name_##]</div>
+                              <div class="date">
+                                <i class="uil uil-calender"></i>
+                                <span>[##_guest_rep_date_##]</span>
+                              </div>
+                            </div>
+                            <span class="guestbook__header-control">
                               <a
                                 href="#"
                                 onclick="[##_guest_rep_onclick_delete_##]"
-                                >MODIFY/DELETE</a
                               >
+                                <i class="uil uil-edit"></i>
+                              </a>
                               <a
                                 href="#"
                                 onclick="[##_guest_rep_onclick_reply_##]"
-                                >REPLY</a
                               >
+                                <i class="uil uil-corner-up-left-alt"></i>
+                              </a>
                             </span>
-                            <p>[##_guest_rep_desc_##]</p>
                           </div>
-                          <s_guest_reply_container>
-                            <ul>
-                              <s_guest_reply_rep>
-                                <li id="[##_guest_rep_id_##]">
-                                  <div class="[##_guest_rep_class_##]">
-                                    <span class="name"
-                                      >[##_guest_rep_name_##]</span
-                                    >
-                                    <span class="date">
-                                      [##_guest_rep_date_##]</span
-                                    >
-                                    <span class="control">
+                          <div class="guestbook__body">
+                            [##_guest_rep_desc_##]
+                          </div>
+                        </div>
+
+                        <s_guest_reply_container>
+                          <ul>
+                            <s_guest_reply_rep>
+                              <li id="[##_guest_rep_id_##]">
+                                <div
+                                  class="
+                                    guestbook__item
+                                    [##_guest_rep_class_##]
+                                  "
+                                >
+                                  <div class="guestbook__header">
+                                    <div class="guestbook__header-avatar">
+                                      <i class="uil uil-comment-notes"></i>
+                                    </div>
+
+                                    <div class="guestbook__header-info">
+                                      <div class="name">
+                                        [##_guest_rep_name_##]
+                                      </div>
+                                      <div class="date">
+                                        <span>[##_guest_rep_date_##]</span>
+                                      </div>
+                                    </div>
+                                    <span class="guestbook__header-control">
                                       <a
                                         href="#"
                                         onclick="[##_guest_rep_onclick_delete_##]"
-                                        >MODIFY/DELETE
+                                      >
+                                        <i class="uil uil-edit"></i>
                                       </a>
                                     </span>
-                                    <p>[##_guest_rep_desc_##]</p>
                                   </div>
-                                </li>
-                              </s_guest_reply_rep>
-                            </ul>
-                          </s_guest_reply_container>
-                        </li>
-                      </s_guest_rep>
-                    </ol>
-                  </div>
+                                  <div class="guestbook__body">
+                                    [##_guest_rep_desc_##]
+                                  </div>
+                                </div>
+                              </li>
+                            </s_guest_reply_rep>
+                          </ul>
+                        </s_guest_reply_container>
+                      </li>
+                    </s_guest_rep>
+                  </ul>
                 </s_guest_container>
               </div>
             </div>
@@ -577,12 +607,16 @@
             constants.sidebar.components.sidebar.style.display = "none";
           },
           _handleShowSidebarByWindowResizing: () => {
+            const _sidebar = constants.sidebar.components.sidebar;
+            const _sidebarCloseButton =
+              constants.sidebar.components.sidebarCloseButton;
             if (960 <= window.innerWidth) {
-              constants.sidebar.components.sidebar.style.display = "block";
-              constants.sidebar.components.sidebarCloseButton.style.display =
-                "none";
+              _sidebar.style.display = "block";
+              _sidebarCloseButton.style.display = "none";
             } else {
-              constants.sidebar.components.sidebar.style.display = "none";
+              if (_sidebar.style.display === "block") {
+                _sidebar.style.display = "none";
+              }
             }
           },
         },

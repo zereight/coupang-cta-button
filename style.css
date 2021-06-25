@@ -145,6 +145,10 @@ body {
   /* font */
   font-family: "Ubuntu", "Noto Sans KR", sans-serif;
 }
+input,
+textarea {
+  -webkit-appearance: none;
+}
 /* Button */
 .btn {
   border: none;
@@ -560,9 +564,11 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 .tag__cloud .tag__list .tag__item {
   margin: 0 5px 5px 0;
+  white-space: nowrap;
 }
 
 /* Guestbook */
@@ -615,40 +621,114 @@ main {
   outline: none;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
-  height: 100px;
+  height: 130px;
 }
 .guestbook__textarea > button {
   margin-top: 10px;
   width: 100px;
 }
-#tt_captChaBottom {
+.guestbook__list {
   margin-top: 10px;
 }
-#tt_captChaBottom {
-  display: block !important;
-  position: static !important;
-}
-#tt_captChaBottom .inner_captcha_box {
+.guestbook__list ul {
   display: flex;
-  position: static !important;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
 }
-#tt_captChaBottom .inner_captcha_box .wrap_captcha_inner {
-  flex: 1;
+.guestbook__header {
+  display: flex;
+  align-items: center;
 }
-#tt_captChaBottom #inputCaptcha {
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid var(--gray-color2);
-  border-radius: 0;
+.guestbook__header-avatar {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  margin-right: 15px;
+  text-align: center;
 }
-#tt_captChaBottom #inputCaptcha:focus {
-  outline: none;
+.guestbook__header-avatar i {
+  font-size: 55px;
   color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+}
+.guestbook__list ul > li > ul .guestbook__header-avatar i {
+  color: var(--secondary-color);
+}
+.guestbook__header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.guestbook__header-info .name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.guestbook__header-info .name a {
+  color: var(--black-color);
+  font-size: 0.9em;
+  transition: color 0.1s ease-in-out;
+}
+.guestbook__header-info .name a:hover {
+  color: var(--primary-color);
+}
+.guestbook__header-info .date {
+  display: flex;
+  align-items: center;
+  color: var(--black-color3);
+  font-size: 0.9em;
+}
+.guestbook__header-info .date i {
+  margin-right: 3px;
+}
+.guestbook__header-info .date span a {
+  color: var(--secondary-color);
+  transition: color 0.1s ease-in-out;
+}
+.guestbook__header-info .date span a:hover {
+  color: var(--secondary-sub-color);
+}
+.guestbook__list ul > li {
+  margin-bottom: 30px;
+}
+.guestbook__list ul > li > ul {
+  margin-top: 30px;
+}
+.guestbook__list ul li ul li {
+  margin-left: 30px;
+}
+.guestbook__item {
+  padding: 20px;
+  box-shadow: 1px 3px 5px var(--gray-color1);
+  transition: all 0.1s ease-in-out;
+  box-sizing: border-box;
+}
+.guestbook__item .guestbook__body {
+  padding: 20px;
+  line-height: 1.5em;
+}
+.guestbook__item .guestbook__header-control a {
+  color: var(--black-color);
+  padding: 5px;
+}
+.guestbook__item .guestbook__header-control a:hover {
+  color: var(--primary-color);
+}
+/* Guestbook CaptchaBox */
+#tt_captChaBottom {
+  position: static !important;
 }
 #tt_captChaBottom .wrap_box_border {
   display: none;
+}
+#tt_captChaBottom #innerBox {
+  position: static !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 15px;
 }
 /* ========== Footer ========== */
 footer {
@@ -674,9 +754,11 @@ footer {
     top: 0;
     left: 0;
     background-color: var(--white-color);
-    opacity: 0.9;
+    opacity: 0.95;
     z-index: 80;
     width: 350px;
+    height: 100%;
+    overflow-y: scroll;
     border-right: 1px solid var(--gray-color1);
     box-sizing: border-box;
   }
@@ -728,5 +810,18 @@ footer {
   #sidebar {
     width: 100%;
     padding-bottom: 110px;
+  }
+
+  /* ========== Guestbook ========== */
+  .guestbook__header-avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .guestbook__header-avatar i {
+    font-size: 35px;
+  }
+  .guestbook__list ul li ul li {
+    margin-left: 20px;
   }
 }
