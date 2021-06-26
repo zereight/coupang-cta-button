@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"
     />
     <meta name="twitter:domain" content="[##_page_title_##]" />
 
@@ -39,31 +39,31 @@
           <div class="nav__menu">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="/">
+                <a href="/" class="btn btn-txt-blue">
                   <i class="uil uil-estate"></i>
                   <span>HOME</span>
                 </a>
               </li>
               <li class="nav__item">
-                <a href="[##_taglog_link_##]">
+                <a href="[##_taglog_link_##]" class="btn btn-txt-green">
                   <i class="uil uil-tag"></i>
                   <span>TAG</span>
                 </a>
               </li>
               <li class="nav__item">
-                <a href="[##_guestbook_link_##]">
+                <a href="[##_guestbook_link_##]" class="btn btn-txt-orange">
                   <i class="uil uil-book-open"></i>
                   <span>GUESTBOOK</span>
                 </a>
               </li>
               <li class="nav__item">
-                <a href="/manage">
+                <a href="/manage" class="btn btn-txt-violet">
                   <i class="uil uil-setting"></i>
                   <span>ADMIN</span>
                 </a>
               </li>
               <li class="nav__item">
-                <a href="#" class="search__toggle">
+                <a href="#" class="search__toggle btn btn-txt-red">
                   <i class="uil uil-search"></i>
                   <i class="uil uil-times"></i>
                 </a>
@@ -78,7 +78,7 @@
             <!-- 검색 -->
             <div class="search">
               <s_search>
-                <div class="search__group">
+                <form class="search__group">
                   <input
                     type="text"
                     name="[##_search_name_##]"
@@ -91,9 +91,9 @@
                     onclick="[##_search_onclick_submit_##]"
                     class="search__submit"
                   >
-                    Search
+                    <i class="uil uil-search"></i>
                   </button>
-                </div>
+                </form>
               </s_search>
             </div>
           </s_sidebar_element>
@@ -269,7 +269,7 @@
                       <li>
                         <a
                           href="[##_tag_link_##]"
-                          class="[##_tag_class_##] btn btn-sm btn-default"
+                          class="[##_tag_class_##] sidebar__tag-btn btn btn-sm"
                         >
                           [##_tag_name_##]
                         </a>
@@ -330,7 +330,7 @@
               <s_article_rep>
                 <!-- Index Article: 블로그 홈 화면에서 보이는 영역 -->
                 <s_index_article_rep>
-                  <div class="article__idx-item">
+                  <div class="article__idx-item page">
                     <div
                       role="button"
                       class="article__idx-img-wrap"
@@ -343,16 +343,19 @@
                     <div class="article__idx-summary-wrap">
                       <a
                         href="[##_article_rep_link_##]"
-                        class="article__idx-tit"
+                        class="article__idx-tit link link-lg link-hover-blue"
                       >
                         [##_article_rep_title_##]
                       </a>
                       <div class="article__idx-date">
-                        <a href="[##_article_rep_category_link_##]" class="ctg">
+                        <a
+                          href="[##_article_rep_category_link_##]"
+                          class="ctg link link-hover-red"
+                        >
                           <i class="uil uil-bookmark"></i>
                           <span>[##_article_rep_category_##]</span>
                         </a>
-                        <a href="[##_article_rep_link_##]" class="date">
+                        <a href="[##_article_rep_link_##]" class="date link link-hover-red">
                           <i class="uil uil-calender"></i>
                           <span>[##_article_rep_date_##]</span>
                         </a>
@@ -363,13 +366,13 @@
                     </div>
                     <div class="article__idx-btn-wrap">
                       <button
-                        class="btn btn-sm btn-primary"
+                        class="btn btn-sm btn-blue"
                         onclick="window.location.href='[##_article_rep_link_##]'"
                       >
                         <i class="uil uil-eye"></i>
                       </button>
                       <button
-                        class="btn btn-sm btn-primary"
+                        class="btn btn-sm btn-blue"
                         onclick="window.location.href='[##_article_rep_category_link_##]'"
                       >
                         <i class="uil uil-layers"></i>
@@ -407,18 +410,16 @@
                 <i class="uil uil-tag-alt"></i>
                 <span>Tag Cloud</span>
               </h3>
-              <ul class="tag__list">
+              <div class="tag__list">
                 <s_tag_rep>
-                  <li class="tag__item">
-                    <a
-                      href="[##_tag_link_##]"
-                      class="[##_tag_class_##] btn btn-md btn-primary"
-                    >
-                      [##_tag_name_##]
-                    </a>
-                  </li>
+                  <a
+                    href="[##_tag_link_##]"
+                    class="[##_tag_class_##] tag__item btn"
+                  >
+                    [##_tag_name_##]
+                  </a>
                 </s_tag_rep>
-              </ul>
+              </div>
             </div>
           </s_tag>
           <!-- //Tag Cloud -->
@@ -470,7 +471,7 @@
                     <textarea name="[##_guest_textarea_body_##]"></textarea>
                     <button
                       type="submit"
-                      class="btn btn-sm btn-primary"
+                      class="btn btn-sm btn-blue"
                       onclick="[##_guest_onclick_submit_##]"
                     >
                       Submit
@@ -483,7 +484,9 @@
                   <ul>
                     <s_guest_rep>
                       <li id="[##_guest_rep_id_##]">
-                        <div class="[##_guest_rep_class_##] guestbook__item">
+                        <div
+                          class="[##_guest_rep_class_##] page guestbook__item"
+                        >
                           <div class="guestbook__header">
                             <div class="guestbook__header-avatar">
                               <i class="uil uil-comment-notes"></i>
@@ -499,12 +502,14 @@
                             <span class="guestbook__header-control">
                               <a
                                 href="#"
+                                class="btn btn-sm btn-txt-blue"
                                 onclick="[##_guest_rep_onclick_delete_##]"
                               >
                                 <i class="uil uil-edit"></i>
                               </a>
                               <a
                                 href="#"
+                                class="btn btn-sm btn-txt-blue"
                                 onclick="[##_guest_rep_onclick_reply_##]"
                               >
                                 <i class="uil uil-corner-up-left-alt"></i>
@@ -523,6 +528,7 @@
                                 <div
                                   class="
                                     guestbook__item
+                                    page
                                     [##_guest_rep_class_##]
                                   "
                                 >
@@ -542,6 +548,7 @@
                                     <span class="guestbook__header-control">
                                       <a
                                         href="#"
+                                        class="btn btn-sm btn-txt-blue"
                                         onclick="[##_guest_rep_onclick_delete_##]"
                                       >
                                         <i class="uil uil-edit"></i>
@@ -574,7 +581,7 @@
       // document loaded
       document.addEventListener("DOMContentLoaded", () => {
         // constants
-        const { header, sidebar } = constants;
+        const { header, sidebar, guestbook, article } = constants;
 
         // header
         const { _handleToggleSearch, _handleOpenSidebar } = header;
@@ -582,11 +589,21 @@
 
         // sidebar
         const {
+          _handleInsertTagCloudStyle,
           _handleCompareCounterTodayAndYesterday,
           _handleCloseSidebar,
           _handleShowSidebarByWindowResizing,
         } = sidebar;
         const { sidebarCloseButton } = sidebar.components;
+
+        // guestbook
+        const {
+          _handleInsertGuestbookUsernameStyle,
+          _handleInsertGuestbookReportStyle,
+        } = guestbook;
+
+        // article
+        const { _handleHiddenArticleTitleIfNotArticleUrl } = article;
 
         // search button toggle event
         searchToggleButton.addEventListener("click", _handleToggleSearch);
@@ -602,6 +619,18 @@
 
         // Compare visitor counter.
         _handleCompareCounterTodayAndYesterday();
+
+        // Tag Cloud Style
+        _handleInsertTagCloudStyle();
+
+        // Guestbook Username Style
+        _handleInsertGuestbookUsernameStyle();
+
+        // Gusetbook Report Style
+        _handleInsertGuestbookReportStyle();
+
+        // Hidden Article Title if not article url
+        _handleHiddenArticleTitleIfNotArticleUrl();
       });
 
       const constants = {
@@ -646,6 +675,11 @@
           components: {
             sidebar: document.querySelector("#sidebar"),
             sidebarCloseButton: document.querySelector(".sidebar__close"),
+            tagCloud1List: document.querySelectorAll(".cloud1"),
+            tagCloud2List: document.querySelectorAll(".cloud2"),
+            tagCloud3List: document.querySelectorAll(".cloud3"),
+            tagCloud4List: document.querySelectorAll(".cloud4"),
+            tagCloud5List: document.querySelectorAll(".cloud5"),
             counterYesterday: document.querySelector(".counter__yesterday"),
             counterToday: document.querySelector(".counter__today"),
             counterTotal: document.querySelector(".counter__total"),
@@ -657,6 +691,31 @@
             counterDownIcon: document.querySelector(
               ".counter .uil-angle-double-down"
             ),
+          },
+          _handleInsertTagCloudStyle: () => {
+            const {
+              tagCloud1List,
+              tagCloud2List,
+              tagCloud3List,
+              tagCloud4List,
+              tagCloud5List,
+            } = constants.sidebar.components;
+
+            tagCloud1List.forEach((tagCloud) => {
+              tagCloud.classList.add("btn-blue");
+            });
+            tagCloud2List.forEach((tagCloud) => {
+              tagCloud.classList.add("btn-green");
+            });
+            tagCloud3List.forEach((tagCloud) => {
+              tagCloud.classList.add("btn-red");
+            });
+            tagCloud4List.forEach((tagCloud) => {
+              tagCloud.classList.add("btn-orange");
+            });
+            tagCloud5List.forEach((tagCloud) => {
+              tagCloud.classList.add("btn-violet");
+            });
           },
           _handleCompareCounterTodayAndYesterday: () => {
             const {
@@ -699,6 +758,45 @@
               if (_sidebar.style.display === "block") {
                 _sidebar.style.display = "none";
               }
+            }
+          },
+        },
+        guestbook: {
+          components: {
+            guestbookUsernameList: document.querySelectorAll(
+              ".guestbook__header-info .name a"
+            ),
+            guestbookReportList: document.querySelectorAll(
+              ".guestbook__header-info .date span a"
+            ),
+          },
+          _handleInsertGuestbookUsernameStyle: () => {
+            const { guestbookUsernameList } = constants.guestbook.components;
+
+            guestbookUsernameList.forEach((username) => {
+              username.classList.add("link-hover-blue");
+              username.classList.add("link");
+            });
+          },
+          _handleInsertGuestbookReportStyle: () => {
+            const { guestbookReportList } = constants.guestbook.components;
+
+            guestbookReportList.forEach((report) => {
+              report.classList.add("link-red");
+              report.classList.add("link");
+              report.classList.add("link-sm");
+            });
+          },
+        },
+        article: {
+          components: {
+            article: document.querySelector("#content .article"),
+          },
+          _handleHiddenArticleTitleIfNotArticleUrl: () => {
+            const pathName = window.location.pathname;
+            if (pathName === "/guestbook" || pathName === "/tag") {
+              const { article } = constants.article.components;
+              article.style.display = "none";
             }
           },
         },
