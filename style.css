@@ -325,7 +325,6 @@ main {
 }
 .sidebar__item {
   margin-bottom: 25px;
-  font-size: 0.9em;
 }
 .sidebar__item .sidebar__title {
   font-weight: bold;
@@ -480,7 +479,7 @@ main {
 }
 .sidebar .comment .sidebar__contents .comment__link {
   color: var(--black-color);
-  margin-top: 5px;
+  margin-top: 10px;
   transition: color 0.1s ease-in-out;
 }
 .sidebar .comment .sidebar__contents .comment__link:hover {
@@ -703,6 +702,12 @@ main {
   transition: all 0.1s ease-in-out;
   box-sizing: border-box;
 }
+.guestbook__item:hover {
+  box-shadow: 1px 3px 5px var(--primary-sub-color);
+}
+.guestbook__list ul > li > ul .guestbook__item:hover {
+  box-shadow: 1px 3px 5px var(--secondary-sub-color);
+}
 .guestbook__item .guestbook__body {
   padding: 20px;
   line-height: 1.5em;
@@ -756,11 +761,14 @@ footer {
     background-color: var(--white-color);
     opacity: 0.95;
     z-index: 80;
-    width: 350px;
+    width: 400px;
     height: 100%;
-    overflow-y: scroll;
+    overflow: scroll;
     border-right: 1px solid var(--gray-color1);
     box-sizing: border-box;
+  }
+  #sidebar::-webkit-scrollbar {
+    display: none;
   }
   .sidebar__close {
     display: block;
@@ -809,7 +817,7 @@ footer {
   /* ========== Sidebar ========== */
   #sidebar {
     width: 100%;
-    padding-bottom: 110px;
+    padding-bottom: 90px;
   }
 
   /* ========== Guestbook ========== */
