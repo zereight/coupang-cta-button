@@ -738,6 +738,104 @@ main {
   flex-wrap: wrap;
   padding-top: 15px;
 }
+/* ========== MAIN CONTENT ========== */
+/* Article */
+.article .article__container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Index Article */
+.article .article__idx-item {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow: 1px 3px 5px var(--gray-color1);
+  height: 160px;
+}
+.article__idx-item .article__idx-img-wrap {
+  border-radius: 5px;
+  width: 160px;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom right,
+    var(--primary-sub-color),
+    var(--secondary-sub-color)
+  );
+  margin-right: 20px;
+  transition: opacity 0.1s ease-in-out;
+}
+.article__idx-item .article__idx-img-wrap:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.article__idx-item .article__idx-img-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50, 50);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+.article__idx-item .article__idx-summary-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.article__idx-summary-wrap a.article__idx-tit {
+  color: var(--black-color);
+  font-weight: bold;
+  margin-bottom: 8px;
+  transition: color 0.1s ease-in-out;
+}
+.article__idx-summary-wrap a.article__idx-tit:hover {
+  color: var(--primary-color);
+}
+.article__idx-summary-wrap .article__idx-date {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8em;
+}
+.article__idx-summary-wrap .article__idx-date a {
+  color: var(--black-color3);
+  transition: color 0.1s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+.article__idx-summary-wrap .article__idx-date a i {
+  margin-right: 3px;
+}
+.article__idx-summary-wrap .article__idx-date a:hover {
+  color: var(--secondary-color);
+}
+.article__idx-summary-wrap .article__idx-summary {
+  line-height: 1.5em;
+  height: 100px;
+  overflow-y: hidden;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+.article__idx-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+.article__idx-btn-wrap button {
+  margin-bottom: 3px;
+  width: 45px;
+  height: 45px;
+}
+/* Permalink Article */
+
 /* ========== Footer ========== */
 footer {
   display: flex;
