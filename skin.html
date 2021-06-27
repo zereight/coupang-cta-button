@@ -355,7 +355,10 @@
                           <i class="uil uil-bookmark"></i>
                           <span>[##_article_rep_category_##]</span>
                         </a>
-                        <a href="[##_article_rep_link_##]" class="date link link-hover-red">
+                        <a
+                          href="[##_article_rep_link_##]"
+                          class="date link link-hover-red"
+                        >
                           <i class="uil uil-calender"></i>
                           <span>[##_article_rep_date_##]</span>
                         </a>
@@ -383,20 +386,86 @@
 
                 <!-- Permalink Article: 블로그 상세 글 페이지 일때만 보이는 영역 -->
                 <s_permalink_article_rep>
-                  <div class="article__tit-wrap">
-                    <h2>
-                      <a href="[##_article_rep_link_##]"
-                        >[##_article_rep_title_##]</a
-                      >
-                    </h2>
-                    <div class="category">
-                      <a href="[##_article_rep_category_link_##]"
-                        >[##_article_rep_category_##]</a
-                      >
+                  <div class="article__per-header">
+                    <a
+                      href="[##_article_rep_link_##]"
+                      class="article__per-tit link link-hover-blue"
+                    >
+                      [##_article_rep_title_##]
+                    </a>
+                    <div class="article__per-desc">
+                      <div class="article__per-left">
+                        <img src="[##_image_##]" />
+                      </div>
+                      <div class="article__per-right">
+                        <div class="article__per-info">
+                          <div class="name">
+                            <i class="uil uil-user"></i>
+                            <span>By [##_blogger_##]</span>
+                          </div>
+                          <a
+                            href="[##_article_rep_category_link_##]"
+                            class="ctg link link-hover-red"
+                          >
+                            <i class="uil uil-bookmark"></i>
+                            <span>[##_article_rep_category_##]</span>
+                          </a>
+                          <div class="date">
+                            <i class="uil uil-calender"></i>
+                            <span>[##_article_rep_date_##]</span>
+                          </div>
+                        </div>
+                        <s_ad_div>
+                          <div class="article__per-control">
+                            <div>
+                              <a
+                                href="[##_s_ad_m_link_##]"
+                                class="link link-sm link-hover-red"
+                              >
+                                <i class="uil uil-edit"></i>
+                                <span>Edit</span>
+                              </a>
+                              (<a
+                                href="#"
+                                onclick="[##_s_ad_m_onclick_##]"
+                                class="link link-sm link-hover-red"
+                              >
+                                <i class="uil uil-browser"></i>
+                                <span>New Window</span> </a
+                              >)
+                            </div>
+                            <a
+                              href="#"
+                              onclick="[##_s_ad_s2_onclick_##]"
+                              class="link link-sm link-hover-red"
+                            >
+                              <i class="uil uil-padlock"></i>
+                              <span>
+                                [##_s_ad_s1_label_##] -> [##_s_ad_s2_label_##]
+                              </span>
+                            </a>
+                            <a
+                              href="#"
+                              onclick="[##_s_ad_t_onclick_##]"
+                              class="link link-sm link-hover-red"
+                            >
+                              <i class="uil uil-link-alt"></i>
+                              <span>Trackback</span>
+                            </a>
+                            <a
+                              href="#"
+                              onclick="[##_s_ad_d_onclick_##]"
+                              class="link link-sm link-hover-red"
+                            >
+                              <i class="uil uil-trash-alt"></i>
+                              <span>Delete</span>
+                            </a>
+                          </div>
+                        </s_ad_div>
+                      </div>
                     </div>
-                    <div class="date">[##_article_rep_date_##]</div>
-                    <div class="article">[##_article_rep_desc_##]</div>
                   </div>
+                  <div class="article__content">[##_article_rep_desc_##]</div>
                 </s_permalink_article_rep>
               </s_article_rep>
             </div>
@@ -793,7 +862,8 @@
             article: document.querySelector("#content .article"),
           },
           _handleHiddenArticleTitleIfNotArticleUrl: () => {
-            const pathName = window.location.pathname;
+            const pathName = window.location.pathname.toLowerCase;
+
             if (pathName === "/guestbook" || pathName === "/tag") {
               const { article } = constants.article.components;
               article.style.display = "none";
