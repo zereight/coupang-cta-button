@@ -3,6 +3,10 @@
   <head>
     <title>[##_page_title_##]</title>
 
+    <!--============= CUSTOM =============-->
+
+    <!--==================================-->
+
     <!--============= META TAGS =============-->
     <meta charset="UTF-8" />
     <meta name="title" content="[##_page_title_##] :: [##_title_##]" />
@@ -35,7 +39,7 @@
         <!-- Navigation -->
         <nav class="nav">
           <i class="sidebar__open uil uil-bars"></i>
-          <a class="nav__logo" href="/"> [##_title_##] </a>
+          <a class="nav__logo" href="/"> [##_title_##] - 스킨 공사중</a>
           <div class="nav__menu">
             <ul class="nav__list">
               <li class="nav__item">
@@ -386,19 +390,19 @@
 
                 <!-- Permalink Article: 블로그 상세 글 페이지 일때만 보이는 영역 -->
                 <s_permalink_article_rep>
-                  <div class="article__per-header">
+                  <div class="article__header">
                     <a
                       href="[##_article_rep_link_##]"
-                      class="article__per-tit link link-hover-blue"
+                      class="article__tit link link-hover-blue"
                     >
                       [##_article_rep_title_##]
                     </a>
-                    <div class="article__per-desc">
-                      <div class="article__per-left">
+                    <div class="article__desc">
+                      <div class="article__left">
                         <img src="[##_image_##]" />
                       </div>
-                      <div class="article__per-right">
-                        <div class="article__per-info">
+                      <div class="article__right">
+                        <div class="article__info">
                           <div class="name">
                             <i class="uil uil-user"></i>
                             <span>By [##_blogger_##]</span>
@@ -416,7 +420,7 @@
                           </div>
                         </div>
                         <s_ad_div>
-                          <div class="article__per-control">
+                          <div class="article__control">
                             <div>
                               <a
                                 href="[##_s_ad_m_link_##]"
@@ -466,6 +470,148 @@
                     </div>
                   </div>
                   <div class="article__content">[##_article_rep_desc_##]</div>
+
+                  <div class="article__comment">
+                    <s_rp>
+                      <h3 class="content__tit">
+                        <i class="uil uil-comment-dots"></i>
+                        <span>Comment</span>
+                      </h3>
+                      <div class="article__comment-form">
+                        <s_rp_input_form>
+                          <div class="article__comment-info">
+                            <s_rp_member>
+                              <s_rp_guest>
+                                <div class="article__comment-info-item">
+                                  <i class="uil uil-user"></i>
+                                  <input
+                                    type="text"
+                                    placeholder="username"
+                                    name="[##_rp_input_name_##]"
+                                    value="[##_guest_name_##]"
+                                  />
+                                </div>
+                                <div class="article__comment-info-item">
+                                  <i class="uil uil-key-skeleton"></i>
+                                  <input
+                                    type="password"
+                                    placeholder="password"
+                                    maxlength="8"
+                                    name="[##_rp_input_password_##]"
+                                    value="[##_rp_admin_check_##]"
+                                  />
+                                </div>
+                                <div class="article__comment-info-item">
+                                  <i class="uil uil-window"></i>
+                                  <input
+                                    type="text"
+                                    placeholder="homepage"
+                                    name="[##_rp_input_homepage_##]"
+                                    value="[##_guest_homepage_##]"
+                                  />
+                                </div>
+                              </s_rp_guest>
+                              <div class="article__comment-secret">
+                                <i class="uil uil-lock"></i>
+                                <i class="uil uil-unlock"></i>
+                                <input
+                                  type="checkbox"
+                                  id="article-secret-checkbox"
+                                  name="[##_rp_input_is_secret_##]"
+                                  class="checkbox"
+                                />
+                              </div>
+                            </s_rp_member>
+                          </div>
+                          <div class="article__comment-textarea">
+                            <textarea
+                              name="[##_rp_input_comment_##]"
+                            ></textarea>
+                            <button
+                              type="submit"
+                              class="btn btn-sm btn-blue"
+                              onclick="[##_rp_onclick_submit_##]"
+                            >
+                              Submit
+                            </button>
+                          </div>
+                        </s_rp_input_form>
+                      </div>
+                      <div class="article__comment-list">
+                        <s_rp_container>
+                          <ol>
+                            <s_rp_rep>
+                              <li id="[##_rp_rep_id_##]">
+                                <div class="[##_rp_rep_class_##]">
+                                  <span class="image">[##_rp_rep_logo_##]</span>
+                                  <span class="name">[##_rp_rep_name_##]</span>
+                                  <span class="date"> [##_rp_rep_date_##]</span>
+                                  <span class="control">
+                                    <a
+                                      href="[##_rp_rep_link_##]"
+                                      class="address"
+                                      >&nbsp;
+                                      <span>댓글주소</span>
+                                    </a>
+                                    <a
+                                      href="#"
+                                      onclick="[##_rp_rep_onclick_delete_##]"
+                                      class="modify"
+                                      >&nbsp;
+                                      <span>수정/삭제</span>
+                                    </a>
+                                    <a
+                                      href="#"
+                                      onclick="[##_rp_rep_onclick_reply_##]"
+                                      class="write"
+                                      >&nbsp;
+                                      <span>댓글쓰기</span>
+                                    </a>
+                                  </span>
+                                  <p>[##_rp_rep_desc_##]</p>
+                                </div>
+                                <s_rp2_container>
+                                  <ul>
+                                    <s_rp2_rep>
+                                      <li id="[##_rp_rep_id_##]">
+                                        <div class="[##_rp_rep_class_##]">
+                                          <span class="image"
+                                            >[##_rp_rep_logo_##]</span
+                                          >
+                                          <span class="name"
+                                            >[##_rp_rep_name_##]</span
+                                          >
+                                          <span class="date">
+                                            [##_rp_rep_date_##]</span
+                                          >
+                                          <span class="control">
+                                            <a
+                                              href="[##_rp_rep_link_##]"
+                                              class="address"
+                                              >&nbsp;
+                                              <span>댓글주소</span>
+                                            </a>
+                                            <a
+                                              href="#"
+                                              onclick="[##_rp_rep_onclick_delete_##]"
+                                              class="modify"
+                                              >&nbsp;
+                                              <span>수정/삭제</span>
+                                            </a>
+                                          </span>
+                                          <p>[##_rp_rep_desc_##]</p>
+                                        </div>
+                                      </li>
+                                    </s_rp2_rep>
+                                  </ul>
+                                </s_rp2_container>
+                              </li>
+                            </s_rp_rep>
+                          </ol>
+                        </s_rp_container>
+                      </div>
+                    </s_rp>
+                  </div>
                 </s_permalink_article_rep>
               </s_article_rep>
             </div>
@@ -672,7 +818,11 @@
         } = guestbook;
 
         // article
-        const { _handleHiddenArticleTitleIfNotArticleUrl } = article;
+        const {
+          _handleHiddenArticleTitleIfNotArticleUrl,
+          _handleToggleLockIconOnSecretBox,
+        } = article;
+        const { articleSecretCheckBox } = article.components;
 
         // search button toggle event
         searchToggleButton.addEventListener("click", _handleToggleSearch);
@@ -700,6 +850,10 @@
 
         // Hidden Article Title if not article url
         _handleHiddenArticleTitleIfNotArticleUrl();
+        articleSecretCheckBox.addEventListener(
+          "click",
+          _handleToggleLockIconOnSecretBox
+        );
       });
 
       const constants = {
@@ -860,13 +1014,39 @@
         article: {
           components: {
             article: document.querySelector("#content .article"),
+            articleSecretCheckBox: document.querySelector(
+              "#article-secret-checkbox"
+            ),
+            articleSecretLockIcon: document.querySelector(
+              ".article__comment-secret .uil-lock"
+            ),
+            articleSecretUnLockIcon: document.querySelector(
+              ".article__comment-secret .uil-unlock"
+            ),
           },
           _handleHiddenArticleTitleIfNotArticleUrl: () => {
-            const pathName = window.location.pathname.toLowerCase;
+            const pathName = window.location.pathname;
 
             if (pathName === "/guestbook" || pathName === "/tag") {
               const { article } = constants.article.components;
               article.style.display = "none";
+            }
+          },
+          _handleToggleLockIconOnSecretBox: () => {
+            const {
+              articleSecretCheckBox,
+              articleSecretLockIcon,
+              articleSecretUnLockIcon,
+            } = constants.article.components;
+            const isLocked = articleSecretCheckBox.getAttribute("lock");
+            if (isLocked === "true") {
+              articleSecretCheckBox.setAttribute("lock", "false");
+              articleSecretLockIcon.style.display = "none";
+              articleSecretUnLockIcon.style.display = "block";
+            } else {
+              articleSecretCheckBox.setAttribute("lock", "true");
+              articleSecretLockIcon.style.display = "block";
+              articleSecretUnLockIcon.style.display = "none";
             }
           },
         },
