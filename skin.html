@@ -542,64 +542,86 @@
                           <ol>
                             <s_rp_rep>
                               <li id="[##_rp_rep_id_##]">
-                                <div class="[##_rp_rep_class_##]">
-                                  <span class="image">[##_rp_rep_logo_##]</span>
-                                  <span class="name">[##_rp_rep_name_##]</span>
-                                  <span class="date"> [##_rp_rep_date_##]</span>
-                                  <span class="control">
-                                    <a
-                                      href="[##_rp_rep_link_##]"
-                                      class="address"
-                                      >&nbsp;
-                                      <span>댓글주소</span>
-                                    </a>
-                                    <a
-                                      href="#"
-                                      onclick="[##_rp_rep_onclick_delete_##]"
-                                      class="modify"
-                                      >&nbsp;
-                                      <span>수정/삭제</span>
-                                    </a>
-                                    <a
-                                      href="#"
-                                      onclick="[##_rp_rep_onclick_reply_##]"
-                                      class="write"
-                                      >&nbsp;
-                                      <span>댓글쓰기</span>
-                                    </a>
-                                  </span>
-                                  <p>[##_rp_rep_desc_##]</p>
+                                <div
+                                  class="
+                                    article__comment-item
+                                    [##_rp_rep_class_##]
+                                  "
+                                >
+                                  <div class="article__comment-img">
+                                    <img
+                                      src="[##_rp_rep_logo_##]"
+                                      alt="profile image"
+                                    />
+                                  </div>
+                                  <div class="article__comment-content-wrap">
+                                    <div class="article__comment-name">
+                                      <i class="uil uil-user"></i>
+                                      <span>[##_rp_rep_name_##]</span>
+                                      <a
+                                        href="#"
+                                        onclick="[##_rp_rep_onclick_delete_##]"
+                                        class="btn btn-sm btn-txt-blue"
+                                        ><i class="uil uil-edit"></i
+                                      ></a>
+                                      <a
+                                        href="#"
+                                        onclick="[##_rp_rep_onclick_reply_##]"
+                                        class="btn btn-sm btn-txt-blue"
+                                        ><i
+                                          class="uil uil-corner-up-left-alt"
+                                        ></i
+                                      ></a>
+                                    </div>
+                                    <div class="article__comment-content">
+                                      <p>[##_rp_rep_desc_##]</p>
+                                      <div class="date">
+                                        [##_rp_rep_date_##]
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                                 <s_rp2_container>
                                   <ul>
                                     <s_rp2_rep>
                                       <li id="[##_rp_rep_id_##]">
-                                        <div class="[##_rp_rep_class_##]">
-                                          <span class="image"
-                                            >[##_rp_rep_logo_##]</span
+                                        <div
+                                          class="
+                                            article__comment-item
+                                            [##_rp_rep_class_##]
+                                          "
+                                        >
+                                          <div class="article__comment-img">
+                                            <img
+                                              src="[##_rp_rep_logo_##]"
+                                              alt="profile image"
+                                            />
+                                          </div>
+                                          <div
+                                            class="
+                                              article__comment-content-wrap
+                                            "
                                           >
-                                          <span class="name"
-                                            >[##_rp_rep_name_##]</span
-                                          >
-                                          <span class="date">
-                                            [##_rp_rep_date_##]</span
-                                          >
-                                          <span class="control">
-                                            <a
-                                              href="[##_rp_rep_link_##]"
-                                              class="address"
-                                              >&nbsp;
-                                              <span>댓글주소</span>
-                                            </a>
-                                            <a
-                                              href="#"
-                                              onclick="[##_rp_rep_onclick_delete_##]"
-                                              class="modify"
-                                              >&nbsp;
-                                              <span>수정/삭제</span>
-                                            </a>
-                                          </span>
-                                          <p>[##_rp_rep_desc_##]</p>
+                                            <div class="article__comment-name">
+                                              <i class="uil uil-user"></i>
+                                              <span>[##_rp_rep_name_##]</span>
+                                              <a
+                                                href="#"
+                                                onclick="[##_rp_rep_onclick_delete_##]"
+                                                class="btn btn-sm btn-txt-blue"
+                                              >
+                                                <i class="uil uil-edit"></i>
+                                              </a>
+                                            </div>
+                                            <div
+                                              class="article__comment-content"
+                                            >
+                                              <p>[##_rp_rep_desc_##]</p>
+                                              <div class="date">
+                                                [##_rp_rep_date_##]
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </li>
                                     </s_rp2_rep>
@@ -821,6 +843,7 @@
         const {
           _handleHiddenArticleTitleIfNotArticleUrl,
           _handleToggleLockIconOnSecretBox,
+          _handleInsertStyleArticleCommentListLinks,
         } = article;
         const { articleSecretCheckBox } = article.components;
 
@@ -839,21 +862,28 @@
         // Compare visitor counter.
         _handleCompareCounterTodayAndYesterday();
 
-        // Tag Cloud Style
+        // Tag cloud style
         _handleInsertTagCloudStyle();
 
-        // Guestbook Username Style
+        // Guestbook username style
         _handleInsertGuestbookUsernameStyle();
 
-        // Gusetbook Report Style
+        // Gusetbook report style
         _handleInsertGuestbookReportStyle();
 
-        // Hidden Article Title if not article url
+        // Hidden article title if not article url
         _handleHiddenArticleTitleIfNotArticleUrl();
-        articleSecretCheckBox.addEventListener(
-          "click",
-          _handleToggleLockIconOnSecretBox
-        );
+
+        // Toggle lock icon at write form of comment
+        if (articleSecretCheckBox) {
+          articleSecretCheckBox.addEventListener(
+            "click",
+            _handleToggleLockIconOnSecretBox
+          );
+        }
+
+        // Article comment link style
+        _handleInsertStyleArticleCommentListLinks();
       });
 
       const constants = {
@@ -1023,6 +1053,12 @@
             articleSecretUnLockIcon: document.querySelector(
               ".article__comment-secret .uil-unlock"
             ),
+            articleCommentListNameLinks: document.querySelectorAll(
+              ".article__comment-content-wrap .article__comment-name span a"
+            ),
+            articleCommentLiskReportLinks: document.querySelectorAll(
+              ".article__comment-content .date a"
+            ),
           },
           _handleHiddenArticleTitleIfNotArticleUrl: () => {
             const pathName = window.location.pathname;
@@ -1048,6 +1084,21 @@
               articleSecretLockIcon.style.display = "block";
               articleSecretUnLockIcon.style.display = "none";
             }
+          },
+          _handleInsertStyleArticleCommentListLinks: () => {
+            const {
+              articleCommentListNameLinks,
+              articleCommentLiskReportLinks,
+            } = constants.article.components;
+
+            articleCommentListNameLinks.forEach((nameLink) => {
+              nameLink.classList.add("link");
+              nameLink.classList.add("link-hover-blue");
+            });
+            articleCommentLiskReportLinks.forEach((reportLink) => {
+              reportLink.classList.add("link");
+              reportLink.classList.add("link-red");
+            });
           },
         },
       };
