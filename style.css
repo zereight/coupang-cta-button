@@ -496,7 +496,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: var(--blue-color);
+  color: var(--black-color3);
 }
 .sidebar__item .sidebar__title > i {
   margin-right: 3px;
@@ -726,7 +726,7 @@ main {
 .content__item .content__tit {
   display: flex;
   align-items: center;
-  color: var(--blue-color);
+  color: var(--black-color3);
   margin-bottom: 1em;
   font-weight: bold;
 }
