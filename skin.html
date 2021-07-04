@@ -326,10 +326,6 @@
         <section class="content fade-in-box-2" id="content">
           <!-- Article -->
           <div class="content__item article">
-            <h3 class="content__tit">
-              <i class="uil uil-document-layout-left"></i>
-              <span>Article</span>
-            </h3>
             <div class="article__container">
               <s_article_rep>
                 <!-- Index Article: 블로그 홈 화면에서 보이는 영역 -->
@@ -651,7 +647,7 @@
                 <s_tag_rep>
                   <a
                     href="[##_tag_link_##]"
-                    class="[##_tag_class_##] tag__item btn"
+                    class="[##_tag_class_##] tag__item btn btn-sm"
                   >
                     [##_tag_name_##]
                   </a>
@@ -894,7 +890,6 @@
 
         // article
         const {
-          _handleHiddenArticleTitleIfNotArticleUrl,
           _handleToggleLockIconOnSecretBox,
           _handleInsertStyleArticleCommentListLinks,
         } = article;
@@ -923,9 +918,6 @@
 
         // Gusetbook report style
         _handleInsertGuestbookReportStyle();
-
-        // Hidden article title if not article url
-        _handleHiddenArticleTitleIfNotArticleUrl();
 
         // Toggle lock icon at write form of comment
         if (articleSecretCheckBox) {
@@ -1112,14 +1104,6 @@
             articleCommentLiskReportLinks: document.querySelectorAll(
               ".article__comment-content .date a"
             ),
-          },
-          _handleHiddenArticleTitleIfNotArticleUrl: () => {
-            const pathName = window.location.pathname;
-
-            if (pathName === "/guestbook" || pathName === "/tag") {
-              const { article } = constants.article.components;
-              article.style.display = "none";
-            }
           },
           _handleToggleLockIconOnSecretBox: () => {
             const {

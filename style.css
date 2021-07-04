@@ -176,10 +176,10 @@ textarea {
   -o-animation: fadein 1s; /* Opera */
 }
 .fade-in-box-3 {
-  animation: fadein 2s;
-  -moz-animation: fadein 2s; /* Firefox */
-  -webkit-animation: fadein 2s; /* Safari and Chrome */
-  -o-animation: fadein 2s; /* Opera */
+  animation: fadein 1.5s;
+  -moz-animation: fadein 1.5s; /* Firefox */
+  -webkit-animation: fadein 1.5s; /* Safari and Chrome */
+  -o-animation: fadein 1.5s; /* Opera */
 }
 @keyframes fadein {
   0% {
@@ -795,10 +795,10 @@ main {
 }
 .tag__cloud .tag__list .tag__item {
   display: inline-block;
-  margin: 0 5px 5px 0;
+  margin: 0 7px 7px 0;
   white-space: nowrap;
+  border-radius: 15px;
 }
-
 /* Guestbook */
 .guestbook__form .guestbook__info {
   display: flex;
@@ -843,14 +843,13 @@ main {
   color: var(--black-color3);
   border: none;
   border-radius: 6px;
-  height: 70px;
+  height: 130px;
   transition: height 0.1s ease-in-out;
   line-height: 1.5em;
   box-sizing: border-box;
 }
 .guestbook__form .guestbook__textarea > textarea:focus {
   outline: none;
-  height: 130px;
 }
 .guestbook__textarea > button {
   margin-top: 10px;
@@ -926,12 +925,12 @@ main {
   padding: 20px;
   line-height: 1.5em;
 }
-/* Guestbook CaptchaBox */
+/* CaptchaBox */
 #tt_captChaBottom {
   position: static !important;
 }
 #tt_captChaBottom .wrap_box_border {
-  display: none;
+  height: 1px !important;
 }
 #tt_captChaBottom #innerBox {
   position: static !important;
@@ -957,12 +956,12 @@ main {
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
-  height: 200px;
+  height: 240px;
 }
 .article__idx-item .article__idx-img-wrap {
   border-radius: 5px;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   position: relative;
   overflow: hidden;
   background: linear-gradient(
@@ -995,7 +994,7 @@ main {
 }
 .article__idx-summary-wrap a.article__idx-tit {
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 .article__idx-summary-wrap .article__idx-date {
   display: flex;
@@ -1013,7 +1012,7 @@ main {
 }
 .article__idx-summary-wrap .article__idx-summary {
   line-height: 1.7em;
-  max-height: 110px;
+  max-height: 130px;
   overflow-y: hidden;
   font-size: 0.9em;
   margin-top: 10px;
@@ -1193,14 +1192,13 @@ main {
   color: var(--black-color3);
   border: none;
   border-radius: 6px;
-  height: 70px;
+  height: 130px;
   transition: height 0.1s ease-in-out;
   line-height: 1.5em;
   box-sizing: border-box;
 }
 .article__comment-form .article__comment-textarea > textarea:focus {
   outline: none;
-  height: 130px;
 }
 .article__comment-textarea > button {
   margin-top: 10px;
