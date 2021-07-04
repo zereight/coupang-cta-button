@@ -163,6 +163,59 @@ input,
 textarea {
   /* -webkit-appearance: none; */
 }
+.fade-in-box-1 {
+  animation: fadein 0.5s;
+  -moz-animation: fadein 0.5s; /* Firefox */
+  -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+  -o-animation: fadein 0.5s; /* Opera */
+}
+.fade-in-box-2 {
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+  -o-animation: fadein 1s; /* Opera */
+}
+.fade-in-box-3 {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* Button */
 .btn {
   border: none;
@@ -1247,6 +1300,39 @@ ul > li .article__comment-content-wrap .article__comment-content {
 /* ========== Footer ========== */
 footer {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  border-top: 1px solid var(--gray-color0);
+}
+.footer__body {
+  display: flex;
+  flex-direction: row;
+}
+.footer__logo-container {
+  flex: 1;
+}
+.footer__about-container,
+.footer__sns-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.footer__about-container a,
+.footer__sns-container a {
+  flex: 1;
+  margin-top: 5px;
+  padding: 5px 0;
+}
+.footer__copyright {
+  margin-top: 20px;
+  font-size: 0.9em;
+  display: flex;
+}
+.footer__copyright p:first-child {
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 1300px) {
@@ -1385,5 +1471,22 @@ footer {
   }
   .article__comment-content-wrap .article__comment-content .date {
     padding: 10px 0;
+  }
+
+  /* ========== Footer ========== */
+  .footer__body {
+    flex-direction: column;
+  }
+  .footer__about-container,
+  .footer__sns-container {
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 100%;
+  }
+  .footer__copyright {
+    flex-direction: column;
+  }
+  .footer__copyright p:first-child {
+    margin-bottom: 10px;
   }
 }
