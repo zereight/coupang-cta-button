@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
     <information>
-        <name>Berry 0.0.1</name>
-        <version>0.0.1</version>
+        <name>Berry 0.1.1</name>
+        <version>0.1.1</version>
         <description>
             <![CDATA[티스토리 Berry 스킨]]>
         </description>
@@ -70,38 +70,54 @@
     </cover>
     <!-- Variable -->
     <variables>
-        <variablegroup name="구성 요소 보이기/숨기기">
+        <variablegroup name="Footer SNS 링크 설정">
             <variable>
-                <name>displayProfileImage</name>
-                <label>프로필 사진 보이기</label>
-                <description></description>
-                <type>BOOL</type>
+                <name>footer_sns_facebook_link</name>
+                <label>
+                    <![CDATA[ Facebook Link ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer에 위치한 Facebook SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
                 <option></option>
-                <default>true</default>
+                <default></default>
             </variable>
             <variable>
-                <name>displayBlogger</name>
-                <label>블로거 이름 보이기</label>
-                <description></description>
-                <type>BOOL</type>
+                <name>footer_sns_twitter_link</name>
+                <label>
+                    <![CDATA[ Twitter Link ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer에 위치한 Twitter SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
                 <option></option>
-                <default>true</default>
+                <default></default>
             </variable>
             <variable>
-                <name>displayBlogDesc</name>
-                <label>블로그 소개글 보이기</label>
-                <description></description>
-                <type>BOOL</type>
+                <name>footer_sns_youtube_link</name>
+                <label>
+                    <![CDATA[ Youtube Link ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer에 위치한 Youtube SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
                 <option></option>
-                <default>true</default>
+                <default></default>
             </variable>
             <variable>
-                <name>displayVisitChart</name>
-                <label>방문자 차트 보이기</label>
-                <description></description>
-                <type>BOOL</type>
+                <name>footer_sns_github_link</name>
+                <label>
+                    <![CDATA[ Github Link ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer에 위치한 Github SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
                 <option></option>
-                <default>true</default>
+                <default></default>
             </variable>
         </variablegroup>
         <variablegroup name="프로필 설정">
