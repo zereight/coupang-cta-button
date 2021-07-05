@@ -70,7 +70,7 @@
     </cover>
     <!-- Variable -->
     <variables>
-        <variablegroup name="Footer SNS 링크 설정">
+        <variablegroup name="Footer 링크 설정">
             <variable>
                 <name>footer_sns_facebook_link</name>
                 <label>
@@ -114,6 +114,42 @@
                 </label>
                 <description>
                     <![CDATA[ Footer에 위치한 Github SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option></option>
+                <default></default>
+            </variable>
+            <variable>
+                <name>footer_about_link</name>
+                <label>
+                    <![CDATA[ About Link ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer에 위치한 About 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option></option>
+                <default></default>
+            </variable>
+            <variable>
+                <name>footer_careers_link</name>
+                <label>
+                    <![CDATA[ Careers Link ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer에 위치한 Careers 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option></option>
+                <default></default>
+            </variable>
+            <variable>
+                <name>footer_contact_link</name>
+                <label>
+                    <![CDATA[ Contact Link ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer에 위치한 Contact 링크 ]]>
                 </description>
                 <type>STRING</type>
                 <option></option>

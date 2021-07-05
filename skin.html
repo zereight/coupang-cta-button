@@ -814,15 +814,33 @@
             [##_title_##] :: [##_blogger_##]
           </div>
           <div class="footer__about-container">
-            <a href="/" target="_blank" class="link link-sm link-hover-red">
-              About Me
-            </a>
-            <a href="/" target="_blank" class="link link-sm link-hover-red">
-              Careers
-            </a>
-            <a href="/" target="_blank" class="link link-sm link-hover-red">
-              Contact
-            </a>
+            <s_if_var_footer_about_link>
+              <a
+                href="[##_var_footer_about_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-red"
+              >
+                About Me
+              </a>
+            </s_if_var_footer_about_link>
+            <s_if_var_footer_careers_link>
+              <a
+                href="[##_var_footer_careers_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-red"
+              >
+                Careers
+              </a>
+            </s_if_var_footer_careers_link>
+            <s_if_var_footer_contact_link>
+              <a
+                href="[##_var_footer_contact_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-red"
+              >
+                Contact
+              </a>
+            </s_if_var_footer_contact_link>
           </div>
           <div class="footer__sns-container">
             <s_if_var_footer_sns_facebook_link>
