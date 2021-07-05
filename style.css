@@ -1465,6 +1465,9 @@ footer {
   .article__right .article__info > a {
     padding: 3px 0;
   }
+  .article__right .article__control {
+    display: none;
+  }
   /* Article Comment List */
   ol > li .article__comment-content-wrap .article__comment-content {
     flex-direction: column;
