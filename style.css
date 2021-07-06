@@ -1295,6 +1295,26 @@ ul > li .article__comment-content-wrap .article__comment-content {
   font-size: 0.8em;
   color: var(--black-color3);
 }
+/* Paging */
+.paging {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.numbox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numbox a {
+  width: 1em;
+  height: 1em;
+  margin-right: 5px;
+}
+.numbox a:last-child {
+  margin-right: 0;
+}
 /* ========== Footer ========== */
 footer {
   display: flex;
