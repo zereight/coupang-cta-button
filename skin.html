@@ -482,6 +482,7 @@
                   </div>
                   <div class="article__content">[##_article_rep_desc_##]</div>
 
+                  <!-- 본문 댓글 -->
                   <div class="article__comment">
                     <s_rp>
                       <h3 class="content__tit">
@@ -645,6 +646,69 @@
                       </div>
                     </s_rp>
                   </div>
+                  <!-- //본문 댓글 -->
+                  <!-- Recommend prev article -->
+                  <s_article_prev>
+                    <div class="article__prev">
+                      <s_article_prev_thumbnail>
+                        <div
+                          class="article__prev-img"
+                          onclick="window.location.href='[##_article_prev_link_##]'"
+                        >
+                          <img
+                            src="[##_article_prev_thumbnail_link_##]"
+                            alt="thumbnail image"
+                          />
+                        </div>
+                      </s_article_prev_thumbnail>
+                      <div class="article__prev-desc">
+                        <p class="article__prev-info">이전 글 추천</p>
+                        <a
+                          class="link link-hover-blue article__prev-tit"
+                          href="[##_article_prev_link_##]"
+                          target="_blank"
+                        >
+                          [##_article_prev_title_##]
+                        </a>
+                        <p class="article__prev-date">
+                          <i class="uil uil-clock"></i>
+                          <span>[##_article_prev_date_##]</span>
+                        </p>
+                      </div>
+                    </div>
+                  </s_article_prev>
+                  <!-- //Recommend prev article -->
+                  <!-- Recommend next article -->
+                  <s_article_next>
+                    <div class="article__next">
+                      <s_article_next_thumbnail>
+                        <div
+                          class="article__next-img"
+                          onclick="window.location.href='[##_article_next_link_##]'"
+                        >
+                          <img
+                            src="[##_article_next_thumbnail_link_##]"
+                            alt="thumbnail image"
+                          />
+                        </div>
+                      </s_article_next_thumbnail>
+                      <div class="article__next-desc">
+                        <p class="article__next-info">다음 글 추천</p>
+                        <a
+                          class="link link-hover-blue article__next-tit"
+                          href="[##_article_next_link_##]"
+                          target="_blank"
+                        >
+                          [##_article_next_title_##]
+                        </a>
+                        <p class="article__next-date">
+                          <i class="uil uil-clock"></i>
+                          <span>[##_article_next_date_##]</span>
+                        </p>
+                      </div>
+                    </div>
+                  </s_article_next>
+                  <!-- //Recommend next article -->
                 </s_permalink_article_rep>
                 <!-- //Permalink Article -->
               </s_article_rep>
@@ -991,6 +1055,7 @@
         const {
           _handleToggleLockIconOnSecretBox,
           _handleInsertStyleArticleCommentListLinks,
+          _handleShowPrevNextArticle,
         } = article;
         const { articleSecretCheckBox } = article.components;
 
@@ -1028,6 +1093,9 @@
 
         // Article comment link style
         _handleInsertStyleArticleCommentListLinks();
+
+        // Recommend article
+        window.addEventListener("scroll", _handleShowPrevNextArticle);
       });
 
       const constants = {
@@ -1188,6 +1256,7 @@
         article: {
           components: {
             article: document.querySelector("#content .article"),
+            articleContent: document.querySelector(".article__content"),
             articleSecretCheckBox: document.querySelector(
               "#article-secret-checkbox"
             ),
@@ -1203,6 +1272,8 @@
             articleCommentLiskReportLinks: document.querySelectorAll(
               ".article__comment-content .date a"
             ),
+            articlePrev: document.querySelector(".article__prev"),
+            articleNext: document.querySelector(".article__next"),
           },
           _handleToggleLockIconOnSecretBox: () => {
             const {
@@ -1235,6 +1306,47 @@
               reportLink.classList.add("link");
               reportLink.classList.add("link-red");
             });
+          },
+          _handleShowPrevNextArticle: () => {
+            const { articleContent, articlePrev, articleNext } =
+              constants.article.components;
+            if (!articleContent) {
+              return;
+            }
+
+            const currentScrollY = window.scrollY + window.innerHeight;
+
+            // 이전 글이 있을때
+            if (articlePrev) {
+              if (currentScrollY >= articleContent.scrollHeight) {
+                if (
+                  articlePrev.style.display === "" ||
+                  articlePrev.style.display === "none"
+                ) {
+                  articlePrev.style.display = "flex";
+                }
+              } else {
+                if (articlePrev.style.display === "flex") {
+                  articlePrev.style.display = "none";
+                }
+              }
+            }
+
+            // 다음 글이 있을때
+            if (articleNext) {
+              if (currentScrollY >= articleContent.scrollHeight) {
+                if (
+                  articleNext.style.display === "" ||
+                  articleNext.style.display === "none"
+                ) {
+                  articleNext.style.display = "flex";
+                }
+              } else {
+                if (articleNext.style.display === "flex") {
+                  articleNext.style.display = "none";
+                }
+              }
+            }
           },
         },
       };
