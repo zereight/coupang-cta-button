@@ -4,7 +4,6 @@
     <title>[##_page_title_##]</title>
 
     <!--============= CUSTOM =============-->
-
     <!--==================================-->
 
     <!--============= META TAGS =============-->
@@ -35,7 +34,7 @@
   <body id="[##_body_id_##]">
     <s_t3>
       <!--============= HEADER =============-->
-      <header class="header fade-in-box-1" id="header">
+      <header class="header fade-in-box-1" id="header" role="header">
         <!-- Navigation -->
         <nav class="nav">
           <i class="sidebar__open uil uil-bars"></i>
@@ -79,7 +78,7 @@
         <!-- Search -->
         <s_sidebar>
           <s_sidebar_element>
-            <!-- 검색 -->
+            <!-- 검색창 -->
             <div class="search">
               <s_search>
                 <form class="search__group">
@@ -102,15 +101,19 @@
             </div>
           </s_sidebar_element>
         </s_sidebar>
+        <!-- //Search -->
       </header>
+      <!-- //HEADER -->
 
       <!--============= MAIN =============-->
       <main class="main" id="main">
         <section class="sidebar" id="sidebar">
+          <!-- 모바일 환경에서 '닫기' 버튼 -->
           <div class="sidebar__close">
             <i class="uil uil-multiply"></i>
             <span>Close</span>
           </div>
+          <!-- //모바일 환경에서 '닫기' 버튼 -->
 
           <s_sidebar>
             <s_sidebar_element>
@@ -134,6 +137,15 @@
                   </s_rct_notice>
                 </div>
               </div>
+              <!-- //공지사항 -->
+            </s_sidebar_element>
+
+            <s_sidebar_element>
+              <!-- 광고 1 -->
+              <div class="sidebar__item">
+                <!-- 광고 코드를 여기에 삽입 -->
+              </div>
+              <!-- //광고 1 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -145,6 +157,15 @@
                 </h3>
                 <div class="sidebar__contents">[##_category_list_##]</div>
               </div>
+              <!-- //카테고리 -->
+            </s_sidebar_element>
+
+            <s_sidebar_element>
+              <!-- 광고 2 -->
+              <div class="sidebar__item">
+                <!-- 광고 코드를 여기에 삽입 -->
+              </div>
+              <!-- //광고 2 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -184,6 +205,7 @@
                   </ul>
                 </div>
               </div>
+              <!-- //최근 글 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -223,6 +245,7 @@
                   </ul>
                 </div>
               </div>
+              <!-- //인기 글 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -258,6 +281,7 @@
                   </ul>
                 </div>
               </div>
+              <!-- //댓글 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -282,6 +306,7 @@
                   </ul>
                 </div>
               </div>
+              <!-- //태그 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -318,12 +343,17 @@
                   </div>
                 </div>
               </div>
+              <!-- //카운터 -->
             </s_sidebar_element>
           </s_sidebar>
         </section>
 
         <!--============= MAIN CONTENT =============-->
         <section class="content fade-in-box-2" id="content">
+          <!-- 상단 광고 -->
+          <div class="ad__upper-content">[##_revenue_list_upper_##]</div>
+          <!-- //상단 광고 -->
+
           <!-- Article -->
           <div class="content__item article">
             <div class="article__container">
@@ -383,6 +413,7 @@
                     </div>
                   </div>
                 </s_index_article_rep>
+                <!-- //Index Article -->
 
                 <!-- Permalink Article: 블로그 상세 글 페이지 일때만 보이는 영역 -->
                 <s_permalink_article_rep>
@@ -467,6 +498,7 @@
                   </div>
                   <div class="article__content">[##_article_rep_desc_##]</div>
 
+                  <!-- 본문 댓글 -->
                   <div class="article__comment">
                     <s_rp>
                       <h3 class="content__tit">
@@ -630,9 +662,99 @@
                       </div>
                     </s_rp>
                   </div>
+                  <!-- //본문 댓글 -->
+                  <!-- Recommend prev article -->
+                  <s_article_prev>
+                    <div class="article__prev">
+                      <s_article_prev_thumbnail>
+                        <div
+                          class="article__prev-img"
+                          onclick="window.location.href='[##_article_prev_link_##]'"
+                        >
+                          <img
+                            src="[##_article_prev_thumbnail_link_##]"
+                            alt="thumbnail image"
+                          />
+                        </div>
+                      </s_article_prev_thumbnail>
+                      <div class="article__prev-desc">
+                        <p class="article__prev-info">이전 글 추천</p>
+                        <a
+                          class="link link-hover-blue article__prev-tit"
+                          href="[##_article_prev_link_##]"
+                          target="_blank"
+                        >
+                          [##_article_prev_title_##]
+                        </a>
+                        <p class="article__prev-date">
+                          <i class="uil uil-clock"></i>
+                          <span>[##_article_prev_date_##]</span>
+                        </p>
+                      </div>
+                    </div>
+                  </s_article_prev>
+                  <!-- //Recommend prev article -->
+                  <!-- Recommend next article -->
+                  <s_article_next>
+                    <div class="article__next">
+                      <s_article_next_thumbnail>
+                        <div
+                          class="article__next-img"
+                          onclick="window.location.href='[##_article_next_link_##]'"
+                        >
+                          <img
+                            src="[##_article_next_thumbnail_link_##]"
+                            alt="thumbnail image"
+                          />
+                        </div>
+                      </s_article_next_thumbnail>
+                      <div class="article__next-desc">
+                        <p class="article__next-info">다음 글 추천</p>
+                        <a
+                          class="link link-hover-blue article__next-tit"
+                          href="[##_article_next_link_##]"
+                          target="_blank"
+                        >
+                          [##_article_next_title_##]
+                        </a>
+                        <p class="article__next-date">
+                          <i class="uil uil-clock"></i>
+                          <span>[##_article_next_date_##]</span>
+                        </p>
+                      </div>
+                    </div>
+                  </s_article_next>
+                  <!-- //Recommend next article -->
                 </s_permalink_article_rep>
+                <!-- //Permalink Article -->
               </s_article_rep>
             </div>
+
+            <!-- Paging -->
+            <s_paging>
+              <div class="paging__container">
+                <a
+                  [##_prev_page_##]
+                  class="btn btn-lg btn-txt-blue [##_no_more_prev_##]"
+                >
+                  <i class="uil uil-previous"></i>
+                </a>
+                <span class="paging__numbox">
+                  <s_paging_rep>
+                    <a [##_paging_rep_link_##] class="num btn btn-md btn-blue">
+                      [##_paging_rep_link_num_##]
+                    </a>
+                  </s_paging_rep>
+                </span>
+                <a
+                  [##_next_page_##]
+                  class="btn btn-lg btn-txt-blue [##_no_more_next_##]"
+                >
+                  <i class="uil uil-step-forward"></i>
+                </a>
+              </div>
+            </s_paging>
+            <!-- //Paging -->
           </div>
           <!-- //Article -->
 
@@ -804,43 +926,90 @@
             </div>
           </s_guest>
           <!-- //Guestbook -->
+
+          <!-- 하단 광고 -->
+          <div class="ad__lower-content">[##_revenue_list_lower_##]</div>
+          <!-- //하단 광고 -->
         </section>
       </main>
+      <!-- //MAIN -->
 
       <!--============= FOOTER =============-->
-      <footer class="footer fade-in-box-3" id="footer">
+      <footer class="footer fade-in-box-3" id="footer" role="footer">
         <div class="footer__body">
           <div class="footer__logo-container">
             [##_title_##] :: [##_blogger_##]
           </div>
           <div class="footer__about-container">
-            <a href="/" target="_blank" class="link link-sm link-hover-red">
-              About Me
-            </a>
-            <a href="/" target="_blank" class="link link-sm link-hover-red">
-              Careers
-            </a>
-            <a href="/" target="_blank" class="link link-sm link-hover-red">
-              Contact
-            </a>
+            <s_if_var_footer_about_link>
+              <a
+                href="[##_var_footer_about_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-red"
+              >
+                About Me
+              </a>
+            </s_if_var_footer_about_link>
+            <s_if_var_footer_careers_link>
+              <a
+                href="[##_var_footer_careers_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-red"
+              >
+                Careers
+              </a>
+            </s_if_var_footer_careers_link>
+            <s_if_var_footer_contact_link>
+              <a
+                href="[##_var_footer_contact_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-red"
+              >
+                Contact
+              </a>
+            </s_if_var_footer_contact_link>
           </div>
           <div class="footer__sns-container">
-            <a href="/" target="_blank" class="link link-sm link-hover-violet">
-              <i class="uil uil-facebook"></i>
-              Facebook
-            </a>
-            <a href="/" target="_blank" class="link link-sm link-hover-violet">
-              <i class="uil uil-twitter"></i>
-              Twitter
-            </a>
-            <a href="/" target="_blank" class="link link-sm link-hover-violet">
-              <i class="uil uil-youtube"></i>
-              Youtube
-            </a>
-            <a href="/" target="_blank" class="link link-sm link-hover-violet">
-              <i class="uil uil-github"></i>
-              Github
-            </a>
+            <s_if_var_footer_sns_facebook_link>
+              <a
+                href="[##_var_footer_sns_facebook_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-violet"
+              >
+                <i class="uil uil-facebook"></i>
+                Facebook
+              </a>
+            </s_if_var_footer_sns_facebook_link>
+            <s_if_var_footer_sns_twitter_link>
+              <a
+                href="[##_var_footer_sns_twitter_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-violet"
+              >
+                <i class="uil uil-twitter"></i>
+                Twitter
+              </a>
+            </s_if_var_footer_sns_twitter_link>
+            <s_if_var_footer_sns_youtube_link>
+              <a
+                href="[##_var_footer_sns_youtube_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-violet"
+              >
+                <i class="uil uil-youtube"></i>
+                Youtube
+              </a>
+            </s_if_var_footer_sns_youtube_link>
+            <s_if_var_footer_sns_github_link>
+              <a
+                href="[##_var_footer_sns_github_link_##]"
+                target="_blank"
+                class="link link-sm link-hover-violet"
+              >
+                <i class="uil uil-github"></i>
+                Github
+              </a>
+            </s_if_var_footer_sns_github_link>
           </div>
         </div>
         <div class="footer__copyright">
@@ -860,8 +1029,18 @@
               MemoStack</a
             >
           </p>
+          <p>
+            Unicons by
+            <a
+              href="https://iconscout.com/"
+              class="link link-blue"
+              target="_blank"
+              >Iconscout</a
+            >
+          </p>
         </div>
       </footer>
+      <!-- //FOOTER -->
     </s_t3>
     <script type="text/javascript">
       // document loaded
@@ -892,6 +1071,7 @@
         const {
           _handleToggleLockIconOnSecretBox,
           _handleInsertStyleArticleCommentListLinks,
+          _handleShowPrevNextArticle,
         } = article;
         const { articleSecretCheckBox } = article.components;
 
@@ -929,6 +1109,9 @@
 
         // Article comment link style
         _handleInsertStyleArticleCommentListLinks();
+
+        // Recommend article
+        window.addEventListener("scroll", _handleShowPrevNextArticle);
       });
 
       const constants = {
@@ -1089,6 +1272,7 @@
         article: {
           components: {
             article: document.querySelector("#content .article"),
+            articleContent: document.querySelector(".article__content"),
             articleSecretCheckBox: document.querySelector(
               "#article-secret-checkbox"
             ),
@@ -1104,6 +1288,8 @@
             articleCommentLiskReportLinks: document.querySelectorAll(
               ".article__comment-content .date a"
             ),
+            articlePrev: document.querySelector(".article__prev"),
+            articleNext: document.querySelector(".article__next"),
           },
           _handleToggleLockIconOnSecretBox: () => {
             const {
@@ -1136,6 +1322,47 @@
               reportLink.classList.add("link");
               reportLink.classList.add("link-red");
             });
+          },
+          _handleShowPrevNextArticle: () => {
+            const { articleContent, articlePrev, articleNext } =
+              constants.article.components;
+            if (!articleContent) {
+              return;
+            }
+
+            const currentScrollY = window.scrollY + window.innerHeight;
+
+            // 이전 글이 있을때
+            if (articlePrev) {
+              if (currentScrollY >= articleContent.scrollHeight) {
+                if (
+                  articlePrev.style.display === "" ||
+                  articlePrev.style.display === "none"
+                ) {
+                  articlePrev.style.display = "flex";
+                }
+              } else {
+                if (articlePrev.style.display === "flex") {
+                  articlePrev.style.display = "none";
+                }
+              }
+            }
+
+            // 다음 글이 있을때
+            if (articleNext) {
+              if (currentScrollY >= articleContent.scrollHeight) {
+                if (
+                  articleNext.style.display === "" ||
+                  articleNext.style.display === "none"
+                ) {
+                  articleNext.style.display = "flex";
+                }
+              } else {
+                if (articleNext.style.display === "flex") {
+                  articleNext.style.display = "none";
+                }
+              }
+            }
           },
         },
       };
