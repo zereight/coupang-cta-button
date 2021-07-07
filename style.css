@@ -1410,8 +1410,11 @@ footer {
   font-size: 0.9em;
   display: flex;
 }
-.footer__copyright p:first-child {
+.footer__copyright p {
   margin-right: 10px;
+}
+.footer__copyright p:last-child {
+  margin-right: 0;
 }
 
 /* ============== Advertisement ============== */
