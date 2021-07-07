@@ -4,7 +4,21 @@
     <title>[##_page_title_##]</title>
 
     <!--============= CUSTOM =============-->
+    <!-- WEB Master -->
+    <!-- WEB Master - Google -->
+    <meta
+      name="google-site-verification"
+      content="g61UyiULrYkZAsvsdug7_rnYczO8d9k14UBqS1V6M30"
+    />
+    <!-- WEB Master - NAVER -->
+    <meta
+      name="naver-site-verification"
+      content="c8585885c0be0c8e1a4afe9dbd0938e5e1a1424b"
+    />
 
+    <!-- WEB Master - BING -->
+    <meta name="msvalidate.01" content="E669D47061DD5F85C76BEC8F15BBADB3" />
+    <!-- //WEB Master -->
     <!--==================================-->
 
     <!--============= META TAGS =============-->
@@ -35,7 +49,7 @@
   <body id="[##_body_id_##]">
     <s_t3>
       <!--============= HEADER =============-->
-      <header class="header fade-in-box-1" id="header">
+      <header class="header fade-in-box-1" id="header" role="header">
         <!-- Navigation -->
         <nav class="nav">
           <i class="sidebar__open uil uil-bars"></i>
@@ -79,7 +93,7 @@
         <!-- Search -->
         <s_sidebar>
           <s_sidebar_element>
-            <!-- 검색 -->
+            <!-- 검색창 -->
             <div class="search">
               <s_search>
                 <form class="search__group">
@@ -102,15 +116,19 @@
             </div>
           </s_sidebar_element>
         </s_sidebar>
+        <!-- //Search -->
       </header>
+      <!-- //HEADER -->
 
       <!--============= MAIN =============-->
       <main class="main" id="main">
         <section class="sidebar" id="sidebar">
+          <!-- 모바일 환경에서 '닫기' 버튼 -->
           <div class="sidebar__close">
             <i class="uil uil-multiply"></i>
             <span>Close</span>
           </div>
+          <!-- //모바일 환경에서 '닫기' 버튼 -->
 
           <s_sidebar>
             <s_sidebar_element>
@@ -134,6 +152,7 @@
                   </s_rct_notice>
                 </div>
               </div>
+              <!-- //공지사항 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -145,6 +164,7 @@
                 </h3>
                 <div class="sidebar__contents">[##_category_list_##]</div>
               </div>
+              <!-- //카테고리 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -184,6 +204,7 @@
                   </ul>
                 </div>
               </div>
+              <!-- //최근 글 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -223,6 +244,7 @@
                   </ul>
                 </div>
               </div>
+              <!-- //인기 글 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -258,6 +280,7 @@
                   </ul>
                 </div>
               </div>
+              <!-- //댓글 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -282,6 +305,7 @@
                   </ul>
                 </div>
               </div>
+              <!-- //태그 -->
             </s_sidebar_element>
 
             <s_sidebar_element>
@@ -318,12 +342,17 @@
                   </div>
                 </div>
               </div>
+              <!-- //카운터 -->
             </s_sidebar_element>
           </s_sidebar>
         </section>
 
         <!--============= MAIN CONTENT =============-->
         <section class="content fade-in-box-2" id="content">
+          <!-- 상단 광고 -->
+          <div class="ad__upper-content">[##_revenue_list_upper_##]</div>
+          <!-- //상단 광고 -->
+
           <!-- Article -->
           <div class="content__item article">
             <div class="article__container">
@@ -383,6 +412,7 @@
                     </div>
                   </div>
                 </s_index_article_rep>
+                <!-- //Index Article -->
 
                 <!-- Permalink Article: 블로그 상세 글 페이지 일때만 보이는 영역 -->
                 <s_permalink_article_rep>
@@ -631,6 +661,7 @@
                     </s_rp>
                   </div>
                 </s_permalink_article_rep>
+                <!-- //Permalink Article -->
               </s_article_rep>
             </div>
 
@@ -658,6 +689,7 @@
                 </a>
               </div>
             </s_paging>
+            <!-- //Paging -->
           </div>
           <!-- //Article -->
 
@@ -829,11 +861,16 @@
             </div>
           </s_guest>
           <!-- //Guestbook -->
+
+          <!-- 하단 광고 -->
+          <div class="ad__lower-content">[##_revenue_list_lower_##]</div>
+          <!-- //하단 광고 -->
         </section>
       </main>
+      <!-- //MAIN -->
 
       <!--============= FOOTER =============-->
-      <footer class="footer fade-in-box-3" id="footer">
+      <footer class="footer fade-in-box-3" id="footer" role="footer">
         <div class="footer__body">
           <div class="footer__logo-container">
             [##_title_##] :: [##_blogger_##]
@@ -929,6 +966,7 @@
           </p>
         </div>
       </footer>
+      <!-- //FOOTER -->
     </s_t3>
     <script type="text/javascript">
       // document loaded

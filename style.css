@@ -1353,6 +1353,21 @@ footer {
   margin-right: 10px;
 }
 
+/* ============== Advertisement ============== */
+.ad__upper-content,
+.ad__lower-content {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.ad__upper-content {
+  margin-bottom: 10px;
+}
+.ad__lower-content {
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 1300px) {
 }
 @media screen and (max-width: 960px) {
