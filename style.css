@@ -1172,11 +1172,39 @@ main {
   color: var(--blue-color);
   background-color: var(--blue-light-color);
 }
-.article__container .article__content figure a {
-  border-radius: 6px;
-}
 .article__container .article__content figure a:hover {
   background-color: inherit;
+}
+.article__container
+  .article__content
+  blockquote[data-ke-style="style2"]::before {
+  content: "✔️ Tip";
+  margin-bottom: 2px;
+  font-weight: bold;
+  display: block;
+  color: var(--green-color);
+}
+.article__container .article__content blockquote[data-ke-style="style2"] {
+  background-color: var(--green-light-color) !important;
+  border-left: 4px solid var(--green-color) !important;
+  padding: 21px 25px 20px 25px;
+  color: inherit;
+}
+.article__container
+  .article__content
+  blockquote[data-ke-style="style3"]::before {
+  content: "💬 NOTE";
+  margin-bottom: 2px;
+  font-weight: bold;
+  display: block;
+  color: var(--blue-color);
+}
+.article__container .article__content blockquote[data-ke-style="style3"] {
+  background-color: var(--blue-light-color) !important;
+  border: none !important;
+  border-left: 4px solid var(--blue-color) !important;
+  color: inherit;
+  margin-bottom: 20px !important;
 }
 /* Article Comment */
 .article__container .article__comment {
