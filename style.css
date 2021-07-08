@@ -995,6 +995,7 @@ main {
 .article__idx-summary-wrap a.article__idx-tit {
   font-weight: bold;
   margin-bottom: 12px;
+  line-height: 1.4em;
 }
 .article__idx-summary-wrap .article__idx-date {
   display: flex;
@@ -1039,6 +1040,7 @@ main {
   font-weight: bold;
   font-size: 1.7em;
   margin-bottom: 30px;
+  line-height: 1.7em;
 }
 .article__header .article__desc {
   display: flex;
