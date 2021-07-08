@@ -1208,6 +1208,24 @@
               counterDownIcon,
             } = constants.sidebar.components;
 
+            if (counterYesterday === undefined || counterYesterday === null) {
+              return;
+            }
+            if (counterToday === undefined || counterToday === null) {
+              return;
+            }
+            if (counterDelta === undefined || counterDelta === null) {
+              return;
+            }
+            if (counterDeltaGroup === undefined || counterDeltaGroup === null) {
+              return;
+            }
+            if (counterUpIcon === undefined || counterUpIcon === null) {
+              return;
+            }
+            if (counterDownIcon === undefined || counterDownIcon === null) {
+              return;
+            }
             const yesterday = counterYesterday.getAttribute("data-value");
             const today = counterToday.getAttribute("data-value");
             const delta = today - yesterday;
@@ -1232,6 +1250,7 @@
             const _sidebar = constants.sidebar.components.sidebar;
             const _sidebarCloseButton =
               constants.sidebar.components.sidebarCloseButton;
+
             if (960 <= window.innerWidth) {
               _sidebar.style.display = "block";
               _sidebarCloseButton.style.display = "none";
@@ -1254,19 +1273,23 @@
           _handleInsertGuestbookUsernameStyle: () => {
             const { guestbookUsernameList } = constants.guestbook.components;
 
-            guestbookUsernameList.forEach((username) => {
-              username.classList.add("link-hover-blue");
-              username.classList.add("link");
-            });
+            if (guestbookUsernameList) {
+              guestbookUsernameList.forEach((username) => {
+                username.classList.add("link-hover-blue");
+                username.classList.add("link");
+              });
+            }
           },
           _handleInsertGuestbookReportStyle: () => {
             const { guestbookReportList } = constants.guestbook.components;
 
-            guestbookReportList.forEach((report) => {
-              report.classList.add("link-red");
-              report.classList.add("link");
-              report.classList.add("link-sm");
-            });
+            if (guestbookReportList) {
+              guestbookReportList.forEach((report) => {
+                report.classList.add("link-red");
+                report.classList.add("link");
+                report.classList.add("link-sm");
+              });
+            }
           },
         },
         article: {
@@ -1285,7 +1308,7 @@
             articleCommentListNameLinks: document.querySelectorAll(
               ".article__comment-content-wrap .article__comment-name span a"
             ),
-            articleCommentLiskReportLinks: document.querySelectorAll(
+            articleCommentListReportLinks: document.querySelectorAll(
               ".article__comment-content .date a"
             ),
             articlePrev: document.querySelector(".article__prev"),
@@ -1297,31 +1320,38 @@
               articleSecretLockIcon,
               articleSecretUnLockIcon,
             } = constants.article.components;
-            const isLocked = articleSecretCheckBox.getAttribute("lock");
-            if (isLocked === "true") {
-              articleSecretCheckBox.setAttribute("lock", "false");
-              articleSecretLockIcon.style.display = "none";
-              articleSecretUnLockIcon.style.display = "block";
-            } else {
-              articleSecretCheckBox.setAttribute("lock", "true");
-              articleSecretLockIcon.style.display = "block";
-              articleSecretUnLockIcon.style.display = "none";
+            if (articleSecretCheckBox) {
+              const isLocked = articleSecretCheckBox.getAttribute("lock");
+
+              if (isLocked === "true") {
+                articleSecretCheckBox.setAttribute("lock", "false");
+                articleSecretLockIcon.style.display = "none";
+                articleSecretUnLockIcon.style.display = "block";
+              } else {
+                articleSecretCheckBox.setAttribute("lock", "true");
+                articleSecretLockIcon.style.display = "block";
+                articleSecretUnLockIcon.style.display = "none";
+              }
             }
           },
           _handleInsertStyleArticleCommentListLinks: () => {
             const {
               articleCommentListNameLinks,
-              articleCommentLiskReportLinks,
+              articleCommentListReportLinks,
             } = constants.article.components;
 
-            articleCommentListNameLinks.forEach((nameLink) => {
-              nameLink.classList.add("link");
-              nameLink.classList.add("link-hover-blue");
-            });
-            articleCommentLiskReportLinks.forEach((reportLink) => {
-              reportLink.classList.add("link");
-              reportLink.classList.add("link-red");
-            });
+            if (articleCommentListNameLinks) {
+              articleCommentListNameLinks.forEach((nameLink) => {
+                nameLink.classList.add("link");
+                nameLink.classList.add("link-hover-blue");
+              });
+            }
+            if (articleCommentListReportLinks) {
+              articleCommentListReportLinks.forEach((reportLink) => {
+                reportLink.classList.add("link");
+                reportLink.classList.add("link-red");
+              });
+            }
           },
           _handleShowPrevNextArticle: () => {
             const { articleContent, articlePrev, articleNext } =
