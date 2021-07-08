@@ -1703,7 +1703,10 @@ footer {
   .footer__copyright {
     flex-direction: column;
   }
-  .footer__copyright p:first-child {
+  .footer__copyright p {
     margin-bottom: 10px;
+  }
+  .footer__copyright p:last-child {
+    margin-bottom: 0;
   }
 }
