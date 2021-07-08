@@ -354,6 +354,175 @@
           <div class="ad__upper-content">[##_revenue_list_upper_##]</div>
           <!-- //상단 광고 -->
 
+          <!-- Tag Cloud -->
+          <s_tag>
+            <div class="content__item tag__cloud">
+              <h3 class="content__tit">
+                <i class="uil uil-tag-alt"></i>
+                <span>Tag Cloud</span>
+              </h3>
+              <div class="tag__list">
+                <s_tag_rep>
+                  <a
+                    href="[##_tag_link_##]"
+                    class="[##_tag_class_##] tag__item btn btn-sm"
+                  >
+                    [##_tag_name_##]
+                  </a>
+                </s_tag_rep>
+              </div>
+            </div>
+          </s_tag>
+          <!-- //Tag Cloud -->
+
+          <!-- Guestbook -->
+          <s_guest>
+            <div class="content__item guestbook">
+              <h3 class="content__tit">
+                <i class="uil uil-book-open"></i>
+                <span>Guestbook</span>
+              </h3>
+              <div class="guestbook__form">
+                <s_guest_input_form>
+                  <div class="guestbook__info">
+                    <s_guest_member>
+                      <s_guest_form>
+                        <div class="guestbook__info__item">
+                          <i class="uil uil-user"></i>
+                          <input
+                            type="text"
+                            placeholder="username"
+                            name="[##_guest_input_name_##]"
+                            value="[##_guest_name_##]"
+                          />
+                        </div>
+                        <div class="guestbook__info__item">
+                          <i class="uil uil-key-skeleton"></i>
+                          <input
+                            type="password"
+                            placeholder="password"
+                            maxlength="8"
+                            name="[##_guest_input_password_##]"
+                            value="[##_guest_password_##]"
+                          />
+                        </div>
+                        <div class="guestbook__info__item">
+                          <i class="uil uil-window"></i>
+                          <input
+                            type="text"
+                            placeholder="homepage"
+                            name="[##_guest_input_homepage_##]"
+                            value="[##_guest_homepage_##]"
+                          />
+                        </div>
+                      </s_guest_form>
+                    </s_guest_member>
+                  </div>
+                  <div class="guestbook__textarea">
+                    <textarea name="[##_guest_textarea_body_##]"></textarea>
+                    <button
+                      type="submit"
+                      class="btn btn-sm btn-blue"
+                      onclick="[##_guest_onclick_submit_##]"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </s_guest_input_form>
+              </div>
+              <div class="guestbook__list">
+                <s_guest_container>
+                  <ul>
+                    <s_guest_rep>
+                      <li id="[##_guest_rep_id_##]">
+                        <div
+                          class="[##_guest_rep_class_##] page guestbook__item"
+                        >
+                          <div class="guestbook__header">
+                            <div class="guestbook__header-avatar">
+                              <i class="uil uil-comment-notes"></i>
+                            </div>
+
+                            <div class="guestbook__header-info">
+                              <div class="name">[##_guest_rep_name_##]</div>
+                              <div class="date">
+                                <i class="uil uil-calender"></i>
+                                <span>[##_guest_rep_date_##]</span>
+                              </div>
+                            </div>
+                            <span class="guestbook__header-control">
+                              <a
+                                href="#"
+                                class="btn btn-sm btn-txt-blue"
+                                onclick="[##_guest_rep_onclick_delete_##]"
+                              >
+                                <i class="uil uil-edit"></i>
+                              </a>
+                              <a
+                                href="#"
+                                class="btn btn-sm btn-txt-blue"
+                                onclick="[##_guest_rep_onclick_reply_##]"
+                              >
+                                <i class="uil uil-corner-up-left-alt"></i>
+                              </a>
+                            </span>
+                          </div>
+                          <div class="guestbook__body">
+                            [##_guest_rep_desc_##]
+                          </div>
+                        </div>
+
+                        <s_guest_reply_container>
+                          <ul>
+                            <s_guest_reply_rep>
+                              <li id="[##_guest_rep_id_##]">
+                                <div
+                                  class="
+                                    guestbook__item
+                                    page
+                                    [##_guest_rep_class_##]
+                                  "
+                                >
+                                  <div class="guestbook__header">
+                                    <div class="guestbook__header-avatar">
+                                      <i class="uil uil-comment-notes"></i>
+                                    </div>
+
+                                    <div class="guestbook__header-info">
+                                      <div class="name">
+                                        [##_guest_rep_name_##]
+                                      </div>
+                                      <div class="date">
+                                        <span>[##_guest_rep_date_##]</span>
+                                      </div>
+                                    </div>
+                                    <span class="guestbook__header-control">
+                                      <a
+                                        href="#"
+                                        class="btn btn-sm btn-txt-blue"
+                                        onclick="[##_guest_rep_onclick_delete_##]"
+                                      >
+                                        <i class="uil uil-edit"></i>
+                                      </a>
+                                    </span>
+                                  </div>
+                                  <div class="guestbook__body">
+                                    [##_guest_rep_desc_##]
+                                  </div>
+                                </div>
+                              </li>
+                            </s_guest_reply_rep>
+                          </ul>
+                        </s_guest_reply_container>
+                      </li>
+                    </s_guest_rep>
+                  </ul>
+                </s_guest_container>
+              </div>
+            </div>
+          </s_guest>
+          <!-- //Guestbook -->
+
           <!-- Article -->
           <div class="content__item article">
             <div class="article__container">
@@ -758,175 +927,6 @@
           </div>
           <!-- //Article -->
 
-          <!-- Tag Cloud -->
-          <s_tag>
-            <div class="content__item tag__cloud">
-              <h3 class="content__tit">
-                <i class="uil uil-tag-alt"></i>
-                <span>Tag Cloud</span>
-              </h3>
-              <div class="tag__list">
-                <s_tag_rep>
-                  <a
-                    href="[##_tag_link_##]"
-                    class="[##_tag_class_##] tag__item btn btn-sm"
-                  >
-                    [##_tag_name_##]
-                  </a>
-                </s_tag_rep>
-              </div>
-            </div>
-          </s_tag>
-          <!-- //Tag Cloud -->
-
-          <!-- Guestbook -->
-          <s_guest>
-            <div class="content__item guestbook">
-              <h3 class="content__tit">
-                <i class="uil uil-book-open"></i>
-                <span>Guestbook</span>
-              </h3>
-              <div class="guestbook__form">
-                <s_guest_input_form>
-                  <div class="guestbook__info">
-                    <s_guest_member>
-                      <s_guest_form>
-                        <div class="guestbook__info__item">
-                          <i class="uil uil-user"></i>
-                          <input
-                            type="text"
-                            placeholder="username"
-                            name="[##_guest_input_name_##]"
-                            value="[##_guest_name_##]"
-                          />
-                        </div>
-                        <div class="guestbook__info__item">
-                          <i class="uil uil-key-skeleton"></i>
-                          <input
-                            type="password"
-                            placeholder="password"
-                            maxlength="8"
-                            name="[##_guest_input_password_##]"
-                            value="[##_guest_password_##]"
-                          />
-                        </div>
-                        <div class="guestbook__info__item">
-                          <i class="uil uil-window"></i>
-                          <input
-                            type="text"
-                            placeholder="homepage"
-                            name="[##_guest_input_homepage_##]"
-                            value="[##_guest_homepage_##]"
-                          />
-                        </div>
-                      </s_guest_form>
-                    </s_guest_member>
-                  </div>
-                  <div class="guestbook__textarea">
-                    <textarea name="[##_guest_textarea_body_##]"></textarea>
-                    <button
-                      type="submit"
-                      class="btn btn-sm btn-blue"
-                      onclick="[##_guest_onclick_submit_##]"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </s_guest_input_form>
-              </div>
-              <div class="guestbook__list">
-                <s_guest_container>
-                  <ul>
-                    <s_guest_rep>
-                      <li id="[##_guest_rep_id_##]">
-                        <div
-                          class="[##_guest_rep_class_##] page guestbook__item"
-                        >
-                          <div class="guestbook__header">
-                            <div class="guestbook__header-avatar">
-                              <i class="uil uil-comment-notes"></i>
-                            </div>
-
-                            <div class="guestbook__header-info">
-                              <div class="name">[##_guest_rep_name_##]</div>
-                              <div class="date">
-                                <i class="uil uil-calender"></i>
-                                <span>[##_guest_rep_date_##]</span>
-                              </div>
-                            </div>
-                            <span class="guestbook__header-control">
-                              <a
-                                href="#"
-                                class="btn btn-sm btn-txt-blue"
-                                onclick="[##_guest_rep_onclick_delete_##]"
-                              >
-                                <i class="uil uil-edit"></i>
-                              </a>
-                              <a
-                                href="#"
-                                class="btn btn-sm btn-txt-blue"
-                                onclick="[##_guest_rep_onclick_reply_##]"
-                              >
-                                <i class="uil uil-corner-up-left-alt"></i>
-                              </a>
-                            </span>
-                          </div>
-                          <div class="guestbook__body">
-                            [##_guest_rep_desc_##]
-                          </div>
-                        </div>
-
-                        <s_guest_reply_container>
-                          <ul>
-                            <s_guest_reply_rep>
-                              <li id="[##_guest_rep_id_##]">
-                                <div
-                                  class="
-                                    guestbook__item
-                                    page
-                                    [##_guest_rep_class_##]
-                                  "
-                                >
-                                  <div class="guestbook__header">
-                                    <div class="guestbook__header-avatar">
-                                      <i class="uil uil-comment-notes"></i>
-                                    </div>
-
-                                    <div class="guestbook__header-info">
-                                      <div class="name">
-                                        [##_guest_rep_name_##]
-                                      </div>
-                                      <div class="date">
-                                        <span>[##_guest_rep_date_##]</span>
-                                      </div>
-                                    </div>
-                                    <span class="guestbook__header-control">
-                                      <a
-                                        href="#"
-                                        class="btn btn-sm btn-txt-blue"
-                                        onclick="[##_guest_rep_onclick_delete_##]"
-                                      >
-                                        <i class="uil uil-edit"></i>
-                                      </a>
-                                    </span>
-                                  </div>
-                                  <div class="guestbook__body">
-                                    [##_guest_rep_desc_##]
-                                  </div>
-                                </div>
-                              </li>
-                            </s_guest_reply_rep>
-                          </ul>
-                        </s_guest_reply_container>
-                      </li>
-                    </s_guest_rep>
-                  </ul>
-                </s_guest_container>
-              </div>
-            </div>
-          </s_guest>
-          <!-- //Guestbook -->
-
           <!-- 하단 광고 -->
           <div class="ad__lower-content">[##_revenue_list_lower_##]</div>
           <!-- //하단 광고 -->
@@ -1076,13 +1076,16 @@
         const { articleSecretCheckBox } = article.components;
 
         // search button toggle event
-        searchToggleButton.addEventListener("click", _handleToggleSearch);
+        searchToggleButton &&
+          searchToggleButton.addEventListener("click", _handleToggleSearch);
 
         // sidebar open event
-        sidebarOpenButton.addEventListener("click", _handleOpenSidebar);
+        sidebarOpenButton &&
+          sidebarOpenButton.addEventListener("click", _handleOpenSidebar);
 
         // sidebar close event
-        sidebarCloseButton.addEventListener("click", _handleCloseSidebar);
+        sidebarCloseButton &&
+          sidebarCloseButton.addEventListener("click", _handleCloseSidebar);
 
         // window resize
         window.addEventListener("resize", _handleShowSidebarByWindowResizing);
@@ -1100,12 +1103,11 @@
         _handleInsertGuestbookReportStyle();
 
         // Toggle lock icon at write form of comment
-        if (articleSecretCheckBox) {
+        articleSecretCheckBox &&
           articleSecretCheckBox.addEventListener(
             "click",
             _handleToggleLockIconOnSecretBox
           );
-        }
 
         // Article comment link style
         _handleInsertStyleArticleCommentListLinks();
@@ -1182,21 +1184,30 @@
               tagCloud5List,
             } = constants.sidebar.components;
 
-            tagCloud1List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-blue");
-            });
-            tagCloud2List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-green");
-            });
-            tagCloud3List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-red");
-            });
-            tagCloud4List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-orange");
-            });
-            tagCloud5List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-violet");
-            });
+            tagCloud1List &&
+              tagCloud1List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-blue");
+              });
+
+            tagCloud2List &&
+              tagCloud2List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-green");
+              });
+
+            tagCloud3List &&
+              tagCloud3List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-red");
+              });
+
+            tagCloud4List &&
+              tagCloud4List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-orange");
+              });
+
+            tagCloud5List &&
+              tagCloud5List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-violet");
+              });
           },
           _handleCompareCounterTodayAndYesterday: () => {
             const {
@@ -1208,6 +1219,24 @@
               counterDownIcon,
             } = constants.sidebar.components;
 
+            if (counterYesterday === undefined || counterYesterday === null) {
+              return;
+            }
+            if (counterToday === undefined || counterToday === null) {
+              return;
+            }
+            if (counterDelta === undefined || counterDelta === null) {
+              return;
+            }
+            if (counterDeltaGroup === undefined || counterDeltaGroup === null) {
+              return;
+            }
+            if (counterUpIcon === undefined || counterUpIcon === null) {
+              return;
+            }
+            if (counterDownIcon === undefined || counterDownIcon === null) {
+              return;
+            }
             const yesterday = counterYesterday.getAttribute("data-value");
             const today = counterToday.getAttribute("data-value");
             const delta = today - yesterday;
@@ -1232,6 +1261,7 @@
             const _sidebar = constants.sidebar.components.sidebar;
             const _sidebarCloseButton =
               constants.sidebar.components.sidebarCloseButton;
+
             if (960 <= window.innerWidth) {
               _sidebar.style.display = "block";
               _sidebarCloseButton.style.display = "none";
@@ -1254,19 +1284,23 @@
           _handleInsertGuestbookUsernameStyle: () => {
             const { guestbookUsernameList } = constants.guestbook.components;
 
-            guestbookUsernameList.forEach((username) => {
-              username.classList.add("link-hover-blue");
-              username.classList.add("link");
-            });
+            if (guestbookUsernameList) {
+              guestbookUsernameList.forEach((username) => {
+                username.classList.add("link-hover-blue");
+                username.classList.add("link");
+              });
+            }
           },
           _handleInsertGuestbookReportStyle: () => {
             const { guestbookReportList } = constants.guestbook.components;
 
-            guestbookReportList.forEach((report) => {
-              report.classList.add("link-red");
-              report.classList.add("link");
-              report.classList.add("link-sm");
-            });
+            if (guestbookReportList) {
+              guestbookReportList.forEach((report) => {
+                report.classList.add("link-red");
+                report.classList.add("link");
+                report.classList.add("link-sm");
+              });
+            }
           },
         },
         article: {
@@ -1285,7 +1319,7 @@
             articleCommentListNameLinks: document.querySelectorAll(
               ".article__comment-content-wrap .article__comment-name span a"
             ),
-            articleCommentLiskReportLinks: document.querySelectorAll(
+            articleCommentListReportLinks: document.querySelectorAll(
               ".article__comment-content .date a"
             ),
             articlePrev: document.querySelector(".article__prev"),
@@ -1297,31 +1331,38 @@
               articleSecretLockIcon,
               articleSecretUnLockIcon,
             } = constants.article.components;
-            const isLocked = articleSecretCheckBox.getAttribute("lock");
-            if (isLocked === "true") {
-              articleSecretCheckBox.setAttribute("lock", "false");
-              articleSecretLockIcon.style.display = "none";
-              articleSecretUnLockIcon.style.display = "block";
-            } else {
-              articleSecretCheckBox.setAttribute("lock", "true");
-              articleSecretLockIcon.style.display = "block";
-              articleSecretUnLockIcon.style.display = "none";
+            if (articleSecretCheckBox) {
+              const isLocked = articleSecretCheckBox.getAttribute("lock");
+
+              if (isLocked === "true") {
+                articleSecretCheckBox.setAttribute("lock", "false");
+                articleSecretLockIcon.style.display = "none";
+                articleSecretUnLockIcon.style.display = "block";
+              } else {
+                articleSecretCheckBox.setAttribute("lock", "true");
+                articleSecretLockIcon.style.display = "block";
+                articleSecretUnLockIcon.style.display = "none";
+              }
             }
           },
           _handleInsertStyleArticleCommentListLinks: () => {
             const {
               articleCommentListNameLinks,
-              articleCommentLiskReportLinks,
+              articleCommentListReportLinks,
             } = constants.article.components;
 
-            articleCommentListNameLinks.forEach((nameLink) => {
-              nameLink.classList.add("link");
-              nameLink.classList.add("link-hover-blue");
-            });
-            articleCommentLiskReportLinks.forEach((reportLink) => {
-              reportLink.classList.add("link");
-              reportLink.classList.add("link-red");
-            });
+            if (articleCommentListNameLinks) {
+              articleCommentListNameLinks.forEach((nameLink) => {
+                nameLink.classList.add("link");
+                nameLink.classList.add("link-hover-blue");
+              });
+            }
+            if (articleCommentListReportLinks) {
+              articleCommentListReportLinks.forEach((reportLink) => {
+                reportLink.classList.add("link");
+                reportLink.classList.add("link-red");
+              });
+            }
           },
           _handleShowPrevNextArticle: () => {
             const { articleContent, articlePrev, articleNext } =
