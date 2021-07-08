@@ -1076,13 +1076,16 @@
         const { articleSecretCheckBox } = article.components;
 
         // search button toggle event
-        searchToggleButton.addEventListener("click", _handleToggleSearch);
+        searchToggleButton &&
+          searchToggleButton.addEventListener("click", _handleToggleSearch);
 
         // sidebar open event
-        sidebarOpenButton.addEventListener("click", _handleOpenSidebar);
+        sidebarOpenButton &&
+          sidebarOpenButton.addEventListener("click", _handleOpenSidebar);
 
         // sidebar close event
-        sidebarCloseButton.addEventListener("click", _handleCloseSidebar);
+        sidebarCloseButton &&
+          sidebarCloseButton.addEventListener("click", _handleCloseSidebar);
 
         // window resize
         window.addEventListener("resize", _handleShowSidebarByWindowResizing);
@@ -1100,12 +1103,11 @@
         _handleInsertGuestbookReportStyle();
 
         // Toggle lock icon at write form of comment
-        if (articleSecretCheckBox) {
+        articleSecretCheckBox &&
           articleSecretCheckBox.addEventListener(
             "click",
             _handleToggleLockIconOnSecretBox
           );
-        }
 
         // Article comment link style
         _handleInsertStyleArticleCommentListLinks();
@@ -1182,21 +1184,30 @@
               tagCloud5List,
             } = constants.sidebar.components;
 
-            tagCloud1List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-blue");
-            });
-            tagCloud2List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-green");
-            });
-            tagCloud3List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-red");
-            });
-            tagCloud4List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-orange");
-            });
-            tagCloud5List.forEach((tagCloud) => {
-              tagCloud.classList.add("btn-violet");
-            });
+            tagCloud1List &&
+              tagCloud1List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-blue");
+              });
+
+            tagCloud2List &&
+              tagCloud2List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-green");
+              });
+
+            tagCloud3List &&
+              tagCloud3List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-red");
+              });
+
+            tagCloud4List &&
+              tagCloud4List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-orange");
+              });
+
+            tagCloud5List &&
+              tagCloud5List.forEach((tagCloud) => {
+                tagCloud.classList.add("btn-violet");
+              });
           },
           _handleCompareCounterTodayAndYesterday: () => {
             const {
