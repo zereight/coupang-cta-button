@@ -1110,6 +1110,47 @@ main {
   width: 100%;
   line-height: 1.8em;
 }
+/* Toc */
+.article__container .article__content .article__content-toc {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 10vh;
+  right: 0;
+  background: var(--white-color);
+  max-height: 80vh;
+  height: auto;
+  width: 260px;
+  padding: 20px;
+  background: var(--gray-color0);
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  overflow: scroll;
+  z-index: 80;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.article__container .article__content .article__content-toc::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+.article__container .article__content .article__content-toc p {
+  display: inline-block;
+}
+.article__container .article__content .article__content-toc .indent1 {
+  margin-left: 15px;
+}
+.article__container .article__content .article__content-toc .indent2 {
+  margin-left: 30px;
+}
+.article__container .article__content .article__content-toc .indent3 {
+  margin-left: 45px;
+}
+.article__container .article__content .article__content-toc .indent0:hover,
+.article__container .article__content .article__content-toc .indent1:hover,
+.article__container .article__content .article__content-toc .indent2:hover,
+.article__container .article__content .article__content-toc .indent3:hover {
+  cursor: pointer;
+}
 .article__container .article__content figure span {
   width: 100%;
   text-align: center;
@@ -1126,6 +1167,17 @@ main {
   color: var(--black-color3);
   font-style: italic;
   line-height: 1.5em;
+}
+.article__container .article__content h1:hover,
+.article__container .article__content h2:hover,
+.article__container .article__content h3:hover {
+  cursor: pointer;
+}
+.article__container .article__content h1:hover::after,
+.article__container .article__content h2:hover::after,
+.article__container .article__content h3:hover::after {
+  content: " #";
+  color: var(--blue-color);
 }
 .article__container .article__content h2,
 .article__container .article__content h3,
@@ -1513,7 +1565,22 @@ footer {
 .ad__lower-content {
   margin-top: 10px;
 }
-
+@media screen and (max-width: 1900px) {
+  .article__container .article__content .article__content-toc {
+    width: 160px;
+  }
+}
+@media screen and (max-width: 1720px) {
+  .article__container .article__content .article__content-toc {
+    position: static;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: 0;
+    box-sizing: border-box;
+  }
+}
 @media screen and (max-width: 1300px) {
   /* Recommend article */
   .article__prev,

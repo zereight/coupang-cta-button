@@ -144,7 +144,6 @@
               <!-- 광고 1 -->
               <div class="sidebar__item">
                 <!-- 광고 코드를 여기에 삽입 -->
-              </div>
               <!-- //광고 1 -->
             </s_sidebar_element>
 
@@ -164,7 +163,6 @@
               <!-- 광고 2 -->
               <div class="sidebar__item">
                 <!-- 광고 코드를 여기에 삽입 -->
-              </div>
               <!-- //광고 2 -->
             </s_sidebar_element>
 
@@ -665,7 +663,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="article__content">[##_article_rep_desc_##]</div>
+                  <div class="article__content">
+                    <div class="article__content-toc"></div>
+                    [##_article_rep_desc_##]
+                  </div>
 
                   <!-- 본문 댓글 -->
                   <div class="article__comment">
@@ -1072,6 +1073,7 @@
           _handleToggleLockIconOnSecretBox,
           _handleInsertStyleArticleCommentListLinks,
           _handleShowPrevNextArticle,
+          _handleArticleTableOfContent,
         } = article;
         const { articleSecretCheckBox } = article.components;
 
@@ -1114,6 +1116,9 @@
 
         // Recommend article
         window.addEventListener("scroll", _handleShowPrevNextArticle);
+
+        // ToC
+        _handleArticleTableOfContent();
       });
 
       const constants = {
@@ -1307,6 +1312,7 @@
           components: {
             article: document.querySelector("#content .article"),
             articleContent: document.querySelector(".article__content"),
+            articleToc: document.querySelector(".article__content-toc"),
             articleSecretCheckBox: document.querySelector(
               "#article-secret-checkbox"
             ),
@@ -1324,6 +1330,11 @@
             ),
             articlePrev: document.querySelector(".article__prev"),
             articleNext: document.querySelector(".article__next"),
+            articleHeaderTags: document.querySelector(".article__content")
+              ? document
+                  .querySelector(".article__content")
+                  .querySelectorAll("h1, h2, h3")
+              : undefined,
           },
           _handleToggleLockIconOnSecretBox: () => {
             const {
@@ -1403,6 +1414,86 @@
                   articleNext.style.display = "none";
                 }
               }
+            }
+          },
+          _handleArticleTableOfContent: () => {
+            const findMinLevel = () => {
+              const { articleHeaderTags } = constants.article.components;
+
+              // 본문에서 모든 header 태그를 가지고 옴
+              // header 태그가 있는 경우에만 실행
+              if (articleHeaderTags) {
+                // header 태그 중 제일 level이 낮은 것을 찾음
+                // => h1: 1 / h2: 2 / h3: 3
+                let minLevel = 99;
+
+                let tocHtml = "";
+                articleHeaderTags.forEach((tag) => {
+                  // indent를 나누기 위해 level을 먼저 구함
+                  if (minLevel !== 1) {
+                    let currentLevel = 0;
+                    if (tag.tagName === "H1") {
+                      currentLevel = 1;
+                    } else if (tag.tagName === "H2") {
+                      currentLevel = 2;
+                    } else if (tag.tagName === "H3") {
+                      currentLevel = 3;
+                    }
+
+                    if (currentLevel === 1) {
+                      // h1 인 경우, 뒤에 볼 필요도 없음
+                      minLevel = 1;
+                    }
+
+                    minLevel =
+                      minLevel < currentLevel ? minLevel : currentLevel;
+                  }
+                });
+                return minLevel;
+              }
+              return 0;
+            };
+
+            const setIdAtTags = () => {
+              const { articleHeaderTags } = constants.article.components;
+
+              articleHeaderTags &&
+                articleHeaderTags.forEach((tag) => {
+                  // Tag에 id 값 부여
+                  tag.id = `toc-${tag.innerText}`;
+
+                  // 눌렀을때 스크롤 이동
+                  tag.addEventListener("click", () => {
+                    window.location.href = `#${tag.id}`;
+                  });
+                });
+            };
+
+            const generateToc = (minLevel) => {
+              const { articleToc, articleHeaderTags } =
+                constants.article.components;
+
+              articleToc &&
+                articleHeaderTags &&
+                articleHeaderTags.forEach((tag) => {
+                  const p = document.createElement("p");
+                  p.classList.add("link");
+                  p.classList.add("link-sm");
+                  p.classList.add("link-hover-blue");
+                  p.classList.add(`indent${Number(tag.tagName[1]) - minLevel}`);
+                  p.addEventListener("click", () => {
+                    window.location.href = `#${tag.id}`;
+                  });
+                  p.innerText = `* ${tag.innerText}`;
+
+                  articleToc.appendChild(p);
+                });
+            };
+
+            const minLevel = findMinLevel();
+            if (minLevel !== 0) {
+              setIdAtTags();
+              generateToc(minLevel);
             }
           },
         },
