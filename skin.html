@@ -1077,6 +1077,7 @@
           _handleInsertStyleArticleCommentListLinks,
           _handleShowPrevNextArticle,
           _handleArticleTableOfContent,
+          _handleArticlePreTags,
         } = article
         const { articleSecretCheckBox } = article.components
 
@@ -1122,6 +1123,9 @@
 
         // ToC
         _handleArticleTableOfContent()
+
+        // Article pre tags
+        _handleArticlePreTags()
       })
 
       const constants = {
@@ -1338,6 +1342,7 @@
                   .querySelector('.article__content')
                   .querySelectorAll('h1, h2, h3, h4')
               : undefined,
+            articlePreTags: document.querySelectorAll(".article__container .article__content pre"),
           },
           _handleToggleLockIconOnSecretBox: () => {
             const {
@@ -1528,6 +1533,29 @@
               setIdAtTags()
               generateToc(minLevel)
             }
+          },
+          _handleArticlePreTags: () => {
+            const {articlePreTags} = constants.article.components;
+
+            articlePreTags && articlePreTags.forEach(preTag => {
+              const lang = preTag.getAttribute("data-ke-language");
+              if(lang) {
+                const span = document.createElement('span')
+                span.classList.add('code-lang')
+                span.innerText = lang;
+                span.addEventListener('mouseover', () => {
+                  span.innerText = "copy!";
+                })
+                span.addEventListener('click', () => {
+                  navigator.clipboard.writeText(preTag.innerText.split("\n").slice(0, -1).join("\n"));
+                  span.innerText = "copied!";
+                })
+                span.addEventListener('mouseleave', () => {
+                  span.innerText = lang;
+                })
+                preTag.appendChild(span) 
+              }
+            })
           },
         },
       }
