@@ -1109,6 +1109,7 @@ main {
   box-sizing: border-box;
   width: 100%;
   line-height: 1.8em;
+  word-break: break-all;
 }
 /* Toc */
 .article__container .article__content .article__content-toc {
