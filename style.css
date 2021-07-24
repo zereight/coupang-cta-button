@@ -1109,6 +1109,7 @@ main {
   box-sizing: border-box;
   width: 100%;
   line-height: 1.8em;
+  word-break: break-all;
 }
 /* Toc */
 .article__container .article__content .article__content-toc {
@@ -1211,6 +1212,7 @@ main {
 .article__container .article__content pre code {
   line-height: 1.5em;
   padding: 20px;
+  padding-top: 30px;
   font-family: 'Roboto Mono', monospace;
   font-weight: 400;
   font-size: 0.8em;
@@ -1676,6 +1678,10 @@ footer {
   /* ========== Common Styles ========== */
   body {
     margin-bottom: 110px;
+  }
+  /* Page */
+  .page {
+    padding: 17px;
   }
   /* ========== Header ========== */
   .nav__menu,
