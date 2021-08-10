@@ -80,12 +80,13 @@
                 <option>
                     <![CDATA[
                         [
+                        {"name":"article__idx-img-default", "label":"기본", "value":"article__idx-img-default"},
                         {"name":"article__idx-img-rect", "label":"사각형", "value":"article__idx-img-rect"},
                         {"name":"article__idx-img-circle", "label":"원형", "value":"article__idx-img-circle"}
                         ]
                     ]]>
                 </option>
-                <default>circleImage</default>
+                <default>article__idx-img-default</default>
             </variable>
         </variablegroup>
         <!-- Footer Link -->

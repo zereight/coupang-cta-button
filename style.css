@@ -973,6 +973,9 @@ main {
   margin-right: 20px;
   transition: opacity 0.1s ease-in-out;
 }
+.article__idx-item .article__idx-img-default {
+  border-radius: 5px;
+}
 .article__idx-item .article__idx-img-rect {
   border-radius: 0;
 }
