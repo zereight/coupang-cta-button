@@ -973,6 +973,12 @@ main {
   margin-right: 20px;
   transition: opacity 0.1s ease-in-out;
 }
+.article__idx-item .article__idx-img-rect {
+  border-radius: 0;
+}
+.article__idx-item .article__idx-img-circle {
+  border-radius: 100%;
+}
 .article__idx-item .article__idx-img-wrap:hover {
   opacity: 0.8;
   cursor: pointer;

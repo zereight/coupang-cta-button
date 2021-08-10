@@ -70,6 +70,25 @@
     </cover>
     <!-- Variable -->
     <variables>
+        <!-- Board -->
+        <variablegroup name="본문">
+            <variable>
+                <name>board_thumbnail_figure</name>
+                <label>글 썸네일 모양</label>
+                <description></description>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[
+                        [
+                        {"name":"article__idx-img-rect", "label":"사각형", "value":"article__idx-img-rect"},
+                        {"name":"article__idx-img-circle", "label":"원형", "value":"article__idx-img-circle"}
+                        ]
+                    ]]>
+                </option>
+                <default>circleImage</default>
+            </variable>
+        </variablegroup>
+        <!-- Footer Link -->
         <variablegroup name="Footer 링크 설정">
             <variable>
                 <name>footer_sns_facebook_link</name>
@@ -154,41 +173,6 @@
                 <type>STRING</type>
                 <option></option>
                 <default></default>
-            </variable>
-        </variablegroup>
-        <variablegroup name="프로필 설정">
-            <variable>
-                <name>profileImageFeature</name>
-                <label>프로필 사진 형태 선택</label>
-                <description></description>
-                <type>SELECT</type>
-                <option>
-                    <![CDATA[
-                        [
-                        {"name":"circleImage", "label":"원형 프로필 사진", "value":"circleImage"},
-                        {"name":"rectImage", "label":"사각형 프로필 사진", "value":"rectImage"},
-                        {"name":"roundRectImage", "label":"둥근 사각형 프로필 사진", "value":"roundRectImage"}
-                        ]
-                    ]]>
-                </option>
-                <default>circleImage</default>
-            </variable>
-            <variable>
-                <name>profileBorderWeight</name>
-                <label>프로필 테두리 굵기</label>
-                <description></description>
-                <type>SELECT</type>
-                <option>
-                    <![CDATA[
-                        [
-                        {"name":"none", "label":"테두리 없음", "value":"none"},
-                        {"name":"low", "label":"얇은 굵기", "value":"low"},
-                        {"name":"middle", "label":"중간 굵기", "value":"middle"},
-                        {"name":"high", "label":"두꺼운 굵기", "value":"high"}
-                        ]
-                    ]]>
-                </option>
-                <default>none</default>
             </variable>
         </variablegroup>
     </variables>
