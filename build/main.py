@@ -2,6 +2,7 @@
 
 import os
 import shutil
+import zipfile
 
 
 BUILD_DIR_PATH = os.path.abspath(os.path.dirname(__file__))
@@ -31,6 +32,7 @@ if __name__ == "__main__":
         }
     }
 
+    print("copy files")
     for path, v in path_info.items():
         if not os.path.exists(path):
             os.makedirs(path)
@@ -38,3 +40,18 @@ if __name__ == "__main__":
         for filename, src_path in v.items():
             trg_path = os.path.join(path, filename)
             shutil.copy2(src_path, trg_path)
+
+    print("compress files")
+    zip_path = "{}.zip".format(BIN_DIR_PATH)
+
+    if os.path.exists(zip_path):
+        os.remove(zip_path)
+
+    with zipfile.ZipFile(zip_path, "w") as bin_zip:
+        for folder, subfolders, files in os.walk(BIN_DIR_PATH):
+            for f in files:
+                bin_zip.write(
+                    os.path.join(folder, f),
+                    os.path.relpath(os.path.join(folder, f), BIN_DIR_PATH),
+                    compress_type = zipfile.ZIP_DEFLATED
+                )
