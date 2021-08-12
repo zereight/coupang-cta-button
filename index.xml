@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
     <information>
-        <name>Berry 0.3.1</name>
-        <version>0.3.1</version>
+        <name>Berry ${{version}}</name>
+        <version>${{version}}</version>
         <description>
-            <![CDATA[티스토리 Berry 스킨]]>
+            <![CDATA[${{description}}]]>
         </description>
         <license>
-            <![CDATA[개인적으로 수정하여 사용 가능. 단, 저작권 명시 수정 불가. 또한 재배포 및 상업적 이용 불가]]>
+            <![CDATA[${{license}}]]>
         </license>
     </information>
     <author>
-        <name>Taehong Kim</name>
-        <homepage>https://memostack.tistory.com/</homepage>
-        <email>public.devhong@gmail.com</email>
+        <name>${{author}}</name>
+        <homepage>${{homepage}}</homepage>
+        <email>${{email}}</email>
     </author>
     <default>
         <recentEntries>5</recentEntries>

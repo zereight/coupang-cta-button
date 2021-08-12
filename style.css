@@ -5,28 +5,28 @@
 /* ========== Variable ========== */
 :root {
   /* ========== Colors ========== */
-  --blue-dark-color: #1864ab;
-  --blue-color: #228be6;
-  --blue-light-color: #e7f5ff;
-  --green-dark-color: #087f5b;
-  --green-color: #0ca678;
-  --green-light-color: #e6fcf5;
-  --orange-dark-color: #d9480f;
-  --orange-color: #f76707;
-  --orange-light-color: #fff4e6;
-  --red-dark-color: #c92a2a;
-  --red-color: #f03e3e;
-  --red-light-color: #fff5f5;
-  --violet-dark-color: #5f3dc4;
-  --violet-color: #7048e8;
-  --violet-light-color: #f3f0ff;
-  --white-color: #ffffff;
-  --black-color: #212529;
-  --black-color2: #343a40;
-  --black-color3: #495057;
-  --gray-color0: #fafafa;
-  --gray-color1: #dee2e6;
-  --gray-color2: #d9d9d9;
+  --blue-dark-color: ${{blue-dark-color}};
+  --blue-color: ${{blue-color}};
+  --blue-light-color: ${{blue-light-color}};
+  --green-dark-color: ${{green-dark-color}};
+  --green-color: ${{green-color}};
+  --green-light-color: ${{green-light-color}};
+  --orange-dark-color: ${{orange-dark-color}};
+  --orange-color: ${{orange-color}};
+  --orange-light-color: ${{orange-light-color}};
+  --red-dark-color: ${{red-dark-color}};
+  --red-color: ${{red-color}};
+  --red-light-color: ${{red-light-color}};
+  --violet-dark-color: ${{violet-dark-color}};
+  --violet-color: ${{violet-color}};
+  --violet-light-color: ${{violet-light-color}};
+  --white-color: ${{white-color}};
+  --black-color: ${{black-color}};
+  --black-color2: ${{black-color2}};
+  --black-color3: ${{black-color3}};
+  --gray-color0: ${{gray-color0}};
+  --gray-color1: ${{gray-color1}};
+  --gray-color2: ${{gray-color2}};
 
   /* ========== Font & typography ========== */
 }
