@@ -8,7 +8,7 @@ import zipfile
 
 BUILD_DIR_PATH = os.path.abspath(os.path.dirname(__file__))
 ROOT_DIR_PATH = os.path.abspath(os.path.join(BUILD_DIR_PATH, "../"))
-BIN_DIR_PATH = os.path.join(BUILD_DIR_PATH, "bin")
+SKIN_DIR_PATH = os.path.join(BUILD_DIR_PATH, "skin")
 CONFIG_PATH = os.path.join(ROOT_DIR_PATH, "config.json")
 
 
@@ -37,17 +37,17 @@ def compile(path):
 
 
 def compress():
-    zip_path = "{}.zip".format(BIN_DIR_PATH)
+    zip_path = "{}.zip".format(SKIN_DIR_PATH)
 
     if os.path.exists(zip_path):
         os.remove(zip_path)
 
     with zipfile.ZipFile(zip_path, "w") as bin_zip:
-        for folder, subfolders, files in os.walk(BIN_DIR_PATH):
+        for folder, subfolders, files in os.walk(SKIN_DIR_PATH):
             for f in files:
                 bin_zip.write(
                     os.path.join(folder, f),
-                    os.path.relpath(os.path.join(folder, f), BIN_DIR_PATH),
+                    os.path.relpath(os.path.join(folder, f), SKIN_DIR_PATH),
                     compress_type = zipfile.ZIP_DEFLATED
                 )
 
@@ -56,13 +56,13 @@ def compress():
 if __name__ == "__main__":
     assert os.path.exists(ROOT_DIR_PATH)
 
-    if os.path.exists(BIN_DIR_PATH):
-        shutil.rmtree(BIN_DIR_PATH)
+    if os.path.exists(SKIN_DIR_PATH):
+        shutil.rmtree(SKIN_DIR_PATH)
     
-    os.makedirs(BIN_DIR_PATH)
+    os.makedirs(SKIN_DIR_PATH)
 
     path_info = {
-        BIN_DIR_PATH: {
+        SKIN_DIR_PATH: {
             "index.xml": os.path.join(ROOT_DIR_PATH, "index.xml"),
             "skin.html": os.path.join(ROOT_DIR_PATH, "skin.html"),
             "style.css": os.path.join(ROOT_DIR_PATH, "style.css"),
@@ -70,16 +70,16 @@ if __name__ == "__main__":
             "preview560.jpg": os.path.join(ROOT_DIR_PATH, "preview560.jpg"),
             "preview1600.jpg": os.path.join(ROOT_DIR_PATH, "preview1600.jpg")
         },
-        os.path.join(BIN_DIR_PATH, "images"): {
+        os.path.join(SKIN_DIR_PATH, "images"): {
             "script.js": os.path.join(ROOT_DIR_PATH, "script.js")
         }
     }
 
     copy_files(path_info)
 
-    compile(os.path.join(BIN_DIR_PATH, "index.xml"))
-    compile(os.path.join(BIN_DIR_PATH, "skin.html"))
-    compile(os.path.join(BIN_DIR_PATH, "style.css"))
+    compile(os.path.join(SKIN_DIR_PATH, "index.xml"))
+    compile(os.path.join(SKIN_DIR_PATH, "skin.html"))
+    compile(os.path.join(SKIN_DIR_PATH, "style.css"))
 
     compress()
     
