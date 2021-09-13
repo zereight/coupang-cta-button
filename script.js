@@ -1,147 +1,151 @@
 // document loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // constants
-    const { header, sidebar, guestbook, article } = constants
+  // constants
+  const { header, sidebar, guestbook, article } = constants
 
-    // header
-    const { _handleToggleSearch, _handleOpenSidebar } = header
-    const { searchToggleButton, sidebarOpenButton } = header.components
+  // header
+  const { toggleSearchInput, openSidebar } = header.func
+  const { searchToggleButton, sidebarOpenButton } = header.elements
 
-    // sidebar
-    const {
-      _handleInsertTagCloudStyle,
-      _handleCompareCounterTodayAndYesterday,
-      _handleCloseSidebar,
-      _handleShowSidebarByWindowResizing,
-    } = sidebar
-    const { sidebarCloseButton } = sidebar.components
+  // sidebar
+  const { sidebarCloseButton } = sidebar.elements
+  const {
+    tagCloudStyle,
+    compareCounterTodayAndYesterday,
+    closeSidebar,
+    showSidebarByWindowResizing,
+  } = sidebar.func
 
-    // guestbook
-    const {
-      _handleInsertGuestbookUsernameStyle,
-      _handleInsertGuestbookReportStyle,
-    } = guestbook
+  // guestbook
+  const { guestbookUsernameStyle, guestbookReportStyle } = guestbook.func
 
-    // article
-    const {
-      _handleToggleLockIconOnSecretBox,
-      _handleInsertStyleArticleCommentListLinks,
-      _handleShowPrevNextArticle,
-      _handleArticleTableOfContent,
-    } = article
-    const { articleSecretCheckBox } = article.components
+  // article
+  const {
+    toggleLockIconOnSecretBox,
+    articleCommentListLinkStyle,
+    showPrevNextArticle,
+    articleTableOfContent,
+    copyToClipboard,
+  } = article.func
+  const { articleSecretCheckBox } = article.elements
 
-    // search button toggle event
-    searchToggleButton &&
-      searchToggleButton.addEventListener('click', _handleToggleSearch)
+  // 검색 버튼을 누를면, 검색창을 토글한다.
+  searchToggleButton &&
+    searchToggleButton.addEventListener('click', toggleSearchInput)
 
-    // sidebar open event
-    sidebarOpenButton &&
-      sidebarOpenButton.addEventListener('click', _handleOpenSidebar)
+  // 사이드바를 오픈한다.
+  sidebarOpenButton && sidebarOpenButton.addEventListener('click', openSidebar)
 
-    // sidebar close event
-    sidebarCloseButton &&
-      sidebarCloseButton.addEventListener('click', _handleCloseSidebar)
+  // 사이드바를 닫는다.
+  sidebarCloseButton &&
+    sidebarCloseButton.addEventListener('click', closeSidebar)
 
-    // window resize
-    window.addEventListener('resize', _handleShowSidebarByWindowResizing)
+  // window resize
+  window.addEventListener('resize', showSidebarByWindowResizing)
 
-    // Compare visitor counter.
-    _handleCompareCounterTodayAndYesterday()
+  // 방문자 수를 비교하고, 스타일을 적용
+  compareCounterTodayAndYesterday()
 
-    // Tag cloud style
-    _handleInsertTagCloudStyle()
+  // Tag cloud 스타일 적용
+  tagCloudStyle()
 
-    // Guestbook username style
-    _handleInsertGuestbookUsernameStyle()
+  // Guestbook username 스타일 적용
+  guestbookUsernameStyle()
 
-    // Guestbook report style
-    _handleInsertGuestbookReportStyle()
+  // Guestbook report 스타일 적용
+  guestbookReportStyle()
 
-    // Toggle lock icon at write form of comment
-    articleSecretCheckBox &&
-      articleSecretCheckBox.addEventListener(
-        'click',
-        _handleToggleLockIconOnSecretBox
-      )
+  // 댓글의 lock icon 을 토글한다.
+  articleSecretCheckBox &&
+    articleSecretCheckBox.addEventListener('click', toggleLockIconOnSecretBox)
 
-    // Article comment link style
-    _handleInsertStyleArticleCommentListLinks()
+  // 댓글 링크 스타일 적용
+  articleCommentListLinkStyle()
 
-    // Recommend article
-    window.addEventListener('scroll', _handleShowPrevNextArticle)
+  // 본문의 스크롤이 하단에 도달했을때, 추천글을 띄운다.
+  window.addEventListener('scroll', showPrevNextArticle)
 
-    // ToC
-    _handleArticleTableOfContent()
-  })
+  // ToC
+  articleTableOfContent()
 
-  const constants = {
-    // header constants
-    header: {
-      components: {
-        search: document.querySelector('.search'),
-        searchIcon: document.querySelector('.search__toggle .uil-search'),
-        searchCloseIcon: document.querySelector(
-          '.search__toggle .uil-times'
-        ),
-        sidebarOpenButton: document.querySelector('.sidebar__open'),
-        searchToggleButton: document.querySelector('.search__toggle'),
-        searchInput: document.querySelector('.search__input'),
-      },
-      _handleToggleSearch: () => {
+  // code를 클립보드에 복사한다.
+  copyToClipboard()
+})
+
+const constants = {
+  // header elements & functions
+  header: {
+    elements: {
+      search: document.querySelector('.search'),
+      searchIcon: document.querySelector('.search__toggle .uil-search'),
+      searchCloseIcon: document.querySelector('.search__toggle .uil-times'),
+      sidebarOpenButton: document.querySelector('.sidebar__open'),
+      searchToggleButton: document.querySelector('.search__toggle'),
+      searchInput: document.querySelector('.search__input'),
+    },
+    func: {
+      /**
+       * Search 창을 토글한다.
+       */
+      toggleSearchInput: () => {
         const { search, searchIcon, searchCloseIcon, searchInput } =
-          constants.header.components
+          constants.header.elements
 
-        if (
-          search.style.display === 'none' ||
-          search.style.display === ''
-        ) {
-          search.style.display = 'flex'
-          searchIcon.style.display = 'none'
-          searchCloseIcon.style.display = 'block'
+        if (search.style.display === 'none' || search.style.display === '') {
+          // search 창이 숨겨져 있는 경우, 보이도록 설정
+          search.style.display = 'flex' // search 창 보이기
+          searchIcon.style.display = 'none' // search open Icon 숨기기
+          searchCloseIcon.style.display = 'block' // search close Icon 보이기
           searchInput.focus() // 검색창 누르면 포커싱
         } else {
-          search.style.display = 'none'
-          searchIcon.style.display = 'block'
-          searchCloseIcon.style.display = 'none'
+          search.style.display = 'none' // search 창 숨기기
+          searchIcon.style.display = 'block' // search open Icon 보이기
+          searchCloseIcon.style.display = 'none' // search close Icon 숨기기
         }
       },
-      _handleOpenSidebar: () => {
-        constants.sidebar.components.sidebarCloseButton.style.display =
-          'block'
-        constants.sidebar.components.sidebar.style.display = 'block'
+      /**
+       * 사이드바를 오픈한다.
+       */
+      openSidebar: () => {
+        const { sidebarCloseButton, sidebar } = constants.sidebar.elements
+
+        sidebarCloseButton.style.display = 'block'
+        sidebar.style.display = 'block'
       },
     },
-    // sidebar constants
-    sidebar: {
-      components: {
-        sidebar: document.querySelector('#sidebar'),
-        sidebarCloseButton: document.querySelector('.sidebar__close'),
-        tagCloud1List: document.querySelectorAll('.cloud1'),
-        tagCloud2List: document.querySelectorAll('.cloud2'),
-        tagCloud3List: document.querySelectorAll('.cloud3'),
-        tagCloud4List: document.querySelectorAll('.cloud4'),
-        tagCloud5List: document.querySelectorAll('.cloud5'),
-        counterYesterday: document.querySelector('.counter__yesterday'),
-        counterToday: document.querySelector('.counter__today'),
-        counterTotal: document.querySelector('.counter__total'),
-        counterDelta: document.querySelector('.counter__delta'),
-        counterDeltaGroup: document.querySelector('.counter__deltagroup'),
-        counterUpIcon: document.querySelector(
-          '.counter .uil-angle-double-up'
-        ),
-        counterDownIcon: document.querySelector(
-          '.counter .uil-angle-double-down'
-        ),
-      },
-      _handleInsertTagCloudStyle: () => {
+  },
+  // sidebar elements & functions
+  sidebar: {
+    elements: {
+      sidebar: document.querySelector('#sidebar'),
+      sidebarCloseButton: document.querySelector('.sidebar__close'),
+      tagCloud1List: document.querySelectorAll('.cloud1'),
+      tagCloud2List: document.querySelectorAll('.cloud2'),
+      tagCloud3List: document.querySelectorAll('.cloud3'),
+      tagCloud4List: document.querySelectorAll('.cloud4'),
+      tagCloud5List: document.querySelectorAll('.cloud5'),
+      counterYesterday: document.querySelector('.counter__yesterday'),
+      counterToday: document.querySelector('.counter__today'),
+      counterTotal: document.querySelector('.counter__total'),
+      counterDelta: document.querySelector('.counter__delta'),
+      counterDeltaGroup: document.querySelector('.counter__deltagroup'),
+      counterUpIcon: document.querySelector('.counter .uil-angle-double-up'),
+      counterDownIcon: document.querySelector(
+        '.counter .uil-angle-double-down'
+      ),
+    },
+    func: {
+      /**
+       * Tag Cloud 에 스타일을 입힌다.
+       */
+      tagCloudStyle: () => {
         const {
           tagCloud1List,
           tagCloud2List,
           tagCloud3List,
           tagCloud4List,
           tagCloud5List,
-        } = constants.sidebar.components
+        } = constants.sidebar.elements
 
         tagCloud1List &&
           tagCloud1List.forEach((tagCloud) => {
@@ -168,7 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
             tagCloud.classList.add('btn-violet')
           })
       },
-      _handleCompareCounterTodayAndYesterday: () => {
+      /**
+       * 오늘 방문자 수와 어제 방문자 수를 비교하고, 스타일을 입힌다.
+       */
+      compareCounterTodayAndYesterday: () => {
         const {
           counterYesterday,
           counterToday,
@@ -176,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
           counterDeltaGroup,
           counterUpIcon,
           counterDownIcon,
-        } = constants.sidebar.components
+        } = constants.sidebar.elements
 
         if (counterYesterday === undefined || counterYesterday === null) {
           return
@@ -196,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (counterDownIcon === undefined || counterDownIcon === null) {
           return
         }
+
         const yesterday = counterYesterday.getAttribute('data-value')
         const today = counterToday.getAttribute('data-value')
         const delta = today - yesterday
@@ -213,13 +221,19 @@ document.addEventListener('DOMContentLoaded', () => {
           counterDelta.innerHTML = delta * -1
         }
       },
-      _handleCloseSidebar: () => {
-        constants.sidebar.components.sidebar.style.display = 'none'
+      /**
+       * 사이드 바를 닫는다.
+       */
+      closeSidebar: () => {
+        constants.sidebar.elements.sidebar.style.display = 'none'
       },
-      _handleShowSidebarByWindowResizing: () => {
-        const _sidebar = constants.sidebar.components.sidebar
+      /**
+       * 창 크기에 따라 사이드바를 보이게 하거나 숨긴다.
+       */
+      showSidebarByWindowResizing: () => {
+        const _sidebar = constants.sidebar.elements.sidebar
         const _sidebarCloseButton =
-          constants.sidebar.components.sidebarCloseButton
+          constants.sidebar.elements.sidebarCloseButton
 
         if (960 <= window.innerWidth) {
           _sidebar.style.display = 'block'
@@ -231,71 +245,83 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       },
     },
-    guestbook: {
-      components: {
-        guestbookUsernameList: document.querySelectorAll(
-          '.guestbook__header-info .name a'
-        ),
-        guestbookReportList: document.querySelectorAll(
-          '.guestbook__header-info .date span a'
-        ),
-      },
-      _handleInsertGuestbookUsernameStyle: () => {
-        const { guestbookUsernameList } = constants.guestbook.components
+  },
+  guestbook: {
+    elements: {
+      guestbookUsernameList: document.querySelectorAll(
+        '.guestbook__header-info .name a'
+      ),
+      guestbookReportList: document.querySelectorAll(
+        '.guestbook__header-info .date span a'
+      ),
+    },
+    func: {
+      /**
+       * guestbook의 usename에 스타일을 적용한다.
+       */
+      guestbookUsernameStyle: () => {
+        const { guestbookUsernameList } = constants.guestbook.elements
 
-        if (guestbookUsernameList) {
+        guestbookUsernameList &&
           guestbookUsernameList.forEach((username) => {
             username.classList.add('link-hover-blue')
             username.classList.add('link')
           })
-        }
       },
-      _handleInsertGuestbookReportStyle: () => {
-        const { guestbookReportList } = constants.guestbook.components
+      /**
+       * guestbook의 '신고' 버튼에 스타일을 적용한다.
+       */
+      guestbookReportStyle: () => {
+        const { guestbookReportList } = constants.guestbook.elements
 
-        if (guestbookReportList) {
+        guestbookReportList &&
           guestbookReportList.forEach((report) => {
             report.classList.add('link-red')
             report.classList.add('link')
             report.classList.add('link-sm')
           })
-        }
       },
     },
-    article: {
-      components: {
-        article: document.querySelector('#content .article'),
-        articleContent: document.querySelector('.article__content'),
-        articleToc: document.querySelector('.article__content-toc'),
-        articleSecretCheckBox: document.querySelector(
-          '#article-secret-checkbox'
-        ),
-        articleSecretLockIcon: document.querySelector(
-          '.article__comment-secret .uil-lock'
-        ),
-        articleSecretUnLockIcon: document.querySelector(
-          '.article__comment-secret .uil-unlock'
-        ),
-        articleCommentListNameLinks: document.querySelectorAll(
-          '.article__comment-content-wrap .article__comment-name span a'
-        ),
-        articleCommentListReportLinks: document.querySelectorAll(
-          '.article__comment-content .date a'
-        ),
-        articlePrev: document.querySelector('.article__prev'),
-        articleNext: document.querySelector('.article__next'),
-        articleHeaderTags: document.querySelector('.article__content')
-          ? document
-              .querySelector('.article__content')
-              .querySelectorAll('h1, h2, h3, h4')
-          : undefined,
-      },
-      _handleToggleLockIconOnSecretBox: () => {
+  },
+  article: {
+    elements: {
+      article: document.querySelector('#content .article'),
+      articleContent: document.querySelector('.article__content'),
+      articleToc: document.querySelector('.article__content-toc'),
+      articleSecretCheckBox: document.querySelector('#article-secret-checkbox'),
+      articleSecretLockIcon: document.querySelector(
+        '.article__comment-secret .uil-lock'
+      ),
+      articleSecretUnLockIcon: document.querySelector(
+        '.article__comment-secret .uil-unlock'
+      ),
+      articleCommentListNameLinks: document.querySelectorAll(
+        '.article__comment-content-wrap .article__comment-name span a'
+      ),
+      articleCommentListReportLinks: document.querySelectorAll(
+        '.article__comment-content .date a'
+      ),
+      articlePrev: document.querySelector('.article__prev'),
+      articleNext: document.querySelector('.article__next'),
+      articleHeaderTags: document.querySelector('.article__content')
+        ? document
+            .querySelector('.article__content')
+            .querySelectorAll('h1, h2, h3, h4')
+        : undefined,
+      articlePreTags: document.querySelectorAll(
+        '.article__container .article__content pre'
+      ),
+    },
+    func: {
+      /**
+       * 댓글 쓰기의 lock icon을 토글한다. (비밀글 아이콘)
+       */
+      toggleLockIconOnSecretBox: () => {
         const {
           articleSecretCheckBox,
           articleSecretLockIcon,
           articleSecretUnLockIcon,
-        } = constants.article.components
+        } = constants.article.elements
         if (articleSecretCheckBox) {
           const isLocked = articleSecretCheckBox.getAttribute('lock')
 
@@ -310,28 +336,31 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       },
-      _handleInsertStyleArticleCommentListLinks: () => {
-        const {
-          articleCommentListNameLinks,
-          articleCommentListReportLinks,
-        } = constants.article.components
+      /**
+       * 댓글 링크에 스타일 적용
+       */
+      articleCommentListLinkStyle: () => {
+        const { articleCommentListNameLinks, articleCommentListReportLinks } =
+          constants.article.elements
 
-        if (articleCommentListNameLinks) {
+        articleCommentListNameLinks &&
           articleCommentListNameLinks.forEach((nameLink) => {
             nameLink.classList.add('link')
             nameLink.classList.add('link-hover-blue')
           })
-        }
-        if (articleCommentListReportLinks) {
+
+        articleCommentListReportLinks &&
           articleCommentListReportLinks.forEach((reportLink) => {
             reportLink.classList.add('link')
             reportLink.classList.add('link-red')
           })
-        }
       },
-      _handleShowPrevNextArticle: () => {
+      /**
+       * 스크롤이 본문 하단에 도달했을때, 추천글을 띄운다.
+       */
+      showPrevNextArticle: () => {
         const { articleContent, articlePrev, articleNext } =
-          constants.article.components
+          constants.article.elements
         if (!articleContent) {
           return
         }
@@ -370,9 +399,15 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       },
-      _handleArticleTableOfContent: () => {
+      /**
+       * ToC 설정
+       */
+      articleTableOfContent: () => {
+        /**
+         * ToC 설정 - header 태그에서 가장 level이 낮을것을 찾음
+         */
         const findMinLevel = () => {
-          const { articleHeaderTags } = constants.article.components
+          const { articleHeaderTags } = constants.article.elements
 
           // 본문에서 모든 header 태그를 가지고 옴
           // header 태그가 있는 경우에만 실행
@@ -409,8 +444,11 @@ document.addEventListener('DOMContentLoaded', () => {
           return 0
         }
 
+        /**
+         * ToC 설정 - 태그에 id 값을 넣는다.
+         */
         const setIdAtTags = () => {
-          const { articleHeaderTags } = constants.article.components
+          const { articleHeaderTags } = constants.article.elements
 
           articleHeaderTags &&
             articleHeaderTags.forEach((tag) => {
@@ -431,9 +469,11 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         }
 
+        /**
+         * ToC 설정 - ToC를 생성한다.
+         */
         const generateToc = (minLevel) => {
-          const { articleToc, articleHeaderTags } =
-            constants.article.components
+          const { articleToc, articleHeaderTags } = constants.article.elements
 
           const indexNumbers = { 0: 0, 1: 0, 2: 0, 3: 0 }
 
@@ -480,5 +520,32 @@ document.addEventListener('DOMContentLoaded', () => {
           generateToc(minLevel)
         }
       },
+      copyToClipboard: () => {
+        const { articlePreTags } = constants.article.elements
+
+        articlePreTags &&
+          articlePreTags.forEach((preTag) => {
+            const lang = preTag.getAttribute('data-ke-language')
+            if (lang) {
+              const span = document.createElement('span')
+              span.classList.add('code-lang')
+              span.innerText = lang
+              span.addEventListener('mouseover', () => {
+                span.innerText = 'copy!'
+              })
+              span.addEventListener('click', () => {
+                navigator.clipboard.writeText(
+                  preTag.innerText.split('\n').slice(0, -1).join('\n')
+                )
+                span.innerText = 'copied!'
+              })
+              span.addEventListener('mouseleave', () => {
+                span.innerText = lang
+              })
+              preTag.appendChild(span)
+            }
+          })
+      },
     },
-  }
+  },
+}
