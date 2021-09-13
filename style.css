@@ -1262,7 +1262,7 @@ main {
   color: var(--blue-color);
   background-color: var(--blue-light-color);
   border-radius: 6px;
-  padding: 3px 6px;
+  padding: 0 6px 3px 6px;
 }
 .article__container .article__content a {
   color: var(--blue-color);
