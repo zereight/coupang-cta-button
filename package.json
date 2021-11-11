@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "build": "python script/build.py",
+    "dev": "python script/dev.py"
+  },
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "prettier": "^2.6.2"
   }
 }

@@ -1,7 +1,7 @@
 {
     "version": {
         "replace": "${{version}}",
-        "value": "1.1.0"
+        "value": "2.0.0"
     },
     "description": {
         "replace": "${{description}}",
