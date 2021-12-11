@@ -10,7 +10,8 @@ WORKSPACE_DIR_PATH = os.path.abspath(os.path.dirname(__file__))  # 스크립트 
 ROOT_DIR_PATH = os.path.abspath(os.path.join(WORKSPACE_DIR_PATH, "../"))  # 프로젝트 루트 경로
 
 # 빌드 산출물 경로
-BUILD_DIR_PATH = os.path.join(ROOT_DIR_PATH, "build")
+BUILD_SRC_DIR_PATH = os.path.join(ROOT_DIR_PATH, "build", "src")
+BUILD_ZIP_DIR_PATH = os.path.join(ROOT_DIR_PATH, "build", "zip")
 
 # Source 경로
 SRC_DIR_PATH = os.path.join(ROOT_DIR_PATH, "src")
@@ -18,6 +19,7 @@ HTML_DIR_PATH = os.path.join(SRC_DIR_PATH, "html")
 CSS_DIR_PATH = os.path.join(SRC_DIR_PATH, "css")
 JS_DIR_PATH = os.path.join(SRC_DIR_PATH, "javascript")
 XML_DIR_PATH = os.path.join(SRC_DIR_PATH, "xml")
+ASSETS_DIR_PATH = os.path.join(SRC_DIR_PATH, "assets")
 
 # build configuration
 CONFIG_FILE_PATH = os.path.join(ROOT_DIR_PATH, "settings", "config.json")
@@ -46,14 +48,14 @@ if __name__ == "__main__":
     xml_file_list = get_files_by_dir(XML_DIR_PATH)
 
     build_path = {
-        "html": os.path.join(BUILD_DIR_PATH, "skin.html"),
-        "css": os.path.join(BUILD_DIR_PATH, "style.css"),
-        "xml": os.path.join(BUILD_DIR_PATH, "index.xml"),
-        "js":  os.path.join(BUILD_DIR_PATH, "images", "script.js"),
+        "html": os.path.join(BUILD_SRC_DIR_PATH, "skin.html"),
+        "css": os.path.join(BUILD_SRC_DIR_PATH, "style.css"),
+        "xml": os.path.join(BUILD_SRC_DIR_PATH, "index.xml"),
+        "js":  os.path.join(BUILD_SRC_DIR_PATH, "images", "script.js"),
         "includes": [
-            os.path.join(ROOT_DIR_PATH, "preview256.jpg"),
-            os.path.join(ROOT_DIR_PATH, "preview560.jpg"),
-            os.path.join(ROOT_DIR_PATH, "preview1600.jpg"),
+            os.path.join(ASSETS_DIR_PATH, "preview256.jpg"),
+            os.path.join(ASSETS_DIR_PATH, "preview560.jpg"),
+            os.path.join(ASSETS_DIR_PATH, "preview1600.jpg"),
         ],
     }
 
