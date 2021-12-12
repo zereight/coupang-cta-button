@@ -10,8 +10,9 @@ WORKSPACE_DIR_PATH = os.path.abspath(os.path.dirname(__file__))  # 스크립트 
 ROOT_DIR_PATH = os.path.abspath(os.path.join(WORKSPACE_DIR_PATH, "../"))  # 프로젝트 루트 경로
 
 # 빌드 산출물 경로
-BUILD_SRC_DIR_PATH = os.path.join(ROOT_DIR_PATH, "build", "src")
-BUILD_ZIP_DIR_PATH = os.path.join(ROOT_DIR_PATH, "build", "zip")
+BUILD_DIR_PATH = os.path.join(ROOT_DIR_PATH, "build")
+BUILD_SRC_DIR_PATH = os.path.join(BUILD_DIR_PATH, "src")
+BUILD_ZIP_DIR_PATH = os.path.join(BUILD_DIR_PATH, "zip")
 
 # Source 경로
 SRC_DIR_PATH = os.path.join(ROOT_DIR_PATH, "src")
@@ -25,7 +26,14 @@ ASSETS_DIR_PATH = os.path.join(SRC_DIR_PATH, "assets")
 CONFIG_FILE_PATH = os.path.join(ROOT_DIR_PATH, "settings", "config.json")
 
 
-def get_files_by_dir(d):
+def get_configuration():
+    """configuration 값을 읽어온다."""
+    with open(CONFIG_FILE_PATH, "rb") as f:
+        config = f.read().decode("utf-8")
+    return json.loads(config)
+
+
+def get_files_by_dir(d, entry_point=None):
     """입력받은 경로안의 모든 파일 목록을 가져온다.
 
     Args
@@ -34,17 +42,46 @@ def get_files_by_dir(d):
     file_list = []
     for cur_path, _, files in os.walk(d):
         for f in files:
-            file_list.append(os.path.join(cur_path, f))
+            if entry_point != None and entry_point != f:
+                file_list.append(os.path.join(cur_path, f))
     return file_list
+
+
+def build_html(entry_point, html_files):
+    """html 코드들을 빌드한다.
+
+    Args
+    - entry_point: 진입점 파일 경로
+    - html_files: html 파일 목록
+    """
+    target_filepath = os.path.join(BUILD_SRC_DIR_PATH, entry_point)
+
+    with open(os.path.join(HTML_DIR_PATH, entry_point), 'rb') as f:
+        compiled_code = f.read().decode("utf-8")
+
+    for path in html_files:
+        filename = os.path.basename(path).split(".")[0]
+        print(filename)
+        replacer = "<berry_{} />".format(filename)
+        with open(path, 'rb') as f:
+            code = f.read().decode("utf-8")
+
+        compiled_code = compiled_code.replace(replacer, code)
+
+    with open(target_filepath, "w", encoding="utf-8") as f:
+        f.write(compiled_code)
 
 
 if __name__ == "__main__":
     for path in [ROOT_DIR_PATH, WORKSPACE_DIR_PATH, HTML_DIR_PATH, CSS_DIR_PATH, JS_DIR_PATH, CONFIG_FILE_PATH]:
         assert os.path.exists(path), "Not found path. path: {}".format(path)
 
-    html_file_list = get_files_by_dir(HTML_DIR_PATH)
-    css_file_list = get_files_by_dir(CSS_DIR_PATH)
-    js_file_list = get_files_by_dir(JS_DIR_PATH)
+    config = get_configuration()
+    entry_point = config["entry_point"]
+
+    html_file_list = get_files_by_dir(HTML_DIR_PATH, entry_point=entry_point["html"])
+    css_file_list = get_files_by_dir(CSS_DIR_PATH, entry_point=entry_point["css"])
+    js_file_list = get_files_by_dir(JS_DIR_PATH, entry_point=entry_point["js"])
     xml_file_list = get_files_by_dir(XML_DIR_PATH)
 
     build_path = {
@@ -62,8 +99,9 @@ if __name__ == "__main__":
     # 이전 빌드 산출물 삭제
     if os.path.exists(BUILD_DIR_PATH):
         shutil.rmtree(BUILD_DIR_PATH)
-    os.makedirs(os.path.join(BUILD_DIR_PATH, "images"))
+    os.makedirs(os.path.join(BUILD_SRC_DIR_PATH, "images"))
 
+    build_html(entry_point["html"], html_file_list)
 #     copy_files(path_info)
 #
 #     compile(os.path.join(SKIN_DIR_PATH, "index.xml"))

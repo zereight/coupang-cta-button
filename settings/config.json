@@ -1,4 +1,9 @@
 {
+    "entry_point": {
+        "html": "skin.html",
+        "css": "style.css",
+        "js": "script.js"
+    },
     "version": {
         "replace": "${{version}}",
         "value": "2.0.0"
