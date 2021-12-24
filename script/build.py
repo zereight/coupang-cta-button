@@ -61,16 +61,54 @@ def build_html(entry_point, html_files):
 
     for path in html_files:
         filename = os.path.basename(path).split(".")[0]
-        print(filename)
-        replacer = "<berry_{} />".format(filename)
+        replacer = "<!--berry_{}-->".format(filename)
         with open(path, 'rb') as f:
             code = f.read().decode("utf-8")
 
+        code = "<!-- BEGIN: {} -->\n".format(filename) + code + "<!-- END: {} -->\n" .format(filename)
+
+        for line in compiled_code.split("\n"):
+            if replacer in line:
+                indent = len(line.split("<")[0])
+                break
+
+        code = ("\n" + " " * indent).join(code.split("\n"))
         compiled_code = compiled_code.replace(replacer, code)
 
     with open(target_filepath, "w", encoding="utf-8") as f:
         f.write(compiled_code)
 
+
+def build_css(entry_point, css_files):
+    """css 코드들을 빌드한다.
+
+    Args
+    - entry_point: 진입점 파일 경로
+    - css_files: css 파일 목록
+    """
+    target_filepath = os.path.join(BUILD_SRC_DIR_PATH, entry_point)
+
+    with open(os.path.join(CSS_DIR_PATH, entry_point), 'rb') as f:
+        compiled_code = f.read().decode("utf-8")
+
+    for path in css_files:
+        filename = os.path.basename(path).split(".")[0]
+        replacer = "/*berry_{}*/".format(filename)
+        with open(path, 'rb') as f:
+            code = f.read().decode("utf-8")
+
+        code = "/* BEGIN: {}.css */\n".format(filename) + code + "/* END: {}.css */\n" .format(filename)
+
+        for line in compiled_code.split("\n"):
+            if replacer in line:
+                indent = len(line.split("/*")[0])
+                break
+
+        code = ("\n" + " " * indent).join(code.split("\n"))
+        compiled_code = compiled_code.replace(replacer, code)
+
+    with open(target_filepath, "w", encoding="utf-8") as f:
+        f.write(compiled_code)
 
 if __name__ == "__main__":
     for path in [ROOT_DIR_PATH, WORKSPACE_DIR_PATH, HTML_DIR_PATH, CSS_DIR_PATH, JS_DIR_PATH, CONFIG_FILE_PATH]:
@@ -102,6 +140,7 @@ if __name__ == "__main__":
     os.makedirs(os.path.join(BUILD_SRC_DIR_PATH, "images"))
 
     build_html(entry_point["html"], html_file_list)
+    build_css(entry_point["css"], css_file_list)
 #     copy_files(path_info)
 #
 #     compile(os.path.join(SKIN_DIR_PATH, "index.xml"))
