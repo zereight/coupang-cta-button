@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--default-font-size);
+  font-family: 'Noto Sans KR', serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+body.dark-theme {
+  color: var(--text-reverse-color);
+  background-color: var(--background-reverse-color);
+}
+
+#main-layout {
+  flex: 1;
+}

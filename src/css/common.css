@@ -1,0 +1,21 @@
+:root {
+  /* font */
+  --x-small-font-size: 8px;
+  --small-font-size: 14px;
+  --default-font-size: 16px;
+  --large-font-size: 22px;
+  --x-large-font-size: 36px;
+
+  /* space */
+  --small-space: 14px;
+  --default-space: 18px;
+  --large-space: 24px;
+
+  /* colors */
+  --primary-color: #7950f2;
+  --text-color: #212529;
+  --sub-text-color: #868e96;
+  --background-color: #ffffff;
+  --background-reverse-color: #212529;
+  --text-reverse-color: #f8f9fa;
+}

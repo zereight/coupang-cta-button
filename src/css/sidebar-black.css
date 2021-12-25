@@ -1,0 +1,12 @@
+body.dark-theme .desc-wrapper > .blog-info > a.title {
+  color: var(--text-reverse-color);
+}
+body.dark-theme .desc-wrapper > .blog-info > a.title:hover {
+  color: var(--primary-color);
+}
+body.dark-theme .desc-wrapper > .blog-info > p.blogger-name {
+  color: var(--sub-text-color);
+}
+body.dark-theme .desc-wrapper > p.description {
+  color: var(--sub-text-color);
+}
