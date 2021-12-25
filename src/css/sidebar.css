@@ -4,6 +4,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   padding: var(--default-space);
+  margin-left: var(--default-space);
   box-sizing: border-box;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -27,6 +28,9 @@
   border-radius: 100%;
 }
 
+.desc-wrapper {
+  margin-bottom: var(--small-space);
+}
 .desc-wrapper > .blog-info {
   margin-bottom: var(--small-space);
   display: flex;
@@ -49,4 +53,33 @@
 }
 .desc-wrapper > p.description {
   color: var(--sub-text-color);
+}
+
+.button-wrapper > button.follow-btn {
+  background-color: var(--primary-color);
+  color: var(--text-reverse-color);
+  font-size: var(--small-font-size);
+  border-radius: var(--default-radius);
+  padding: 0 var(--small-space);
+  height: 34px;
+  border: none;
+}
+.button-wrapper > button.follow-btn:hover {
+  cursor: pointer;
+  background-color: var(--primary-dark-color);
+}
+
+.button-wrapper > button.rss-btn {
+  background-color: var(--primary-color);
+  color: var(--text-reverse-color);
+  font-size: var(--default-font-size);
+  border-radius: var(--default-radius);
+  padding: 0 var(--x-small-space);
+  height: 34px;
+  width: 34px;
+  border: none;
+}
+.button-wrapper > button.rss-btn:hover {
+  cursor: pointer;
+  background-color: var(--primary-dark-color);
 }

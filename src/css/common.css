@@ -6,12 +6,17 @@
   --large-font-size: 22px;
   --x-large-font-size: 36px;
 
+  /* radius */
+  --default-radius: 11px;
+
   /* space */
+  --x-small-space: 8px;
   --small-space: 14px;
   --default-space: 18px;
   --large-space: 24px;
 
   /* colors */
+  --primary-dark-color: #5f3dc4;
   --primary-color: #7950f2;
   --text-color: #212529;
   --sub-text-color: #868e96;
