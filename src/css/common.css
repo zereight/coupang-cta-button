@@ -16,11 +16,15 @@
   --large-space: 24px;
 
   /* colors */
-  --primary-dark-color: #5f3dc4;
-  --primary-color: #7950f2;
-  --text-color: #212529;
-  --sub-text-color: #868e96;
+  --primary-color: #6C63FF;
+  --primary-hover-color: #4640a5;
+  --secondary-color: #F8A4D8;
+  /* colors - light */
+  --text-color: #373c46;
+  --sub-text-color: #9da6b8;
   --background-color: #ffffff;
-  --background-reverse-color: #212529;
+  /* colors - dark */
   --text-reverse-color: #f8f9fa;
+  --sub-text-reverse-color: #9da6b8;
+  --background-reverse-color: #212529;
 }

@@ -1,7 +1,13 @@
 {
+  "name": "tistory_berry_skin",
+  "version": "1.0.0",
+  "repository": "https://github.com/bluemiv/tistory_berry_skin.git",
+  "author": "TaehongKim <public.devhong@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "build": "python script/build.py",
-    "dev": "python script/dev.py"
+    "prebuild": "rm -rf build",
+    "build": "python3 script/build.py",
+    "dev": "python3 script/dev.py"
   },
   "devDependencies": {
     "prettier": "^2.6.2"
