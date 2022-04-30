@@ -3,40 +3,59 @@
     <a class="blog-title" href="[##_blog_link_##]">[##_title_##]</a>
   </section>
 
-  <section id="profile">
-    <div class="image-wrapper">
-      <img src="[##_image_##]" alt="profile image" />
-    </div>
-    <div class="blogger-name">[##_blogger_##]</div>
-    <div class="blog-desc">[##_desc_##]</div>
-  </section>
+  <s_sidebar>
+    <!-- 오른쪽 사이드바 -->
+    <s_sidebar_element>
+      <!-- Profile -->
+      <section id="profile">
+        <div class="image-wrapper">
+          <img src="[##_image_##]" alt="profile image" />
+        </div>
+        <div class="blogger-name">[##_blogger_##]</div>
+        <div class="blog-desc">[##_desc_##]</div>
+      </section>
+    </s_sidebar_element>
 
-  <section id="blog-menu">
-    <ul>
-      <li>
-        <a href="[##_blog_link_##]">
-          <i class="uil uil-estate"></i>
-          <span>HOME</span>
-        </a>
-      </li>
-      <li>
-        <a href="[##_taglog_link_##]">
-          <i class="uil uil-tag-alt"></i>
-          <span>TAG</span>
-        </a>
-      </li>
-      <li>
-        <a href="[##_guestbook_link_##]">
-          <i class="uil uil-book-open"></i>
-          <span>GUESTBOOK</span>
-        </a>
-      </li>
-      <li>
-        <a href="[##_rss_url_##]" target="_blank">
-          <i class="uil uil-rss"></i>
-          <span>RSS</span>
-        </a>
-      </li>
-    </ul>
-  </section>
+    <s_sidebar_element>
+      <!-- Blog Menu -->
+      <section id="blog-menu">
+        <ul>
+          <li>
+            <a href="[##_blog_link_##]">
+              <i class="uil uil-estate"></i>
+              <span>HOME</span>
+            </a>
+          </li>
+          <li>
+            <a href="[##_taglog_link_##]">
+              <i class="uil uil-tag-alt"></i>
+              <span>TAG</span>
+            </a>
+          </li>
+          <li>
+            <a href="[##_guestbook_link_##]">
+              <i class="uil uil-book-open"></i>
+              <span>GUESTBOOK</span>
+            </a>
+          </li>
+          <li>
+            <a href="[##_rss_url_##]" target="_blank">
+              <i class="uil uil-rss"></i>
+              <span>RSS</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </s_sidebar_element>
+
+    <s_sidebar_element>
+      <!-- Category -->
+      <section id="category">
+        <h6 class="section-title">
+          <i class="uil uil-list-ul"></i>
+          <span>Category</span>
+        </h6>
+      </section>
+    </s_sidebar_element>
+  </s_sidebar>
 </aside>

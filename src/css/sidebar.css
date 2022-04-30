@@ -11,9 +11,20 @@
 #sidebar::-webkit-scrollbar {
   display: none;
 }
+
 #sidebar > section {
   padding: var(--default-space) 0;
-  margin-bottom: var(--x-large-space);
+  margin-bottom: var(--large-space);
+}
+#sidebar > section .section-title {
+  font-size: var(--small-font-size);
+  padding-bottom: var(--default-space);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#sidebar > section .section-title > .uil {
+  margin-right: var(--small-space);
 }
 
 #blog-intro > a.blog-title {
@@ -54,11 +65,13 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: start;
 }
 #blog-menu ul > li {
   height: 40px;
   display: flex;
+  align-items: center;
 }
 #blog-menu ul > li > a > .uil {
   margin-right: var(--small-space);
@@ -68,4 +81,7 @@
 }
 #blog-menu ul > li > a:hover {
   color: var(--primary-color);
+}
+
+#category {
 }
