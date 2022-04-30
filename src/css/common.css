@@ -13,12 +13,13 @@
   --x-small-space: 8px;
   --small-space: 14px;
   --default-space: 18px;
-  --large-space: 24px;
+  --large-space: 32px;
+  --x-large-space: 48px;
 
   /* colors */
-  --primary-color: #6C63FF;
+  --primary-color: #6c63ff;
   --primary-hover-color: #4640a5;
-  --secondary-color: #F8A4D8;
+  --secondary-color: #f8a4d8;
   /* colors - light */
   --text-color: #373c46;
   --sub-text-color: #9da6b8;
