@@ -1,12 +1,29 @@
-body.dark-theme .desc-wrapper > .blog-info > a.title {
+body.dark-theme {
   color: var(--text-reverse-color);
 }
-body.dark-theme .desc-wrapper > .blog-info > a.title:hover {
+
+/* blog introduce */
+body.dark-theme #blog-intro > a.blog-title {
+  color: var(--text-reverse-color);
+}
+body.dark-theme #blog-intro > a.blog-title:hover {
   color: var(--primary-color);
 }
-body.dark-theme .desc-wrapper > .blog-info > p.blogger-name {
-  color: var(--sub-text-color);
+
+/* profile */
+body.dark-theme #profile .blogger-name {
+  color: var(--text-reverse-color);
 }
-body.dark-theme .desc-wrapper > p.description {
-  color: var(--sub-text-color);
+
+/* blog menu */
+body.dark-theme #blog-menu ul > li > a {
+  color: var(--text-reverse-color);
+}
+
+/* category */
+body.dark-theme #category a {
+  color: var(--text-reverse-color);
+}
+body.dark-theme #category a:hover {
+  color: var(--primary-color);
 }
