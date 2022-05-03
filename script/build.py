@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 import json
 import shutil
 import zipfile
 
+ENV_DEV = "DEV"
+ENV_PROD = "PROD"
 
 WORKSPACE_DIR_PATH = os.path.abspath(os.path.dirname(__file__))  # 스크립트 실행 경로
 ROOT_DIR_PATH = os.path.abspath(os.path.join(WORKSPACE_DIR_PATH, "../"))  # 프로젝트 루트 경로
@@ -42,8 +45,7 @@ def get_files_by_dir(d, entry_point=None):
     file_list = []
     for cur_path, _, files in os.walk(d):
         for f in files:
-            if entry_point != None and entry_point != f:
-                file_list.append(os.path.join(cur_path, f))
+            file_list.append(os.path.join(cur_path, f))
     return file_list
 
 
@@ -51,7 +53,7 @@ def build_html(entry_point, html_files):
     """html 코드들을 빌드한다.
 
     Args
-    - entry_point: 진입점 파일 경로
+    - entry_point: 진입점 파일명
     - html_files: html 파일 목록
     """
     target_filepath = os.path.join(BUILD_SRC_DIR_PATH, entry_point)
@@ -60,6 +62,8 @@ def build_html(entry_point, html_files):
         compiled_code = f.read().decode("utf-8")
 
     for path in html_files:
+        if entry_point in path:
+            continue
         filename = os.path.basename(path).split(".")[0]
         replacer = "<!--berry_{}-->".format(filename)
         with open(path, 'rb') as f:
@@ -110,7 +114,50 @@ def build_css(entry_point, css_files):
     with open(target_filepath, "w", encoding="utf-8") as f:
         f.write(compiled_code)
 
+
+def build_javascript(entry_point, env=ENV_DEV, html_entry_point=None):
+    js_path = os.path.join(BUILD_SRC_DIR_PATH, "images", entry_point)
+
+    indent = " " * 4
+    javascript_tag = "{}<script type=\"text/javascript\" src=\"./images/{}\"></script>".format(indent, entry_point)
+    if env == ENV_DEV and html_entry_point is not None:
+        javascript_tag = ["{}<script type=\"text/javascript\">".format(indent)]
+        with open(js_path, "rb") as f:
+            js_code = f.read().decode("utf-8")
+            for code in js_code.split("\n"):
+                javascript_tag.append("{}{}".format(indent, code))
+            javascript_tag.append("{}</script>".format(indent))
+            javascript_tag = "\n".join(javascript_tag)
+
+    html_path = os.path.join(BUILD_SRC_DIR_PATH, html_entry_point)
+    with open(html_path, 'rb') as f:
+        html_code = f.read().decode("utf-8")
+
+    next_html_code = []
+    for code in html_code.split("\n"):
+        next_html_code.append(code)
+        if "<!-- Javascript -->" in code:
+            next_html_code.append(javascript_tag)
+
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(next_html_code))
+
+
+def copy(src, trg_path):
+    """파일을 복사한다"""
+    if not os.path.exists(trg_path):
+        os.makedirs(trg_path)
+
+    filename = os.path.basename(src)
+    full_trg_path = os.path.join(trg_path, filename)
+    shutil.copy2(src, full_trg_path)
+
+
 if __name__ == "__main__":
+    env = ENV_DEV
+    if len(sys.argv) >= 2 and sys.argv[1].lower() == "prod":
+        env = ENV_PROD
+
     for path in [ROOT_DIR_PATH, WORKSPACE_DIR_PATH, HTML_DIR_PATH, CSS_DIR_PATH, JS_DIR_PATH, CONFIG_FILE_PATH]:
         assert os.path.exists(path), "Not found path. path: {}".format(path)
 
@@ -119,46 +166,16 @@ if __name__ == "__main__":
 
     html_file_list = get_files_by_dir(HTML_DIR_PATH, entry_point=entry_point["html"])
     css_file_list = get_files_by_dir(CSS_DIR_PATH, entry_point=entry_point["css"])
-    js_file_list = get_files_by_dir(JS_DIR_PATH, entry_point=entry_point["js"])
     xml_file_list = get_files_by_dir(XML_DIR_PATH)
 
-    build_path = {
-        "html": os.path.join(BUILD_SRC_DIR_PATH, "skin.html"),
-        "css": os.path.join(BUILD_SRC_DIR_PATH, "style.css"),
-        "xml": os.path.join(BUILD_SRC_DIR_PATH, "index.xml"),
-        "js":  os.path.join(BUILD_SRC_DIR_PATH, "images", "script.js"),
-        "includes": [
-            os.path.join(ASSETS_DIR_PATH, "preview256.jpg"),
-            os.path.join(ASSETS_DIR_PATH, "preview560.jpg"),
-            os.path.join(ASSETS_DIR_PATH, "preview1600.jpg"),
-        ],
-    }
-
-    # 이전 빌드 산출물 삭제
-    if os.path.exists(BUILD_DIR_PATH):
-        shutil.rmtree(BUILD_DIR_PATH)
-    os.makedirs(os.path.join(BUILD_SRC_DIR_PATH, "images"))
-
+    # html
     build_html(entry_point["html"], html_file_list)
+
+    # css
     build_css(entry_point["css"], css_file_list)
-#     copy_files(path_info)
-#
-#     compile(os.path.join(SKIN_DIR_PATH, "index.xml"))
-#     compile(os.path.join(SKIN_DIR_PATH, "skin.html"))
-#     compile(os.path.join(SKIN_DIR_PATH, "style.css"))
-#
-#     compress()
 
-
-
-def copy_files(path_info):
-    for path, v in path_info.items():
-        if not os.path.exists(path):
-            os.makedirs(path)
-
-        for filename, src_path in v.items():
-            trg_path = os.path.join(path, filename)
-            shutil.copy2(src_path, trg_path)
+    # javascript
+    build_javascript(entry_point["js"], env=env, html_entry_point=entry_point["html"])
 
 
 def compile(path):

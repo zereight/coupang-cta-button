@@ -5,11 +5,16 @@
   "author": "TaehongKim <public.devhong@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prebuild": "rm -rf build",
+    "babel_build": "yarn babel src/javascript --out-dir build/src/images",
+    "prebuild": "rm -rf build && yarn babel_build",
     "build": "python3 script/build.py",
+    "build:prod": "yarn prebuild && python3 script/build.py prod",
     "dev": "python3 script/dev.py"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
     "prettier": "^2.6.2"
   }
 }
