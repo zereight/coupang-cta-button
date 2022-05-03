@@ -1,5 +1,6 @@
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 80px;
 }
@@ -24,11 +25,22 @@ header #moon-button {
 }
 
 header .search-wrapper {
+  border-radius: var(--small-radius);
+  background-color: var(--light-gray-color);
+  padding: var(--small-space);
+  display: flex;
+  align-items: center;
+  width: 220px;
+  height: 50px;
+  box-sizing: border-box;
+  color: var(--text-color);
 }
 header .search-wrapper #search {
   border: none;
-  height: 50px;
-  background-color: var(--text-sub-color);
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  background-color: var(--light-gray-color);
 }
 header .search-wrapper #search:focus {
   outline: none;

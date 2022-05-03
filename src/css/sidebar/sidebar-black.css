@@ -14,6 +14,9 @@ body.dark-theme #blog-intro > a.blog-title:hover {
 body.dark-theme #profile .blogger-name {
   color: var(--text-reverse-color);
 }
+body.dark-theme #profile .blog-desc {
+  color: var(--text-reverse-sub-color);
+}
 
 /* blog menu */
 body.dark-theme #blog-menu ul > li > a {
@@ -26,4 +29,7 @@ body.dark-theme #category a {
 }
 body.dark-theme #category a:hover {
   color: var(--primary-color);
+}
+#category ul a .c_cnt {
+  color: var(--text-reverse-sub-color);
 }

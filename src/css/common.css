@@ -21,13 +21,15 @@
   --primary-color: #6c63ff;
   --primary-hover-color: #4640a5;
   --secondary-color: #f8a4d8;
+  --dark-gray-color: #ced4da;
+  --light-gray-color: #f1f3f5;
   /* colors - light */
   --text-color: #373c46;
   --text-sub-color: #9da6b8;
   --text-hover-color: #f8f9fa;
   --background-color: #ffffff;
   /* colors - dark */
-  --text-reverse-color: #f8f9fa;
+  --text-reverse-color: #e9ecef;
   --text-reverse-sub-color: #9da6b8;
   --background-reverse-color: #212529;
 }
