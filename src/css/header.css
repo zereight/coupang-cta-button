@@ -10,10 +10,15 @@ header .theme-button {
   font-size: var(--default-font-size);
   background-color: transparent;
   border: none;
-  border-right: var(--small-radius);
+  border-radius: var(--small-radius);
+  padding: 0;
+  text-align: center;
 }
 header .theme-button:hover {
   background-color: var(--primary-color);
   color: var(--text-reverse-color);
   cursor: pointer;
+}
+header #moon-button {
+  display: none;
 }
