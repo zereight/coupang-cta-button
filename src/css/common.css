@@ -7,10 +7,11 @@
   --x-large-font-size: 36px;
 
   /* radius */
+  --small-radius: 6px;
   --default-radius: 11px;
 
   /* space */
-  --x-small-space: 8px;
+  --x-small-space: 7px;
   --small-space: 14px;
   --default-space: 18px;
   --large-space: 32px;
