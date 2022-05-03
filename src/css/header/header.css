@@ -16,9 +16,20 @@ header .theme-button {
 }
 header .theme-button:hover {
   background-color: var(--primary-color);
-  color: var(--text-reverse-color);
+  color: var(--text-hover-color);
   cursor: pointer;
 }
 header #moon-button {
   display: none;
+}
+
+header .search-wrapper {
+}
+header .search-wrapper #search {
+  border: none;
+  height: 50px;
+  background-color: var(--text-sub-color);
+}
+header .search-wrapper #search:focus {
+  outline: none;
 }

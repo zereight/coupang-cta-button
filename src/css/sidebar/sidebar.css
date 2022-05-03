@@ -64,7 +64,7 @@
   color: var(--text-color);
 }
 #profile .blog-desc {
-  color: var(--sub-text-color);
+  color: var(--text-sub-color);
 }
 
 /* blog menu */
@@ -97,7 +97,7 @@
   border-radius: var(--small-radius);
 }
 #blog-menu ul > li > a:hover {
-  color: var(--text-reverse-color);
+  color: var(--text-hover-color);
   background-color: var(--primary-color);
 }
 
@@ -116,7 +116,7 @@
   color: var(--primary-color);
 }
 #category ul a .c_cnt {
-  color: var(--sub-text-color);
+  color: var(--text-sub-color);
   font-size: var(--small-font-size);
 }
 #category ul.sub_category_list {

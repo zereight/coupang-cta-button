@@ -23,10 +23,11 @@
   --secondary-color: #f8a4d8;
   /* colors - light */
   --text-color: #373c46;
-  --sub-text-color: #9da6b8;
+  --text-sub-color: #9da6b8;
+  --text-hover-color: #f8f9fa;
   --background-color: #ffffff;
   /* colors - dark */
   --text-reverse-color: #f8f9fa;
-  --sub-text-reverse-color: #9da6b8;
+  --text-reverse-sub-color: #9da6b8;
   --background-reverse-color: #212529;
 }
