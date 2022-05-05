@@ -13,26 +13,23 @@ window.onload = () => {
   const body = document.querySelector('body');
 
   // Theme Toggle
-  const brightButton = document.querySelector('#bright-button');
-  const moonButton = document.querySelector('#moon-button');
-
+  const themeButton = document.querySelector('#theme-button');
   const toggleTheme = (e) => {
     const isDarkTheme = body.classList.contains('dark-theme');
+    const sunIcon = document.querySelector('#theme-button .uil-sun');
+    const moonIcon = document.querySelector('#theme-button .uil-moon');
 
     if (isDarkTheme) {
-      moonButton.style.display = 'none';
-      brightButton.style.display = 'block';
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
       body.classList.remove('dark-theme');
     } else {
-      brightButton.style.display = 'none';
-      moonButton.style.display = 'block';
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
       body.classList.add('dark-theme');
     }
   };
-
-  [brightButton, moonButton].map((btn) =>
-    btn.addEventListener('click', errHandle(toggleTheme))
-  );
+  themeButton.addEventListener('click', errHandle(toggleTheme));
 
   // Search
   const searchInput = document.querySelector('#search');

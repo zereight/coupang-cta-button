@@ -5,25 +5,7 @@ header {
   height: 80px;
 }
 
-header .theme-button {
-  width: 50px;
-  height: 50px;
-  font-size: var(--default-font-size);
-  background-color: transparent;
-  border: none;
-  border-radius: var(--small-radius);
-  padding: 0;
-  text-align: center;
-}
-header .theme-button:hover {
-  background-color: var(--primary-color);
-  color: var(--text-hover-color);
-  cursor: pointer;
-}
-header #moon-button {
-  display: none;
-}
-
+/* Search */
 header .search-wrapper {
   border-radius: var(--small-radius);
   background-color: var(--light-gray-color);
@@ -44,4 +26,26 @@ header .search-wrapper #search {
 }
 header .search-wrapper #search:focus {
   outline: none;
+}
+
+/* Header Buttons */
+header .button-group #theme-button,
+header .button-group #admin-button {
+  width: 50px;
+  height: 50px;
+  font-size: var(--default-font-size);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--small-radius);
+  padding: 0;
+  text-align: center;
+}
+header .button-group #theme-button:hover,
+header .button-group #admin-button:hover {
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+  cursor: pointer;
+}
+header .button-group #theme-button .uil-moon {
+  display: none;
 }
