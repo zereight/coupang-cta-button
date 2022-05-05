@@ -15,6 +15,8 @@ header .search-wrapper {
   width: 220px;
   height: 50px;
   box-sizing: border-box;
+}
+header .search-wrapper .uil-search {
   color: var(--text-color);
 }
 header .search-wrapper #search {
@@ -23,6 +25,7 @@ header .search-wrapper #search {
   margin: 0;
   flex: 1;
   background-color: var(--light-gray-color);
+  color: var(--text-color);
 }
 header .search-wrapper #search:focus {
   outline: none;
@@ -46,6 +49,6 @@ header .button-group #admin-button:hover {
   color: var(--text-hover-color);
   cursor: pointer;
 }
-header .button-group #theme-button .uil-moon {
+header .button-group #theme-button .uil-sun {
   display: none;
 }

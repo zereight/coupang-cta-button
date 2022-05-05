@@ -36,10 +36,16 @@ window.onload = () => {
   const search = (event) => {
     let searchValue = document.getElementsByName('search')[0].value;
     if (event.key === 'Enter') {
-      window.location.href = '/search/' + looseURIEncode(searchValue);
-      searchValue = '';
+      window.open('/search/' + looseURIEncode(searchValue), '_self');
       return false;
     }
   };
   searchInput.addEventListener('keypress', errHandle(search));
+
+  // Admin button
+  const adminButton = document.querySelector('#admin-button');
+  const moveAdminPage = (event) => {
+    window.open('/manage', '_blank');
+  };
+  adminButton.addEventListener('click', errHandle(moveAdminPage));
 };
