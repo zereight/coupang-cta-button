@@ -21,7 +21,7 @@
   --primary-color: #6c63ff;
   --primary-hover-color: #4640a5;
   --secondary-color: #f8a4d8;
-  --dark-gray-color: #ced4da;
+  --dark-gray-color: #868e96;
   --light-gray-color: #f1f3f5;
   /* colors - light */
   --text-color: #373c46;
@@ -32,4 +32,23 @@
   --text-reverse-color: #e9ecef;
   --text-reverse-sub-color: #9da6b8;
   --background-reverse-color: #212529;
+}
+
+body {
+  font-size: var(--default-font-size);
+  font-family: 'Noto Sans KR', serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+body.dark-theme {
+  color: var(--text-reverse-color);
+  background-color: var(--background-reverse-color);
+}
+
+body a,
+body button {
+  transition-property: color, background-color;
+  transition-duration: 0.2s, 0.2s;
+  transition-timing-function: ease-in-out;
 }
