@@ -49,6 +49,6 @@ body.dark-theme {
 body a,
 body button {
   transition-property: color, background-color;
-  transition-duration: 0.2s, 0.2s;
+  transition-duration: 0.1s, 0.2s;
   transition-timing-function: ease-in-out;
 }
