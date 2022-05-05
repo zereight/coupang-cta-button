@@ -1,0 +1,44 @@
+main .title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+main .title-wrapper > div {
+  margin-bottom: var(--default-space);
+}
+main .title-wrapper > div:last-child {
+  margin-bottom: 0;
+}
+main .title-wrapper {
+  margin-bottom: var(--large-space);
+}
+
+main .title-wrapper .date {
+  color: var(--text-sub-color);
+  font-weight: bold;
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+}
+main .title-wrapper .date .uil-calender {
+  margin-right: var(--x-small-space);
+}
+main .title-wrapper .title h1 a {
+  font-weight: bold;
+  color: var(--text-color);
+  font-size: var(--x-large-font-size);
+}
+main .title-wrapper .category a {
+  color: var(--text-sub-color);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+main .title-wrapper .category a .uil-bookmark {
+  margin-right: var(--x-small-space);
+}
+main .title-wrapper .title h1 a:hover,
+main .title-wrapper .category a:hover {
+  color: var(--primary-color);
+}

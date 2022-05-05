@@ -11,7 +11,7 @@
   --default-radius: 11px;
 
   /* space */
-  --x-small-space: 7px;
+  --x-small-space: 6px;
   --small-space: 14px;
   --default-space: 18px;
   --large-space: 32px;
@@ -25,7 +25,7 @@
   --light-gray-color: #f1f3f5;
   /* colors - light */
   --text-color: #373c46;
-  --text-sub-color: #9da6b8;
+  --text-sub-color: #868e96;
   --text-hover-color: #f8f9fa;
   --background-color: #ffffff;
   /* colors - dark */

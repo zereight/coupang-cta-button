@@ -6,6 +6,10 @@
   margin: 0 auto;
 }
 
-#main-layout {
+#main-container {
   flex: 1;
+}
+
+#main-container main {
+  padding: var(--default-space) 0;
 }
