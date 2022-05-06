@@ -9,7 +9,6 @@
       <a href="[##_article_rep_link_##]" class="title">
         [##_article_rep_title_##]
       </a>
-      <div class="summary">[##_article_rep_summary_##]</div>
       <div class="date-n-category">
         <span class="date">
           <i class="uil uil-calender"></i>
@@ -20,6 +19,21 @@
           <span>[##_article_rep_category_##]</span>
         </a>
       </div>
+      <div class="summary">[##_article_rep_summary_##]</div>
+    </div>
+    <div class="button-group">
+      <button
+        class="article-view-button"
+        onclick="move('[##_article_rep_link_##]')"
+      >
+        <i class="uil uil-eye"></i>
+      </button>
+      <button
+        class="article-clipboard-button"
+        onclick="copy(getBaseUrl()+'[##_article_rep_link_##]')"
+      >
+        <i class="uil uil-copy"></i>
+      </button>
     </div>
   </div>
 </s_index_article_rep>

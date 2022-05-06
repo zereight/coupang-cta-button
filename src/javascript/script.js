@@ -9,8 +9,41 @@ const errHandle = (func, errHandler = undefined) => {
   }
 };
 
+const move = (url, target = '_self') => window.open(url, target);
+
+const copy = (content) => navigator.clipboard.writeText(content);
+
+const getBaseUrl = () => {
+  const { protocol, host } = window.location;
+  return `${protocol}//${host}`;
+};
+
 window.onload = () => {
   const body = document.querySelector('body');
+
+  // blog menu
+  const blogHomeMenu = document.querySelector('#blog-menu .home-menu');
+  const blogTagMenu = document.querySelector('#blog-menu .tag-menu');
+  const blogGuestbookMenu = document.querySelector(
+    '#blog-menu .guestbook-menu'
+  );
+  const addActiveProperty = () => {
+    const pathname = window.location.pathname;
+    switch (pathname) {
+      case '/':
+        blogHomeMenu.classList.add('blog-menu-active');
+        return;
+      case '/tag':
+        blogTagMenu.classList.add('blog-menu-active');
+        return;
+      case '/guestbook':
+        blogGuestbookMenu.classList.add('blog-menu-active');
+        return;
+      default:
+        return;
+    }
+  };
+  errHandle(addActiveProperty)();
 
   // Theme Toggle
   const themeButton = document.querySelector('#theme-button');
