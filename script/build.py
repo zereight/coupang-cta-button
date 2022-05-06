@@ -69,7 +69,8 @@ def build_html(entry_point, html_files):
         with open(path, 'rb') as f:
             code = f.read().decode("utf-8")
 
-        code = "<!-- BEGIN: {} -->\n".format(filename) + code + "<!-- END: {} -->\n" .format(filename)
+        if filename not in ["index-page", "permalink-page"]:
+            code = "<!-- BEGIN: {} -->\n".format(filename) + code + "<!-- END: {} -->\n" .format(filename)
 
         for line in compiled_code.split("\n"):
             if replacer in line:

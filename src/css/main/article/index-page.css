@@ -1,0 +1,91 @@
+#article-container .index-item {
+  display: flex;
+  margin-bottom: var(--default-space);
+  padding: var(--default-space);
+  border-radius: var(--small-radius);
+  box-shadow: 3px 3px 5px var(--light-gray-color);
+}
+#article-container .index-item:last-child {
+  margin-bottom: 0;
+}
+
+#article-container .image-wrapper {
+  display: block;
+  width: 230px;
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+  margin-right: var(--large-space);
+}
+#article-container .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+#article-container .article-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#article-container .article-info > * {
+  margin-bottom: var(--default-space);
+}
+#article-container .article-info > *:last-child {
+  margin-bottom: 0;
+}
+
+#article-container .article-info a.title {
+  height: var(--large-font-size);
+  line-height: var(--large-font-size);
+  font-size: var(--large-font-size);
+  font-weight: bold;
+  color: var(--text-color);
+  display: block;
+}
+#article-container .article-info a.title:hover {
+  color: var(--primary-color);
+}
+
+#article-container .article-info .summary {
+  max-height: 95px;
+  color: var(--text-sub-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+#article-container .date-n-category {
+  color: var(--text-sub-color);
+  height: var(--small-font-size);
+  line-height: var(--small-font-size);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+}
+#article-container .date-n-category .date {
+  margin-right: var(--small-space);
+  display: flex;
+  align-items: center;
+}
+#article-container .date-n-category .date .uil-calender {
+  margin-right: var(--x-small-space);
+}
+#article-container .date-n-category .category {
+  color: var(--text-sub-color);
+  display: flex;
+  align-items: center;
+}
+#article-container .date-n-category .category .uil-bookmark {
+  margin-right: var(--x-small-space);
+}
+#article-container .date-n-category .category:hover {
+  color: var(--secondary-color);
+}
