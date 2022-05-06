@@ -1,10 +1,12 @@
 /* Search */
 body.dark-theme header .search-wrapper {
   background-color: var(--dark-gray-color);
-  color: var(--text-color);
+  color: var(--text-reverse-color);
 }
-body.dark-theme header .search-wrapper #search {
+body.dark-theme header .search-wrapper #search,
+body.dark-theme header .search-wrapper .uil-search {
   background-color: var(--dark-gray-color);
+  color: var(--text-reverse-color);
 }
 
 /* Header Buttons */

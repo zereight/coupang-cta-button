@@ -18,8 +18,44 @@ const getBaseUrl = () => {
   return `${protocol}//${host}`;
 };
 
+const initTheme = () => {
+  const isDarkTheme = localStorage.getItem('theme') === 'dark';
+  if (isDarkTheme) {
+    document.querySelector('body').classList.add('dark-theme');
+  }
+};
+errHandle(initTheme)();
+
 window.onload = () => {
   const body = document.querySelector('body');
+
+  // Theme Toggle
+  const themeButton = document.querySelector('#theme-button');
+  const sunIcon = document.querySelector('#theme-button .uil-sun');
+  const moonIcon = document.querySelector('#theme-button .uil-moon');
+  const initThemeIcon = () => {
+    const isDarkTheme = localStorage.getItem('theme') === 'dark';
+    if (isDarkTheme) {
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+    }
+  };
+  errHandle(initThemeIcon)();
+  const toggleTheme = (e) => {
+    const isDarkTheme = body.classList.contains('dark-theme');
+    if (isDarkTheme) {
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+      body.classList.remove('dark-theme');
+      localStorage.removeItem('theme');
+    } else {
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+      body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+    }
+  };
+  themeButton.addEventListener('click', errHandle(toggleTheme));
 
   // blog menu
   const blogHomeMenu = document.querySelector('#blog-menu .home-menu');
@@ -44,25 +80,6 @@ window.onload = () => {
     }
   };
   errHandle(addActiveProperty)();
-
-  // Theme Toggle
-  const themeButton = document.querySelector('#theme-button');
-  const toggleTheme = (e) => {
-    const isDarkTheme = body.classList.contains('dark-theme');
-    const sunIcon = document.querySelector('#theme-button .uil-sun');
-    const moonIcon = document.querySelector('#theme-button .uil-moon');
-
-    if (isDarkTheme) {
-      sunIcon.style.display = 'none';
-      moonIcon.style.display = 'block';
-      body.classList.remove('dark-theme');
-    } else {
-      sunIcon.style.display = 'block';
-      moonIcon.style.display = 'none';
-      body.classList.add('dark-theme');
-    }
-  };
-  themeButton.addEventListener('click', errHandle(toggleTheme));
 
   // Search
   const searchInput = document.querySelector('#search');
