@@ -1,0 +1,22 @@
+#alert {
+  position: fixed;
+  top: 0;
+  right: -500px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--default-radius);
+  margin: var(--large-space);
+  padding: var(--default-space);
+  box-shadow: 3px 3px 5px var(--light-gray-color);
+  border: 1px solid var(--light-gray-color);
+  transition: 0.1s right ease-in-out;
+}
+#alert .uil-check-circle {
+  margin-right: var(--x-small-space);
+  font-size: var(--default-font-size);
+  color: #51cf66;
+}
+#alert .alert-text {
+  font-weight: bold;
+  font-size: var(--default-font-size);
+}
