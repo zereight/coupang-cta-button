@@ -1,3 +1,5 @@
+let alertTimer;
+
 const errHandle = (func, errHandler = undefined) => {
   try {
     return func;
@@ -9,6 +11,14 @@ const errHandle = (func, errHandler = undefined) => {
   }
 };
 
+const initTheme = () => {
+  const isDarkTheme = localStorage.getItem('theme') === 'dark';
+  if (isDarkTheme) {
+    document.querySelector('body').classList.add('dark-theme');
+  }
+};
+errHandle(initTheme)();
+
 const move = (url, target = '_self') => window.open(url, target);
 
 const copy = (content) => navigator.clipboard.writeText(content);
@@ -18,13 +28,22 @@ const getBaseUrl = () => {
   return `${protocol}//${host}`;
 };
 
-const initTheme = () => {
-  const isDarkTheme = localStorage.getItem('theme') === 'dark';
-  if (isDarkTheme) {
-    document.querySelector('body').classList.add('dark-theme');
-  }
+const showAlert = (text) => {
+  const alert = document.querySelector('#alert');
+  const alertText = document.querySelector('#alert .alert-text');
+  alertText.innerText = text;
+  alert.style.right = '0';
+
+  if (alertTimer) clearTimeout(alertTimer);
+  alertTimer = setTimeout(() => (alert.style.right = '-500px'), 2000);
 };
-errHandle(initTheme)();
+
+// index page - copy article url
+const copyArticleUrl = (url) => {
+  const fullUrl = `${getBaseUrl()}${url}`;
+  copy(fullUrl);
+  showAlert('복사했습니다!');
+};
 
 window.onload = () => {
   const body = document.querySelector('body');
