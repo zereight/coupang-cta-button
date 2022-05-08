@@ -1,5 +1,6 @@
 body.dark-theme #article-container .index-item {
-  box-shadow: 3px 3px 5px var(--dark-gray-color);
+  box-shadow: none;
+  background-color: var(--dark-gray-color);
 }
 
 body.dark-theme #article-container .article-info a.title {
