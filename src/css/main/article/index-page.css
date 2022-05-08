@@ -16,6 +16,7 @@
   position: relative;
   overflow: hidden;
   margin-right: var(--large-space);
+  border-radius: var(--default-radius);
 }
 #article-container .image-wrapper img {
   width: 100%;
