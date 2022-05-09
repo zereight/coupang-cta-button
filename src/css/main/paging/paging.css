@@ -1,0 +1,63 @@
+#paging {
+  margin-top: var(--default-space);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#paging .prev,
+#paging .next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: var(--text-color);
+  font-size: var(--large-font-size);
+}
+#paging .prev:hover,
+#paging .next:hover {
+  color: var(--primary-color);
+}
+#paging .no-more-prev,
+#paging .no-more-next {
+  color: var(--text-sub-color);
+}
+#paging .no-more-prev:hover,
+#paging .no-more-next:hover {
+  cursor: not-allowed;
+  color: var(--text-sub-color);
+}
+#paging .numbox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#paging .numbox a.num {
+  width: 50px;
+  height: 50px;
+  margin-right: var(--x-small-space);
+}
+#paging .numbox a.num span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color);
+  border-radius: var(--default-radius);
+}
+#paging .numbox a.num span.selected {
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+}
+#paging .numbox a.num:last-child {
+  margin-right: 0;
+}
+#paging .numbox a.num:hover span {
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+}
+#paging .numbox a.num:hover span.selected {
+  cursor: not-allowed;
+}

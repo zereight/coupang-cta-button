@@ -1,0 +1,27 @@
+#paging .prev,
+#paging .next {
+  color: var(--text-reverse-color);
+}
+#paging .prev:hover,
+#paging .next:hover {
+  color: var(--primary-color);
+}
+#paging .no-more-prev,
+#paging .no-more-next {
+  color: var(--text-reverse-sub-color);
+}
+#paging .no-more-prev:hover,
+#paging .no-more-next:hover {
+  color: var(--text-reverse-sub-color);
+}
+#paging .numbox a.num span {
+  color: var(--text-reverse-color);
+}
+#paging .numbox a.num span.selected {
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+}
+#paging .numbox a.num:hover span {
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+}
