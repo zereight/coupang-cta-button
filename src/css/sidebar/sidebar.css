@@ -89,11 +89,10 @@
   color: var(--text-color);
   border-radius: var(--small-radius);
 }
-#blog-menu ul > li > a:hover {
-  color: var(--text-hover-color);
-  background-color: var(--primary-color);
-}
 #blog-menu ul > li > a.blog-menu-active {
+  color: var(--primary-color);
+}
+#blog-menu ul > li > a:hover {
   color: var(--text-hover-color);
   background-color: var(--primary-color);
 }
