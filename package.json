@@ -5,7 +5,7 @@
   "author": "TaehongKim <public.devhong@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "babel_build": "yarn babel src/javascript --out-dir build/src/images",
+    "babel_build": "yarn tsc src/javascript/script.ts && yarn babel src/javascript/script.js --out-file build/src/images/script.js",
     "prebuild": "rm -rf build && yarn babel_build",
     "build": "python3 script/build.py",
     "build:prod": "yarn prebuild && python3 script/build.py prod",
@@ -15,6 +15,8 @@
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
-    "prettier": "^2.6.2"
+    "@babel/preset-typescript": "^7.16.7",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
   }
 }

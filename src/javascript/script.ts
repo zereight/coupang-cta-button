@@ -1,36 +1,44 @@
-let alertTimer;
+let alertTimer: number;
 
-const errHandle = (func, errHandler = undefined) => {
+type EventHandlerFunction = (e: any) => any;
+type ErrHandlerFunction = (e: Error) => any;
+const errHandle = (
+  func: EventHandlerFunction,
+  errHandler?: ErrHandlerFunction
+): any => {
   try {
     return func;
-  } catch (e) {
+  } catch (e: unknown) {
     console.error(e);
-    if (!!errHandler) {
+    if (!!errHandler && e instanceof Error) {
       errHandler(e);
     }
   }
 };
 
-const initTheme = () => {
+const initTheme = (): void => {
   const isDarkTheme = localStorage.getItem('theme') === 'dark';
   if (isDarkTheme) {
-    document.querySelector('body').classList.add('dark-theme');
+    const bodyTag = document.querySelector('body') as HTMLBodyElement;
+    bodyTag.classList.add('dark-theme');
   }
 };
 errHandle(initTheme)();
 
-const move = (url, target = '_self') => window.open(url, target);
+const move = (url: string, target = '_self') => window.open(url, target);
 
-const copy = (content) => navigator.clipboard.writeText(content);
+const copy = (content: string) => navigator.clipboard.writeText(content);
 
 const getBaseUrl = () => {
   const { protocol, host } = window.location;
   return `${protocol}//${host}`;
 };
 
-const showAlert = (text) => {
-  const alert = document.querySelector('#alert');
-  const alertText = document.querySelector('#alert .alert-text');
+const showAlert = (text: string) => {
+  const alert = document.querySelector('#alert') as HTMLDivElement;
+  const alertText = document.querySelector(
+    '#alert .alert-text'
+  ) as HTMLSpanElement;
   alertText.innerText = text;
   alert.style.right = '0';
 
@@ -39,20 +47,28 @@ const showAlert = (text) => {
 };
 
 // index page - copy article url
-const copyArticleUrl = (url) => {
+const copyArticleUrl = (url: string) => {
   const fullUrl = `${getBaseUrl()}${url}`;
   copy(fullUrl);
   showAlert('복사했습니다!');
 };
 
 window.onload = () => {
-  const body = document.querySelector('body');
+  const body: HTMLBodyElement = document.querySelector(
+    'body'
+  ) as HTMLBodyElement;
 
   // Theme Toggle
-  const themeButton = document.querySelector('#theme-button');
-  const sunIcon = document.querySelector('#theme-button .uil-sun');
-  const moonIcon = document.querySelector('#theme-button .uil-moon');
-  const initThemeIcon = () => {
+  const themeButton = document.querySelector(
+    '#theme-button'
+  ) as HTMLButtonElement;
+  const sunIcon = document.querySelector(
+    '#theme-button .uil-sun'
+  ) as HTMLElement;
+  const moonIcon = document.querySelector(
+    '#theme-button .uil-moon'
+  ) as HTMLElement;
+  const initThemeIcon = (): void => {
     const isDarkTheme = localStorage.getItem('theme') === 'dark';
     if (isDarkTheme) {
       sunIcon.style.display = 'block';
@@ -60,7 +76,7 @@ window.onload = () => {
     }
   };
   errHandle(initThemeIcon)();
-  const toggleTheme = (e) => {
+  const toggleTheme = (e: Event) => {
     const isDarkTheme = body.classList.contains('dark-theme');
     if (isDarkTheme) {
       sunIcon.style.display = 'none';
@@ -77,11 +93,15 @@ window.onload = () => {
   themeButton.addEventListener('click', errHandle(toggleTheme));
 
   // blog menu
-  const blogHomeMenu = document.querySelector('#blog-menu .home-menu');
-  const blogTagMenu = document.querySelector('#blog-menu .tag-menu');
+  const blogHomeMenu = document.querySelector(
+    '#blog-menu .home-menu'
+  ) as HTMLAnchorElement;
+  const blogTagMenu = document.querySelector(
+    '#blog-menu .tag-menu'
+  ) as HTMLAnchorElement;
   const blogGuestbookMenu = document.querySelector(
     '#blog-menu .guestbook-menu'
-  );
+  ) as HTMLAnchorElement;
   const addActiveProperty = () => {
     const pathname = window.location.pathname;
     switch (pathname) {
@@ -99,11 +119,18 @@ window.onload = () => {
     }
   };
   errHandle(addActiveProperty)();
-
+  const looseURIEncode = (s: string) => {
+    return (s = (s = (s = s.replace(new RegExp('%', 'g'), '%25')).replace(
+      new RegExp('\\?', 'g'),
+      '%3F'
+    )).replace(new RegExp('#', 'g'), '%23'));
+  };
   // Search
-  const searchInput = document.querySelector('#search');
-  const search = (event) => {
-    let searchValue = document.getElementsByName('search')[0].value;
+  const searchInput = document.querySelector('#search') as HTMLInputElement;
+  const search = (event: KeyboardEvent) => {
+    let searchValue: string = (
+      document.getElementsByName('search')[0] as HTMLInputElement
+    ).value;
     if (event.key === 'Enter') {
       window.open('/search/' + looseURIEncode(searchValue), '_self');
       return false;
@@ -112,8 +139,10 @@ window.onload = () => {
   searchInput.addEventListener('keypress', errHandle(search));
 
   // Admin button
-  const adminButton = document.querySelector('#admin-button');
-  const moveAdminPage = (event) => {
+  const adminButton = document.querySelector(
+    '#admin-button'
+  ) as HTMLButtonElement;
+  const moveAdminPage = (event: MouseEvent) => {
     window.open('/manage', '_blank');
   };
   adminButton.addEventListener('click', errHandle(moveAdminPage));
