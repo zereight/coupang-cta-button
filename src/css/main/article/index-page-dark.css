@@ -1,12 +1,12 @@
-body.dark-theme #article-container .index-item {
+#article-container .index-item {
   box-shadow: none;
   background-color: var(--dark-gray-color);
 }
 
-body.dark-theme #article-container .article-info a.title {
+#article-container .article-info a.title {
   color: var(--text-reverse-color);
 }
 
-body.dark-theme #article-container .article-info a.title:hover {
+#article-container .article-info a.title:hover {
   color: var(--primary-color);
 }

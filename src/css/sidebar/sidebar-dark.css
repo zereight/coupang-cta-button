@@ -1,33 +1,29 @@
-body.dark-theme {
-  color: var(--text-reverse-color);
-}
-
 /* blog introduce */
-body.dark-theme #blog-intro > a.blog-title {
+#blog-intro > a.blog-title {
   color: var(--text-reverse-color);
 }
-body.dark-theme #blog-intro > a.blog-title:hover {
+#blog-intro > a.blog-title:hover {
   color: var(--primary-color);
 }
 
 /* profile */
-body.dark-theme #profile .blogger-name {
+#profile .blogger-name {
   color: var(--text-reverse-color);
 }
-body.dark-theme #profile .blog-desc {
+#profile .blog-desc {
   color: var(--text-reverse-sub-color);
 }
 
 /* blog menu */
-body.dark-theme #blog-menu ul > li > a {
+#blog-menu ul > li > a {
   color: var(--text-reverse-color);
 }
 
 /* category */
-body.dark-theme #category a {
+#category a {
   color: var(--text-reverse-color);
 }
-body.dark-theme #category a:hover {
+#category a:hover {
   color: var(--primary-color);
 }
 #category ul a .c_cnt {
