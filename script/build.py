@@ -99,6 +99,7 @@ def build_css(entry_point, css_files):
     for path in css_files:
         filename = os.path.basename(path).split(".")[0]
         replacer = "/*berry_{}*/".format(filename)
+        is_dark_theme = 'dark' in filename
         with open(path, 'rb') as f:
             code = f.read().decode("utf-8")
 
@@ -109,7 +110,10 @@ def build_css(entry_point, css_files):
                 indent = len(line.split("/*")[0])
                 break
 
-        code = ("\n" + " " * indent).join(code.split("\n"))
+        code = ("\n" + " " * indent).join(list(map(
+            lambda c: '{} {}'.format('body.dark-theme', c) if is_dark_theme and len(c) >= 1 and c.strip()[-1] in ['{', ','] and 'body.dark-theme' not in c else c,
+            code.split("\n")
+        )))
         compiled_code = compiled_code.replace(replacer, code)
 
     with open(target_filepath, "w", encoding="utf-8") as f:
