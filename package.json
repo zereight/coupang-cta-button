@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "babel_build": "yarn tsc src/javascript/script.ts && yarn babel src/javascript/script.js --out-file build/src/images/script.js",
-    "prebuild": "rm -rf build && yarn babel_build",
+    "prebuild": "rm -rf build && rm -rf src/javascript/script.js && yarn babel_build",
     "build": "python3 script/build.py",
     "build:prod": "yarn prebuild && python3 script/build.py prod",
     "dev": "python3 script/dev.py"
