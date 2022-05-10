@@ -2,7 +2,7 @@ let alertTimer: number;
 
 type EventHandlerFunction = (e: any) => any;
 type ErrHandlerFunction = (e: Error) => any;
-const errHandle = (
+const funcWrapper = (
   func: EventHandlerFunction,
   errHandler?: ErrHandlerFunction
 ): any => {
@@ -23,7 +23,7 @@ const initTheme = (): void => {
     bodyTag.classList.add('dark-theme');
   }
 };
-errHandle(initTheme)();
+funcWrapper(initTheme)();
 
 const move = (url: string, target = '_self') => window.open(url, target);
 
@@ -75,7 +75,7 @@ window.onload = () => {
       moonIcon.style.display = 'none';
     }
   };
-  errHandle(initThemeIcon)();
+  funcWrapper(initThemeIcon)();
   const toggleTheme = (e: Event) => {
     const isDarkTheme = body.classList.contains('dark-theme');
     if (isDarkTheme) {
@@ -90,7 +90,33 @@ window.onload = () => {
       localStorage.setItem('theme', 'dark');
     }
   };
-  themeButton.addEventListener('click', errHandle(toggleTheme));
+  themeButton.addEventListener('click', funcWrapper(toggleTheme));
+
+  // TOC
+  const showToc = (): void => {
+    if (['', '/'].includes(window?.location?.pathname ?? '/')) {
+      return;
+    }
+    const curPathname: string = window.location.pathname.split('/')[1];
+    const isArticlePage: boolean = ![
+      'tag',
+      'guestbook',
+      'category',
+      'manage',
+    ].includes(curPathname);
+    if (isArticlePage) {
+      const tocContainer: HTMLDivElement = document.querySelector(
+        '#toc-container'
+      ) as HTMLDivElement;
+      tocContainer.style.width = '200px';
+      const tocWrapper: HTMLDivElement = document.querySelector(
+        '#toc-container .toc-wrapper'
+      ) as HTMLDivElement;
+      tocContainer.style.width = '200px';
+      tocWrapper.style.display = 'inline-block';
+    }
+  };
+  funcWrapper(showToc)();
 
   // blog menu
   const blogHomeMenu = document.querySelector(
@@ -118,7 +144,7 @@ window.onload = () => {
         return;
     }
   };
-  errHandle(addActiveProperty)();
+  funcWrapper(addActiveProperty)();
   const looseURIEncode = (s: string) => {
     return (s = (s = (s = s.replace(new RegExp('%', 'g'), '%25')).replace(
       new RegExp('\\?', 'g'),
@@ -136,7 +162,7 @@ window.onload = () => {
       return false;
     }
   };
-  searchInput.addEventListener('keypress', errHandle(search));
+  searchInput.addEventListener('keypress', funcWrapper(search));
 
   // Admin button
   const adminButton = document.querySelector(
@@ -145,5 +171,5 @@ window.onload = () => {
   const moveAdminPage = (event: MouseEvent) => {
     window.open('/manage', '_blank');
   };
-  adminButton.addEventListener('click', errHandle(moveAdminPage));
+  adminButton.addEventListener('click', funcWrapper(moveAdminPage));
 };

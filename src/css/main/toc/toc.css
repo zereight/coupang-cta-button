@@ -1,3 +1,20 @@
 #toc-container {
-  width: 200px;
+  width: 0;
+}
+#toc-container .toc-wrapper {
+  position: sticky;
+  top: var(--small-space);
+  left: 0;
+  display: none;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--default-space);
+  border-left: dashed 2px var(--light-gray-color);
+  max-height: 80vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+#toc-container .toc-wrapper::-webkit-scrollbar {
+  display: none;
 }
