@@ -1,4 +1,12 @@
 :root {
+  /* width */
+  --xxl-screen: 1680px;
+  --xl-screen: 1440px;
+  --l-screen: 1200px;
+  --m-screen: 992px;
+  --s-screen: 768px;
+  --xs-screen: 576px;
+
   /* font */
   --x-small-font-size: 8px;
   --small-font-size: 14px;
