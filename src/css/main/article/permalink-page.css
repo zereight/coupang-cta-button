@@ -87,6 +87,10 @@ main #article-container #article-wrapper .article {
   line-height: 2.2;
   font-size: var(--default-font-size);
   color: var(--text-color);
+  width: calc(
+    var(--xxl-screen) - 340px - 200px - var(--default-space) -
+      var(--default-space)
+  );
 }
 
 main #article-container #article-wrapper blockquote {
