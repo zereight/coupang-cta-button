@@ -12,5 +12,7 @@
 }
 
 #main-container main {
+  display: flex;
+
   padding: var(--default-space) 0;
 }
