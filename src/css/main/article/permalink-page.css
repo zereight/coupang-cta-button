@@ -1,4 +1,42 @@
-main .title-wrapper {
+main .title-container {
+  position: relative;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--large-space);
+}
+main .title-container .thumbnail-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--default-radius);
+}
+main .title-container .thumbnail-wrapper > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -2;
+}
+main .title-container .thumbnail-background-layout {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--dark-gray-color);
+  opacity: 0.8;
+  border-radius: var(--default-radius);
+}
+main .title-container .title-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +53,7 @@ main .title-wrapper {
 }
 
 main .title-wrapper .date {
-  color: var(--text-sub-color);
+  color: var(--text-reverse-color);
   font-weight: bold;
   font-size: var(--small-font-size);
   display: flex;
@@ -26,11 +64,11 @@ main .title-wrapper .date .uil-calender {
 }
 main .title-wrapper .title h1 a {
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--text-reverse-color);
   font-size: var(--x-large-font-size);
 }
 main .title-wrapper .category a {
-  color: var(--text-sub-color);
+  color: var(--text-reverse-color);
   font-weight: bold;
   display: flex;
   align-items: center;
