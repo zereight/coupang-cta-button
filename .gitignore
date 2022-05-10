@@ -3,6 +3,4 @@
 node_modules
 build/
 
-src/javascript/script.js
-
 yarn-*.log
