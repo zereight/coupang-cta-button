@@ -84,19 +84,52 @@ main .title-wrapper .category a:hover {
 }
 
 main #article-container #article-wrapper .article {
-  line-height: 2;
+  line-height: 2.2;
   font-size: var(--default-font-size);
+  color: var(--text-color);
 }
+
+main #article-container #article-wrapper blockquote {
+  color: var(--text-color);
+}
+main #article-container blockquote[data-ke-style='style2']:before,
+main #article-container blockquote[data-ke-style='style3']:before {
+  display: block;
+  font-weight: bold;
+  margin-bottom: var(--x-small-space);
+}
+main #article-container #article-wrapper blockquote[data-ke-style='style2'],
+main #article-container #article-wrapper blockquote[data-ke-style='style3'] {
+  border: none;
+  border-radius: var(--default-radius);
+  padding: var(--large-space);
+}
+main #article-container blockquote[data-ke-style='style2']:before {
+  content: '💡 Tip';
+  color: #12b886;
+}
+main #article-container #article-wrapper blockquote[data-ke-style='style2'] {
+  background-color: #e6fcf5;
+}
+main #article-container blockquote[data-ke-style='style3']:before {
+  content: '📑 NOTE';
+  color: #228be6;
+}
+main #article-container #article-wrapper blockquote[data-ke-style='style3'] {
+  background-color: #e7f5ff;
+}
+
 main #article-container #article-wrapper .article h1,
 main #article-container #article-wrapper .article h2,
 main #article-container #article-wrapper .article h3 {
-  margin-bottom: var(--default-space);
+  margin: var(--default-space) 0;
   font-weight: bold;
 }
 
 main #article-container #article-wrapper .article pre {
   padding: 0;
   margin: 0;
+  white-space: pre;
 }
 main #article-container #article-wrapper .article pre code {
   padding: var(--default-font-size);
@@ -109,4 +142,65 @@ main #article-container #article-wrapper .article pre code {
 }
 main #article-container #article-wrapper .article pre code::-webkit-scrollbar {
   display: none;
+}
+main #article-container #article-wrapper .article strong,
+main #article-container #article-wrapper .article b {
+  font-weight: bold;
+}
+main #article-container #article-wrapper .article ul,
+main #article-container #article-wrapper .article ol {
+  margin: 0 0 var(--default-space) var(--large-space);
+}
+main #article-container #article-wrapper .article a {
+  color: var(--primary-color);
+}
+main #article-container #article-wrapper .article a:hover {
+  color: var(--primary-hover-color);
+}
+
+main #article-container #article-wrapper .article figure {
+  margin: var(--small-space) 0;
+  overflow: hidden;
+  border-radius: var(--default-radius);
+}
+main #article-container #article-wrapper .article figure a {
+  border: 1px solid var(--light-gray-color);
+  border-radius: var(--default-radius);
+  transition: 0.1s all ease-in-out;
+}
+main #article-container #article-wrapper .article figure a:hover {
+  border: 1px solid var(--dark-gray-color);
+}
+main #article-container #article-wrapper .article figure a .og-image {
+  border-right: none;
+}
+main #article-container #article-wrapper .article figure a .og-title {
+  color: var(--text-color);
+}
+main #article-container #article-wrapper .article figure a .og-desc {
+  color: var(--text-sub-color);
+}
+main #article-container #article-wrapper .article figure a .og-host {
+  color: var(--primary-color);
+}
+main #article-container #article-wrapper .article figure a .og-host:hover {
+  color: var(--primary-hover-color);
+}
+
+main #article-container #article-wrapper .article figure.imageblock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: var(--small-space) 0;
+  padding: 0;
+}
+main #article-container #article-wrapper .article figure.imageblock span {
+  display: block;
+  min-width: 50%;
+  max-width: 80%;
+}
+main #article-container #article-wrapper .article figure.imageblock img {
+  display: block;
+  width: 100%;
 }

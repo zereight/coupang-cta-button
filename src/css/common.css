@@ -61,3 +61,7 @@ body button {
   transition-duration: 0.1s, 0.1s;
   transition-timing-function: ease-in-out;
 }
+body *::selection {
+  background-color: var(--primary-color);
+  color: var(--text-reverse-color);
+}

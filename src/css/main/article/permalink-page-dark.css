@@ -1,0 +1,37 @@
+main #article-container #article-wrapper .article {
+  color: var(--text-reverse-color);
+}
+main #article-container blockquote[data-ke-style='style2']:before {
+  color: #e6fcf5;
+}
+main #article-container #article-wrapper blockquote[data-ke-style='style2'] {
+  background-color: #12b886;
+}
+main #article-container blockquote[data-ke-style='style3']:before {
+  color: #e7f5ff;
+}
+main #article-container #article-wrapper blockquote {
+  color: var(--text-reverse-color);
+}
+main #article-container #article-wrapper blockquote[data-ke-style='style3'] {
+  background-color: #228be6;
+  color: var(--text-reverse-color);
+}
+main #article-container #article-wrapper .article figure a {
+  border: 1px solid var(--dark-gray-color);
+}
+main #article-container #article-wrapper .article figure a:hover {
+  border: 1px solid var(--light-gray-color);
+}
+main #article-container #article-wrapper .article figure a .og-title {
+  color: var(--text-reverse-color);
+}
+main #article-container #article-wrapper .article figure a .og-desc {
+  color: var(--text-reverse-sub-color);
+}
+main #article-container #article-wrapper .article figure a .og-host {
+  color: var(--primary-color);
+}
+main #article-container #article-wrapper .article figure a .og-host:hover {
+  color: var(--primary-hover-color);
+}
