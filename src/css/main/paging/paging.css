@@ -1,5 +1,5 @@
 #paging {
-  margin-top: var(--default-space);
+  margin-top: var(--large-space);
   display: flex;
   justify-content: space-between;
   align-items: center;

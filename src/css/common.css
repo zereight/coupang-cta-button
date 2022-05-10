@@ -47,6 +47,7 @@ body.dark-theme {
 }
 
 body a,
+body span,
 body button {
   transition-property: color, background-color;
   transition-duration: 0.1s, 0.2s;
