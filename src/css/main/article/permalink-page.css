@@ -44,3 +44,31 @@ main .title-wrapper .title h1 a:hover {
 main .title-wrapper .category a:hover {
   color: var(--secondary-color);
 }
+
+main #article-container #article-wrapper .article {
+  line-height: 2;
+  font-size: var(--default-font-size);
+}
+main #article-container #article-wrapper .article h1,
+main #article-container #article-wrapper .article h2,
+main #article-container #article-wrapper .article h3 {
+  margin-bottom: var(--default-space);
+  font-weight: bold;
+}
+
+main #article-container #article-wrapper .article pre {
+  padding: 0;
+  margin: 0;
+}
+main #article-container #article-wrapper .article pre code {
+  padding: var(--default-font-size);
+  font-family: Consolas, Menlo, Monaco, source-code-pro, 'Courier New',
+    monospace;
+  border-radius: var(--small-radius);
+  margin: var(--small-space) 0;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+}
+main #article-container #article-wrapper .article pre code::-webkit-scrollbar {
+  display: none;
+}
