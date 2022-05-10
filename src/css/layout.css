@@ -8,11 +8,16 @@
 
 #main-container {
   flex: 1;
-  padding: 0 var(--default-space);
 }
 
 #main-container main {
-  display: flex;
-
   padding: var(--default-space) 0;
+}
+#main-container main #article-container {
+  display: flex;
+}
+#main-container main #article-container #article-wrapper {
+  flex: 1;
+  word-break: break-word;
+  padding: 0 var(--default-space);
 }
