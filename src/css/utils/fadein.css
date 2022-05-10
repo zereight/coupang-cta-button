@@ -1,0 +1,53 @@
+.fade-in-box-1 {
+  animation: fadein 0.75s;
+  -moz-animation: fadein 0.75s;
+  -webkit-animation: fadein 0.75s;
+  -o-animation: fadein 0.75s;
+}
+.fade-in-box-2 {
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
+}
+.fade-in-box-3 {
+  animation: fadein 1.25s;
+  -moz-animation: fadein 1.25s;
+  -webkit-animation: fadein 1.25s;
+  -o-animation: fadein 1.25s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
