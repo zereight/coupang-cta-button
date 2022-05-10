@@ -38,7 +38,9 @@ main .title-wrapper .category a {
 main .title-wrapper .category a .uil-bookmark {
   margin-right: var(--x-small-space);
 }
-main .title-wrapper .title h1 a:hover,
-main .title-wrapper .category a:hover {
+main .title-wrapper .title h1 a:hover {
   color: var(--primary-color);
+}
+main .title-wrapper .category a:hover {
+  color: var(--secondary-color);
 }
