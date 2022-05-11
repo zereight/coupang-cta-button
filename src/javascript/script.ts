@@ -127,7 +127,7 @@ window.onload = () => {
     const tocWrapper = document.querySelector('.toc-wrapper');
     if (!tocWrapper) return;
 
-    let minLevel: number = Infinity;
+    let minLevel: number = 5;
     let prefixNums = [0, 0, 0];
     const tocList = Array.from(articleHeadTags)
       .map((node) => {
@@ -138,7 +138,7 @@ window.onload = () => {
       .map(({ node, level, text }) => {
         prefixNums = prefixNums.map((num, idx) => {
           if (idx < level - 1) {
-            return num;
+            return num === 0 ? 1 : num;
           } else if (idx === level - 1) {
             return num + 1;
           } else {
@@ -146,10 +146,12 @@ window.onload = () => {
           }
         });
 
-        const textPrefix = prefixNums.reduce((result: string, num: number) => {
-          if (num === 0) return result;
-          return `${result}${result ? '.' : ''}${num}`;
-        }, '');
+        const textPrefix = prefixNums
+          .slice(minLevel - 1, prefixNums.length + 1)
+          .reduce((result: string, num: number) => {
+            if (!num) return result;
+            return `${result}${result ? '.' : ''}${num}`;
+          }, '');
         return {
           node,
           text: `${textPrefix}. ${text}`,
@@ -166,6 +168,8 @@ window.onload = () => {
         if (!!node) {
           // @ts-ignore
           node.id = text;
+          node.classList.add('head');
+          node.innerHTML = text;
         }
 
         tocWrapper.appendChild(tag);

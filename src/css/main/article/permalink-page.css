@@ -129,6 +129,15 @@ main #article-container #article-wrapper .article h3 {
   margin: var(--default-space) 0;
   font-weight: bold;
 }
+main #article-container #article-wrapper .article h1 {
+  font-size: 36px;
+}
+main #article-container #article-wrapper .article h2 {
+  font-size: 30px;
+}
+main #article-container #article-wrapper .article h3 {
+  font-size: 24px;
+}
 
 main #article-container #article-wrapper .article pre {
   padding: 0;
