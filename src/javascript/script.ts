@@ -108,15 +108,72 @@ window.onload = () => {
       const tocContainer: HTMLDivElement = document.querySelector(
         '#toc-container'
       ) as HTMLDivElement;
-      tocContainer.style.width = '200px';
       const tocWrapper: HTMLDivElement = document.querySelector(
         '#toc-container .toc-wrapper'
       ) as HTMLDivElement;
-      tocContainer.style.width = '200px';
+      tocContainer.style.width = '240px';
       tocWrapper.style.display = 'inline-block';
     }
   };
   funcWrapper(showToc)();
+
+  const makeToc = () => {
+    if (!document.querySelector('.article')) return;
+
+    const articleHeadTags = document.querySelectorAll(
+      '.article h1, .article h2, .article h3'
+    ) as NodeListOf<Element>;
+
+    const tocWrapper = document.querySelector('.toc-wrapper');
+    if (!tocWrapper) return;
+
+    let minLevel: number = Infinity;
+    let prefixNums = [0, 0, 0];
+    const tocList = Array.from(articleHeadTags)
+      .map((node) => {
+        const level = Number(node.nodeName.charAt(1));
+        minLevel = minLevel > level ? level : minLevel;
+        return { node, level, text: node.textContent };
+      })
+      .map(({ node, level, text }) => {
+        prefixNums = prefixNums.map((num, idx) => {
+          if (idx < level - 1) {
+            return num;
+          } else if (idx === level - 1) {
+            return num + 1;
+          } else {
+            return 0;
+          }
+        });
+
+        const textPrefix = prefixNums.reduce((result: string, num: number) => {
+          if (num === 0) return result;
+          return `${result}${result ? '.' : ''}${num}`;
+        }, '');
+        return {
+          node,
+          text,
+          fulltext: `${textPrefix}. ${text}`,
+          depth: textPrefix.split('.').length,
+        };
+      })
+      .map(({ node, text, fulltext, depth }) => {
+        const tag = document.createElement('a');
+        tag.classList.add('toc');
+        tag.classList.add(`toc${depth}`);
+        tag.innerText = fulltext;
+        tag.href = `#${text}`;
+
+        if (!!node) {
+          // @ts-ignore
+          node.id = text;
+        }
+
+        tocWrapper.appendChild(tag);
+        return tag;
+      });
+  };
+  funcWrapper(makeToc)();
 
   // blog menu
   const blogHomeMenu = document.querySelector(
@@ -151,6 +208,7 @@ window.onload = () => {
       '%3F'
     )).replace(new RegExp('#', 'g'), '%23'));
   };
+
   // Search
   const searchInput = document.querySelector('#search') as HTMLInputElement;
   const search = (event: KeyboardEvent) => {

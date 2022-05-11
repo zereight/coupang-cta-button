@@ -18,3 +18,22 @@
 #toc-container .toc-wrapper::-webkit-scrollbar {
   display: none;
 }
+#toc-container .toc-wrapper a.toc {
+  display: block;
+  margin-bottom: var(--small-space);
+  color: var(--text-sub-color);
+  font-size: var(--small-font-size);
+  line-height: 1.7;
+}
+#toc-container .toc-wrapper a.toc:hover {
+  color: var(--primary-color);
+}
+#toc-container .toc-wrapper a.toc:last-child {
+  margin-bottom: 0;
+}
+#toc-container .toc-wrapper a.toc2 {
+  margin-left: var(--x-small-space);
+}
+#toc-container .toc-wrapper a.toc3 {
+  margin-left: calc(var(--x-small-space) + var(--x-small-space));
+}
