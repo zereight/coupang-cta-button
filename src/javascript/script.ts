@@ -152,16 +152,15 @@ window.onload = () => {
         }, '');
         return {
           node,
-          text,
-          fulltext: `${textPrefix}. ${text}`,
+          text: `${textPrefix}. ${text}`,
           depth: textPrefix.split('.').length,
         };
       })
-      .map(({ node, text, fulltext, depth }) => {
+      .map(({ node, text, depth }) => {
         const tag = document.createElement('a');
         tag.classList.add('toc');
         tag.classList.add(`toc${depth}`);
-        tag.innerText = fulltext;
+        tag.innerText = text;
         tag.href = `#${text}`;
 
         if (!!node) {
