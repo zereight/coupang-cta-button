@@ -1,0 +1,22 @@
+.reply-item .content .name a {
+  color: var(--text-reverse-sub-color);
+}
+.reply-item .content .name a:hover {
+  color: var(--primary-color);
+}
+.reply-item .content .desc {
+  color: var(--text-reverse-color);
+}
+.reply-item .content .control-group {
+  color: var(--text-reverse-sub-color);
+}
+.reply-item .content .control-group .address,
+.reply-item .content .control-group .modify,
+.reply-item .content .control-group .write {
+  color: var(--text-reverse-sub-color);
+}
+.reply-item .content .control-group .address:hover,
+.reply-item .content .control-group .modify:hover,
+.reply-item .content .control-group .write:hover {
+  color: var(--primary-color);
+}

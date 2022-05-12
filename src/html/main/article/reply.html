@@ -4,11 +4,8 @@
       <s_rp_container>
         <ul class="reply-parent-wrapper">
           <s_rp_rep>
-            <li
-              id="[##_rp_rep_id_##]"
-              class="reply-patent-li [##_rp_rep_class_##]"
-            >
-              <div class="reply-item">
+            <li id="[##_rp_rep_id_##]" class="reply-patent-li">
+              <div class="reply-item [##_rp_rep_class_##]">
                 <div class="img-wrapper">
                   <img src="[##_rp_rep_logo_##]" alt="reply profile image" />
                 </div>
@@ -23,15 +20,15 @@
                     >
                       <span>Reply to</span>
                     </a>
-                    <a href="[##_rp_rep_link_##]" class="address">
-                      <span>URL Copy</span>
-                    </a>
                     <a
                       href="#"
                       onclick="[##_rp_rep_onclick_delete_##]"
                       class="modify"
                     >
                       <span>Edit/Delete</span>
+                    </a>
+                    <a href="[##_rp_rep_link_##]" class="address">
+                      <span>Address</span>
                     </a>
                     <span class="date">[##_rp_rep_date_##]</span>
                   </div>
@@ -41,24 +38,30 @@
                 <ul class="reply-child-wrapper">
                   <s_rp2_rep>
                     <li id="[##_rp_rep_id_##]">
-                      <div class="[##_rp_rep_class_##]">
-                        <span class="image">[##_rp_rep_logo_##]</span>
-                        <span class="name">[##_rp_rep_name_##]</span>
-                        <span class="date"> [##_rp_rep_date_##]</span>
-                        <span class="control">
-                          <a href="[##_rp_rep_link_##]" class="address"
-                            >&nbsp;
-                            <span>댓글주소</span>
-                          </a>
-                          <a
-                            href="#"
-                            onclick="[##_rp_rep_onclick_delete_##]"
-                            class="modify"
-                            >&nbsp;
-                            <span>수정/삭제</span>
-                          </a>
-                        </span>
-                        <p>[##_rp_rep_desc_##]</p>
+                      <div class="reply-item [##_rp_rep_class_##]">
+                        <div class="img-wrapper">
+                          <img
+                            src="[##_rp_rep_logo_##]"
+                            alt="reply profile image"
+                          />
+                        </div>
+                        <div class="content">
+                          <p class="name">[##_rp_rep_name_##]</p>
+                          <p class="desc">[##_rp_rep_desc_##]</p>
+                          <div class="control-group">
+                            <a
+                              href="#"
+                              onclick="[##_rp_rep_onclick_delete_##]"
+                              class="modify"
+                            >
+                              <span>Edit/Delete</span>
+                            </a>
+                            <a href="[##_rp_rep_link_##]" class="address">
+                              <span>Address</span>
+                            </a>
+                            <span class="date">[##_rp_rep_date_##]</span>
+                          </div>
+                        </div>
                       </div>
                     </li>
                   </s_rp2_rep>
