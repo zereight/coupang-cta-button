@@ -1,0 +1,35 @@
+/* Guestbook write form */
+#guestbook-container .guestbook-form .form-item label {
+  color: var(--text-reverse-sub-color);
+}
+#guestbook-container .guestbook-form .form-item input,
+.guestbook-form #inputCaptcha {
+  color: var(--text-reverse-color);
+  background-color: var(--dark-gray-color);
+}
+#guestbook-container .guestbook-form textarea {
+  color: var(--text-reverse-color);
+  background-color: var(--dark-gray-color);
+}
+
+/* Guestbook list */
+.guestbook-parent-wrapper .guestbook-patent-li {
+  border-bottom: 1px dashed var(--dark-gray-color);
+}
+.guestbook-item .content .name,
+.guestbook-item .content .name a {
+  color: var(--text-reverse-sub-color);
+}
+.guestbook-item .content .name a:hover {
+  color: var(--primary-color);
+}
+.guestbook-item .content .desc {
+  color: var(--text-reverse-color);
+}
+.guestbook-item .content .control-group {
+  color: var(--text-reverse-sub-color);
+}
+.guestbook-item .content .control-group .modify,
+.guestbook-item .content .control-group .write {
+  color: var(--text-reverse-sub-color);
+}
