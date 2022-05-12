@@ -53,6 +53,26 @@ const copyArticleUrl = (url: string) => {
   showAlert('복사했습니다!');
 };
 
+const headerIntersectionObserver = new IntersectionObserver((entries) => {
+  // scroll top button
+  const scrollTopButton = document.querySelector(
+    '#scroll-top-button'
+  ) as HTMLButtonElement;
+
+  // float theme button
+  const floatThemeButton = document.querySelector(
+    '#float-theme-button'
+  ) as HTMLButtonElement;
+
+  if (entries[0].intersectionRatio === 0) {
+    scrollTopButton.style.bottom = '100px';
+    floatThemeButton.style.bottom = '180px';
+  } else {
+    scrollTopButton.style.bottom = '-500px';
+    floatThemeButton.style.bottom = '-500px';
+  }
+});
+
 window.onload = () => {
   const body: HTMLBodyElement = document.querySelector(
     'body'
@@ -62,17 +82,28 @@ window.onload = () => {
   const themeButton = document.querySelector(
     '#theme-button'
   ) as HTMLButtonElement;
+  const floatThemeButton = document.querySelector(
+    '#float-theme-button'
+  ) as HTMLButtonElement;
   const sunIcon = document.querySelector(
     '#theme-button .uil-sun'
   ) as HTMLElement;
   const moonIcon = document.querySelector(
     '#theme-button .uil-moon'
   ) as HTMLElement;
+  const floatSunIcon = document.querySelector(
+    '#float-theme-button .uil-sun'
+  ) as HTMLElement;
+  const floatMoonIcon = document.querySelector(
+    '#float-theme-button .uil-moon'
+  ) as HTMLElement;
   const initThemeIcon = (): void => {
     const isDarkTheme = localStorage.getItem('theme') === 'dark';
     if (isDarkTheme) {
       sunIcon.style.display = 'block';
+      floatSunIcon.style.display = 'block';
       moonIcon.style.display = 'none';
+      floatMoonIcon.style.display = 'none';
     }
   };
   funcWrapper(initThemeIcon)();
@@ -80,17 +111,39 @@ window.onload = () => {
     const isDarkTheme = body.classList.contains('dark-theme');
     if (isDarkTheme) {
       sunIcon.style.display = 'none';
+      floatSunIcon.style.display = 'none';
       moonIcon.style.display = 'block';
+      floatMoonIcon.style.display = 'block';
       body.classList.remove('dark-theme');
       localStorage.removeItem('theme');
     } else {
       sunIcon.style.display = 'block';
+      floatSunIcon.style.display = 'block';
       moonIcon.style.display = 'none';
+      floatMoonIcon.style.display = 'none';
       body.classList.add('dark-theme');
       localStorage.setItem('theme', 'dark');
     }
   };
   themeButton.addEventListener('click', funcWrapper(toggleTheme));
+  floatThemeButton.addEventListener('click', funcWrapper(toggleTheme));
+
+  // scroll top button
+  const header = document.querySelector('header');
+  if (header) {
+    headerIntersectionObserver.observe(header);
+  }
+  const scrollTopButton = document.querySelector(
+    '#scroll-top-button'
+  ) as HTMLButtonElement;
+  const onClickScrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+  scrollTopButton.addEventListener('click', funcWrapper(onClickScrollTop));
 
   // TOC
   const showToc = (): void => {
@@ -170,6 +223,10 @@ window.onload = () => {
           node.id = text;
           node.classList.add('head');
           node.innerHTML = text;
+          node.addEventListener(
+            'click',
+            funcWrapper(() => (window.location.href = `#${text}`))
+          );
         }
 
         tocWrapper.appendChild(tag);

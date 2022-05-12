@@ -1,0 +1,10 @@
+#scroll-top-button,
+#float-theme-button {
+  background-color: var(--dark-gray-color);
+  color: var(--text-reverse-color);
+}
+#scroll-top-button:hover,
+#float-theme-button:hover {
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+}

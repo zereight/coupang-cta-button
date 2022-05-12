@@ -128,6 +128,7 @@ main #article-container #article-wrapper .article h2,
 main #article-container #article-wrapper .article h3 {
   margin: var(--default-space) 0;
   font-weight: bold;
+  transition: color 0.1s ease-in-out;
 }
 main #article-container #article-wrapper .article h1 {
   font-size: 36px;
@@ -137,6 +138,12 @@ main #article-container #article-wrapper .article h2 {
 }
 main #article-container #article-wrapper .article h3 {
   font-size: 24px;
+}
+main #article-container #article-wrapper .article h1:hover,
+main #article-container #article-wrapper .article h2:hover,
+main #article-container #article-wrapper .article h3:hover {
+  cursor: pointer;
+  color: var(--primary-color);
 }
 
 main #article-container #article-wrapper .article pre {
