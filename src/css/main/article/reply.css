@@ -1,0 +1,77 @@
+.reply-container {
+  display: flex;
+  flex-direction: column;
+}
+.reply-container .reply-list {
+}
+
+.reply-container .reply-list .reply-parent-wrapper {
+}
+.reply-parent-wrapper .reply-patent-li {
+  display: flex;
+  flex-direction: column;
+}
+.reply-parent-wrapper .reply-patent-li .reply-item {
+  display: flex;
+  padding: var(--default-space) 0;
+  margin-bottom: var(--default-space);
+}
+.reply-parent-wrapper .reply-item .img-wrapper {
+  margin-right: var(--default-space);
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.reply-parent-wrapper .reply-item .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.reply-parent-wrapper .reply-item .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.reply-item .content .name a {
+  display: block;
+  color: var(--text-sub-color);
+  font-size: var(--small-font-size);
+  transition: color 0.1s ease-in-out;
+  margin-bottom: var(--default-space);
+}
+.reply-item .content .name a:hover {
+  color: var(--primary-color);
+}
+.reply-item .content .desc {
+  color: var(--text-color);
+  margin-bottom: var(--default-space);
+}
+.reply-item .content .control-group {
+  color: var(--text-sub-color);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.reply-item .content .control-group .address,
+.reply-item .content .control-group .modify,
+.reply-item .content .control-group .write {
+  margin-right: var(--small-space);
+  color: var(--text-sub-color);
+  transition: color 0.1s ease-in-out;
+}
+.reply-item .content .control-group .address:hover,
+.reply-item .content .control-group .modify:hover,
+.reply-item .content .control-group .write:hover {
+  color: var(--primary-color);
+}
+
+.reply-container .reply-list .reply-child-wrapper {
+}
+.reply-parent-wrapper ul .reply-child-li {
+}
