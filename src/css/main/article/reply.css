@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Reply list */
 .reply-container .reply-list {
   margin-top: var(--large-space);
 }
@@ -36,6 +38,7 @@
   display: flex;
   flex-direction: column;
 }
+.reply-item .content .name,
 .reply-item .content .name a {
   display: block;
   color: var(--text-sub-color);
@@ -79,4 +82,86 @@
 }
 .reply-container .reply-list .reply-child-wrapper {
   margin-left: var(--large-space);
+}
+
+/* Reply write */
+.reply-form {
+  margin-top: var(--large-space);
+}
+.reply-form .form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--default-space);
+}
+.reply-form .form-item:last-child {
+  margin-bottom: 0;
+}
+.reply-form .form-item label {
+  display: flex;
+  align-items: center;
+  color: var(--text-sub-color);
+  font-size: var(--small-font-size);
+  width: 150px;
+}
+.reply-form .form-item label i.uil {
+  margin-right: var(--x-small-space);
+}
+.reply-form .form-item input {
+  margin: 0;
+  padding: var(--small-space);
+  border: none;
+  border-radius: var(--small-radius);
+  color: var(--text-color);
+  background-color: var(--light-gray-color);
+  width: 250px;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in-out;
+}
+.reply-form .form-item input:focus {
+  flex: 1;
+  outline: none;
+}
+.reply-form .secret-item {
+  display: flex;
+  align-items: center;
+}
+.reply-form .secret-item label {
+  display: flex;
+  align-items: center;
+  color: var(--text-sub-color);
+  font-size: var(--small-font-size);
+}
+.reply-form .secret-item label i.uil {
+  margin-right: var(--x-small-space);
+}
+.reply-form .secret-item label {
+  margin-right: var(--small-space);
+}
+.reply-form textarea {
+  margin-top: var(--default-space);
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--small-space);
+  color: var(--text-color);
+  background-color: var(--light-gray-color);
+  border: none;
+  height: 150px;
+  transition: height 0.1s ease-in-out;
+  border-radius: var(--default-radius);
+}
+.reply-form textarea:focus {
+  outline: none;
+}
+.reply-form .reply-submit-button {
+  padding: var(--small-space) var(--default-space);
+  margin: var(--default-space) 0 0 0;
+  border: none;
+  color: var(--text-hover-color);
+  background-color: var(--primary-color);
+  transition: background-color 0.1s ease-in-out;
+  border-radius: var(--small-radius);
+}
+.reply-form .reply-submit-button:hover {
+  cursor: pointer;
+  background-color: var(--primary-hover-color);
 }
