@@ -143,6 +143,10 @@ main #article-container #article-wrapper .article pre {
   padding: 0;
   margin: 0;
   white-space: pre;
+  transition: all 0.1s ease-in-out;
+}
+main #article-container #article-wrapper .article pre:hover {
+  margin-right: -240px;
 }
 main #article-container #article-wrapper .article pre code {
   padding: var(--default-font-size);
@@ -150,11 +154,6 @@ main #article-container #article-wrapper .article pre code {
     monospace;
   border-radius: var(--small-radius);
   margin: var(--small-space) 0;
-  overflow-x: scroll;
-  -ms-overflow-style: none;
-}
-main #article-container #article-wrapper .article pre code::-webkit-scrollbar {
-  display: none;
 }
 main #article-container #article-wrapper .article strong,
 main #article-container #article-wrapper .article b {
@@ -202,6 +201,7 @@ main #article-container #article-wrapper .article figure a .og-host:hover {
 
 main #article-container #article-wrapper .article figure.imageblock {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -216,4 +216,7 @@ main #article-container #article-wrapper .article figure.imageblock span {
 main #article-container #article-wrapper .article figure.imageblock img {
   display: block;
   width: 100%;
+}
+main #article-container #article-wrapper .article figure.imageblock figcaption {
+  color: var(--text-sub-color);
 }

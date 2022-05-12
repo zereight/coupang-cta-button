@@ -35,3 +35,7 @@ main #article-container #article-wrapper .article figure a .og-host {
 main #article-container #article-wrapper .article figure a .og-host:hover {
   color: var(--primary-hover-color);
 }
+
+main #article-container #article-wrapper .article figure.imageblock figcaption {
+  color: var(--text-reverse-sub-color);
+}
