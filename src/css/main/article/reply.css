@@ -148,6 +148,7 @@
   height: 150px;
   transition: height 0.1s ease-in-out;
   border-radius: var(--default-radius);
+  line-height: 1.7;
 }
 .reply-form textarea:focus {
   outline: none;

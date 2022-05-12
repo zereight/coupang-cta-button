@@ -26,7 +26,8 @@
 .reply-form .form-item label {
   color: var(--text-reverse-sub-color);
 }
-.reply-form .form-item input {
+.reply-form .form-item input,
+.reply-form #inputCaptcha {
   color: var(--text-reverse-color);
   background-color: var(--dark-gray-color);
 }
