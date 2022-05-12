@@ -18,7 +18,25 @@
   font-size: var(--default-font-size);
   transition: 0.1s bottom ease-in-out;
 }
-
+.container_postbtn .btn_subscription {
+  position: fixed;
+  right: 100px;
+  bottom: -500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 100% !important;
+  border: none !important;
+  padding: 0;
+  margin: 0;
+  z-index: 99;
+  background-color: var(--light-gray-color) !important;
+  color: var(--text-color) !important;
+  font-size: var(--default-font-size) !important;
+  transition: 0.1s bottom ease-in-out;
+}
 #scroll-top-button:hover,
 #float-theme-button:hover {
   cursor: pointer;
@@ -28,4 +46,9 @@
 
 #float-theme-button .uil-sun {
   display: none;
+}
+
+.container_postbtn .btn_subscription:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--text-hover-color) !important;
 }
