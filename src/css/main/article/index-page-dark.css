@@ -10,3 +10,18 @@
 #article-container #article-wrapper .article-info a.title:hover {
   color: var(--primary-color);
 }
+
+#article-container #article-wrapper .button-group .article-view-button,
+#article-container #article-wrapper .button-group .article-clipboard-button {
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+  box-shadow: 3px 3px 5px var(--dark-gray-color);
+}
+#article-container #article-wrapper .button-group .article-view-button:hover,
+#article-container
+  #article-wrapper
+  .button-group
+  .article-clipboard-button:hover {
+  background-color: var(--primary-hover-color);
+  color: var(--text-hover-color);
+}

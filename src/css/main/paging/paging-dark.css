@@ -17,11 +17,9 @@
 #paging .numbox a.num span {
   color: var(--text-reverse-color);
 }
-#paging .numbox a.num span.selected {
-  background-color: var(--primary-color);
-  color: var(--text-hover-color);
-}
+#paging .numbox a.num span.selected,
 #paging .numbox a.num:hover span {
   background-color: var(--primary-color);
   color: var(--text-hover-color);
+  box-shadow: none;
 }

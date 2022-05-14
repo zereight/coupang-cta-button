@@ -46,17 +46,20 @@
   height: 100%;
   color: var(--text-color);
   border-radius: var(--default-radius);
+  transition: all 0.1s ease-in-out;
 }
 #paging .numbox a.num span.selected {
-  background-color: var(--primary-color);
-  color: var(--text-hover-color);
+  background-color: var(--primary-light-color);
+  color: var(--primary-color);
+  box-shadow: 3px 3px 5px var(--light-gray-color);
 }
 #paging .numbox a.num:last-child {
   margin-right: 0;
 }
 #paging .numbox a.num:hover span {
-  background-color: var(--primary-color);
-  color: var(--text-hover-color);
+  background-color: var(--primary-light-color);
+  color: var(--primary-color);
+  box-shadow: 3px 3px 5px var(--light-gray-color);
 }
 #paging .numbox a.num:hover span.selected {
   cursor: not-allowed;
