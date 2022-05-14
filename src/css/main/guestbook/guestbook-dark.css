@@ -11,6 +11,9 @@
   color: var(--text-reverse-color);
   background-color: var(--dark-gray-color);
 }
+#guestbook-container .guestbook-form .guestbook-submit-button {
+  box-shadow: none;
+}
 
 /* Guestbook list */
 .guestbook-parent-wrapper .guestbook-patent-li {

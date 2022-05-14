@@ -38,3 +38,6 @@
   color: var(--text-reverse-color);
   background-color: var(--dark-gray-color);
 }
+.reply-form .reply-submit-button {
+  box-shadow: none;
+}

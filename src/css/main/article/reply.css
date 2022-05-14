@@ -161,6 +161,7 @@
   background-color: var(--primary-color);
   transition: background-color 0.1s ease-in-out;
   border-radius: var(--small-radius);
+  box-shadow: 3px 3px 5px var(--light-gray-color);
 }
 .reply-form .reply-submit-button:hover {
   cursor: pointer;
