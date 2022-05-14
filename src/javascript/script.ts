@@ -304,4 +304,37 @@ window.onload = () => {
     window.open('/manage', '_blank');
   };
   adminButton.addEventListener('click', funcWrapper(moveAdminPage));
+
+  // counter
+  const calcVisitCounter = () => {
+    const todayCounter = document.querySelector(
+      '#counter .today .value'
+    ) as HTMLSpanElement;
+    const yesterdayCounter = document.querySelector(
+      '#counter .yesterday .value'
+    ) as HTMLSpanElement;
+    const diff =
+      Number(todayCounter.innerText || 0) -
+      Number(yesterdayCounter.innerText || 0);
+    if (diff > 0) {
+      const totalIncreaseValue = document.querySelector(
+        '#counter .total .increase .value'
+      ) as HTMLSpanElement;
+      totalIncreaseValue.innerText = '' + diff;
+      const totalIncrease = document.querySelector(
+        '#counter .total .increase'
+      ) as HTMLSpanElement;
+      totalIncrease.style.display = 'flex';
+    } else if (diff < 0) {
+      const totalDecreaseValue = document.querySelector(
+        '#counter .total .decrease .value'
+      ) as HTMLSpanElement;
+      totalDecreaseValue.innerText = '' + diff;
+      const totalDecrease = document.querySelector(
+        '#counter .total .decrease'
+      ) as HTMLSpanElement;
+      totalDecrease.style.display = 'flex';
+    }
+  };
+  funcWrapper(calcVisitCounter)();
 };

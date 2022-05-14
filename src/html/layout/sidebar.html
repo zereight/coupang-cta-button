@@ -6,7 +6,7 @@
   <s_sidebar>
     <!-- 오른쪽 사이드바 -->
     <s_sidebar_element>
-      <!-- Profile -->
+      <!-- 프로필 -->
       <section id="profile">
         <div class="image-wrapper">
           <img src="[##_image_##]" alt="profile image" />
@@ -17,7 +17,7 @@
     </s_sidebar_element>
 
     <s_sidebar_element>
-      <!-- Blog Menu -->
+      <!-- 블로그 메뉴 -->
       <section id="blog-menu">
         <ul>
           <li>
@@ -49,13 +49,175 @@
     </s_sidebar_element>
 
     <s_sidebar_element>
-      <!-- Category -->
+      <!-- 카테고리 -->
       <section id="category">
         <h6 class="section-title">
           <i class="uil uil-list-ul"></i>
           <span>Category</span>
         </h6>
         [##_category_list_##]
+      </section>
+    </s_sidebar_element>
+
+    <s_sidebar_element>
+      <!-- 공지사항 -->
+      <s_rct_notice>
+        <section id="notice">
+          <h6 class="section-title">
+            <i class="uil uil-bell"></i>
+            <span>Notice</span>
+          </h6>
+          <ul>
+            <s_rct_notice_rep>
+              <li>
+                <a href="[##_notice_rep_link_##]">
+                  <i class="uil uil-asterisk"></i>
+                  <span>[##_notice_rep_title_##]</span>
+                </a>
+              </li>
+            </s_rct_notice_rep>
+          </ul>
+        </section>
+      </s_rct_notice>
+    </s_sidebar_element>
+
+    <s_sidebar_element>
+      <!-- 최근 발행된 글 -->
+      <section class="sidebar-articles">
+        <h6 class="section-title">
+          <i class="uil uil-document-layout-left"></i>
+          <span>Recently Published Articles</span>
+        </h6>
+        <ul>
+          <s_rctps_rep>
+            <li>
+              <div class="image-wrapper">
+                <s_rctps_rep_thumbnail>
+                  <img src="[##_rctps_rep_thumbnail_##]" />
+                </s_rctps_rep_thumbnail>
+              </div>
+              <div class="desc">
+                <div class="title">
+                  <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                  <span class="cnt">[##_rctps_rep_rp_cnt_##]</span>
+                </div>
+                <a class="category" href="[##_rctps_rep_category_link_##]">
+                  <i class="uil uil-bookmark"></i>
+                  <span>[##_rctps_rep_category_##]</span>
+                </a>
+              </div>
+            </li>
+          </s_rctps_rep>
+        </ul>
+      </section>
+    </s_sidebar_element>
+
+    <s_sidebar_element>
+      <!-- 인기 글 -->
+      <section class="sidebar-articles">
+        <h6 class="section-title">
+          <i class="uil uil-fire"></i>
+          <span>Popular Articles</span>
+        </h6>
+        <ul>
+          <s_rctps_popular_rep>
+            <li>
+              <div class="image-wrapper">
+                <s_rctps_rep_thumbnail>
+                  <img src="[##_rctps_rep_thumbnail_##]" />
+                </s_rctps_rep_thumbnail>
+              </div>
+              <div class="desc">
+                <div class="title">
+                  <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                  <span class="cnt">[##_rctps_rep_rp_cnt_##]</span>
+                </div>
+                <a class="category" href="[##_rctps_rep_category_link_##]">
+                  <i class="uil uil-bookmark"></i>
+                  <span>[##_rctps_rep_category_##]</span>
+                </a>
+              </div>
+            </li>
+          </s_rctps_popular_rep>
+        </ul>
+      </section>
+    </s_sidebar_element>
+
+    <s_sidebar_element>
+      <!-- 최근 댓글 -->
+      <section id="recent-comments">
+        <h6 class="section-title">
+          <i class="uil uil-comment-heart"></i>
+          <span>Recent Comments</span>
+        </h6>
+        <ul>
+          <s_rctrp_rep>
+            <li>
+              <div class="user-info">
+                <span class="name">
+                  <i class="uil uil-user"></i>
+                  <span>[##_rctrp_rep_name_##]</span>
+                </span>
+                <span class="date">
+                  <i class="uil uil-calender"></i>
+                  <span>[##_rctrp_rep_time_##]</span>
+                </span>
+              </div>
+              <a href="[##_rctrp_rep_link_##]">[##_rctrp_rep_desc_##]</a>
+            </li>
+          </s_rctrp_rep>
+        </ul>
+      </section>
+    </s_sidebar_element>
+
+    <s_sidebar_element>
+      <!-- 태그 클라우드 -->
+      <section id="tag">
+        <h6 class="section-title">
+          <i class="uil uil-tag-alt"></i>
+          <span>Tag Cloud</span>
+        </h6>
+        <ul>
+          <s_random_tags>
+            <li>
+              <a href="[##_tag_link_##]" class="[##_tag_class_##]">
+                [##_tag_name_##]
+              </a>
+            </li>
+          </s_random_tags>
+        </ul>
+      </section>
+    </s_sidebar_element>
+
+    <s_sidebar_element>
+      <!-- 방문자수 -->
+      <section id="counter">
+        <h6 class="section-title">
+          <i class="uil uil-tag-alt"></i>
+          <span>Counter</span>
+        </h6>
+        <div class="counter-wrapper">
+          <div class="today">
+            <span class="head">Today</span>
+            <span class="value">[##_count_today_##]</span>
+          </div>
+          <div class="yesterday">
+            <span class="head">Yesterday</span>
+            <span class="value">[##_count_yesterday_##]</span>
+          </div>
+          <div class="total">
+            <span class="head">Total</span>
+            <span>[##_count_total_##]</span>
+            <span class="increase">
+              <i class="uil uil-angle-double-up"></i>
+              <span class="value"></span>
+            </span>
+            <span class="decrease">
+              <i class="uil uil-angle-double-down"></i>
+              <span class="value"></span>
+            </span>
+          </div>
+        </div>
       </section>
     </s_sidebar_element>
   </s_sidebar>
