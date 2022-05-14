@@ -209,7 +209,7 @@
   margin-right: var(--x-small-space);
 }
 
-/**/
+/* recent comment */
 #recent-comments ul {
   display: flex;
   flex-direction: column;
