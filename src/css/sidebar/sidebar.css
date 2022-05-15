@@ -338,15 +338,15 @@
   font-weight: bold;
   margin-right: var(--x-small-space);
 }
-#counter .counter-wrapper .total .increase,
-#counter .counter-wrapper .total .decrease {
+#counter .counter-wrapper .today .increase,
+#counter .counter-wrapper .today .decrease {
   display: none;
   align-items: center;
   font-size: var(--small-font-size);
 }
-#counter .counter-wrapper .total .increase {
+#counter .counter-wrapper .today .increase {
   color: #f03e3e;
 }
-#counter .counter-wrapper .total .decrease {
+#counter .counter-wrapper .today .decrease {
   color: #1c7ed6;
 }

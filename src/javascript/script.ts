@@ -317,23 +317,23 @@ window.onload = () => {
       Number(todayCounter.innerText || 0) -
       Number(yesterdayCounter.innerText || 0);
     if (diff > 0) {
-      const totalIncreaseValue = document.querySelector(
-        '#counter .total .increase .value'
+      const todayIncreaseValue = document.querySelector(
+        '#counter .today .increase .value'
       ) as HTMLSpanElement;
-      totalIncreaseValue.innerText = '' + diff;
-      const totalIncrease = document.querySelector(
-        '#counter .total .increase'
+      todayIncreaseValue.innerText = '' + diff;
+      const todayIncrease = document.querySelector(
+        '#counter .today .increase'
       ) as HTMLSpanElement;
-      totalIncrease.style.display = 'flex';
+      todayIncrease.style.display = 'flex';
     } else if (diff < 0) {
-      const totalDecreaseValue = document.querySelector(
-        '#counter .total .decrease .value'
+      const todayDecreaseValue = document.querySelector(
+        '#counter .today .decrease .value'
       ) as HTMLSpanElement;
-      totalDecreaseValue.innerText = '' + diff;
-      const totalDecrease = document.querySelector(
-        '#counter .total .decrease'
+      todayDecreaseValue.innerText = '' + diff;
+      const todayDecrease = document.querySelector(
+        '#counter .today .decrease'
       ) as HTMLSpanElement;
-      totalDecrease.style.display = 'flex';
+      todayDecrease.style.display = 'flex';
     }
   };
   funcWrapper(calcVisitCounter)();
