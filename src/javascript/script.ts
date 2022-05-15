@@ -153,7 +153,7 @@ window.onload = () => {
 
   // TOC
   const showToc = (): void => {
-    if (['', '/'].includes(window?.location?.pathname ?? '/')) {
+    if (['', '/', '/notice'].includes(window?.location?.pathname ?? '/')) {
       return;
     }
     const curPathname: string = window.location.pathname.split('/')[1];
