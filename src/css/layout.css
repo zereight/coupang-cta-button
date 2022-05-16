@@ -28,14 +28,14 @@
   #root-container {
     max-width: var(--l-screen);
   }
+
+  #main-container main #article-container #article-wrapper {
+    padding: 0 var(--small-space) 0 var(--default-space);
+  }
 }
 
 @media screen and (max-width: 992px) {
   #root-container {
     max-width: var(--m-screen);
-  }
-
-  #main-container main #article-container #article-wrapper {
-    padding: 0 var(--small-space) 0 var(--x-small-space);
   }
 }

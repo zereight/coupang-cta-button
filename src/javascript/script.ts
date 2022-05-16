@@ -337,4 +337,21 @@ window.onload = () => {
     }
   };
   funcWrapper(calcVisitCounter)();
+
+  // sidebar toggle button
+  const sidebarOpenButton = document.querySelector(
+    '.sidebar-open-btn'
+  ) as HTMLButtonElement;
+  const sidebarCloseButton = document.querySelector(
+    '.sidebar-close-btn'
+  ) as HTMLButtonElement;
+  const sidebar = document.querySelector('#sidebar') as HTMLElement;
+  const openSideBar = () => {
+    sidebar.style.left = '0px';
+  };
+  const closeSideBar = () => {
+    sidebar.style.left = '-700px';
+  };
+  sidebarOpenButton.addEventListener('click', funcWrapper(openSideBar));
+  sidebarCloseButton.addEventListener('click', funcWrapper(closeSideBar));
 };

@@ -3,6 +3,10 @@
 }
 
 /* blog introduce */
+button.sidebar-open-btn .uil,
+#blog-intro > button.sidebar-close-btn .uil {
+  color: var(--text-reverse-color);
+}
 #blog-intro > a.blog-title {
   color: var(--text-reverse-color);
 }
