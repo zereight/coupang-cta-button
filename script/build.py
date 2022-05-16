@@ -111,7 +111,7 @@ def build_css(entry_point, css_files):
                 break
 
         code = ("\n" + " " * indent).join(list(map(
-            lambda c: '{} {}'.format('body.dark-theme', c) if is_dark_theme and len(c) >= 1 and c.strip()[-1] in ['{', ','] and 'body.dark-theme' not in c else c,
+            lambda c: '{} {}'.format('body.dark-theme', c.strip()) if is_dark_theme and len(c) >= 1 and c.strip()[-1] in ['{', ','] and 'body.dark-theme' not in c and "@media" not in c else c,
             code.split("\n")
         )))
         compiled_code = compiled_code.replace(replacer, code)
