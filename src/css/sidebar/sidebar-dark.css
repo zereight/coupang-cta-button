@@ -93,6 +93,12 @@ button.sidebar-open-btn .uil,
   color: var(--text-reverse-color);
 }
 
+@media screen and (max-width: 1200px) {
+  #blog-intro {
+    background-color: var(--background-reverse-color);
+  }
+}
+
 @media screen and (max-width: 992px) {
   #sidebar {
     border-right: 1px solid var(--dark-gray-color);

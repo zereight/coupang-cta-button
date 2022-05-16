@@ -392,6 +392,13 @@ button.sidebar-open-btn {
     border-right: 1px solid var(--light-gray-color);
     width: 400px;
   }
+  #blog-intro {
+    position: sticky;
+    top: -18px;
+    left: 0;
+    background-color: var(--background-color);
+    z-index: 101;
+  }
   button.sidebar-open-btn,
   #blog-intro > button.sidebar-close-btn {
     display: block;
