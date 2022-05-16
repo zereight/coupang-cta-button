@@ -1,3 +1,7 @@
+#sidebar {
+  background-color: var(--background-reverse-color);
+}
+
 /* blog introduce */
 #blog-intro > a.blog-title {
   color: var(--text-reverse-color);
@@ -83,4 +87,10 @@
 /* counter */
 #counter .counter-wrapper > div {
   color: var(--text-reverse-color);
+}
+
+@media screen and (max-width: 992px) {
+  #sidebar {
+    border-right: 1px solid var(--dark-gray-color);
+  }
 }

@@ -117,10 +117,7 @@
   box-shadow: 3px 3px 5px var(--light-gray-color);
 }
 #article-container #article-wrapper .button-group .article-view-button:hover,
-#article-container
-  #article-wrapper
-  .button-group
-  .article-clipboard-button:hover {
+#article-wrapper .button-group .article-clipboard-button:hover {
   background-color: var(--primary-color);
   color: var(--text-hover-color);
   cursor: pointer;

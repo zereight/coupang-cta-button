@@ -87,7 +87,8 @@ main #article-container #article-wrapper .article {
   line-height: 2.2;
   font-size: var(--default-font-size);
   color: var(--text-color);
-  width: calc(
+  width: 100%;
+  max-width: calc(
     var(--xxl-screen) - 340px - 240px - var(--default-space) -
       var(--default-space)
   );
@@ -226,4 +227,26 @@ main #article-container #article-wrapper .article figure.imageblock img {
 }
 main #article-container #article-wrapper .article figure.imageblock figcaption {
   color: var(--text-sub-color);
+}
+
+@media screen and (max-width: 1680px) {
+  main #article-container #article-wrapper .article {
+    max-width: calc(
+      100vw - 340px - 240px - var(--default-space) - var(--default-space)
+    );
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main #article-container #article-wrapper .article {
+    max-width: calc(
+      100vw - 240px - var(--default-space) - var(--default-space)
+    );
+  }
+}
+
+@media screen and (max-width: 992px) {
+  main #article-container #article-wrapper .article {
+    max-width: calc(100vw - 240px - var(--small-space) - var(--x-small-space));
+  }
 }

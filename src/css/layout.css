@@ -1,7 +1,8 @@
 #root-container {
   display: flex;
   flex-direction: row;
-  width: var(--xxl-screen);
+  width: 100%;
+  max-width: var(--xxl-screen);
   padding: 0;
   margin: 0 auto;
 }
@@ -21,4 +22,20 @@
   box-sizing: border-box;
   word-break: break-word;
   padding: 0 var(--default-space);
+}
+
+@media screen and (max-width: 1200px) {
+  #root-container {
+    max-width: var(--l-screen);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #root-container {
+    max-width: var(--m-screen);
+  }
+
+  #main-container main #article-container #article-wrapper {
+    padding: 0 var(--small-space) 0 var(--x-small-space);
+  }
 }
