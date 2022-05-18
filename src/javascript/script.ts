@@ -354,4 +354,17 @@ window.onload = () => {
   };
   sidebarOpenButton.addEventListener('click', funcWrapper(openSideBar));
   sidebarCloseButton.addEventListener('click', funcWrapper(closeSideBar));
+
+  // article tags
+  const makeNewTagHTML = () => {
+    const articleTagContainer = document.querySelector(
+      '.article-tag-container'
+    ) as HTMLDivElement;
+    if (!articleTagContainer) return;
+    articleTagContainer.innerHTML = articleTagContainer.innerHTML
+      .split(',')
+      .map((tagText) => tagText.trim())
+      .join('');
+  };
+  funcWrapper(makeNewTagHTML)();
 };
