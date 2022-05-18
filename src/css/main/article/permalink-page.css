@@ -216,6 +216,7 @@ main #article-container #article-wrapper .article figure.imageblock {
   width: 100%;
   margin: var(--small-space) 0;
   padding: 0;
+  border-radius: 0;
 }
 main #article-container #article-wrapper .article figure.imageblock span {
   display: block;
