@@ -101,7 +101,9 @@
   align-items: center;
   color: var(--text-sub-color);
   font-size: var(--small-font-size);
-  width: 150px;
+  width: 100%;
+  max-width: 150px;
+  min-width: 120px;
 }
 .reply-form .form-item label i.uil {
   margin-right: var(--x-small-space);
@@ -168,9 +170,34 @@
   background-color: var(--primary-hover-color);
 }
 
+#tt_captChaBottom {
+  display: block;
+  position: static;
+}
+#tt_captChaBottom .wrap_box_border {
+  display: none;
+}
+#innerBox {
+  margin-top: var(--small-space);
+  position: static !important;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: var(--small-space);
+  width: 100%;
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 576px) {
   .reply-item .content .control-group {
     flex-wrap: wrap;
     row-gap: var(--small-space);
+  }
+  .reply-form .form-item input {
+    max-width: 250px;
+    width: 100%;
+  }
+  .reply-form .form-item input:focus {
+    flex: none;
   }
 }

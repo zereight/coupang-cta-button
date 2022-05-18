@@ -31,7 +31,9 @@
   align-items: center;
   color: var(--text-sub-color);
   font-size: var(--small-font-size);
-  width: 150px;
+  width: 100%;
+  max-width: 150px;
+  min-width: 120px;
 }
 #guestbook-container .guestbook-form .form-item label i.uil {
   margin-right: var(--x-small-space);
@@ -166,5 +168,12 @@
   .guestbook-item .content .control-group {
     flex-wrap: wrap;
     row-gap: var(--small-space);
+  }
+  #guestbook-container .guestbook-form .form-item input {
+    max-width: 250px;
+    width: 100%;
+  }
+  #guestbook-container .guestbook-form .form-item input:focus {
+    flex: none;
   }
 }
