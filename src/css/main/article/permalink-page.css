@@ -247,6 +247,8 @@ main #article-container #article-wrapper .article figure.imageblock figcaption {
 
 @media screen and (max-width: 992px) {
   main #article-container #article-wrapper .article {
-    max-width: calc(100vw - 240px - var(--small-space) - var(--x-small-space));
+    max-width: calc(
+      100vw - var(--small-space) - var(--x-small-space) - var(--default-space)
+    );
   }
 }

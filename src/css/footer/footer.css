@@ -60,3 +60,35 @@ footer .right-container ul.about-me li a:hover,
 footer .right-container ul.contact li a:hover {
   color: var(--primary-color);
 }
+
+@media screen and (max-width: 768px) {
+  footer .left-container p.copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer .left-container p.copyright > span {
+    margin-right: 0;
+    margin-bottom: var(--small-space);
+    display: flex;
+    align-items: center;
+  }
+  footer .left-container p.copyright > span:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer .left-container p.copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer .left-container p.copyright > span {
+    margin-right: 0;
+    margin-bottom: var(--small-space);
+    display: flex;
+    align-items: center;
+  }
+  footer .left-container p.copyright > span:last-child {
+    margin-bottom: 0;
+  }
+}

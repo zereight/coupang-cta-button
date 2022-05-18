@@ -404,3 +404,10 @@ button.sidebar-open-btn {
     display: block;
   }
 }
+
+@media screen and (max-width: 576px) {
+  #sidebar {
+    border-right: none;
+    width: 100vw;
+  }
+}

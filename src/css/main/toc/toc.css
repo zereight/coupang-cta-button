@@ -38,3 +38,9 @@
 #toc-container .toc-wrapper a.toc3 {
   margin-left: calc(var(--x-small-space) + var(--x-small-space));
 }
+
+@media screen and (max-width: 992px) {
+  #toc-container {
+    display: none;
+  }
+}

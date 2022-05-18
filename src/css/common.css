@@ -8,11 +8,11 @@
   --xs-screen: 576px;
 
   /* font */
-  --x-small-font-size: 8px;
-  --small-font-size: 14px;
-  --default-font-size: 16px;
-  --large-font-size: 22px;
-  --x-large-font-size: 36px;
+  --x-small-font-size: 0.8rem;
+  --small-font-size: 0.9rem;
+  --default-font-size: 1rem;
+  --large-font-size: 1.25rem;
+  --x-large-font-size: 2rem;
 
   /* radius */
   --small-radius: 6px;
@@ -44,7 +44,7 @@
 }
 
 body {
-  font-size: var(--default-font-size);
+  font-size: 18px;
   font-family: 'Noto Sans KR', serif;
   color: var(--text-color);
   background-color: var(--background-color);
