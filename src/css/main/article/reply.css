@@ -44,7 +44,7 @@
   color: var(--text-sub-color);
   font-size: var(--small-font-size);
   transition: color 0.1s ease-in-out;
-  margin-bottom: var(--default-space);
+  margin-bottom: var(--small-space);
 }
 .reply-item .content .name a:hover {
   color: var(--primary-color);
@@ -166,4 +166,11 @@
 .reply-form .reply-submit-button:hover {
   cursor: pointer;
   background-color: var(--primary-hover-color);
+}
+
+@media screen and (max-width: 576px) {
+  .reply-item .content .control-group {
+    flex-wrap: wrap;
+    row-gap: var(--small-space);
+  }
 }

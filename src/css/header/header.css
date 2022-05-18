@@ -54,3 +54,16 @@ header .button-group #admin-button:hover {
 header .button-group #theme-button .uil-sun {
   display: none;
 }
+
+@media screen and (max-width: 576px) {
+  header .search-wrapper {
+    max-width: 220px;
+    min-width: 180px;
+    width: 100%;
+    height: 50px;
+    margin-right: 0;
+  }
+  header .button-group {
+    display: none;
+  }
+}

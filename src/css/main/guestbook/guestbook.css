@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   min-height: 50vh;
+  padding: 0 var(--default-space);
 }
 #guestbook-container .title {
   font-size: var(--large-font-size);
@@ -123,7 +124,7 @@
   color: var(--text-sub-color);
   font-size: var(--small-font-size);
   transition: color 0.1s ease-in-out;
-  margin-bottom: var(--default-space);
+  margin-bottom: var(--small-space);
 }
 .guestbook-item .content .name a:hover {
   color: var(--primary-color);
@@ -159,4 +160,11 @@
 }
 .guestbook-list .guestbook-child-wrapper {
   margin-left: var(--large-space);
+}
+
+@media screen and (max-width: 576px) {
+  .guestbook-item .content .control-group {
+    flex-wrap: wrap;
+    row-gap: var(--small-space);
+  }
 }

@@ -41,6 +41,7 @@ main .title-container .title-wrapper {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding: 0 var(--default-space);
 }
 main .title-wrapper > div {
   margin-bottom: var(--default-space);
@@ -250,5 +251,12 @@ main #article-container #article-wrapper .article figure.imageblock figcaption {
     max-width: calc(
       100vw - var(--small-space) - var(--x-small-space) - var(--default-space)
     );
+  }
+  main #article-container #article-wrapper .article pre:hover {
+    margin-right: 0;
+  }
+  main #article-container #article-wrapper .article figure.imageblock span {
+    min-width: 80%;
+    max-width: 100%;
   }
 }

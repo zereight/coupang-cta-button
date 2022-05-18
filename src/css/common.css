@@ -59,3 +59,9 @@ body *::selection {
   background-color: var(--primary-color);
   color: var(--text-reverse-color);
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
