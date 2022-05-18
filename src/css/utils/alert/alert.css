@@ -10,6 +10,7 @@
   box-shadow: 3px 3px 5px var(--light-gray-color);
   border: 1px solid var(--light-gray-color);
   transition: 0.1s right ease-in-out;
+  background-color: var(--background-color);
 }
 #alert .uil-check-circle {
   margin-right: var(--x-small-space);

@@ -27,7 +27,16 @@ funcWrapper(initTheme)();
 
 const move = (url: string, target = '_self') => window.open(url, target);
 
-const copy = (content: string) => navigator.clipboard.writeText(content);
+const copy = (content: string, callback = () => {}) => {
+  try {
+    navigator.clipboard.writeText(content);
+    if (callback) {
+      callback();
+    }
+  } catch (e) {
+    console.error(e);
+  }
+};
 
 const getBaseUrl = () => {
   const { protocol, host } = window.location;
@@ -354,6 +363,32 @@ window.onload = () => {
   };
   sidebarOpenButton.addEventListener('click', funcWrapper(openSideBar));
   sidebarCloseButton.addEventListener('click', funcWrapper(closeSideBar));
+
+  // code language
+  const makeCodeLanguageLabel = () => {
+    const articlePre = document.querySelectorAll('.article pre');
+    if (articlePre) {
+      articlePre.forEach((node) => {
+        const language = node.getAttribute('data-ke-language')?.toUpperCase();
+
+        if (language) {
+          const label = document.createElement('label');
+          label.classList.add('code-language');
+          label.innerText = language;
+
+          const code = node.children[0].textContent;
+          if (code) {
+            label.addEventListener('click', () =>
+              copy(code, () => showAlert('복사되었습니다.'))
+            );
+          }
+
+          node.appendChild(label);
+        }
+      });
+    }
+  };
+  funcWrapper(makeCodeLanguageLabel)();
 
   // article tags
   const makeNewTagHTML = () => {

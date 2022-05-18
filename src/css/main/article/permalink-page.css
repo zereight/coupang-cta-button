@@ -153,6 +153,7 @@ main #article-container #article-wrapper .article pre {
   margin: 0;
   white-space: pre;
   transition: all 0.1s ease-in-out;
+  position: relative;
 }
 main #article-container #article-wrapper .article pre:hover {
   margin-right: -240px;
@@ -163,6 +164,23 @@ main #article-container #article-wrapper .article pre code {
     monospace;
   border-radius: var(--small-radius);
   margin: var(--small-space) 0;
+}
+main #article-container #article-wrapper .article pre .code-language {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: var(--small-space);
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+  padding: 2px var(--x-small-space);
+  font-size: var(--x-small-font-size);
+  font-family: 'Noto Sans KR', serif;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+main #article-container #article-wrapper .article pre .code-language:hover {
+  background-color: var(--primary-hover-color);
 }
 main #article-container #article-wrapper .article strong,
 main #article-container #article-wrapper .article b {
