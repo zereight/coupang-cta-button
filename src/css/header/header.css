@@ -67,3 +67,10 @@ header .button-group #theme-button .uil-sun {
     display: none;
   }
 }
+
+@media screen and (max-width: 280px) {
+  header .search-wrapper {
+    max-width: 190px;
+    min-width: 180px;
+  }
+}

@@ -64,3 +64,10 @@
 #paging .numbox a.num:hover span.selected {
   cursor: not-allowed;
 }
+
+@media screen and (max-width: 576px) {
+  #paging {
+    width: 100%;
+    overflow-x: scroll;
+  }
+}
