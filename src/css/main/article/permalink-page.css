@@ -166,18 +166,21 @@ main #article-container #article-wrapper .article pre code {
   margin: var(--small-space) 0;
 }
 main #article-container #article-wrapper .article pre .code-language {
-  display: block;
+  display: flex;
+  align-items: center;
+  column-gap: var(--x-small-space);
   box-sizing: border-box;
   position: absolute;
   top: 0;
   left: var(--small-space);
   background-color: var(--primary-color);
   color: var(--text-hover-color);
-  padding: 2px var(--x-small-space);
+  padding: 1px var(--small-space);
   font-size: var(--x-small-font-size);
   font-family: 'Noto Sans KR', serif;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
+  border-radius: var(--small-radius);
 }
 main #article-container #article-wrapper .article pre .code-language:hover {
   background-color: var(--primary-hover-color);
