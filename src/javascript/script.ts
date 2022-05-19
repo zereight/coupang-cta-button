@@ -160,6 +160,15 @@ window.onload = () => {
   };
   scrollTopButton.addEventListener('click', funcWrapper(onClickScrollTop));
 
+  // loading
+  const hideLoading = () => {
+    const loading = document.querySelector('#loading') as HTMLDivElement;
+    if (loading) {
+      loading.style.display = 'none';
+    }
+  };
+  funcWrapper(hideLoading)();
+
   // TOC
   const showToc = (): void => {
     if (['', '/', '/notice'].includes(window?.location?.pathname ?? '/')) {
