@@ -67,6 +67,7 @@ main .title-wrapper .title h1 a {
   font-weight: bold;
   color: var(--text-reverse-color);
   font-size: var(--x-large-font-size);
+  line-height: 1.5;
 }
 main .title-wrapper .category a {
   color: var(--text-reverse-color);
