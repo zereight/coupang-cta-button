@@ -141,90 +141,140 @@
             </variable>
         </variablegroup>
         <!-- Footer Link -->
-        <variablegroup name="Footer 링크 설정">
+        <variablegroup name="Footer SNS 링크 설정">
             <variable>
-                <name>footer_sns_facebook_link</name>
+                <name>footer-sns-twitter</name>
                 <label>
-                    <![CDATA[ Facebook Link ]]>
+                    <![CDATA[ Twitter URL ]]>
                 </label>
                 <description>
-                    <![CDATA[ Footer에 위치한 Facebook SNS 링크 ]]>
+                    <![CDATA[ Footer 에 위치한 Twitter SNS 링크 ]]>
                 </description>
                 <type>STRING</type>
-                <option></option>
-                <default></default>
+                <option />
+                <default />
             </variable>
             <variable>
-                <name>footer_sns_twitter_link</name>
+                <name>footer-sns-youtube</name>
                 <label>
-                    <![CDATA[ Twitter Link ]]>
+                    <![CDATA[ Youtube URL ]]>
                 </label>
                 <description>
-                    <![CDATA[ Footer에 위치한 Twitter SNS 링크 ]]>
+                    <![CDATA[ Footer 에 위치한 Youtube SNS 링크 ]]>
                 </description>
                 <type>STRING</type>
-                <option></option>
-                <default></default>
+                <option />
+                <default />
             </variable>
             <variable>
-                <name>footer_sns_youtube_link</name>
+                <name>footer-sns-linkedin</name>
                 <label>
-                    <![CDATA[ Youtube Link ]]>
+                    <![CDATA[ LinkedIn URL ]]>
                 </label>
                 <description>
-                    <![CDATA[ Footer에 위치한 Youtube SNS 링크 ]]>
+                    <![CDATA[ Footer 에 위치한 LinkedIn SNS 링크 ]]>
                 </description>
                 <type>STRING</type>
-                <option></option>
-                <default></default>
+                <option />
+                <default />
             </variable>
             <variable>
-                <name>footer_sns_github_link</name>
+                <name>footer-sns-github</name>
                 <label>
-                    <![CDATA[ Github Link ]]>
+                    <![CDATA[ GitHub URL ]]>
                 </label>
                 <description>
-                    <![CDATA[ Footer에 위치한 Github SNS 링크 ]]>
+                    <![CDATA[ Footer 에 위치한 GitHub SNS 링크 ]]>
                 </description>
                 <type>STRING</type>
-                <option></option>
-                <default></default>
+                <option />
+                <default />
             </variable>
             <variable>
-                <name>footer_about_link</name>
+                <name>footer-sns-discord</name>
                 <label>
-                    <![CDATA[ About Link ]]>
+                    <![CDATA[ Discord URL ]]>
                 </label>
                 <description>
-                    <![CDATA[ Footer에 위치한 About 링크 ]]>
+                    <![CDATA[ Footer 에 위치한 Discord SNS 링크 ]]>
                 </description>
                 <type>STRING</type>
-                <option></option>
-                <default></default>
+                <option />
+                <default />
+            </variable>
+        </variablegroup>
+        <variablegroup name="Footer 커스텀 링크 설정">
+            <variable>
+                <name>footer-custom-1-label</name>
+                <label>
+                    <![CDATA[ Custom 1 - Label ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 1 Label ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
             </variable>
             <variable>
-                <name>footer_careers_link</name>
+                <name>footer-custom-1-url</name>
                 <label>
-                    <![CDATA[ Careers Link ]]>
+                    <![CDATA[ Custom 1 - URL ]]>
                 </label>
                 <description>
-                    <![CDATA[ Footer에 위치한 Careers 링크 ]]>
+                    <![CDATA[ Footer 에 위치한 Custom 1 URL ]]>
                 </description>
                 <type>STRING</type>
-                <option></option>
-                <default></default>
+                <option />
+                <default />
             </variable>
             <variable>
-                <name>footer_contact_link</name>
+                <name>footer-custom-2-label</name>
                 <label>
-                    <![CDATA[ Contact Link ]]>
+                    <![CDATA[ Custom 2 - Label ]]>
                 </label>
                 <description>
-                    <![CDATA[ Footer에 위치한 Contact 링크 ]]>
+                    <![CDATA[ Footer 에 위치한 Custom 2 Label ]]>
                 </description>
                 <type>STRING</type>
-                <option></option>
-                <default></default>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-2-url</name>
+                <label>
+                    <![CDATA[ Custom 2 - URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 2 URL ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-3-label</name>
+                <label>
+                    <![CDATA[ Custom 3 - Label ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 3 Label ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-3-url</name>
+                <label>
+                    <![CDATA[ Custom 3 - URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 3 URL ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
             </variable>
         </variablegroup>
     </variables>
