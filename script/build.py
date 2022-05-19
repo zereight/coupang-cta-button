@@ -28,6 +28,13 @@ ASSETS_DIR_PATH = os.path.join(SRC_DIR_PATH, "assets")
 # build configuration
 CONFIG_FILE_PATH = os.path.join(ROOT_DIR_PATH, "settings", "config.json")
 
+def get_package_json():
+    """package.json에서 version 정보를 가지고 온다."""
+    with open(os.path.join(ROOT_DIR_PATH, "package.json"), "rb") as f:
+        package = f.read().decode("utf-8")
+        package_json = json.loads(package)
+    return package_json
+
 
 def get_configuration():
     """configuration 값을 읽어온다."""
@@ -147,6 +154,23 @@ def build_javascript(entry_point, env=ENV_DEV, html_entry_point=None):
     with open(html_path, "w", encoding="utf-8") as f:
         f.write("\n".join(next_html_code))
 
+def build_xml(entry_point):
+    target_filepath = os.path.join(BUILD_SRC_DIR_PATH, entry_point)
+
+    with open(os.path.join(XML_DIR_PATH, entry_point), 'rb') as f:
+        raw_code = f.read().decode("utf-8")
+
+    package_json = get_package_json()
+    raw_code = raw_code.replace("${{version}}", package_json["version"])
+    raw_code = raw_code.replace("${{description}}", package_json["description"])
+    raw_code = raw_code.replace("${{license}}", package_json["author"])
+    raw_code = raw_code.replace("${{author}}", package_json["author"].split()[0])
+    raw_code = raw_code.replace("${{homepage}}", "https://memostack.tistory.com/")
+    raw_code = raw_code.replace("${{email}}", "public.bluemiv@gmail.com")
+
+    with open(target_filepath, "w", encoding="utf-8") as f:
+        f.write(raw_code)
+
 
 def copy(src, trg_path):
     """파일을 복사한다"""
@@ -181,6 +205,9 @@ if __name__ == "__main__":
 
     # javascript
     build_javascript(entry_point["js"], env=env, html_entry_point=entry_point["html"])
+
+    # xml
+    build_xml(entry_point["xml"])
 
 
 def compile(path):

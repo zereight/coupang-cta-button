@@ -1,8 +1,9 @@
 {
   "name": "tistory_berry_skin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "repository": "https://github.com/bluemiv/tistory_berry_skin.git",
   "author": "TaehongKim <public.devhong@gmail.com>",
+  "description": "수정 가능, 재배포 금지",
   "license": "MIT",
   "scripts": {
     "babel_build": "yarn tsc && yarn babel build/temp/script.js --out-file build/src/images/script.js",
