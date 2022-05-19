@@ -207,7 +207,7 @@
             <variable>
                 <name>footer-custom-1-label</name>
                 <label>
-                    <![CDATA[ Custom 1 - Label ]]>
+                    <![CDATA[ [Custom 1] Label ]]>
                 </label>
                 <description>
                     <![CDATA[ Footer 에 위치한 Custom 1 Label ]]>
@@ -219,7 +219,7 @@
             <variable>
                 <name>footer-custom-1-url</name>
                 <label>
-                    <![CDATA[ Custom 1 - URL ]]>
+                    <![CDATA[ [Custom 1] URL ]]>
                 </label>
                 <description>
                     <![CDATA[ Footer 에 위치한 Custom 1 URL ]]>
@@ -231,7 +231,7 @@
             <variable>
                 <name>footer-custom-2-label</name>
                 <label>
-                    <![CDATA[ Custom 2 - Label ]]>
+                    <![CDATA[ [Custom 2] Label ]]>
                 </label>
                 <description>
                     <![CDATA[ Footer 에 위치한 Custom 2 Label ]]>
@@ -243,7 +243,7 @@
             <variable>
                 <name>footer-custom-2-url</name>
                 <label>
-                    <![CDATA[ Custom 2 - URL ]]>
+                    <![CDATA[ [Custom 2] URL ]]>
                 </label>
                 <description>
                     <![CDATA[ Footer 에 위치한 Custom 2 URL ]]>
@@ -255,7 +255,7 @@
             <variable>
                 <name>footer-custom-3-label</name>
                 <label>
-                    <![CDATA[ Custom 3 - Label ]]>
+                    <![CDATA[ [Custom 3] Label ]]>
                 </label>
                 <description>
                     <![CDATA[ Footer 에 위치한 Custom 3 Label ]]>
@@ -267,7 +267,7 @@
             <variable>
                 <name>footer-custom-3-url</name>
                 <label>
-                    <![CDATA[ Custom 3 - URL ]]>
+                    <![CDATA[ [Custom 3] URL ]]>
                 </label>
                 <description>
                     <![CDATA[ Footer 에 위치한 Custom 3 URL ]]>
