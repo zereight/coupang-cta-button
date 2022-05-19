@@ -16,7 +16,15 @@
   position: relative;
   overflow: hidden;
   margin-right: var(--large-space);
+}
+.article-thumbnail-shape-default {
   border-radius: var(--default-radius);
+}
+.article-thumbnail-shape-rectangle {
+  border-radius: 0;
+}
+.article-thumbnail-shape-circle {
+  border-radius: 100%;
 }
 #article-container #article-wrapper .image-wrapper img {
   width: 100%;

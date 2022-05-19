@@ -77,55 +77,67 @@
                 <label>
                     <![CDATA[ 블로그 사진 보이기/숨기기 ]]>
                 </label>
-                <type>BOOL</type>
-                <option />
-                <default>true</default>
                 <description>
                     <![CDATA[ 블로그의 사진을 보이게 하거나 숨깁니다. ]]>
                 </description>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
             </variable>
             <variable>
                 <name>profile-blogger-visible</name>
                 <label>
                     <![CDATA[ 블로거명 보이기/숨기기 ]]>
                 </label>
-                <type>BOOL</type>
-                <option />
-                <default>true</default>
                 <description>
                     <![CDATA[ 블로거의 이름을 보이게 하거나 숨깁니다. ]]>
                 </description>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
             </variable>
             <variable>
                 <name>profile-blog-desc-visible</name>
                 <label>
                     <![CDATA[ 블로그 설명 보이기/숨기기 ]]>
                 </label>
-                <type>BOOL</type>
-                <option />
-                <default>true</default>
                 <description>
                     <![CDATA[ 블로그의 설명을 보이게 하거나 숨깁니다. ]]>
                 </description>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
             </variable>
         </variablegroup>
         <!-- Board -->
-        <variablegroup name="본문">
+        <variablegroup name="본문 설정">
             <variable>
-                <name>board_thumbnail_figure</name>
+                <name>board-thumbnail-shape</name>
                 <label>글 썸네일 모양</label>
-                <description></description>
+                <description>글 썸네일의 모양을 선택할 수 있습니다.</description>
                 <type>SELECT</type>
                 <option>
                     <![CDATA[
-                        [
-                        {"name":"article__idx-img-default", "label":"기본", "value":"article__idx-img-default"},
-                        {"name":"article__idx-img-rect", "label":"사각형", "value":"article__idx-img-rect"},
-                        {"name":"article__idx-img-circle", "label":"원형", "value":"article__idx-img-circle"}
-                        ]
+                    [
+                        {
+                            "name":"article-thumbnail-shape-default",
+                            "label":"둥근사각형",
+                            "value":"article-thumbnail-shape-default"
+                        },
+                        {
+                            "name":"article-thumbnail-shape-rectangle",
+                            "label":"사각형",
+                            "value":"article-thumbnail-shape-rectangle"
+                        },
+                        {
+                            "name":"article-thumbnail-shape-circle",
+                            "label":"원형",
+                            "value":"article-thumbnail-shape-circle"
+                        }
+                    ]
                     ]]>
                 </option>
-                <default>article__idx-img-default</default>
+                <default><![CDATA[ article-thumbnail-shape-default ]]></default>
             </variable>
         </variablegroup>
         <!-- Footer Link -->
