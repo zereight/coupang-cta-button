@@ -15,11 +15,17 @@
     <s_sidebar_element>
       <!-- 프로필 -->
       <section id="profile">
-        <div class="image-wrapper">
-          <img src="[##_image_##]" alt="profile image" />
-        </div>
-        <div class="blogger-name">[##_blogger_##]</div>
-        <div class="blog-desc">[##_desc_##]</div>
+        <s_if_var_profile-image-visible>
+          <div class="image-wrapper">
+            <img src="[##_image_##]" alt="profile image" />
+          </div>
+        </s_if_var_profile-image-visible>
+        <s_if_var_profile-blogger-visible>
+          <div class="blogger-name">[##_blogger_##]</div>
+        </s_if_var_profile-blogger-visible>
+        <s_if_var_profile-blog-desc-visible>
+          <div class="blog-desc">[##_desc_##]</div>
+        </s_if_var_profile-blog-desc-visible>
       </section>
     </s_sidebar_element>
 

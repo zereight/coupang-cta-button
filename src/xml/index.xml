@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
     <information>
-        <name>Berry ${{version}}</name>
+        <name>Tistory Berry Skin ${{version}}</name>
         <version>${{version}}</version>
         <description>
             <![CDATA[${{description}}]]>
@@ -11,7 +11,7 @@
         </license>
     </information>
     <author>
-        <name>${{author}}</name>
+        <name><![CDATA[${{author}}]]></name>
         <homepage>${{homepage}}</homepage>
         <email>${{email}}</email>
     </author>
@@ -70,6 +70,45 @@
     </cover>
     <!-- Variable -->
     <variables>
+        <!-- Profile -->
+        <variablegroup name="프로필 설정">
+            <variable>
+                <name>profile-image-visible</name>
+                <label>
+                    <![CDATA[ 블로그 사진 보이기/숨기기 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 블로그의 사진을 보이게 하거나 숨깁니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>profile-blogger-visible</name>
+                <label>
+                    <![CDATA[ 블로거명 보이기/숨기기 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 블로거의 이름을 보이게 하거나 숨깁니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>profile-blog-desc-visible</name>
+                <label>
+                    <![CDATA[ 블로그 설명 보이기/숨기기 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 블로그의 설명을 보이게 하거나 숨깁니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
         <!-- Board -->
         <variablegroup name="본문">
             <variable>

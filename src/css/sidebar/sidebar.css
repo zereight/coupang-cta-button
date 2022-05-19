@@ -72,6 +72,7 @@ button.sidebar-open-btn {
   border-radius: 100%;
   overflow: hidden;
   position: relative;
+  margin-bottom: var(--small-space);
 }
 #profile .image-wrapper > img {
   width: 100%;
@@ -83,7 +84,7 @@ button.sidebar-open-btn {
   transform: translate(50, 50);
 }
 #profile .blogger-name {
-  margin: var(--small-space) 0;
+  margin-bottom: var(--small-space);
   color: var(--text-color);
 }
 #profile .blog-desc {
