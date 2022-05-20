@@ -89,6 +89,30 @@ main .title-wrapper .title h1 a:hover {
 main .title-wrapper .category a:hover {
   color: var(--secondary-color);
 }
+main .admin-button-group {
+  position: absolute;
+  bottom: var(--default-space);
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--x-small-space);
+  font-size: var(--small-font-size);
+}
+main .admin-button-group > span {
+  color: var(--light-gray-color);
+}
+main .admin-button-group a {
+  color: var(--text-reverse-color);
+  transition: color 0.1s ease-in-out;
+  display: flex;
+  align-items: center;
+  column-gap: var(--x-small-space);
+}
+main .admin-button-group a:hover {
+  color: var(--secondary-color);
+}
 
 main #article-container #article-wrapper .article {
   line-height: 2.2;
