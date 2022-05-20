@@ -15,6 +15,11 @@ main .title-container .thumbnail-wrapper {
   height: 100%;
   overflow: hidden;
   border-radius: var(--default-radius);
+  background: linear-gradient(
+    70deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
 }
 main .title-container .thumbnail-wrapper > img {
   width: 100%;

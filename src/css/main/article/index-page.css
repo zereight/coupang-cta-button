@@ -16,6 +16,11 @@
   position: relative;
   overflow: hidden;
   margin-right: var(--large-space);
+  background: linear-gradient(
+    70deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
 }
 .article-thumbnail-shape-default {
   border-radius: var(--default-radius);
