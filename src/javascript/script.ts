@@ -198,15 +198,16 @@ window.onload = () => {
     if (!document.querySelector('.article')) return;
 
     const articleHeadTags = document.querySelectorAll(
-      '.article h1, .article h2, .article h3'
+      '.article h1, .article h2, .article h3, .article h4'
     ) as NodeListOf<Element>;
 
     const tocWrapper = document.querySelector('.toc-wrapper');
-    if (!tocWrapper) return;
+    if (!articleHeadTags || !tocWrapper) return;
 
     let minLevel: number = 5;
-    let prefixNums = [0, 0, 0];
+    let prefixNums = [0, 0, 0, 0];
     const tocList = Array.from(articleHeadTags)
+      .splice(0, articleHeadTags.length - 1)
       .map((node) => {
         const level = Number(node.nodeName.charAt(1));
         minLevel = minLevel > level ? level : minLevel;
