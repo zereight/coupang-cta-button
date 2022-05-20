@@ -373,6 +373,7 @@ button.sidebar-open-btn {
   display: none;
   align-items: center;
   font-size: var(--small-font-size);
+  margin-left: var(--small-space);
 }
 #counter .counter-wrapper .today .increase {
   color: #f03e3e;
