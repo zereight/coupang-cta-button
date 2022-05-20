@@ -72,6 +72,58 @@
     <variables>
         <variablegroup name="고급 설정">
             <variable>
+                <name>font-style</name>
+                <label>
+                    <![CDATA[ 폰트 변경 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 폰트를 변경합니다. ]]>
+                </description>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[
+                    [
+                        {
+                            "name":"noto-sans",
+                            "label":"Noto Sans",
+                            "value":"@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);body {font-family: 'Noto Sans KR', sans-serif;}"
+                        },
+                        {
+                            "name":"NotoSerifKR",
+                            "label":"본명조",
+                            "value":"@font-face {font-family: 'NotoSerifKR';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff');font-weight: normal;font-style: normal;}body {font-family: 'NotoSerifKR', sans-serif;}"
+                        },
+                        {
+                            "name":"gmarket-sans",
+                            "label":"Gmarket Sans",
+                            "value":"@font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}body {font-family: 'GmarketSansMedium', sans-serif;}"
+                        },
+                        {
+                            "name":"NanumBarunGothic",
+                            "label":"나눔바른고딕",
+                            "value":"@font-face {font-family: 'NanumBarunGothic';font-style: normal;font-weight: 400;src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');};@font-face {font-family: 'NanumBarunGothic';font-style: normal;font-weight: 700;src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')};@font-face {font-family: 'NanumBarunGothic';font-style: normal;font-weight: 300;src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');};body {font-family: 'NanumBarunGothic', sans-serif;}"
+                        },
+                        {
+                            "name":"MaruBuri",
+                            "label":"마루 부리",
+                            "value":"@font-face {font-family: 'MaruBuri-Regular';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');font-weight: normal;font-style: normal;};body {font-family: 'MaruBuri-Regular', sans-serif;}"
+                        },
+                        {
+                            "name":"Cafe24Oneprettynight",
+                            "label":"카페24 고운밤",
+                            "value":"@font-face {font-family: 'Cafe24Oneprettynight';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');font-weight: normal;font-style: normal;}body {font-family: 'Cafe24Oneprettynight', sans-serif;}"
+                        },
+                        {
+                            "name":"cafe24Ohsquareair",
+                            "label":"카페24 아네모네 에어",
+                            "value":"@font-face {font-family: 'Cafe24Ohsquareair';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/Cafe24Ohsquareair.woff') format('woff');font-weight: normal;font-style: normal;}body {font-family: 'Cafe24Ohsquareair', sans-serif;}"
+                        }
+                    ]
+                    ]]>
+                </option>
+                <default><![CDATA[ noto-sans ]]></default>
+            </variable>
+            <variable>
                 <name>loading-visible</name>
                 <label>
                     <![CDATA[ 로딩 보이기/숨기기 ]]>
