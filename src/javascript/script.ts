@@ -78,9 +78,9 @@ const headerIntersectionObserver = new IntersectionObserver((entries) => {
   ) as HTMLButtonElement;
 
   if (entries[0].intersectionRatio === 0) {
-    scrollTopButton.style.bottom = '100px';
-    floatThemeButton.style.bottom = '180px';
-    subscribeButton.style.bottom = '260px';
+    scrollTopButton.style.bottom = '80px';
+    floatThemeButton.style.bottom = '160px';
+    subscribeButton.style.bottom = '240px';
   } else {
     scrollTopButton.style.bottom = '-500px';
     floatThemeButton.style.bottom = '-500px';
