@@ -152,6 +152,9 @@ button.sidebar-open-btn {
 #category ul.sub_category_list a.link_sub_item:before {
   content: '-';
 }
+#category ul.sub_category_list a.link_sub_item:hover {
+  color: var(--secondary-color);
+}
 
 /* notice */
 #notice ul {
@@ -230,6 +233,7 @@ button.sidebar-open-btn {
   align-items: center;
   color: var(--text-sub-color);
   transition: color 0.1s ease-in-out;
+  font-size: var(--small-font-size);
 }
 .sidebar-articles ul li .desc a.category:hover {
   color: var(--secondary-color);
