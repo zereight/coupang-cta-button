@@ -16,11 +16,11 @@
   align-items: center;
   flex-direction: column;
   row-gap: var(--small-space);
-  background-color: var(--dark-gray-color);
-  color: var(--text-reverse-color);
-  max-width: 300px;
+  background-color: var(--light-gray-color);
+  color: var(--text-color);
+  max-width: 200px;
   width: 100%;
-  max-height: 300px;
+  max-height: 200px;
   height: 100%;
   border-radius: var(--default-radius);
 }
@@ -47,4 +47,7 @@
   100% {
     transform: rotate(360deg);
   }
+}
+#loading .overlay .text {
+  font-size: var(--small-font-size);
 }
