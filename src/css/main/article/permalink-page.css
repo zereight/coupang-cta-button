@@ -220,6 +220,21 @@ main #article-container #article-wrapper .article pre .code-language {
 main #article-container #article-wrapper .article pre .code-language:hover {
   background-color: var(--primary-hover-color);
 }
+main #article-container #article-wrapper .article p > code,
+main #article-container #article-wrapper .article span > code,
+main #article-container #article-wrapper .article div > code,
+main #article-container #article-wrapper .article ul > code,
+main #article-container #article-wrapper .article li > code,
+main #article-container #article-wrapper .article blockquote > code {
+  background: linear-gradient(
+    70deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-hover-color);
+  padding: 2px var(--x-small-space);
+  border-radius: var(--small-radius);
+}
 main #article-container #article-wrapper .article strong,
 main #article-container #article-wrapper .article b {
   font-weight: bold;
