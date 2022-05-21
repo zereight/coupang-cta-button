@@ -9,7 +9,7 @@ const funcWrapper = (
   try {
     return func;
   } catch (e: unknown) {
-    console.error(e);
+    console.log(e);
     if (!!errHandler && e instanceof Error) {
       errHandler(e);
     }
@@ -100,10 +100,16 @@ const replyFormIntersectionObserver = new IntersectionObserver((entries) => {
     '.recommend-card'
   ) as NodeListOf<HTMLDivElement>;
   if (!recommendCardList || recommendCardList.length === 0) return;
-  if (entries[0].intersectionRatio === 0) {
+
+  const hide = () =>
     recommendCardList.forEach((card) => (card.style.bottom = '-500px'));
-  } else {
+  const show = () =>
     recommendCardList.forEach((card) => (card.style.bottom = '100px'));
+
+  if (entries[0].intersectionRatio === 0) {
+    funcWrapper(hide)();
+  } else {
+    funcWrapper(show)();
   }
 });
 

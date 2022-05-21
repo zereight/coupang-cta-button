@@ -137,6 +137,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .article-thumbnail-shape-circle {
+    border-radius: var(--default-radius);
+  }
   #article-container #article-wrapper .index-item {
     flex-direction: column;
   }
