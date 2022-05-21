@@ -113,7 +113,17 @@ const replyFormIntersectionObserver = new IntersectionObserver((entries) => {
   }
 });
 
+const hideLoading = () => {
+  const loading = document.querySelector('#loading') as HTMLDivElement;
+  if (loading && loading.style.display != 'none') {
+    loading.style.display = 'none';
+  }
+};
+
 window.onload = () => {
+  // loading
+  funcWrapper(hideLoading)();
+
   const body: HTMLBodyElement = document.querySelector(
     'body'
   ) as HTMLBodyElement;
@@ -184,15 +194,6 @@ window.onload = () => {
     });
   };
   scrollTopButton.addEventListener('click', funcWrapper(onClickScrollTop));
-
-  // loading
-  const hideLoading = () => {
-    const loading = document.querySelector('#loading') as HTMLDivElement;
-    if (loading) {
-      loading.style.display = 'none';
-    }
-  };
-  funcWrapper(hideLoading)();
 
   // TOC
   const showToc = (): void => {

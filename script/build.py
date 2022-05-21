@@ -128,7 +128,7 @@ def build_css(entry_point, css_files):
 
 
 def build_javascript(entry_point, env=ENV_DEV, html_entry_point=None):
-    js_path = os.path.join(BUILD_SRC_DIR_PATH, "images", entry_point)
+    js_path = os.path.join(BUILD_SRC_DIR_PATH, entry_point)
 
     indent = " " * 4
     javascript_tag = "{}<script type=\"text/javascript\" src=\"./images/{}\"></script>".format(indent, entry_point)

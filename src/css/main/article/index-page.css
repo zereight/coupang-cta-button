@@ -54,8 +54,7 @@
 }
 
 #article-container #article-wrapper .article-info a.title {
-  height: var(--large-font-size);
-  line-height: var(--large-font-size);
+  line-height: 1.7;
   font-size: var(--large-font-size);
   font-weight: bold;
   color: var(--text-color);

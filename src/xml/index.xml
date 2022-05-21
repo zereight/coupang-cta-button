@@ -133,7 +133,7 @@
                 </description>
                 <type>BOOL</type>
                 <option />
-                <default>true</default>
+                <default>false</default>
             </variable>
         </variablegroup>
         <!-- Profile -->
