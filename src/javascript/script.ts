@@ -88,12 +88,12 @@ const headerIntersectionObserver = new IntersectionObserver((entries) => {
   }
 });
 
-const recommendCardObserver = new IntersectionObserver((entries) => {
+const replyFormIntersectionObserver = new IntersectionObserver((entries) => {
   const recommendCardList = document.querySelectorAll(
     '.recommend-card'
   ) as NodeListOf<HTMLDivElement>;
   if (!recommendCardList || recommendCardList.length === 0) return;
-  if (entries[0].intersectionRatio === 1) {
+  if (entries[0].intersectionRatio === 0) {
     recommendCardList.forEach((card) => (card.style.bottom = '-500px'));
   } else {
     recommendCardList.forEach((card) => (card.style.bottom = '100px'));
@@ -425,9 +425,9 @@ window.onload = () => {
   };
   funcWrapper(makeNewTagHTML)();
 
-  const articlePostButtonLike = document.querySelector(
-    '.postbtn_like'
+  const replyFormTextArea = document.querySelector(
+    '.reply-form textarea'
   ) as HTMLTextAreaElement;
-  if (!articlePostButtonLike) return;
-  recommendCardObserver.observe(articlePostButtonLike);
+  if (!replyFormTextArea) return;
+  replyFormIntersectionObserver.observe(replyFormTextArea);
 };
