@@ -94,9 +94,9 @@ const recommendCardObserver = new IntersectionObserver((entries) => {
   ) as NodeListOf<HTMLDivElement>;
   if (!recommendCardList || recommendCardList.length === 0) return;
   if (entries[0].intersectionRatio === 1) {
-    recommendCardList.forEach((card) => (card.style.bottom = '100px'));
-  } else {
     recommendCardList.forEach((card) => (card.style.bottom = '-500px'));
+  } else {
+    recommendCardList.forEach((card) => (card.style.bottom = '100px'));
   }
 });
 
