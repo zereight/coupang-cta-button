@@ -77,14 +77,21 @@ const headerIntersectionObserver = new IntersectionObserver((entries) => {
     '.container_postbtn .btn_subscription'
   ) as HTMLButtonElement;
 
-  if (entries[0].intersectionRatio === 0) {
+  const show = () => {
     scrollTopButton.style.bottom = '80px';
     floatThemeButton.style.bottom = '160px';
     subscribeButton.style.bottom = '240px';
-  } else {
+  };
+  const hide = () => {
     scrollTopButton.style.bottom = '-500px';
     floatThemeButton.style.bottom = '-500px';
     subscribeButton.style.bottom = '-500px';
+  };
+
+  if (entries[0].intersectionRatio === 0) {
+    funcWrapper(show)();
+  } else {
+    funcWrapper(hide)();
   }
 });
 
