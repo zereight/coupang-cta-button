@@ -1,6 +1,7 @@
 #paging {
   margin-top: var(--large-space);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -30,6 +31,8 @@
 #paging .numbox {
   flex: 1;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--x-small-space);
   justify-content: center;
   align-items: center;
 }

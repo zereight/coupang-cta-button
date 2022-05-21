@@ -386,6 +386,12 @@ button.sidebar-open-btn {
   color: #1c7ed6;
 }
 
+#sidebar .sidebar-ad-container {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 1200px) {
   #sidebar {
     position: fixed;

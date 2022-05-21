@@ -5,6 +5,11 @@ main .title-container {
   align-items: center;
   justify-content: center;
   margin-bottom: var(--large-space);
+  width: 100%;
+  max-width: calc(
+    var(--xxl-screen) - 340px - 240px - var(--default-space) -
+      var(--default-space)
+  );
 }
 main .title-container .thumbnail-wrapper {
   position: absolute;
@@ -283,6 +288,7 @@ main #article-container #article-wrapper .article figure.imageblock figcaption {
 }
 
 @media screen and (max-width: 1680px) {
+  main .title-container,
   main #article-container #article-wrapper .article {
     max-width: calc(
       100vw - 340px - 240px - var(--default-space) - var(--default-space)
@@ -291,6 +297,7 @@ main #article-container #article-wrapper .article figure.imageblock figcaption {
 }
 
 @media screen and (max-width: 1200px) {
+  main .title-container,
   main #article-container #article-wrapper .article {
     max-width: calc(
       100vw - 240px - var(--default-space) - var(--default-space)
@@ -299,6 +306,7 @@ main #article-container #article-wrapper .article figure.imageblock figcaption {
 }
 
 @media screen and (max-width: 992px) {
+  main .title-container,
   main #article-container #article-wrapper .article {
     max-width: calc(
       100vw - var(--small-space) - var(--x-small-space) - var(--default-space)

@@ -4,6 +4,7 @@
   row-gap: var(--small-space);
   font-size: var(--small-font-size);
   margin-top: var(--default-space);
+  width: 100%;
 }
 .article-tag-container a::before {
   content: '# ';

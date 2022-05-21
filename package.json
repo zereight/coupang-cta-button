@@ -6,7 +6,7 @@
   "description": "수정 가능, 재배포 금지",
   "license": "MIT",
   "scripts": {
-    "babel_build": "yarn tsc && yarn babel build/temp/script.js --out-file build/src/images/script.js",
+    "babel_build": "yarn tsc && yarn babel build/temp/script.js --out-file build/src/script.js",
     "prebuild": "rm -rf build && yarn babel_build",
     "build": "python3 script/build.py",
     "build:prod": "yarn prebuild && python3 script/build.py prod",

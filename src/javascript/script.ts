@@ -9,7 +9,7 @@ const funcWrapper = (
   try {
     return func;
   } catch (e: unknown) {
-    console.error(e);
+    console.log(e);
     if (!!errHandler && e instanceof Error) {
       errHandler(e);
     }
@@ -77,14 +77,21 @@ const headerIntersectionObserver = new IntersectionObserver((entries) => {
     '.container_postbtn .btn_subscription'
   ) as HTMLButtonElement;
 
-  if (entries[0].intersectionRatio === 0) {
+  const show = () => {
     scrollTopButton.style.bottom = '80px';
     floatThemeButton.style.bottom = '160px';
     subscribeButton.style.bottom = '240px';
-  } else {
+  };
+  const hide = () => {
     scrollTopButton.style.bottom = '-500px';
     floatThemeButton.style.bottom = '-500px';
     subscribeButton.style.bottom = '-500px';
+  };
+
+  if (entries[0].intersectionRatio === 0) {
+    funcWrapper(show)();
+  } else {
+    funcWrapper(hide)();
   }
 });
 
@@ -93,14 +100,30 @@ const replyFormIntersectionObserver = new IntersectionObserver((entries) => {
     '.recommend-card'
   ) as NodeListOf<HTMLDivElement>;
   if (!recommendCardList || recommendCardList.length === 0) return;
-  if (entries[0].intersectionRatio === 0) {
+
+  const hide = () =>
     recommendCardList.forEach((card) => (card.style.bottom = '-500px'));
-  } else {
+  const show = () =>
     recommendCardList.forEach((card) => (card.style.bottom = '100px'));
+
+  if (entries[0].intersectionRatio === 0) {
+    funcWrapper(hide)();
+  } else {
+    funcWrapper(show)();
   }
 });
 
+const hideLoading = () => {
+  const loading = document.querySelector('#loading') as HTMLDivElement;
+  if (loading && loading.style.display != 'none') {
+    loading.style.display = 'none';
+  }
+};
+
 window.onload = () => {
+  // loading
+  funcWrapper(hideLoading)();
+
   const body: HTMLBodyElement = document.querySelector(
     'body'
   ) as HTMLBodyElement;
@@ -171,15 +194,6 @@ window.onload = () => {
     });
   };
   scrollTopButton.addEventListener('click', funcWrapper(onClickScrollTop));
-
-  // loading
-  const hideLoading = () => {
-    const loading = document.querySelector('#loading') as HTMLDivElement;
-    if (loading) {
-      loading.style.display = 'none';
-    }
-  };
-  funcWrapper(hideLoading)();
 
   // TOC
   const showToc = (): void => {
