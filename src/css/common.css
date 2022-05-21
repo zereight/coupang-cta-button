@@ -60,6 +60,12 @@ body *::selection {
   color: var(--text-reverse-color);
 }
 
+.article-ad-container {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 768px) {
   body {
     font-size: 16px;
