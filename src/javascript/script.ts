@@ -88,6 +88,18 @@ const headerIntersectionObserver = new IntersectionObserver((entries) => {
   }
 });
 
+const recommendCardObserver = new IntersectionObserver((entries) => {
+  const recommendCardList = document.querySelectorAll(
+    '.recommend-card'
+  ) as NodeListOf<HTMLDivElement>;
+  if (!recommendCardList || recommendCardList.length === 0) return;
+  if (entries[0].intersectionRatio === 1) {
+    recommendCardList.forEach((card) => (card.style.bottom = '100px'));
+  } else {
+    recommendCardList.forEach((card) => (card.style.bottom = '-500px'));
+  }
+});
+
 window.onload = () => {
   const body: HTMLBodyElement = document.querySelector(
     'body'
@@ -412,4 +424,10 @@ window.onload = () => {
       .join('');
   };
   funcWrapper(makeNewTagHTML)();
+
+  const articlePostButtonLike = document.querySelector(
+    '.postbtn_like'
+  ) as HTMLTextAreaElement;
+  if (!articlePostButtonLike) return;
+  recommendCardObserver.observe(articlePostButtonLike);
 };
