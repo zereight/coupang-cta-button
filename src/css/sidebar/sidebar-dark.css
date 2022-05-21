@@ -1,0 +1,106 @@
+#sidebar {
+  background-color: var(--background-reverse-color);
+}
+
+/* blog introduce */
+button.sidebar-open-btn .uil,
+#blog-intro > button.sidebar-close-btn .uil {
+  color: var(--text-reverse-color);
+}
+#blog-intro > a.blog-title {
+  color: var(--text-reverse-color);
+}
+#blog-intro > a.blog-title:hover {
+  color: var(--primary-color);
+}
+
+/* profile */
+#profile .blogger-name {
+  color: var(--text-reverse-color);
+}
+#profile .blog-desc {
+  color: var(--text-reverse-sub-color);
+}
+
+/* blog menu */
+#blog-menu ul > li > a {
+  color: var(--text-reverse-color);
+}
+#blog-menu ul > li > a.blog-menu-active {
+  color: var(--primary-color);
+}
+#blog-menu ul > li > a:hover {
+  color: var(--text-hover-color);
+  background-color: var(--primary-color);
+}
+
+/* category */
+#category a {
+  color: var(--text-reverse-color);
+}
+#category a:hover {
+  color: var(--primary-color);
+}
+#category ul a .c_cnt {
+  color: var(--text-reverse-sub-color);
+}
+
+/* notice */
+#notice ul li a {
+  color: var(--text-reverse-color);
+}
+#notice ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* recently published articles */
+.sidebar-articles ul li .desc .title a {
+  color: var(--text-reverse-color);
+}
+.sidebar-articles ul li .desc .title a:hover {
+  color: var(--primary-color);
+}
+.sidebar-articles ul li .desc .title .cnt {
+  color: var(--text-reverse-sub-color);
+}
+.sidebar-articles ul li .desc a.category {
+  color: var(--text-reverse-sub-color);
+}
+.sidebar-articles ul li .desc a.category:hover {
+  color: var(--secondary-color);
+  transition: color 0.1s ease-in-out;
+}
+
+/* recent comment */
+#recent-comments ul li {
+  background-color: var(--primary-color);
+}
+#recent-comments ul li::after {
+  border-top: 15px solid var(--primary-color);
+}
+#recent-comments ul li .user-info .date {
+  color: var(--text-reverse-sub-color);
+}
+#recent-comments ul li a {
+  color: var(--text-reverse-color);
+}
+#recent-comments ul li a:hover {
+  color: var(--primary-light-color);
+}
+
+/* counter */
+#counter .counter-wrapper > div {
+  color: var(--text-reverse-color);
+}
+
+@media screen and (max-width: 1200px) {
+  #blog-intro {
+    background-color: var(--background-reverse-color);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #sidebar {
+    border-right: 1px solid var(--dark-gray-color);
+  }
+}

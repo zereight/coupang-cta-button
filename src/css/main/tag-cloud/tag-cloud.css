@@ -1,0 +1,73 @@
+#tag-cloud-container {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--default-space);
+}
+#tag-cloud-container .title {
+  font-size: var(--large-font-size);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#tag-cloud-container .title .uil {
+  margin-right: var(--small-space);
+}
+#tag-cloud-container .tag-cloud-wrapper {
+  flex: 1;
+}
+#tag-cloud-container .tag-cloud-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--default-space);
+  padding: 0;
+  margin: 0;
+}
+#tag-cloud-container .tag-cloud-wrapper li {
+  height: auto;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud1,
+#tag-cloud-container .tag-cloud-wrapper a.cloud2,
+#tag-cloud-container .tag-cloud-wrapper a.cloud3,
+#tag-cloud-container .tag-cloud-wrapper a.cloud4,
+#tag-cloud-container .tag-cloud-wrapper a.cloud5 {
+  display: block;
+  padding: var(--small-space);
+  margin-right: var(--small-space);
+  border-radius: var(--small-radius);
+  color: var(--text-hover-color);
+  transition: all 0.1s ease-in-out;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud1 {
+  background-color: #9775fa;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud1:hover {
+  background-color: #7950f2;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud2 {
+  background-color: #da77f2;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud2:hover {
+  background-color: #be4bdb;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud3 {
+  background-color: #f783ac;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud3:hover {
+  background-color: #e64980;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud4 {
+  background-color: #ff8787;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud4:hover {
+  background-color: #fa5252;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud5 {
+  background-color: #4dabf7;
+}
+#tag-cloud-container .tag-cloud-wrapper a.cloud5:hover {
+  background-color: #228be6;
+}

@@ -1,0 +1,314 @@
+main .title-container {
+  position: relative;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--large-space);
+}
+main .title-container .thumbnail-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--default-radius);
+  background: linear-gradient(
+    70deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+main .title-container .thumbnail-wrapper > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -2;
+}
+main .title-container .thumbnail-background-layout {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--dark-gray-color);
+  opacity: 0.8;
+  border-radius: var(--default-radius);
+}
+main .title-container .title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--default-space);
+}
+main .title-wrapper > div {
+  margin-bottom: var(--default-space);
+}
+main .title-wrapper > div:last-child {
+  margin-bottom: 0;
+}
+main .title-wrapper {
+  margin-bottom: var(--large-space);
+}
+
+main .title-wrapper .date {
+  color: var(--text-reverse-color);
+  font-weight: bold;
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+}
+main .title-wrapper .date .uil-calender {
+  margin-right: var(--x-small-space);
+}
+main .title-wrapper .title h1 a {
+  font-weight: bold;
+  color: var(--text-reverse-color);
+  font-size: var(--x-large-font-size);
+  line-height: 1.5;
+}
+main .title-wrapper .category a {
+  color: var(--text-reverse-color);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+main .title-wrapper .category a .uil-bookmark {
+  margin-right: var(--x-small-space);
+}
+main .title-wrapper .title h1 a:hover {
+  color: var(--primary-color);
+}
+main .title-wrapper .category a:hover {
+  color: var(--secondary-color);
+}
+main .admin-button-group {
+  position: absolute;
+  bottom: var(--default-space);
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--x-small-space);
+  font-size: var(--small-font-size);
+}
+main .admin-button-group > span {
+  color: var(--light-gray-color);
+}
+main .admin-button-group a {
+  color: var(--text-reverse-color);
+  transition: color 0.1s ease-in-out;
+  display: flex;
+  align-items: center;
+  column-gap: var(--x-small-space);
+}
+main .admin-button-group a:hover {
+  color: var(--secondary-color);
+}
+
+main #article-container #article-wrapper .article {
+  line-height: 2.2;
+  font-size: var(--default-font-size);
+  color: var(--text-color);
+  width: 100%;
+  max-width: calc(
+    var(--xxl-screen) - 340px - 240px - var(--default-space) -
+      var(--default-space)
+  );
+}
+
+main #article-container #article-wrapper blockquote {
+  color: var(--text-color);
+}
+main #article-container blockquote[data-ke-style='style2']:before,
+main #article-container blockquote[data-ke-style='style3']:before {
+  display: block;
+  font-weight: bold;
+  margin-bottom: var(--x-small-space);
+}
+main #article-container #article-wrapper blockquote[data-ke-style='style2'],
+main #article-container #article-wrapper blockquote[data-ke-style='style3'] {
+  border: none;
+  border-radius: var(--default-radius);
+  padding: var(--large-space);
+}
+main #article-container blockquote[data-ke-style='style2']:before {
+  content: '💡 Tip';
+  color: #12b886;
+}
+main #article-container #article-wrapper blockquote[data-ke-style='style2'] {
+  background-color: #e6fcf5;
+}
+main #article-container blockquote[data-ke-style='style3']:before {
+  content: '📑 NOTE';
+  color: #228be6;
+}
+main #article-container #article-wrapper blockquote[data-ke-style='style3'] {
+  background-color: #e7f5ff;
+}
+
+main #article-container #article-wrapper .article h1,
+main #article-container #article-wrapper .article h2,
+main #article-container #article-wrapper .article h3 {
+  margin: var(--default-space) 0;
+  font-weight: bold;
+  transition: color 0.1s ease-in-out;
+}
+main #article-container #article-wrapper .article h1 {
+  font-size: 36px;
+}
+main #article-container #article-wrapper .article h2 {
+  font-size: 30px;
+}
+main #article-container #article-wrapper .article h3 {
+  font-size: 24px;
+}
+main #article-container #article-wrapper .article h1:hover,
+main #article-container #article-wrapper .article h2:hover,
+main #article-container #article-wrapper .article h3:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+main #article-container #article-wrapper .article pre {
+  padding: 0;
+  margin: 0;
+  white-space: pre;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+}
+main #article-container #article-wrapper .article pre:hover {
+  margin-right: -240px;
+}
+main #article-container #article-wrapper .article pre code {
+  padding: var(--default-font-size);
+  font-family: Consolas, Menlo, Monaco, source-code-pro, 'Courier New',
+    monospace;
+  border-radius: var(--small-radius);
+  margin: var(--default-space) 0 var(--small-space) 0;
+}
+main #article-container #article-wrapper .article pre .code-language {
+  display: flex;
+  align-items: center;
+  column-gap: var(--x-small-space);
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: var(--small-space);
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+  padding: 1px var(--small-space);
+  font-size: var(--x-small-font-size);
+  font-family: 'Noto Sans KR', serif;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  border-radius: var(--small-radius);
+}
+main #article-container #article-wrapper .article pre .code-language:hover {
+  background-color: var(--primary-hover-color);
+}
+main #article-container #article-wrapper .article strong,
+main #article-container #article-wrapper .article b {
+  font-weight: bold;
+}
+main #article-container #article-wrapper .article ul,
+main #article-container #article-wrapper .article ol {
+  margin: 0 0 var(--default-space) var(--large-space);
+}
+main #article-container #article-wrapper .article a {
+  color: var(--primary-color);
+}
+main #article-container #article-wrapper .article a:hover {
+  color: var(--primary-hover-color);
+}
+
+main #article-container #article-wrapper .article figure {
+  margin: var(--small-space) 0;
+  overflow: hidden;
+  border-radius: var(--default-radius);
+}
+main #article-container #article-wrapper .article figure a {
+  border: 1px solid var(--light-gray-color);
+  border-radius: var(--default-radius);
+  transition: 0.1s all ease-in-out;
+}
+main #article-container #article-wrapper .article figure a:hover {
+  border: 1px solid var(--dark-gray-color);
+}
+main #article-container #article-wrapper .article figure a .og-image {
+  border-right: none;
+}
+main #article-container #article-wrapper .article figure a .og-title {
+  color: var(--text-color);
+}
+main #article-container #article-wrapper .article figure a .og-desc {
+  color: var(--text-sub-color);
+}
+main #article-container #article-wrapper .article figure a .og-host {
+  color: var(--primary-color);
+}
+main #article-container #article-wrapper .article figure a .og-host:hover {
+  color: var(--primary-hover-color);
+}
+
+main #article-container #article-wrapper .article figure.imageblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: var(--small-space) 0;
+  padding: 0;
+  border-radius: 0;
+}
+main #article-container #article-wrapper .article figure.imageblock span {
+  display: block;
+  min-width: 50%;
+  max-width: 80%;
+}
+main #article-container #article-wrapper .article figure.imageblock img {
+  display: block;
+  width: 100%;
+}
+main #article-container #article-wrapper .article figure.imageblock figcaption {
+  color: var(--text-sub-color);
+}
+
+@media screen and (max-width: 1680px) {
+  main #article-container #article-wrapper .article {
+    max-width: calc(
+      100vw - 340px - 240px - var(--default-space) - var(--default-space)
+    );
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main #article-container #article-wrapper .article {
+    max-width: calc(
+      100vw - 240px - var(--default-space) - var(--default-space)
+    );
+  }
+}
+
+@media screen and (max-width: 992px) {
+  main #article-container #article-wrapper .article {
+    max-width: calc(
+      100vw - var(--small-space) - var(--x-small-space) - var(--default-space)
+    );
+  }
+  main #article-container #article-wrapper .article pre:hover {
+    margin-right: 0;
+  }
+  main #article-container #article-wrapper .article figure.imageblock span {
+    min-width: 80%;
+    max-width: 100%;
+  }
+}

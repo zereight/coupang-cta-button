@@ -1,0 +1,21 @@
+/* Search */
+header .search-wrapper {
+  background-color: var(--dark-gray-color);
+  color: var(--text-reverse-color);
+}
+header .search-wrapper #search,
+header .search-wrapper .uil-search {
+  background-color: var(--dark-gray-color);
+  color: var(--text-reverse-color);
+}
+
+/* Header Buttons */
+header .button-group #theme-button,
+header .button-group #admin-button {
+  color: var(--text-reverse-color);
+}
+header .button-group #theme-button:hover,
+header .button-group #admin-button:hover {
+  background-color: var(--primary-color);
+  color: var(--text-hover-color);
+}

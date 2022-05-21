@@ -1,0 +1,11 @@
+#alert {
+  box-shadow: none;
+  border: 1px solid var(--dark-gray-color);
+  background-color: var(--dark-gray-color);
+}
+#alert .uil-check-circle {
+  color: #51cf66;
+}
+#alert .alert-text {
+  color: var(--text-reverse-color);
+}

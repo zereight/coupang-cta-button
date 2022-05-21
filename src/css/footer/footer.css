@@ -1,0 +1,102 @@
+footer {
+  padding: var(--x-large-space) var(--default-space);
+  display: flex;
+  margin-bottom: 350px;
+  margin-top: 100px;
+}
+footer .left-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-sub-color);
+  font-size: var(--small-font-size);
+}
+footer .left-container p.copyright {
+  display: flex;
+  align-items: center;
+  margin-top: var(--large-space);
+}
+footer .left-container p.copyright > span {
+  margin-right: var(--small-space);
+  display: flex;
+  align-items: center;
+}
+footer .left-container p.copyright > span:last-child {
+  margin-right: 0;
+}
+footer .left-container p.copyright > span > a {
+  margin-left: var(--x-small-space);
+  color: var(--primary-color);
+  transition: color 0.1s ease-in-out;
+}
+footer .left-container p.copyright > span > a:hover {
+  color: var(--primary-hover-color);
+}
+
+footer .right-container {
+  display: flex;
+}
+footer .right-container ul.about-me {
+  margin-right: var(--large-space);
+}
+footer .right-container ul.about-me,
+footer .right-container ul.contact {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--small-font-size);
+}
+footer .right-container ul.about-me li a,
+footer .right-container ul.contact li a {
+  color: var(--text-sub-color);
+  display: flex;
+  align-items: center;
+  padding: var(--x-small-space);
+  margin-bottom: var(--small-space);
+}
+footer .right-container ul.contact li a .uil {
+  margin-right: var(--x-small-space);
+}
+footer .right-container ul.about-me li a:hover,
+footer .right-container ul.contact li a:hover {
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+  footer .left-container p.copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer .left-container p.copyright > span {
+    margin-right: 0;
+    margin-bottom: var(--small-space);
+    display: flex;
+    align-items: center;
+  }
+  footer .left-container p.copyright > span:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    flex-direction: column;
+    margin-bottom: 320px;
+  }
+  footer .left-container p.copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer .left-container p.copyright > span {
+    margin-right: 0;
+    margin-bottom: var(--small-space);
+    display: flex;
+    align-items: center;
+  }
+  footer .left-container p.copyright > span:last-child {
+    margin-bottom: 0;
+  }
+  footer .right-container {
+    margin-top: var(--large-space);
+    justify-content: center;
+  }
+}

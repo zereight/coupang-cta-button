@@ -1,0 +1,8 @@
+.article-tag-container a {
+  color: var(--text-reverse-color);
+  background-color: var(--dark-gray-color);
+}
+.article-tag-container a:hover {
+  color: var(--text-hover-color);
+  background-color: var(--primary-color);
+}
