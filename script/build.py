@@ -209,6 +209,11 @@ if __name__ == "__main__":
     # xml
     build_xml(entry_point["xml"])
 
+    # copy assets
+    copy(os.path.join(ASSETS_DIR_PATH, "preview256.jpg"), BUILD_SRC_DIR_PATH)
+    copy(os.path.join(ASSETS_DIR_PATH, "preview560.jpg"), BUILD_SRC_DIR_PATH)
+    copy(os.path.join(ASSETS_DIR_PATH, "preview1600.jpg"), BUILD_SRC_DIR_PATH)
+
 
 def compile(path):
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
