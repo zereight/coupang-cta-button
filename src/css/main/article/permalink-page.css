@@ -7,7 +7,7 @@ main .title-container {
   margin-bottom: var(--large-space);
   width: 100%;
   max-width: calc(
-    var(--xxl-screen) - 340px - 240px - var(--default-space) -
+    var(--xxl-screen) - 336px - 240px - var(--default-space) -
       var(--default-space)
   );
 }
@@ -125,7 +125,7 @@ main #article-container #article-wrapper .article {
   color: var(--text-color);
   width: 100%;
   max-width: calc(
-    var(--xxl-screen) - 340px - 240px - var(--default-space) -
+    var(--xxl-screen) - 336px - 240px - var(--default-space) -
       var(--default-space)
   );
 }
@@ -291,7 +291,7 @@ main #article-container #article-wrapper .article figure.imageblock figcaption {
   main .title-container,
   main #article-container #article-wrapper .article {
     max-width: calc(
-      100vw - 340px - 240px - var(--default-space) - var(--default-space)
+      100vw - 336px - 240px - var(--default-space) - var(--default-space)
     );
   }
 }
