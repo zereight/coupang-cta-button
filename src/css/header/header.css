@@ -34,8 +34,7 @@ header .search-wrapper #search:focus {
 }
 
 /* Header Buttons */
-header .button-group #theme-button,
-header .button-group #admin-button {
+header .button-group .header-button {
   width: 50px;
   height: 50px;
   font-size: var(--default-font-size);
@@ -45,8 +44,7 @@ header .button-group #admin-button {
   padding: 0;
   text-align: center;
 }
-header .button-group #theme-button:hover,
-header .button-group #admin-button:hover {
+header .button-group .header-button:hover {
   background-color: var(--primary-color);
   color: var(--text-hover-color);
   cursor: pointer;
