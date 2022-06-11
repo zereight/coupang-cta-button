@@ -341,6 +341,15 @@ window.onload = () => {
   };
   searchInput.addEventListener('keypress', funcWrapper(search));
 
+  // Post button
+  const postButton = document.querySelector(
+    '#post-button'
+  ) as HTMLButtonElement;
+  const movePostPage = (event: MouseEvent) => {
+    window.open('/manage/post', '_blank');
+  };
+  postButton.addEventListener('click', funcWrapper(movePostPage));
+
   // Admin button
   const adminButton = document.querySelector(
     '#admin-button'

@@ -10,12 +10,10 @@ header .search-wrapper .uil-search {
 }
 
 /* Header Buttons */
-header .button-group #theme-button,
-header .button-group #admin-button {
+header .button-group .header-button {
   color: var(--text-reverse-color);
 }
-header .button-group #theme-button:hover,
-header .button-group #admin-button:hover {
+header .button-group .header-button:hover {
   background-color: var(--primary-color);
   color: var(--text-hover-color);
 }
