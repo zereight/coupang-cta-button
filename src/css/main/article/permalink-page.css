@@ -292,7 +292,10 @@ main #article-container #article-wrapper .article figure.imageblock {
 main #article-container #article-wrapper .article figure.imageblock span,
 main #article-container #article-wrapper .article figure.imageblock img {
   display: block;
-  width: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 60vh;
 }
 main #article-container #article-wrapper .article figure.imageblock figcaption {
   color: var(--text-sub-color);

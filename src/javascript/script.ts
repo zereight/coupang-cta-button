@@ -322,15 +322,19 @@ window.onload = () => {
     ) as HTMLDivElement;
     likeButton.innerHTML = !!likeOnDiv ? heartFillSvg : heartSvg;
   };
-
-  if (likeButton) {
-    displayLikeButton();
-    likeButton.addEventListener('click', () => {
-      (
-        document.querySelector('.btn_post.uoc-icon') as HTMLButtonElement
-      )?.click();
-      setTimeout(displayLikeButton, 200);
-    });
+  const uocIconButton = document.querySelector(
+    '.btn_post.uoc-icon'
+  ) as HTMLButtonElement;
+  if (!uocIconButton) {
+    likeButton.style.display = 'none';
+  } else {
+    if (likeButton) {
+      displayLikeButton();
+      likeButton.addEventListener('click', () => {
+        uocIconButton?.click();
+        setTimeout(displayLikeButton, 200);
+      });
+    }
   }
 
   // blog menu
