@@ -1,5 +1,6 @@
 #scroll-top-button,
-#float-theme-button {
+#float-theme-button,
+#btn-like {
   position: fixed;
   right: 100px;
   bottom: -500px;
@@ -38,7 +39,8 @@
   transition: 0.1s bottom ease-in-out;
 }
 #scroll-top-button:hover,
-#float-theme-button:hover {
+#float-theme-button:hover,
+#btn-like:hover {
   cursor: pointer;
   background-color: var(--primary-color);
   color: var(--text-hover-color);
@@ -56,23 +58,28 @@
 @media screen and (max-width: 992px) {
   #scroll-top-button,
   #float-theme-button,
+  #btn-like,
   .container_postbtn .btn_subscription {
-    right: 70px;
+    right: 60px;
   }
 }
 
 @media screen and (max-width: 768px) {
   #scroll-top-button,
   #float-theme-button,
+  #btn-like,
   .container_postbtn .btn_subscription {
-    right: 50px;
+    right: 40px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  #scroll-top-button,
+  #scroll-top-button {
+    right: 20px;
+  }
   #float-theme-button,
+  #btn-like,
   .container_postbtn .btn_subscription {
-    right: 30px;
+    display: none;
   }
 }

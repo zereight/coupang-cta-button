@@ -1,14 +1,17 @@
 #scroll-top-button,
-#float-theme-button {
+#float-theme-button,
+#btn-like {
   background-color: var(--dark-gray-color);
   color: var(--text-reverse-color);
 }
+
 .container_postbtn .btn_subscription {
   background-color: var(--dark-gray-color) !important;
   color: var(--text-reverse-color) !important;
 }
 #scroll-top-button:hover,
-#float-theme-button:hover {
+#float-theme-button:hover,
+#btn-like:hover {
   background-color: var(--primary-color);
   color: var(--text-hover-color);
 }

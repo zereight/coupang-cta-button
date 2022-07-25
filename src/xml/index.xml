@@ -135,6 +135,18 @@
                 <option />
                 <default>false</default>
             </variable>
+            <variable>
+                <name>dark-theme-on-off</name>
+                <label>
+                    <![CDATA[ 다크 테마 변경 기능 활성화 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 다크 테마 변경 기능을 활성화합니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+            </variable>
         </variablegroup>
         <!-- Profile -->
         <variablegroup name="프로필 설정">

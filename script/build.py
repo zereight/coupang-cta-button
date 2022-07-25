@@ -131,7 +131,9 @@ def build_javascript(entry_point, env=ENV_DEV, html_entry_point=None):
     js_path = os.path.join(BUILD_SRC_DIR_PATH, entry_point)
 
     indent = " " * 4
-    javascript_tag = "{}<script type=\"text/javascript\" src=\"./images/{}\"></script>".format(indent, entry_point)
+    package_json = get_package_json()
+    skin_version = package_json["version"]
+    javascript_tag = "{}<script type=\"text/javascript\" src=\"./images/{}?v={}\"></script>".format(indent, entry_point, skin_version)
     if env == ENV_DEV and html_entry_point is not None:
         javascript_tag = ["{}<script type=\"text/javascript\">".format(indent)]
         with open(js_path, "rb") as f:
