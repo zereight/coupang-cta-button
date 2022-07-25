@@ -289,11 +289,7 @@ main #article-container #article-wrapper .article figure.imageblock {
   padding: 0;
   border-radius: 0;
 }
-main #article-container #article-wrapper .article figure.imageblock span {
-  display: block;
-  min-width: 50%;
-  max-width: 80%;
-}
+main #article-container #article-wrapper .article figure.imageblock span,
 main #article-container #article-wrapper .article figure.imageblock img {
   display: block;
   width: 100%;
