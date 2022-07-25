@@ -134,7 +134,7 @@ window.onload = () => {
   if (ACTIVE_DARK_THEME) {
     // localStorage에서 theme 값을 가지고와서 테마 설정
     const initTheme = (): void => {
-      const isDarkTheme = localStorage.getItem('theme') === 'dark';
+      const isDarkTheme = localStorage?.getItem('theme') === 'dark';
       if (ACTIVE_DARK_THEME && isDarkTheme) {
         body.classList.add('dark-theme');
       }
@@ -158,7 +158,7 @@ window.onload = () => {
       '#float-theme-button .uil-moon'
     ) as HTMLElement;
     const initThemeIcon = (): void => {
-      const isDarkTheme = localStorage.getItem('theme') === 'dark';
+      const isDarkTheme = localStorage?.getItem('theme') === 'dark';
       if (isDarkTheme) {
         sunIcon.style.display = 'block';
         floatSunIcon.style.display = 'block';
@@ -175,21 +175,21 @@ window.onload = () => {
         moonIcon.style.display = 'block';
         floatMoonIcon.style.display = 'block';
         body.classList.remove('dark-theme');
-        localStorage.removeItem('theme');
+        localStorage?.removeItem('theme');
       } else {
         sunIcon.style.display = 'block';
         floatSunIcon.style.display = 'block';
         moonIcon.style.display = 'none';
         floatMoonIcon.style.display = 'none';
         body.classList.add('dark-theme');
-        localStorage.setItem('theme', 'dark');
+        localStorage?.setItem('theme', 'dark');
       }
     };
     themeButton?.addEventListener('click', funcWrapper(toggleTheme));
     floatThemeButton?.addEventListener('click', funcWrapper(toggleTheme));
   } else {
     body.classList.remove('dark-theme');
-    localStorage.removeItem('theme');
+    localStorage?.removeItem('theme');
   }
 
   // scroll top button
