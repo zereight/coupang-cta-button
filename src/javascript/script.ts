@@ -138,7 +138,7 @@ window.onload = () => {
     };
     funcWrapper(initTheme)();
 
-    //
+    // 테마 버튼 아이콘 변경
     const floatThemeButton = document.querySelector(
       '#float-theme-button'
     ) as HTMLButtonElement;
@@ -204,7 +204,7 @@ window.onload = () => {
       behavior: 'smooth',
     });
   };
-  scrollTopButton.addEventListener('click', funcWrapper(onClickScrollTop));
+  scrollTopButton?.addEventListener('click', funcWrapper(onClickScrollTop));
 
   // TOC
   const showToc = (): void => {
@@ -285,7 +285,7 @@ window.onload = () => {
           node.id = text;
           node.classList.add('head');
           node.innerHTML = text;
-          node.addEventListener(
+          node?.addEventListener(
             'click',
             funcWrapper(() => (window.location.href = `#${text}`))
           );
@@ -350,7 +350,7 @@ window.onload = () => {
       return false;
     }
   };
-  searchInput.addEventListener('keypress', funcWrapper(search));
+  searchInput?.addEventListener('keypress', funcWrapper(search));
 
   // Post button
   const postButton = document.querySelector(
@@ -359,7 +359,7 @@ window.onload = () => {
   const movePostPage = (event: MouseEvent) => {
     window.open('/manage/post', '_blank');
   };
-  postButton.addEventListener('click', funcWrapper(movePostPage));
+  postButton?.addEventListener('click', funcWrapper(movePostPage));
 
   // Admin button
   const adminButton = document.querySelector(
@@ -368,7 +368,7 @@ window.onload = () => {
   const moveAdminPage = (event: MouseEvent) => {
     window.open('/manage', '_blank');
   };
-  adminButton.addEventListener('click', funcWrapper(moveAdminPage));
+  adminButton?.addEventListener('click', funcWrapper(moveAdminPage));
 
   // counter
   const calcVisitCounter = () => {
@@ -417,8 +417,8 @@ window.onload = () => {
   const closeSideBar = () => {
     sidebar.style.left = '-700px';
   };
-  sidebarOpenButton.addEventListener('click', funcWrapper(openSideBar));
-  sidebarCloseButton.addEventListener('click', funcWrapper(closeSideBar));
+  sidebarOpenButton?.addEventListener('click', funcWrapper(openSideBar));
+  sidebarCloseButton?.addEventListener('click', funcWrapper(closeSideBar));
 
   // code language
   const makeCodeLanguageLabel = () => {
@@ -434,7 +434,7 @@ window.onload = () => {
 
           const code = node.children[0].textContent;
           if (code) {
-            label.addEventListener('click', () =>
+            label?.addEventListener('click', () =>
               copy(code, () => showAlert('복사되었습니다.'))
             );
           }
