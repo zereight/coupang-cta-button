@@ -10,6 +10,12 @@ main #article-container #article-wrapper blockquote[data-ke-style='style2'] {
 main #article-container blockquote[data-ke-style='style3']:before {
   color: #e7f5ff;
 }
+main #article-container blockquote[data-ke-style='style3'] a {
+  color: var(--primary-light-color) !important;
+}
+main #article-container blockquote[data-ke-style='style3'] a:hover {
+  color: var(--primary-hover-color) !important;
+}
 main #article-container #article-wrapper blockquote {
   color: var(--text-reverse-color);
 }
