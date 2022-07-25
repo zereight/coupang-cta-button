@@ -1,3 +1,5 @@
+let ACTIVE_DARK_THEME = true;
+
 let alertTimer: number;
 
 type EventHandlerFunction = (e: any) => any;
@@ -15,15 +17,6 @@ const funcWrapper = (
     }
   }
 };
-
-const initTheme = (): void => {
-  const isDarkTheme = localStorage.getItem('theme') === 'dark';
-  if (isDarkTheme) {
-    const bodyTag = document.querySelector('body') as HTMLBodyElement;
-    bodyTag.classList.add('dark-theme');
-  }
-};
-funcWrapper(initTheme)();
 
 const move = (url: string, target = '_self') => window.open(url, target);
 
@@ -77,16 +70,17 @@ const headerIntersectionObserver = new IntersectionObserver((entries) => {
     '.container_postbtn .btn_subscription'
   ) as HTMLButtonElement;
 
-  const show = () => {
-    scrollTopButton.style.bottom = '80px';
-    floatThemeButton.style.bottom = '160px';
-    subscribeButton.style.bottom = '240px';
-  };
-  const hide = () => {
-    scrollTopButton.style.bottom = '-500px';
-    floatThemeButton.style.bottom = '-500px';
-    subscribeButton.style.bottom = '-500px';
-  };
+  const buttonList = [
+    scrollTopButton,
+    floatThemeButton,
+    subscribeButton,
+  ].filter((btn) => !!btn);
+  const show = () =>
+    buttonList.forEach(
+      (btn, idx) => btn && (btn.style.bottom = `${80 * (idx + 1)}px`)
+    );
+  const hide = () =>
+    buttonList.forEach((btn, idx) => btn && (btn.style.bottom = '-500px'));
 
   if (entries[0].intersectionRatio === 0) {
     funcWrapper(show)();
@@ -132,51 +126,68 @@ window.onload = () => {
   const themeButton = document.querySelector(
     '#theme-button'
   ) as HTMLButtonElement;
-  const floatThemeButton = document.querySelector(
-    '#float-theme-button'
-  ) as HTMLButtonElement;
-  const sunIcon = document.querySelector(
-    '#theme-button .uil-sun'
-  ) as HTMLElement;
-  const moonIcon = document.querySelector(
-    '#theme-button .uil-moon'
-  ) as HTMLElement;
-  const floatSunIcon = document.querySelector(
-    '#float-theme-button .uil-sun'
-  ) as HTMLElement;
-  const floatMoonIcon = document.querySelector(
-    '#float-theme-button .uil-moon'
-  ) as HTMLElement;
-  const initThemeIcon = (): void => {
-    const isDarkTheme = localStorage.getItem('theme') === 'dark';
-    if (isDarkTheme) {
-      sunIcon.style.display = 'block';
-      floatSunIcon.style.display = 'block';
-      moonIcon.style.display = 'none';
-      floatMoonIcon.style.display = 'none';
-    }
-  };
-  funcWrapper(initThemeIcon)();
-  const toggleTheme = (e: Event) => {
-    const isDarkTheme = body.classList.contains('dark-theme');
-    if (isDarkTheme) {
-      sunIcon.style.display = 'none';
-      floatSunIcon.style.display = 'none';
-      moonIcon.style.display = 'block';
-      floatMoonIcon.style.display = 'block';
-      body.classList.remove('dark-theme');
-      localStorage.removeItem('theme');
-    } else {
-      sunIcon.style.display = 'block';
-      floatSunIcon.style.display = 'block';
-      moonIcon.style.display = 'none';
-      floatMoonIcon.style.display = 'none';
-      body.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark');
-    }
-  };
-  themeButton.addEventListener('click', funcWrapper(toggleTheme));
-  floatThemeButton.addEventListener('click', funcWrapper(toggleTheme));
+  ACTIVE_DARK_THEME = !!themeButton; // 테마 버튼이 없는 경우, 다크 테마 기능이 비활성화 된것으로 간주
+
+  if (ACTIVE_DARK_THEME) {
+    // localStorage에서 theme 값을 가지고와서 테마 설정
+    const initTheme = (): void => {
+      const isDarkTheme = localStorage.getItem('theme') === 'dark';
+      if (ACTIVE_DARK_THEME && isDarkTheme) {
+        body.classList.add('dark-theme');
+      }
+    };
+    funcWrapper(initTheme)();
+
+    //
+    const floatThemeButton = document.querySelector(
+      '#float-theme-button'
+    ) as HTMLButtonElement;
+    const sunIcon = document.querySelector(
+      '#theme-button .uil-sun'
+    ) as HTMLElement;
+    const moonIcon = document.querySelector(
+      '#theme-button .uil-moon'
+    ) as HTMLElement;
+    const floatSunIcon = document.querySelector(
+      '#float-theme-button .uil-sun'
+    ) as HTMLElement;
+    const floatMoonIcon = document.querySelector(
+      '#float-theme-button .uil-moon'
+    ) as HTMLElement;
+    const initThemeIcon = (): void => {
+      const isDarkTheme = localStorage.getItem('theme') === 'dark';
+      if (isDarkTheme) {
+        sunIcon.style.display = 'block';
+        floatSunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+        floatMoonIcon.style.display = 'none';
+      }
+    };
+    funcWrapper(initThemeIcon)();
+    const toggleTheme = (e: Event) => {
+      const isDarkTheme = body.classList.contains('dark-theme');
+      if (isDarkTheme) {
+        sunIcon.style.display = 'none';
+        floatSunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+        floatMoonIcon.style.display = 'block';
+        body.classList.remove('dark-theme');
+        localStorage.removeItem('theme');
+      } else {
+        sunIcon.style.display = 'block';
+        floatSunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+        floatMoonIcon.style.display = 'none';
+        body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+      }
+    };
+    themeButton?.addEventListener('click', funcWrapper(toggleTheme));
+    floatThemeButton?.addEventListener('click', funcWrapper(toggleTheme));
+  } else {
+    body.classList.remove('dark-theme');
+    localStorage.removeItem('theme');
+  }
 
   // scroll top button
   const header = document.querySelector('header');

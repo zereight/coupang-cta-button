@@ -12,10 +12,12 @@
     </s_search>
   </div>
   <div class="button-group">
-    <button id="theme-button" class="header-button">
-      <i class="uil uil-sun"></i>
-      <i class="uil uil-moon"></i>
-    </button>
+    <s_if_var_dark-theme-on-off>
+      <button id="theme-button" class="header-button">
+        <i class="uil uil-sun"></i>
+        <i class="uil uil-moon"></i>
+      </button>
+    </s_if_var_dark-theme-on-off>
     <button id="post-button" class="header-button">
       <i class="uil uil-pen"></i>
     </button>
