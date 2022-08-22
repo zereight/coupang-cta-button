@@ -130,6 +130,14 @@ main #article-container #article-wrapper .article {
   );
 }
 
+main #article-container #article-wrapper .article ul {
+  list-style-type: circle;
+}
+
+main #article-container #article-wrapper .article ol {
+  list-style-type: decimal;
+}
+
 main #article-container #article-wrapper blockquote {
   color: var(--text-color);
 }
