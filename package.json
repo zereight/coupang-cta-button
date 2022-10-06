@@ -1,27 +1,23 @@
 {
   "name": "tistory_berry_skin",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "repository": "https://github.com/bluemiv/tistory_berry_skin.git",
   "author": "TaehongKim <public.bluemiv@gmail.com>",
   "description": "수정 가능, 재배포 금지",
   "license": "MIT",
   "scripts": {
-    "babel_build": "yarn tsc && yarn babel build/temp/script.js --out-file build/src/script.js",
-    "prebuild": "rm -rf build && yarn babel_build",
-    "build": "python3 script/build.py",
-    "build:prod": "yarn prebuild && python3 script/build.py prod",
-    "dev": "python3 script/dev.py"
+    "build:pug": "yarn pug ./src/view/index.pug -o ./build/skin.html -P",
+    "build": "yarn build:pug && yarn webpack --config webpack.config.js",
+    "build:prod": "export NODE_ENV=prod && yarn build:pug && yarn webpack --config webpack.config.js",
+    "dev": "yarn pug -w ./src/view/index.pug -o ./build/skin.html -P"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
-    "@babel/preset-typescript": "^7.16.7",
-    "babel-preset-minify": "^0.5.2",
-    "prettier": "^2.6.2",
-    "typescript": "^4.6.4"
+    "prettier": "^2.7.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   },
   "engines": {
-    "node": ">=16.15.1"
+    "node": ">=16.17.0"
   }
 }
