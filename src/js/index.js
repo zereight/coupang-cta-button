@@ -1,3 +1,15 @@
-window.document.addEventListener('DOMContentLoaded', function () {});
+import { WRITE_URL, MANAGE_URL } from './constants';
+import { initTheme, toggleTheme } from './theme-service';
+import { defEventHandler, openTab } from './util-service';
 
-window.onload(function () {});
+// initialize theme
+initTheme();
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Theme button event handler
+  defEventHandler('#theme-btn', 'click', toggleTheme);
+  // Write button event handler
+  defEventHandler('#write-btn', 'click', () => openTab(WRITE_URL));
+  // Manage button event handler
+  defEventHandler('#manage-btn', 'click', () => openTab(MANAGE_URL));
+});

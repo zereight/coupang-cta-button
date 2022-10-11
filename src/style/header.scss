@@ -1,0 +1,56 @@
+header {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 80px;
+  padding: 0 $pd-lg;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+
+  a.title {
+    h1 {
+      font-size: $fs-lg;
+      font-weight: normal;
+    }
+  }
+
+  .menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    column-gap: $pd-md;
+    button {
+      width: 50px;
+      height: 50px;
+      display: block;
+    }
+  }
+
+  #theme-btn {
+    .bi-moon {
+      display: inline;
+    }
+    .bi-sun {
+      display: none;
+    }
+  }
+}
+
+.dark-theme {
+  header {
+    background-color: rgba(52, 58, 64, 0.7);
+
+    #theme-btn {
+      .bi-moon {
+        display: none;
+      }
+      .bi-sun {
+        display: inline;
+      }
+    }
+  }
+}

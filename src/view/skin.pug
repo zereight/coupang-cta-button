@@ -1,9 +1,13 @@
 doctype html
-html(lang="ko")
-    head
-        include head/meta
-        include head/import
-        title test pug page
-    body
-        include header/index
-        include footer/index
+html(lang='ko')
+  head
+    include head/meta
+    include head/import
+    title [##_page_title_##]
+  body
+    include header/index
+    .main-container 
+      include aside/index
+      include main/index
+    include footer/index
+    script(type='text/javascript')

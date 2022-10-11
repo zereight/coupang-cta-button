@@ -1,0 +1,55 @@
+/* button */
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  transition: $transition;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-text {
+  border: none;
+  background-color: inherit;
+  color: $font-color;
+  &:hover {
+    background-color: $primary;
+    color: $d-font-color;
+    box-shadow: $btn-box-shadow;
+  }
+}
+
+/* link */
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: $transition;
+  border: none;
+}
+.link-primary {
+  color: $primary;
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+/* dark theme  */
+.dark-theme {
+  /* button */
+  .btn-text {
+    color: $d-font-color;
+    &:hover {
+      background-color: $primary;
+      box-shadow: $d-btn-box-shadow;
+    }
+  }
+
+  /* link */
+  .link-primary {
+    color: $d-primary;
+
+    &:hover {
+      color: $d-primary-dark;
+    }
+  }
+}

@@ -6,12 +6,16 @@
   "description": "수정 가능, 재배포 금지",
   "license": "MIT",
   "scripts": {
-    "build:pug": "yarn pug src/view/skin.pug -o ./build -P",
-    "build": "yarn build:pug && yarn webpack --config webpack.config.js",
-    "build:prod": "export NODE_ENV=prod && yarn build:pug && yarn webpack --config webpack.config.js",
-    "dev": "yarn pug -w src/view/skin.pug -o ./build -P"
+    "prettier:all": "yarn prettier --write ./src",
+    "dev:pug": "yarn pug -w src/view/skin.pug -o ./build -P",
+    "dev:webpack": "yarn webpack --watch --config webpack.config.js",
+    "build:pug": "yarn prettier:all && yarn pug src/view/skin.pug -o ./build -P",
+    "build": "yarn prettier:all && rm -rf ./build && yarn build:pug && yarn webpack --config webpack.config.js",
+    "build:prod": "export NODE_ENV=prod && yarn build"
   },
   "devDependencies": {
+    "@prettier/plugin-pug": "^2.2.0",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "mini-css-extract-plugin": "^2.6.1",
     "prettier": "^2.7.1",
@@ -19,7 +23,8 @@
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "xml-loader": "^1.2.1"
   },
   "engines": {
     "node": ">=16.17.0"
