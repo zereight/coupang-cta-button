@@ -9,6 +9,17 @@ $primary7: #4263eb;
 $primary8: #3b5bdb;
 $primary9: #364fc7;
 
+$secondary0: #fff0f6;
+$secondary1: #ffdeeb;
+$secondary2: #fcc2d7;
+$secondary3: #faa2c1;
+$secondary4: #f783ac;
+$secondary5: #f06595;
+$secondary6: #e64980;
+$secondary7: #d6336c;
+$secondary8: #c2255c;
+$secondary9: #a61e4d;
+
 $gray0: #f8f9fa;
 $gray1: #f1f3f5;
 $gray2: #e9ecef;
@@ -21,20 +32,22 @@ $gray8: #343a40;
 $gray9: #212529;
 
 /* font size */
-$fs-xxs: 0.6rem;
-$fs-xs: 0.7rem;
-$fs-sm: 0.8rem;
+$fs-xxs: 0.7rem;
+$fs-xs: 0.8rem;
+$fs-sm: 0.9rem;
 $fs-md: 1rem;
 $fs-lg: 1.5rem;
 $fs-xl: 1.75rem;
 
 /* padding */
+$pd-xs: 0.6rem;
 $pd-sm: 0.8rem;
 $pd-md: 1rem;
 $pd-lg: 2rem;
 $pd-xl: 3rem;
 
 /* radius */
+$radius-sm: 4px;
 $radius-md: 8px;
 $radius-circle: 100%;
 
@@ -43,7 +56,7 @@ $transition: all 0.15s ease-in-out;
 
 /* primary color */
 // light theme
-$primary-light: $primary3;
+$primary-light: $primary0;
 $primary: $primary5;
 $primary-dark: $primary7;
 // dark theme
@@ -51,9 +64,20 @@ $d-primary-light: $primary4;
 $d-primary: $primary7;
 $d-primary-dark: $primary9;
 
+/* secondary color */
+// light theme
+$secondary-light: $secondary0;
+$secondary: $secondary5;
+$secondary-dark: $secondary7;
+// dark theme
+$d-secondary-light: $secondary4;
+$d-secondary: $secondary7;
+$d-secondary-dark: $secondary9;
+
 /* font & background color */
 // light theme
 $font-color: $gray9;
+$font-sub-color: $gray6;
 $bg-color: #ffffff;
 // dark theme
 $d-font-color: $gray1;
@@ -61,6 +85,6 @@ $d-bg-color: $gray8;
 
 /* box shadow */
 // light theme
-$btn-box-shadow: 0px 5px 12px 1px $gray5;
+$btn-box-shadow: 0px 5px 12px 1px $gray3;
 // dark theme
 $d-btn-box-shadow: 0px 5px 12px 1px $gray9;
