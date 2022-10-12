@@ -1,6 +1,20 @@
 .idea/
 .vscode/
+.DS_Store
+
 node_modules
+
 build/
+dist/
+lib/
 
 yarn-*.log
+
+# zero install
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+!.yarn/cache
