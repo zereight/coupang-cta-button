@@ -3,7 +3,7 @@ aside.sidebar {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  row-gap: $pd-lg;
+  row-gap: $pd-xl;
   padding: $pd-md;
   border-right: 1px dashed $gray2;
 
@@ -41,6 +41,7 @@ aside.sidebar {
       height: 120px;
       border-radius: $radius-circle;
       overflow: hidden;
+      box-shadow: $box-shadow;
 
       img {
         width: 100%;
@@ -82,41 +83,85 @@ aside.sidebar {
         text-decoration: none;
         display: flex;
         align-items: center;
-        column-gap: $pd-xs;
-        padding: $pd-sm;
-        border-radius: $radius-md;
+        column-gap: $pd-sm;
         color: $font-color;
         transition: $transition;
-        &:hover {
-          box-shadow: $btn-box-shadow;
-        }
+        padding: $pd-md;
+        border-radius: $radius-md;
 
         .c_cnt {
-          background-color: $gray0;
           color: $font-sub-color;
-          padding: 2px 4px;
-          border-radius: $radius-sm;
           font-size: $fs-xs;
+        }
+
+        &:hover {
+          box-shadow: $box-shadow;
         }
       }
 
+      a.link_tit,
       a.link_item {
         &:hover {
+          color: $primary;
           background-color: $primary-light;
-          color: $primary-dark;
+
+          .c_cnt {
+            color: $primary;
+          }
         }
       }
 
       a.link_sub_item {
-        column-gap: $pd-md;
-        &:before {
-          content: ">";
-          font-size: $fs-xs;
-          color: $font-sub-color;
-        }
         &:hover {
+          color: $secondary;
           background-color: $secondary-light;
-          color: $secondary-dark;
+
+          .c_cnt {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark-theme {
+  aside.sidebar {
+    #category {
+      .tt_category {
+        a {
+          color: $d-font-color;
+
+          .c_cnt {
+            color: $d-font-sub-color;
+          }
+
+          &:hover {
+            box-shadow: $d-box-shadow;
+          }
+        }
+
+        a.link_tit,
+        a.link_item {
+          &:hover {
+            color: $d-primary-light;
+            background-color: $d-primary-dark;
+
+            .c_cnt {
+              color: $d-primary-light;
+            }
+          }
+        }
+
+        a.link_sub_item {
+          &:hover {
+            color: $d-secondary-light;
+            background-color: $d-secondary-dark;
+
+            .c_cnt {
+              color: $d-secondary-light;
+            }
+          }
         }
       }
     }

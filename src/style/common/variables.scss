@@ -36,8 +36,8 @@ $fs-xxs: 0.7rem;
 $fs-xs: 0.8rem;
 $fs-sm: 0.9rem;
 $fs-md: 1rem;
-$fs-lg: 1.5rem;
-$fs-xl: 1.75rem;
+$fs-lg: 1.75rem;
+$fs-xl: 2rem;
 
 /* padding */
 $pd-xs: 0.6rem;
@@ -56,23 +56,23 @@ $transition: all 0.15s ease-in-out;
 
 /* primary color */
 // light theme
-$primary-light: $primary0;
-$primary: $primary5;
-$primary-dark: $primary7;
+$primary-light: #f0f5ff;
+$primary: #2f54eb;
+$primary-dark: #10239e;
 // dark theme
-$d-primary-light: $primary4;
-$d-primary: $primary7;
-$d-primary-dark: $primary9;
+$d-primary-light: #d2e0fa;
+$d-primary: #2b4acb;
+$d-primary-dark: #1c2755;
 
 /* secondary color */
 // light theme
-$secondary-light: $secondary0;
-$secondary: $secondary5;
-$secondary-dark: $secondary7;
+$secondary-light: #f9f0ff;
+$secondary: #722ed1;
+$secondary-dark: #391085;
 // dark theme
-$d-secondary-light: $secondary4;
-$d-secondary: $secondary7;
-$d-secondary-dark: $secondary9;
+$d-secondary-light: #ebd7fa;
+$d-secondary: #642ab5;
+$d-secondary-dark: #301c4d;
 
 /* font & background color */
 // light theme
@@ -81,10 +81,15 @@ $font-sub-color: $gray6;
 $bg-color: #ffffff;
 // dark theme
 $d-font-color: $gray1;
+$d-font-sub-color: $gray5;
 $d-bg-color: $gray8;
 
 /* box shadow */
 // light theme
-$btn-box-shadow: 0px 5px 12px 1px $gray3;
+$box-shadow: 0px 5px 12px 1px $gray2;
+$primary-box-shadow: 0px 5px 12px 1px $primary0;
+$secondary-box-shadow: 0px 5px 12px 1px $secondary0;
 // dark theme
-$d-btn-box-shadow: 0px 5px 12px 1px $gray9;
+$d-box-shadow: 0px 5px 12px 1px $gray9;
+$d-primary-box-shadow: 0px 5px 12px 1px $primary4;
+$d-secondary-box-shadow: 0px 5px 12px 1px $secondary4;

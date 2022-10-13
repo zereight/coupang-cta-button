@@ -15,7 +15,7 @@
   &:hover {
     background-color: $primary;
     color: $d-font-color;
-    box-shadow: $btn-box-shadow;
+    box-shadow: $box-shadow;
   }
 }
 
@@ -40,7 +40,7 @@
     color: $d-font-color;
     &:hover {
       background-color: $primary;
-      box-shadow: $d-btn-box-shadow;
+      box-shadow: $d-box-shadow;
     }
   }
 

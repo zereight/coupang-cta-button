@@ -84,6 +84,7 @@ video {
   border: 0;
   vertical-align: baseline;
 }
+
 article,
 aside,
 details,
@@ -97,11 +98,13 @@ nav,
 section {
   display: block;
 }
+
 body {
   font-size: 18px;
   line-height: 1;
   color: $font-color;
   background-color: $bg-color;
+  font-family: 'SUIT', system-ui, Apple Gothic, sans-serif;
 }
 
 .dark-theme {
