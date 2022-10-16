@@ -8,28 +8,15 @@
   align-items: center;
   justify-content: center;
 }
+
 .btn-text {
   border: none;
   background-color: inherit;
   color: $font-color;
   &:hover {
-    background-color: $primary;
-    color: $d-font-color;
+    background-color: $primary-light;
+    color: $primary;
     box-shadow: $box-shadow;
-  }
-}
-
-/* link */
-.link {
-  text-decoration: none;
-  cursor: pointer;
-  transition: $transition;
-  border: none;
-}
-.link-primary {
-  color: $primary;
-  &:hover {
-    color: $primary-dark;
   }
 }
 
@@ -39,17 +26,9 @@
   .btn-text {
     color: $d-font-color;
     &:hover {
-      background-color: $primary;
+      color: $d-primary-light;
+      background-color: $d-primary-dark;
       box-shadow: $d-box-shadow;
-    }
-  }
-
-  /* link */
-  .link-primary {
-    color: $d-primary;
-
-    &:hover {
-      color: $d-primary-dark;
     }
   }
 }

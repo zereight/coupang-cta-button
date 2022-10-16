@@ -7,21 +7,22 @@ const DEV = 'development';
 const mode = process.env?.NODE_ENV?.toLowerCase() === 'prod' ? PROD : DEV;
 const isDevMode = mode === DEV;
 
+const buildPath = path.resolve(__dirname, 'build');
+
 const plugins = [
   new CopyPlugin({
-    patterns: [{ from: './src/config', to: './' }],
+    patterns: [{ from: path.join(__dirname, 'src/config'), to: './' }],
   }),
+  new MiniCssExtractPlugin({ filename: 'style.css' }),
 ];
-if (isDevMode) {
-  plugins.push(new MiniCssExtractPlugin({ filename: 'style.css' }));
-}
 
 module.exports = {
   mode,
   plugins,
+  devtool: 'source-map',
   entry: ['./src/js/index.js', './src/style/index.scss', './src/config/index.xml'],
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: buildPath,
     filename: 'index.js',
   },
   module: {

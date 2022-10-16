@@ -10,6 +10,8 @@ header {
   backdrop-filter: blur(10px);
 
   a.title {
+    text-decoration: none;
+    color: $font-color;
     h1 {
       font-size: $fs-lg;
       font-weight: normal;
@@ -44,13 +46,8 @@ header {
   header {
     background-color: rgba(52, 58, 64, 0.7);
 
-    #theme-btn {
-      .bi-moon {
-        display: none;
-      }
-      .bi-sun {
-        display: inline;
-      }
+    a.title {
+      color: $d-font-color;
     }
   }
 }

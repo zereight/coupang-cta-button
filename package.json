@@ -9,9 +9,10 @@
     "prettier:all": "yarn prettier --write ./src",
     "dev:pug": "yarn pug -w src/view/skin.pug -o ./build -P",
     "dev:webpack": "yarn webpack --watch --config webpack.config.js",
-    "build:pug": "yarn prettier:all && yarn pug src/view/skin.pug -o ./build -P",
-    "build": "yarn prettier:all && rm -rf ./build && yarn build:pug && yarn webpack --config webpack.config.js",
-    "build:prod": "export NODE_ENV=prod && yarn build"
+    "build:pug": "yarn pug src/view/skin.pug -o ./build -P",
+    "build:webpack": "yarn webpack --config webpack.config.js",
+    "build": "yarn prettier:all && rm -rf ./build && yarn build:pug && yarn build:webpack",
+    "build:prod": "NODE_ENV=prod && yarn build"
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^2.2.0",
@@ -27,7 +28,7 @@
     "xml-loader": "^1.2.1"
   },
   "engines": {
-    "node": ">=16.17.0"
+    "node": ">=16.18.0"
   },
   "packageManager": "yarn@3.2.4"
 }
