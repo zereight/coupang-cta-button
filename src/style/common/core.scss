@@ -1,22 +1,55 @@
 /* button */
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   cursor: pointer;
   transition: $transition;
   border-radius: $radius-md;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: none;
+  padding: $pd-md;
+  margin: 0;
 }
 
 .btn-text {
-  border: none;
   background-color: inherit;
   color: $font-color;
+
   &:hover {
-    background-color: $primary-light;
-    color: $primary;
+    background-color: $light-gray-background-color;
+  }
+}
+
+.btn-primary-text {
+  background-color: inherit;
+  color: $font-color;
+
+  &:hover {
     box-shadow: $box-shadow;
+    background-color: $primary-light;
+  }
+}
+
+.btn-secondary-text {
+  background-color: inherit;
+  color: $font-color;
+
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $secondary-light;
+  }
+}
+
+/* link */
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: $transition;
+  color: $font-color;
+
+  &:hover {
+    color: $primary;
   }
 }
 
@@ -25,10 +58,38 @@
   /* button */
   .btn-text {
     color: $d-font-color;
+
     &:hover {
-      color: $d-primary-light;
-      background-color: $d-primary-dark;
+      background-color: $dark-gray-background-color;
+    }
+  }
+
+  .btn-primary-text {
+    background-color: inherit;
+    color: $d-font-color;
+
+    &:hover {
       box-shadow: $d-box-shadow;
+      background-color: $d-primary-dark;
+    }
+  }
+
+  .btn-secondary-text {
+    background-color: inherit;
+    color: $d-font-color;
+
+    &:hover {
+      box-shadow: $d-box-shadow;
+      background-color: $d-secondary-dark;
+    }
+  }
+
+  /* link */
+  .link {
+    color: $d-font-color;
+
+    &:hover {
+      color: $d-primary;
     }
   }
 }

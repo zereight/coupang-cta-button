@@ -22,7 +22,8 @@ export const initTheme = () => {
   }
 };
 
-export const getTheme = () => (localStorage.getItem(THEME_STORAGE_KEY) === DARK_THEME ? DARK_THEME : LIGHT_THEME);
+export const getTheme = () =>
+  localStorage.getItem(THEME_STORAGE_KEY) === DARK_THEME ? DARK_THEME : LIGHT_THEME;
 
 export const toggleTheme = () => {
   const useDarkTheme = getTheme() === DARK_THEME;

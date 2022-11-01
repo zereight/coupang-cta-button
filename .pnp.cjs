@@ -28,7 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@prettier/plugin-pug", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.2.0"],\
+            ["@prettier/plugin-pug", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.3.0"],\
             ["copy-webpack-plugin", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:11.0.0"],\
             ["css-loader", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:6.7.1"],\
             ["mini-css-extract-plugin", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.6.1"],\
@@ -176,17 +176,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@prettier/plugin-pug", [\
-        ["npm:2.2.0", {\
-          "packageLocation": "./.yarn/cache/@prettier-plugin-pug-npm-2.2.0-928548faef-0a67978f91.zip/node_modules/@prettier/plugin-pug/",\
+        ["npm:2.3.0", {\
+          "packageLocation": "./.yarn/cache/@prettier-plugin-pug-npm-2.3.0-145d4c43cc-04871f4f2d.zip/node_modules/@prettier/plugin-pug/",\
           "packageDependencies": [\
-            ["@prettier/plugin-pug", "npm:2.2.0"]\
+            ["@prettier/plugin-pug", "npm:2.3.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.2.0", {\
-          "packageLocation": "./.yarn/__virtual__/@prettier-plugin-pug-virtual-cb7e70fa0b/0/cache/@prettier-plugin-pug-npm-2.2.0-928548faef-0a67978f91.zip/node_modules/@prettier/plugin-pug/",\
+        ["virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.3.0", {\
+          "packageLocation": "./.yarn/__virtual__/@prettier-plugin-pug-virtual-b8d928e10b/0/cache/@prettier-plugin-pug-npm-2.3.0-145d4c43cc-04871f4f2d.zip/node_modules/@prettier/plugin-pug/",\
           "packageDependencies": [\
-            ["@prettier/plugin-pug", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.2.0"],\
+            ["@prettier/plugin-pug", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.3.0"],\
             ["@types/prettier", null],\
             ["prettier", "npm:2.7.1"],\
             ["pug-lexer", "npm:5.0.1"]\
@@ -3595,7 +3595,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["tistory_berry_skin", "workspace:."],\
-            ["@prettier/plugin-pug", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.2.0"],\
+            ["@prettier/plugin-pug", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.3.0"],\
             ["copy-webpack-plugin", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:11.0.0"],\
             ["css-loader", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:6.7.1"],\
             ["mini-css-extract-plugin", "virtual:17b6e1a7e698c72771dff040b51b1bf2d86a90075a9a2ca8b017f07cb8152af5978991dc172f45b1717426f8cd9819975e434e4dfb4e877fd4cb3fec933ce266#npm:2.6.1"],\

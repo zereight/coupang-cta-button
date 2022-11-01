@@ -118,14 +118,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prettier/plugin-pug@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@prettier/plugin-pug@npm:2.2.0"
+"@prettier/plugin-pug@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@prettier/plugin-pug@npm:2.3.0"
   dependencies:
     pug-lexer: ^5.0.0
   peerDependencies:
     prettier: ^2.3.0
-  checksum: 0a67978f91a0a826891e3008d2315cafd6e069c0237f0a07a55355ab855c10dc092b5dad8f9044a57dea908d6df1aaae397e28b2206b7bf67b41dd741398d57f
+  checksum: 04871f4f2d2ec77f126af53b7ed44ccb801b9e589ebc62403b96b22ee4c1132c4ff8d0191be8dd9718769cbf5bff442133654cccb056d2866fb353e129b400d9
   languageName: node
   linkType: hard
 
@@ -2973,7 +2973,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tistory_berry_skin@workspace:."
   dependencies:
-    "@prettier/plugin-pug": ^2.2.0
+    "@prettier/plugin-pug": ^2.3.0
     copy-webpack-plugin: ^11.0.0
     css-loader: ^6.7.1
     mini-css-extract-plugin: ^2.6.1

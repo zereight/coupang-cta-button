@@ -6,7 +6,7 @@
   "description": "수정 가능, 재배포 금지",
   "license": "MIT",
   "scripts": {
-    "prettier:all": "yarn prettier --write ./src",
+    "prettier:all": "yarn prettier --write ./src/**/*.(pug|js|ts|scss|css|html) --plugin=@prettier/plugin-pug",
     "dev:pug": "yarn pug -w src/view/skin.pug -o ./build -P",
     "dev:webpack": "yarn webpack --watch --config webpack.config.js",
     "build:pug": "yarn pug src/view/skin.pug -o ./build -P",
@@ -15,7 +15,7 @@
     "build:prod": "NODE_ENV=prod && yarn build"
   },
   "devDependencies": {
-    "@prettier/plugin-pug": "^2.2.0",
+    "@prettier/plugin-pug": "^2.3.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "mini-css-extract-plugin": "^2.6.1",
