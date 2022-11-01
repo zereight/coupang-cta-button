@@ -42,14 +42,36 @@
 }
 
 /* link */
-.link {
+.link,
+.link-sub {
   text-decoration: none;
   cursor: pointer;
   transition: $transition;
-  color: $font-color;
+}
 
+.link {
+  color: $font-color;
+}
+
+.link-sub {
+  color: $font-sub-color;
+}
+
+.link-sub-primary {
   &:hover {
     color: $primary;
+  }
+}
+
+.link-primary {
+  &:hover {
+    color: $primary;
+  }
+}
+
+.link-secondary {
+  &:hover {
+    color: $secondary;
   }
 }
 
@@ -87,9 +109,21 @@
   /* link */
   .link {
     color: $d-font-color;
+  }
 
+  .link-sub {
+    color: $d-font-sub-color;
+  }
+
+  .link-primary {
     &:hover {
       color: $d-primary;
+    }
+  }
+
+  .link-secondary {
+    &:hover {
+      color: $d-secondary;
     }
   }
 }

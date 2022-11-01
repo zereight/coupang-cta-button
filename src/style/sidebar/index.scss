@@ -1,6 +1,7 @@
 @import './profile';
 @import './category';
 @import './notice';
+@import './article';
 
 aside.sidebar {
   width: 340px;
@@ -16,7 +17,7 @@ aside.sidebar {
     flex-direction: column;
     row-gap: $pd-md;
 
-    .title {
+    &-title {
       display: flex;
       align-items: center;
       column-gap: $pd-sm;
