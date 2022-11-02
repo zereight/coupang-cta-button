@@ -1,0 +1,17 @@
+section#recent-comments.sidebar-item
+  .sidebar-item-title
+    include ../icons/chat-quote-icon
+    h3 최근 댓글
+  .body
+    ul
+      s_rctrp_rep
+        li
+          .balloon
+            .info
+              .name
+                include ../icons/user-icon
+                span [##_rctrp_rep_name_##]
+              .date
+                include ../icons/calendar-icon
+                span [##_rctrp_rep_time_##]
+            a.desc.link.link-primary(href='[##_rctrp_rep_link_##]') [##_rctrp_rep_desc_##]

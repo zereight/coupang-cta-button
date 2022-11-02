@@ -1,0 +1,94 @@
+aside.sidebar #recent-comments {
+  ul {
+    list-style: none;
+  }
+
+  li {
+    &:nth-child(odd) {
+      margin: $pd-sm 0 $pd-sm 5px;
+
+      .balloon:before {
+        top: 18px;
+        left: -8px;
+        border-right: 8px solid $primary-light;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+    }
+
+    &:nth-child(even) {
+      margin: $pd-sm 5px $pd-sm 5px;
+
+      .balloon:before {
+        bottom: 18px;
+        right: -8px;
+        border-left: 8px solid $primary-light;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+    }
+
+    .balloon {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '';
+      }
+
+      background-color: $primary-light;
+      padding: $pd-sm;
+      border-radius: $radius-md;
+      display: flex;
+      flex-direction: column;
+      row-gap: $pd-sm;
+
+      .info {
+        display: flex;
+        align-items: flex-end;
+        column-gap: $pd-md;
+        font-size: $fs-sm;
+
+        .name {
+          display: flex;
+          align-items: center;
+          column-gap: $pd-xs;
+        }
+
+        .date {
+          display: flex;
+          align-items: center;
+          column-gap: $pd-xs;
+          color: $font-sub-color;
+        }
+      }
+
+      a.desc {
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+/* dark theme */
+.dark-theme aside.sidebar #recent-comments {
+  li {
+    &:nth-child(odd) .balloon:before {
+      border-right: 8px solid $d-primary-dark;
+    }
+
+    &:nth-child(even) .balloon:before {
+      border-left: 8px solid $d-primary-dark;
+    }
+
+    .balloon {
+      background-color: $d-primary-dark;
+
+      .info {
+        .date {
+          color: $d-font-sub-color;
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@
   text-decoration: none;
   cursor: pointer;
   transition: $transition;
+  transition-property: background-color, color, box-shadow;
   border-radius: $radius-md;
   border: none;
   padding: $pd-md;
@@ -47,6 +48,7 @@
   text-decoration: none;
   cursor: pointer;
   transition: $transition;
+  transition-property: color;
 }
 
 .link {
