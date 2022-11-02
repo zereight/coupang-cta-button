@@ -17,9 +17,9 @@ const plugins = [
 ];
 
 module.exports = {
+  ...(isDevMode && { devtool: 'source-map' }),
   mode,
   plugins,
-  devtool: 'source-map',
   entry: ['./src/js/index.js', './src/style/index.scss', './src/config/index.xml'],
   output: {
     path: buildPath,
