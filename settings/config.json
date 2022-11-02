@@ -1,8 +1,0 @@
-{
-    "entry_point": {
-        "html": "skin.html",
-        "css": "style.css",
-        "js": "script.js",
-        "xml": "index.xml"
-    }
-}

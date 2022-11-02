@@ -1,0 +1,53 @@
+aside.sidebar #category {
+  ul {
+    list-style: none;
+  }
+
+  .tt_category {
+    li,
+    a {
+      box-sizing: border-box;
+    }
+
+    .link_tit,
+    a.link_item,
+    a.link_sub_item {
+      justify-content: left;
+      font-size: $fs-md;
+      column-gap: $pd-sm;
+
+      .c_cnt {
+        font-size: $fs-xs;
+        color: $font-sub-color;
+      }
+    }
+
+    li.selected > a.link_item {
+      color: $primary;
+    }
+
+    ul.sub_category_list > li.selected > a.link_sub_item {
+      color: $secondary;
+    }
+  }
+}
+
+.dark-theme {
+  aside.sidebar #category {
+    .link_tit,
+    a.link_item,
+    a.link_sub_item {
+      .c_cnt {
+        color: $d-font-sub-color;
+      }
+    }
+
+    li.selected > a.link_item {
+      color: $d-primary;
+    }
+
+    ul.sub_category_list > li.selected > a.link_sub_item {
+      color: $d-secondary;
+    }
+  }
+}

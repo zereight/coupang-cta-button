@@ -1,27 +1,34 @@
 {
   "name": "tistory_berry_skin",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "repository": "https://github.com/bluemiv/tistory_berry_skin.git",
   "author": "TaehongKim <public.bluemiv@gmail.com>",
   "description": "수정 가능, 재배포 금지",
   "license": "MIT",
   "scripts": {
-    "babel_build": "yarn tsc && yarn babel build/temp/script.js --out-file build/src/script.js",
-    "prebuild": "rm -rf build && yarn babel_build",
-    "build": "python3 script/build.py",
-    "build:prod": "yarn prebuild && python3 script/build.py prod",
-    "dev": "python3 script/dev.py"
+    "prettier:all": "yarn prettier --write ./src/**/*.(pug|js|ts|scss|css|html) --plugin=@prettier/plugin-pug",
+    "dev:pug": "yarn pug -w src/view/skin.pug -o ./build -P",
+    "dev:webpack": "yarn webpack --watch --config webpack.config.js",
+    "build:pug": "yarn pug src/view/skin.pug -o ./build -P",
+    "build:webpack": "yarn webpack --config webpack.config.js",
+    "build": "yarn prettier:all && rm -rf ./build && yarn build:pug && yarn build:webpack",
+    "build:prod": "NODE_ENV=prod && yarn build"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
-    "@babel/preset-typescript": "^7.16.7",
-    "babel-preset-minify": "^0.5.2",
-    "prettier": "^2.6.2",
-    "typescript": "^4.6.4"
+    "@prettier/plugin-pug": "^2.3.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "prettier": "^2.7.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "xml-loader": "^1.2.1"
   },
   "engines": {
-    "node": ">=16.15.1"
-  }
+    "node": ">=16.18.0"
+  },
+  "packageManager": "yarn@3.2.4"
 }

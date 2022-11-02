@@ -1,0 +1,10 @@
+aside.sidebar #notice {
+  .body ul {
+    list-style: none;
+
+    li a {
+      justify-content: left;
+      column-gap: $pd-sm;
+    }
+  }
+}
