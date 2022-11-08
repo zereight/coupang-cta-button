@@ -30,6 +30,7 @@ aside.sidebar #recent-comments {
 
     .balloon {
       position: relative;
+      z-index: -1;
 
       &:before {
         position: absolute;

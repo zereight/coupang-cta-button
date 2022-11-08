@@ -34,7 +34,27 @@ const categoryCountRestyling = () => {
   });
 };
 
-document.addEventListener('DOMContentLoaded', (event) => {
+const handleFocusFakeInput = () => {
+  toggleSearchWrapper();
+  document.querySelector('header #search-input')?.focus();
+};
+
+const handleClickOutOfSearchPopup = (event) => {
+  const searchWrapper = document.querySelector('header .search-popup');
+  if (searchWrapper?.classList.contains('hide-search')) return;
+
+  const clickedOutOfInnerLayer = !event?.target.closest('header .search-popup .inner-layer');
+  if (clickedOutOfInnerLayer) {
+    toggleSearchWrapper();
+  }
+};
+
+const toggleSearchWrapper = () => {
+  const searchWrapper = document.querySelector('header .search-popup');
+  searchWrapper?.classList?.toggle('hide-search');
+};
+
+document.addEventListener('DOMContentLoaded', () => {
   /**
    * header
    */
@@ -44,6 +64,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   defEventHandler('#write-btn', 'click', () => openTab(WRITE_URL));
   // Manage button event handler
   defEventHandler('#manage-btn', 'click', () => openTab(MANAGE_URL));
+  // Fake search input event handler
+  defEventHandler('header .fake-search-input', 'focus', handleFocusFakeInput);
+  document.addEventListener('mouseup', handleClickOutOfSearchPopup);
 
   /**
    * sidebar
