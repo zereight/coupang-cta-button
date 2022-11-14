@@ -1,6 +1,7 @@
 import { WRITE_URL, MANAGE_URL } from './constants';
 import { initTheme, toggleTheme } from './theme-service';
 import { defEventHandler, openTab } from './util-service';
+import { addSearchEventListeners, showSearchPopup } from './search';
 
 // initialize theme
 initTheme();
@@ -34,26 +35,6 @@ const categoryCountRestyling = () => {
   });
 };
 
-const handleFocusFakeInput = () => {
-  toggleSearchWrapper();
-  document.querySelector('header #search-input')?.focus();
-};
-
-const handleClickOutOfSearchPopup = (event) => {
-  const searchWrapper = document.querySelector('header .search-popup');
-  if (searchWrapper?.classList.contains('hide-search')) return;
-
-  const clickedOutOfInnerLayer = !event?.target.closest('header .search-popup .inner-layer');
-  if (clickedOutOfInnerLayer) {
-    toggleSearchWrapper();
-  }
-};
-
-const toggleSearchWrapper = () => {
-  const searchWrapper = document.querySelector('header .search-popup');
-  searchWrapper?.classList?.toggle('hide-search');
-};
-
 document.addEventListener('DOMContentLoaded', () => {
   /**
    * header
@@ -64,9 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
   defEventHandler('#write-btn', 'click', () => openTab(WRITE_URL));
   // Manage button event handler
   defEventHandler('#manage-btn', 'click', () => openTab(MANAGE_URL));
-  // Fake search input event handler
-  defEventHandler('header .fake-search-input', 'focus', handleFocusFakeInput);
-  document.addEventListener('mouseup', handleClickOutOfSearchPopup);
+  // 검색창 관련 이벤트 핸들러
+  addSearchEventListeners();
 
   /**
    * sidebar
