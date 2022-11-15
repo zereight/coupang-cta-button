@@ -1,5 +1,3 @@
-input.fake-search-input(placeholder='Ctrl + K (⌘ + K)')
-
 .search-layer.hide-search-popup
   .search-popup
     .search-form
@@ -16,4 +14,13 @@ input.fake-search-input(placeholder='Ctrl + K (⌘ + K)')
           )
       button#search-popup-close-btn.btn.btn-text
         include ../icons/x-icon
-    .search-tags
+    s_sidebar
+      s_sidebar_element
+        <!-- 검색 태그 -->
+        .search-tags
+          .search-tags-title
+            include ../icons/tags-icon
+            h3 검색 태그
+          .tags
+            s_random_tags
+              a.tag(href='[##_tag_link_##]', class='[##_tag_class_##]') [##_tag_name_##]

@@ -1,13 +1,15 @@
-const SEARCH_LAYER_XPATH = 'header .search-layer';
-const SEARCH_POPUP_XPATH = 'header .search-popup';
+const SEARCH_LAYER_XPATH = '.search-layer';
+const SEARCH_POPUP_XPATH = '.search-popup';
 
 const HIDE_SEARCH_POPUP_CLASSNAME = 'hide-search-popup';
 
 /**
- * 검색창을 연다.
+ * 검색창을 열고, search input 에 focusing
  */
-const showSearchPopup = () =>
+const showSearchPopupAndFocusing = () => {
   document.querySelector(SEARCH_LAYER_XPATH)?.classList?.remove(HIDE_SEARCH_POPUP_CLASSNAME);
+  document.querySelector('#search-input')?.focus();
+};
 
 /**
  * 검색창을 닫는다.
@@ -43,7 +45,7 @@ const openSearchPopupByShortcut = () => {
         clickedK = true;
       }
       if (clickedK && (clickedCtrl || clickedMeta)) {
-        showSearchPopup();
+        showSearchPopupAndFocusing();
         resetKey();
       }
     },
@@ -56,18 +58,19 @@ export const addSearchEventListeners = () => {
   const openSearchPopupEventHandler = openSearchPopupByShortcut();
   document.addEventListener('keydown', openSearchPopupEventHandler.keydown);
   document.addEventListener('keyup', openSearchPopupEventHandler.keyup);
+
   // fake search input 클릭시 검색창 open
-  // search input 에 focusing
   document.querySelector('header .fake-search-input')?.addEventListener('click', () => {
-    showSearchPopup();
-    document.querySelector('#search-input')?.focus();
+    showSearchPopupAndFocusing();
   });
+
   // ESC 키보드 입력시 검색창을 닫는다.
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       hideSearchPopup();
     }
   });
+
   // 검색창 외부 영역 클릭시 검색창을 닫는다.
   document.addEventListener('mouseup', (event) => {
     const searchLayer = document.querySelector(SEARCH_LAYER_XPATH);
@@ -79,6 +82,7 @@ export const addSearchEventListeners = () => {
       hideSearchPopup();
     }
   });
+
   // close 버튼 클릭시 검색창 닫음
   document.querySelector('#search-popup-close-btn')?.addEventListener('click', hideSearchPopup);
 };
