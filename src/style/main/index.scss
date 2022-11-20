@@ -1,0 +1,27 @@
+@import 'index-article';
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .upper-ad-container,
+  .lower-ad-container {
+    max-width: 1280px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .article-container {
+    max-width: 1280px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: $pd-lg;
+    display: flex;
+    flex-direction: column;
+    row-gap: $pd-lg;
+  }
+}

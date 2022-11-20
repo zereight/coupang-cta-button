@@ -1,0 +1,19 @@
+s_index_article_rep
+  .index-article-item
+    a.img-wrapper.img-circle(href='[##_article_rep_link_##]')
+      s_article_rep_thumbnail
+        img(src='[##_article_rep_thumbnail_url_##]')
+    .detail
+      a.title.link.link-primary(href='[##_article_rep_link_##]') [##_article_rep_title_##]
+      .sub-detail
+        a.category.link-sub.link-secondary(href='[##_article_rep_category_link_##]')
+          include ../../icons/bookmark-star-icon
+          span [##_article_rep_category_##]
+        span.date-info
+          include ../../icons/calendar-icon
+          span.date [##_article_rep_date_##]
+        s_rp_count
+          span.comment-count
+            include ../../icons/chat-quote-icon
+            span.date 댓글 [##_article_rep_rp_cnt_##]건
+      p.summary [##_article_rep_summary_##]

@@ -59,12 +59,6 @@
   color: $font-sub-color;
 }
 
-.link-sub-primary {
-  &:hover {
-    color: $primary;
-  }
-}
-
 .link-primary {
   &:hover {
     color: $primary;
@@ -145,6 +139,11 @@
     background-color: $dark-gray-background-color;
     color: $d-font-color;
   }
+}
+
+.img-circle {
+  border-radius: $radius-circle;
+  overflow: hidden;
 }
 
 /* dark theme  */
