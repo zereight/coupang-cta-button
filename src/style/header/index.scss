@@ -9,6 +9,7 @@ header {
   background-color: $alpha-bg-color;
   backdrop-filter: blur(10px);
   column-gap: $pd-md;
+  z-index: 99;
 
   a.title {
     font-size: $fs-lg;

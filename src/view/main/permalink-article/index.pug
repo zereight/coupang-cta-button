@@ -1,6 +1,15 @@
-.permalink-article-container
-  s_permalink_article_rep
-    a(href='[##_article_rep_link_##]') [##_article_rep_title_##]
-    a(href='[##_article_rep_category_link_##]') [##_article_rep_category_##]
-    .date [##_article_rep_date_##]
-    .article [##_article_rep_desc_##]
+s_permalink_article_rep
+  .common-article-container
+    .main-content
+      .article-title-layer
+        s_article_rep_thumbnail
+          .img-layer
+            img(src="[##_article_rep_thumbnail_raw_url_##]")
+        .background-layer
+        .txt-layer
+          a(href='[##_article_rep_link_##]') [##_article_rep_title_##]
+          a(href='[##_article_rep_category_link_##]') [##_article_rep_category_##]
+          .date [##_article_rep_date_##]
+      .article [##_article_rep_desc_##]
+    #toc-container
+      .toc-wrapper testsetset

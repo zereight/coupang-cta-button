@@ -1,4 +1,6 @@
 @import 'index-article';
+@import 'permalink-article';
+@import 'common-article';
 
 main {
   flex: 1;
@@ -8,7 +10,7 @@ main {
 
   .upper-ad-container,
   .lower-ad-container {
-    max-width: 1280px;
+    max-width: 1380px;
     box-sizing: border-box;
     width: 100%;
     padding: 0;
@@ -16,10 +18,9 @@ main {
   }
 
   .article-container {
-    max-width: 1280px;
+    max-width: 1380px;
     box-sizing: border-box;
     width: 100%;
-    padding: $pd-lg;
     display: flex;
     flex-direction: column;
     row-gap: $pd-lg;
