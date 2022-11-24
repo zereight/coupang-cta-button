@@ -143,6 +143,55 @@ main {
       box-sizing: border-box;
       line-height: 2;
       word-break: break-all;
+
+      ul,
+      ol {
+        margin: $pd-md 0;
+      }
+
+      li {
+        margin-left: $pd-xl;
+      }
+
+      a {
+        color: $primary;
+        text-decoration: none;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+          background-color: $primary-light;
+        }
+      }
+
+      figure[data-ke-type='opengraph'] a {
+        border-radius: $radius-md;
+        overflow: hidden;
+        background-color: inherit;
+        border: 1px solid $light-gray-background-color;
+
+        .og-image {
+          border-right: 1px solid $light-gray-background-color;
+          transition: $transition;
+        }
+
+        &:hover {
+          box-shadow: $box-shadow;
+        }
+
+        .og-title {
+          color: $font-color;
+        }
+
+        .og-desc,
+        .og-host {
+          color: $font-sub-color;
+        }
+      }
+
+      hr {
+        margin: $pd-lg auto;
+      }
     }
   }
 }
@@ -172,6 +221,35 @@ main {
     /* 글 본문 */
     .article-body {
       .tt_article_useless_p_margin {
+        a {
+          color: $d-primary;
+
+          &:hover {
+            background-color: $d-primary-dark;
+          }
+        }
+
+        figure[data-ke-type='opengraph'] a {
+          background-color: inherit;
+          border: 1px solid $dark-gray-background-color;
+
+          .og-image {
+            border-right: 1px solid $dark-gray-background-color;
+          }
+
+          &:hover {
+            box-shadow: $d-box-shadow;
+          }
+
+          .og-title {
+            color: $d-font-color;
+          }
+
+          .og-desc,
+          .og-host {
+            color: $d-font-sub-color;
+          }
+        }
       }
     }
 
