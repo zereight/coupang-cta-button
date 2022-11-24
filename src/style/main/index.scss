@@ -24,5 +24,6 @@ main {
     display: flex;
     flex-direction: column;
     row-gap: $pd-lg;
+    padding: 0 $pd-md;
   }
 }

@@ -4,12 +4,27 @@ s_permalink_article_rep
       .article-title-layer
         s_article_rep_thumbnail
           .img-layer
-            img(src="[##_article_rep_thumbnail_raw_url_##]")
+            img(src='[##_article_rep_thumbnail_raw_url_##]')
         .background-layer
         .txt-layer
-          a(href='[##_article_rep_link_##]') [##_article_rep_title_##]
-          a(href='[##_article_rep_category_link_##]') [##_article_rep_category_##]
-          .date [##_article_rep_date_##]
-      .article [##_article_rep_desc_##]
+          .date
+            include ../../icons/calendar-icon
+            span Published [##_article_rep_date_##]
+          a.title(href='[##_article_rep_link_##]') [##_article_rep_title_##]
+          a.category(href='[##_article_rep_category_link_##]')
+            include ../../icons/bookmark-star-icon
+            span [##_article_rep_category_##]
+          .control
+            s_ad_div
+              a(href='[##_s_ad_m_link_##]')
+                include ../../icons/pencil-square-icon
+              a(href='[##_s_ad_m_onclick_##]')
+                include ../../icons/window-stak-icon
+              a(href='#', onclick='[##_s_ad_s2_onclick_##]') [##_s_ad_s2_label_##]
+              a(href='[##_s_ad_t_onclick_##]')
+                include ../../icons/link-icon
+              a(href='[##_s_ad_d_onclick_##]')
+                include ../../icons/trash-icon
+      .article-body [##_article_rep_desc_##]
     #toc-container
       .toc-wrapper testsetset
