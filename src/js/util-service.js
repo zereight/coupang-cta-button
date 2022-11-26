@@ -11,4 +11,15 @@ export const copyClipboard = (text) => {
   window.navigator.clipboard.writeText(text);
 };
 
+export const throttle = (callback, timeout = 100) => {
+  let timeoutId;
+  return () => {
+    if (!!timeoutId) return;
+    timeoutId = setTimeout(() => {
+      callback();
+      timeoutId = null;
+    }, timeout);
+  };
+};
+
 export const openTab = (link, newTab = true) => window.open(link, newTab ? '_blank' : null);

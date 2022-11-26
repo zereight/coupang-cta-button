@@ -1,7 +1,7 @@
 import { WRITE_URL, MANAGE_URL } from './constants';
 import { initTheme, toggleTheme } from './theme-service';
 import { defEventHandler, openTab } from './util-service';
-import { Search, CommonArticle } from './features';
+import { Search, CommonArticle, ProgressBar } from './features';
 
 // initialize theme
 initTheme();
@@ -46,9 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Manage button event handler
   defEventHandler('#manage-btn', 'click', () => openTab(MANAGE_URL));
 
-  /**
-   * Search
-   */
+  ProgressBar.runScripts();
+
   Search.runScripts();
 
   /**
@@ -59,8 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // restyling category counts
   categoryCountRestyling();
 
-  /**
-   * Common article page
-   */
   CommonArticle.runScripts();
 });
