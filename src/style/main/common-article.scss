@@ -194,7 +194,10 @@ main {
         margin: $pd-lg auto;
       }
 
-      h1, h2, h3, h4 {
+      h1,
+      h2,
+      h3,
+      h4 {
         margin: $pd-md 0;
         //padding-bottom: $pd-xs;
         font-weight: bold;
@@ -231,6 +234,7 @@ main {
         border-radius: $radius-md;
         border: none;
         padding: $pd-lg;
+        margin: $pd-md 0;
         box-sizing: border-box;
 
         &:before {
@@ -241,19 +245,29 @@ main {
 
       blockquote[data-ke-style='style2'] {
         background-color: $success-light;
+        transition: $transition;
 
         &:before {
           content: '💡 Tip';
           color: $success;
         }
+
+        &:hover {
+          box-shadow: $success-box-shadow;
+        }
       }
 
       blockquote[data-ke-style='style3'] {
         background-color: $primary-light;
+        transition: $transition;
 
         &:before {
           content: '📑 NOTE';
           color: $primary;
+        }
+
+        &:hover {
+          box-shadow: $primary-box-shadow;
         }
       }
 
@@ -261,6 +275,70 @@ main {
         margin: $pd-md 0;
         border-radius: $radius-md;
         font-size: $fs-md;
+
+        .pre-before-node {
+          display: flex;
+          align-items: center;
+          background-color: $gray9;
+          padding: 0 $pd-sm;
+          height: 38px;
+
+          .btn-wrapper {
+            width: 150px;
+            display: flex;
+            align-items: center;
+            column-gap: $pd-xs;
+
+            .mac-btn {
+              width: 12px;
+              height: 12px;
+              border-radius: $radius-circle;
+            }
+
+            .red-mac-btn {
+              background-color: #fa5252;
+            }
+
+            .orange-mac-btn {
+              background-color: #fab005;
+            }
+
+            .green-mac-btn {
+              background-color: #51cf66;
+            }
+          }
+
+          .language {
+            font-family: 'D2Coding', system-ui, Apple Gothic, sans-serif;
+            flex: 1;
+            color: $font-sub-color;
+            font-size: $fs-sm;
+            text-align: center;
+          }
+
+          .code-copy-button-wrapper {
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .code-copy-button {
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: none;
+              background-color: inherit;
+              font-size: $fs-sm;
+              height: 100%;
+              color: $font-sub-color;
+
+              &:hover {
+                color: $d-font-sub-color;
+              }
+            }
+          }
+        }
 
         code {
           font-family: 'D2Coding', system-ui, Apple Gothic, sans-serif;
@@ -354,6 +432,11 @@ main {
         &:before {
           content: '💡 Tip';
           color: $d-success-light;
+          text-shadow: $text-shadow;
+        }
+
+        &:hover {
+          box-shadow: $d-success-box-shadow;
         }
       }
 
@@ -364,6 +447,11 @@ main {
         &:before {
           content: '📑 NOTE';
           color: $d-primary-light;
+          text-shadow: $text-shadow;
+        }
+
+        &:hover {
+          box-shadow: $d-primary-box-shadow;
         }
       }
     }

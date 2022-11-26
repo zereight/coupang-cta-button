@@ -1,7 +1,7 @@
 import { WRITE_URL, MANAGE_URL } from './constants';
 import { initTheme, toggleTheme } from './theme-service';
 import { defEventHandler, openTab } from './util-service';
-import { addSearchEventListeners, showSearchPopup } from './search';
+import { Search, CommonArticle } from './features';
 
 // initialize theme
 initTheme();
@@ -45,8 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
   defEventHandler('#write-btn', 'click', () => openTab(WRITE_URL));
   // Manage button event handler
   defEventHandler('#manage-btn', 'click', () => openTab(MANAGE_URL));
-  // 검색창 관련 이벤트 핸들러
-  addSearchEventListeners();
+
+  /**
+   * Search
+   */
+  Search.runScripts();
 
   /**
    * sidebar
@@ -55,4 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
   addIconCategoryItem();
   // restyling category counts
   categoryCountRestyling();
+
+  /**
+   * Common article page
+   */
+  CommonArticle.runScripts();
 });

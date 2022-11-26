@@ -53,7 +53,7 @@ const openSearchPopupByShortcut = () => {
   };
 };
 
-export const addSearchEventListeners = () => {
+const runScripts = () => {
   // 단축키 설정
   const openSearchPopupEventHandler = openSearchPopupByShortcut();
   document.addEventListener('keydown', openSearchPopupEventHandler.keydown);
@@ -86,3 +86,6 @@ export const addSearchEventListeners = () => {
   // close 버튼 클릭시 검색창 닫음
   document.querySelector('#search-popup-close-btn')?.addEventListener('click', hideSearchPopup);
 };
+
+const Search = { runScripts };
+export default Search;
