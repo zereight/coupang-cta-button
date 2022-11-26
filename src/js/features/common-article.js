@@ -27,7 +27,7 @@ const codeTagRestyling = () => {
       <div class="mac-btn green-mac-btn"></div>
     </div>
     <div class="language">
-      &lt;${language} /&gt;
+      &lt;${language || 'code'} /&gt;
     </div>`;
     node.insertAdjacentElement('beforeend', buttonWrapper);
     return node;
