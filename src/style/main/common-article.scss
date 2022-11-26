@@ -137,12 +137,13 @@ main {
   }
 
   /* 글 본문 */
-  .article-body {
+  .common-article-container .article-body {
     .tt_article_useless_p_margin {
       width: 100%;
       box-sizing: border-box;
       line-height: 2;
       word-break: break-all;
+      font-size: $fs-md;
 
       ul,
       ol {
@@ -192,6 +193,85 @@ main {
       hr {
         margin: $pd-lg auto;
       }
+
+      h1, h2, h3, h4 {
+        margin: $pd-md 0;
+        //padding-bottom: $pd-xs;
+        font-weight: bold;
+      }
+
+      h1 {
+        border-bottom: 1px solid $light-gray-background-color;
+      }
+
+      h2 {
+        font-size: $fs-xl;
+      }
+
+      h3 {
+        font-size: $fs-lg;
+      }
+
+      h4 {
+        font-size: $fs-md;
+      }
+
+      sup {
+        color: $secondary;
+        vertical-align: super;
+      }
+
+      sub {
+        color: $secondary;
+        vertical-align: sub;
+      }
+
+      blockquote[data-ke-style='style2'],
+      blockquote[data-ke-style='style3'] {
+        border-radius: $radius-md;
+        border: none;
+        padding: $pd-lg;
+        box-sizing: border-box;
+
+        &:before {
+          font-weight: bold;
+          margin-right: $pd-md;
+        }
+      }
+
+      blockquote[data-ke-style='style2'] {
+        background-color: $success-light;
+
+        &:before {
+          content: '💡 Tip';
+          color: $success;
+        }
+      }
+
+      blockquote[data-ke-style='style3'] {
+        background-color: $primary-light;
+
+        &:before {
+          content: '📑 NOTE';
+          color: $primary;
+        }
+      }
+
+      pre {
+        margin: $pd-md 0;
+        border-radius: $radius-md;
+        font-size: $fs-md;
+
+        code {
+          font-family: 'D2Coding', system-ui, Apple Gothic, sans-serif;
+          padding: $pd-md;
+          box-sizing: border-box;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
@@ -218,44 +298,73 @@ main {
       }
     }
 
-    /* 글 본문 */
-    .article-body {
-      .tt_article_useless_p_margin {
-        a {
-          color: $d-primary;
-
-          &:hover {
-            background-color: $d-primary-dark;
-          }
-        }
-
-        figure[data-ke-type='opengraph'] a {
-          background-color: inherit;
-          border: 1px solid $dark-gray-background-color;
-
-          .og-image {
-            border-right: 1px solid $dark-gray-background-color;
-          }
-
-          &:hover {
-            box-shadow: $d-box-shadow;
-          }
-
-          .og-title {
-            color: $d-font-color;
-          }
-
-          .og-desc,
-          .og-host {
-            color: $d-font-sub-color;
-          }
-        }
-      }
-    }
-
     #toc-container {
       .toc-wrapper {
         background-color: $dark-gray-background-color;
+      }
+    }
+  }
+
+  /* 글 본문 */
+  .common-article-container .article-body {
+    .tt_article_useless_p_margin {
+      a {
+        color: $d-primary-light;
+
+        &:hover {
+          background-color: $d-primary-dark;
+        }
+      }
+
+      figure[data-ke-type='opengraph'] a {
+        background-color: inherit;
+        border: 1px solid $dark-gray-background-color;
+
+        .og-image {
+          border-right: 1px solid $dark-gray-background-color;
+        }
+
+        &:hover {
+          box-shadow: $d-box-shadow;
+        }
+
+        .og-title {
+          color: $d-font-color;
+        }
+
+        .og-desc,
+        .og-host {
+          color: $d-font-sub-color;
+        }
+      }
+
+      sup,
+      sub {
+        color: $d-secondary;
+      }
+
+      h1 {
+        border-bottom: 1px solid $dark-gray-background-color;
+      }
+
+      blockquote[data-ke-style='style2'] {
+        background-color: $d-success-dark;
+        color: $d-font-color;
+
+        &:before {
+          content: '💡 Tip';
+          color: $d-success-light;
+        }
+      }
+
+      blockquote[data-ke-style='style3'] {
+        background-color: $d-primary-dark;
+        color: $d-font-color;
+
+        &:before {
+          content: '📑 NOTE';
+          color: $d-primary-light;
+        }
       }
     }
   }
