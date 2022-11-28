@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  column-gap: $pd-xs;
   text-decoration: none;
   cursor: pointer;
   transition: $transition;
@@ -11,6 +12,26 @@
   border: none;
   padding: $pd-md;
   margin: 0;
+}
+
+.btn-primary {
+  background-color: $primary;
+  color: $d-font-color;
+
+  &:hover {
+    background-color: $primary-dark;
+    box-shadow: $box-shadow;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  color: $d-font-color;
+
+  &:hover {
+    background-color: $secondary-dark;
+    box-shadow: $box-shadow;
+  }
 }
 
 .btn-text {
@@ -154,6 +175,26 @@
 
     &:hover {
       background-color: $dark-gray-background-color;
+    }
+  }
+
+  .btn-primary {
+    background-color: $d-primary;
+    color: $d-font-color;
+
+    &:hover {
+      background-color: $d-primary-dark;
+      box-shadow: $d-box-shadow;
+    }
+  }
+
+  .btn-secondary {
+    background-color: $d-secondary;
+    color: $d-font-color;
+
+    &:hover {
+      background-color: $d-secondary-dark;
+      box-shadow: $box-shadow;
     }
   }
 

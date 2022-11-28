@@ -1,0 +1,77 @@
+.reply-container {
+  .reply-write-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: $pd-md;
+
+    .input-item {
+      display: flex;
+      align-items: center;
+      column-gap: $pd-md;
+      color: $font-sub-color;
+
+      label {
+        min-width: 200px;
+        display: flex;
+        align-items: center;
+        column-gap: $pd-sm;
+        font-size: $fs-sm;
+      }
+
+      input {
+        color: $font-color;
+        border: none;
+        background-color: $light-gray-background-color;
+        width: 320px;
+        transition: $transition;
+        padding: $pd-sm;
+        box-sizing: border-box;
+        border-radius: $radius-md;
+
+        &:focus {
+          width: 100%;
+          box-shadow: $box-shadow;
+          outline: none;
+        }
+      }
+
+      input[type='checkbox'] {
+        width: auto;
+      }
+
+      textarea {
+        color: $font-color;
+        border: none;
+        width: 100%;
+        padding: $pd-md;
+        box-sizing: border-box;
+        border-radius: $radius-md;
+        background-color: $light-gray-background-color;
+        min-height: 200px;
+
+        &:focus {
+          box-shadow: $box-shadow;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.dark-theme .reply-container {
+  .reply-write-form {
+    .input-item {
+      color: $d-font-sub-color;
+
+      input,
+      textarea {
+        color: $d-font-color;
+        background-color: $dark-gray-background-color;
+
+        &:focus {
+          box-shadow: $d-box-shadow;
+        }
+      }
+    }
+  }
+}
