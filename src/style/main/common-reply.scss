@@ -1,5 +1,5 @@
 .reply-container {
-  .reply-write-form {
+  .reply-write-form form {
     display: flex;
     flex-direction: column;
     row-gap: $pd-md;
@@ -159,7 +159,7 @@
 }
 
 .dark-theme .reply-container {
-  .reply-write-form {
+  .reply-write-form form {
     .input-item {
       color: $d-font-sub-color;
 

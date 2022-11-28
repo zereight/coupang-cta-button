@@ -1,7 +1,7 @@
 s_rp
   .reply-container
-    s_rp_input_form
-      .reply-write-form
+    .reply-write-form
+      s_rp_input_form
         s_rp_member
           s_rp_guest
             p.input-item
@@ -40,12 +40,12 @@ s_rp
               include ../../icons/lock-icon
               span Secret
             input.checkbox(type='checkbox', name='[##_rp_input_is_secret_##]')
-          p.input-item.textarea-wrapper
-            textarea(name='[##_rp_input_comment_##]', placeholder='댓글을 남겨주세요!')
-          .btn-wrapper
-            button.btn.btn-primary.submit-btn(type='submit', onclick='[##_rp_onclick_submit_##]')
-              include ../../icons/send-icon
-              span Submit
+        p.input-item.textarea-wrapper
+          textarea(name='[##_rp_input_comment_##]', placeholder='댓글을 남겨주세요!')
+        .btn-wrapper
+          button.btn.btn-primary.submit-btn(type='submit', onclick='[##_rp_onclick_submit_##]')
+            include ../../icons/send-icon
+            span Submit
     .reply-list-container
       s_rp_container
         ul.reply-list
