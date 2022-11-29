@@ -55,6 +55,13 @@
         }
       }
     }
+
+    .textarea-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: $pd-sm;
+    }
   }
 
   .reply-list-container {
@@ -156,6 +163,42 @@
       margin-left: $pd-lg;
     }
   }
+
+  #tt_captChaBottom {
+    display: block;
+    position: static;
+  }
+
+  #tt_captChaBottom .wrap_box_border {
+    display: none;
+  }
+
+  #innerBox {
+    margin-top: $pd-sm;
+    position: static !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: $pd-sm;
+    width: 100%;
+    box-sizing: border-box;
+
+    #inputCaptcha {
+      border: none;
+      color: $font-color;
+      background-color: $light-gray-background-color;
+      border-radius: $radius-md !important;
+      padding: $pd-sm;
+    }
+
+    #textRefresh {
+      color: $font-color;
+    }
+
+    #noticeCaptcha {
+      color: $font-color;
+    }
+  }
 }
 
 .dark-theme .reply-container {
@@ -214,6 +257,21 @@
           }
         }
       }
+    }
+  }
+
+  #innerBox {
+    #inputCaptcha {
+      color: $d-font-color;
+      background-color: $dark-gray-background-color;
+    }
+
+    #textRefresh {
+      color: $d-font-color;
+    }
+
+    #noticeCaptcha {
+      color: $d-font-color;
     }
   }
 }

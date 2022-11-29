@@ -1,6 +1,6 @@
 main {
   .common-article-container {
-    max-width: 1380px;
+    max-width: 1430px;
     box-sizing: border-box;
     display: flex;
     column-gap: $pd-md;
@@ -28,6 +28,42 @@ main {
         padding: $pd-sm;
         max-height: 80vh;
         overflow: auto;
+
+        ul.toc-list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          row-gap: $pd-sm;
+
+          .toc-item1,
+          .toc-item2,
+          .toc-item3,
+          .toc-item4 {
+            a {
+              line-height: 1.5;
+              font-size: $fs-sm;
+              text-decoration: none;
+              color: $font-color;
+              transition: $transition;
+
+              &:hover {
+                color: $primary;
+              }
+            }
+          }
+
+          .toc-item2 {
+            padding-left: 2px;
+          }
+
+          .toc-item3 {
+            padding-left: 4px;
+          }
+
+          .toc-item4 {
+            padding-left: 6px;
+          }
+        }
       }
     }
   }
@@ -155,6 +191,10 @@ main {
       }
 
       a {
+        svg {
+          margin-left: $pd-xs;
+        }
+
         color: $primary;
         text-decoration: none;
         cursor: pointer;
@@ -199,8 +239,16 @@ main {
       h3,
       h4 {
         margin: $pd-md 0;
-        //padding-bottom: $pd-xs;
         font-weight: bold;
+
+        a {
+          color: $font-color;
+
+          &:hover {
+            color: $primary;
+            background-color: transparent;
+          }
+        }
       }
 
       h1 {
@@ -379,6 +427,21 @@ main {
     #toc-container {
       .toc-wrapper {
         background-color: $dark-gray-background-color;
+
+        ul.toc-list {
+          .toc-item1,
+          .toc-item2,
+          .toc-item3,
+          .toc-item4 {
+            a {
+              color: $d-font-color;
+
+              &:hover {
+                color: $d-primary;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -423,6 +486,18 @@ main {
 
       h1 {
         border-bottom: 1px solid $dark-gray-background-color;
+      }
+
+      h1 a,
+      h2 a,
+      h3 a,
+      h4 a {
+        color: $d-font-color;
+
+        &:hover {
+          color: $d-primary;
+          background-color: transparent;
+        }
       }
 
       blockquote[data-ke-style='style2'] {

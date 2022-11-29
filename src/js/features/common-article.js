@@ -1,6 +1,6 @@
 import { copyClipboard } from '../util-service';
 
-const codeTagRestyling = () => {
+const codeNodeRestyling = () => {
   const preNodeList = document.querySelectorAll('.article-body pre');
   if (!preNodeList || preNodeList?.length === 0) return;
 
@@ -43,8 +43,70 @@ const codeTagRestyling = () => {
   });
 };
 
+const aNodeRestyling = () => {
+  const aNodeList = document.querySelectorAll('.article-body .tt_article_useless_p_margin p a');
+  if (!aNodeList || aNodeList?.length === 0) return;
+  aNodeList.forEach((aNode) => {
+    const span = document.createElement('span');
+    span.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-box-arrow-up-right" viewbox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+      </svg>`;
+    aNode.insertAdjacentElement('beforeend', span);
+  });
+};
+
+const hNodeRestylingAndMakeToc = () => {
+  const hNodeList = document.querySelectorAll(
+    ['h1', 'h2', 'h3', 'h4']
+      .map((h) => `.article-body .tt_article_useless_p_margin ${h}`)
+      .join(', ')
+  );
+  if (!hNodeList || hNodeList?.length === 0) return;
+
+  const minLevel = Array.from(hNodeList).reduce((minLevel, node) => {
+    const level = +node.nodeName.charAt(1);
+    return Math.min(minLevel, level);
+  }, 4);
+
+  const tocList = [];
+  let curLevelList = [0, 0, 0, 0];
+  hNodeList.forEach((node) => {
+    const level = +node.nodeName.charAt(1);
+    curLevelList = [
+      ...curLevelList.slice(0, level - 1),
+      curLevelList[level - 1] + 1,
+      ...curLevelList.slice(level, curLevelList.length).map((_) => 0),
+    ];
+    const tocNumber = `${curLevelList.slice(minLevel - 1, curLevelList.length).join('.')}.`;
+    const headText = [tocNumber, node.innerText].join(' ');
+    const headId = `article-${
+      headText
+        ?.trim()
+        ?.replace(/\s|\.|\s+\./g, '-')
+        ?.toLowerCase() ?? ''
+    }`;
+    node.innerHTML = `<a id="${headId}" href="#${headId}">${headText} 🔗</a>`;
+
+    tocList.push({ id: headId, text: headText, className: `toc-item${level - minLevel + 1}` });
+  });
+
+  const toc = document.querySelector('#toc-container .toc-wrapper');
+  if (!toc) return;
+  toc.innerHTML = `<ul class="toc-list">
+    ${tocList
+      .map(
+        (tocInfo) =>
+          `<li class="${tocInfo.className}"><a id="${tocInfo.id}" href="#${tocInfo.id}">${tocInfo.text}</a></li>`
+      )
+      .join('\n')}
+    </ul>`;
+};
+
 const runScripts = () => {
-  codeTagRestyling();
+  codeNodeRestyling();
+  aNodeRestyling();
+  hNodeRestylingAndMakeToc();
 };
 
 const CommonArticle = {
