@@ -1,5 +1,5 @@
 import Search from './search';
-import CommonArticle from './common-article';
+import PermalinkArticle from './permalink-article';
 import ProgressBar from './progress-bar';
 
-export { Search, CommonArticle, ProgressBar };
+export { Search, PermalinkArticle, ProgressBar };

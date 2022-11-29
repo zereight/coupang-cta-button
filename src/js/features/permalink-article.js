@@ -86,7 +86,7 @@ const hNodeRestylingAndMakeToc = () => {
         ?.replace(/\s|\.|\s+\./g, '-')
         ?.toLowerCase() ?? ''
     }`;
-    node.innerHTML = `<a id="${headId}" href="#${headId}">${headText} 🔗</a>`;
+    node.innerHTML = `<a id="${headId}" href="#${headId}">${headText}</a>`;
 
     tocList.push({ id: headId, text: headText, className: `toc-item${level - minLevel + 1}` });
   });
@@ -109,8 +109,8 @@ const runScripts = () => {
   hNodeRestylingAndMakeToc();
 };
 
-const CommonArticle = {
+const PermalinkArticle = {
   runScripts,
 };
 
-export default CommonArticle;
+export default PermalinkArticle;

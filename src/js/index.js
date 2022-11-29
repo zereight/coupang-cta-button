@@ -1,7 +1,7 @@
 import { WRITE_URL, MANAGE_URL } from './constants';
 import { initTheme, toggleTheme } from './theme-service';
 import { defEventHandler, openTab } from './util-service';
-import { Search, CommonArticle, ProgressBar } from './features';
+import { Search, PermalinkArticle, ProgressBar } from './features';
 
 // initialize theme
 initTheme();
@@ -58,5 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // restyling category counts
   categoryCountRestyling();
 
-  CommonArticle.runScripts();
+  PermalinkArticle.runScripts();
 });
