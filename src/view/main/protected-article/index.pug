@@ -1,0 +1,25 @@
+s_article_protected
+  .protected-article-container
+    .article-info
+      a.link.link-primary(href='[##_article_rep_link_##]') [##_article_rep_title_##]
+      .date
+        include ../../icons/calendar-icon
+        span [##_article_rep_date_##]
+    .alert.alert-warning 보호되어 있는 글입니다. 내용을 보시려면 비밀번호를 입력해주세요.
+    .password-form
+      .password-form-item
+        label
+          include ../../icons/asterisk-icon
+          span Password
+        input(id='[##_article_password_##]',
+          type='password',
+          placeholder='비밀번호를 입력해주세요.',
+          name='[##_article_password_##]',
+          value='',
+          maxlength='16',
+          onkeydown='if (event.keyCode == 13)[##_article_dissolve_##]'
+        )
+      .btn-wrapper
+        button.btn.btn-primary(type='button', onclick='[##_article_dissolve_##]')
+          include ../../icons/send-icon
+          span submit

@@ -92,6 +92,27 @@
   }
 }
 
+/* alert */
+.alert {
+  border-radius: $radius-md;
+  box-sizing: border-box;
+  padding: $pd-md;
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+}
+
+.alert-warning {
+  border: 1px solid $warning;
+  background-color: $warning-light;
+
+  &:before {
+    content: '⚠';
+    margin-right: $pd-sm;
+  }
+}
+
 /* tag */
 .tags {
   display: flex;
@@ -237,6 +258,18 @@
     &:hover {
       color: $d-secondary-light;
     }
+  }
+
+  /* alert */
+  .alert {
+    &:hover {
+      box-shadow: $d-box-shadow;
+    }
+  }
+
+  .alert-warning {
+    border: 1px solid $d-warning-dark;
+    background-color: $d-warning;
   }
 
   /* tag */
