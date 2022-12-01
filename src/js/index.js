@@ -1,7 +1,6 @@
-import { WRITE_URL, MANAGE_URL } from './constants';
-import { initTheme, toggleTheme } from './theme-service';
-import { defEventHandler, openTab } from './util-service';
+import { initTheme } from './theme-service';
 import { Search, PermalinkArticle, ProgressBar } from './features';
+import Header from './features/header';
 
 // initialize theme
 initTheme();
@@ -36,18 +35,8 @@ const categoryCountRestyling = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  /**
-   * header
-   */
-  // Theme button event handler
-  defEventHandler('#theme-btn', 'click', toggleTheme);
-  // Write button event handler
-  defEventHandler('#write-btn', 'click', () => openTab(WRITE_URL));
-  // Manage button event handler
-  defEventHandler('#manage-btn', 'click', () => openTab(MANAGE_URL));
-
+  Header.runScripts();
   ProgressBar.runScripts();
-
   Search.runScripts();
 
   /**
