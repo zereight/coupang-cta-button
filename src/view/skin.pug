@@ -7,9 +7,10 @@ html(lang='ko')
   body
     include progress-bar/index
     include header/index
-    .main-container
+    .container
       include sidebar/index
-      include main/index
-    include footer/index
+      .main-container
+        include main/index
+        include footer/index
     include search/search-popup
     script(type='text/javascript')

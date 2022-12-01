@@ -8,8 +8,14 @@ body {
     display: none;
   }
 
-  .main-container {
+  .container {
     flex: 1;
     display: flex;
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      row-gap: $pd-lg;
+    }
   }
 }
