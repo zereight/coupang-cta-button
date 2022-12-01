@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
     <information>
-        <name>Tistory Berry Skin ${{version}}</name>
-        <version>${{version}}</version>
+        <name>Berry Skin v3.0.0</name>
+        <version>3.0.0</version>
         <description>
-            <![CDATA[${{description}}]]>
+            <![CDATA[티스토리 스킨 Berry Skin 입니다. 수정은 가능하나, 재배포는 불가능합니다. 관련 문의사항은 "public.bluemiv@gmail.com"으로 연락주세요.]]>
         </description>
         <license>
-            <![CDATA[${{license}}]]>
+            <![CDATA[© Memostak :: Bluemiv]]>
         </license>
     </information>
     <author>
-        <name><![CDATA[${{author}}]]></name>
-        <homepage>${{homepage}}</homepage>
-        <email>${{email}}</email>
+        <name><![CDATA[Bluemiv]]></name>
+        <homepage>https://memostack.tistory.com/</homepage>
+        <email>public.bluemiv@gmail.com</email>
     </author>
     <default>
         <recentEntries>5</recentEntries>
@@ -135,18 +135,6 @@
                 <option />
                 <default>false</default>
             </variable>
-            <variable>
-                <name>dark-theme-on-off</name>
-                <label>
-                    <![CDATA[ 다크 테마 변경 기능 활성화 ]]>
-                </label>
-                <description>
-                    <![CDATA[ 다크 테마 변경 기능을 활성화합니다. ]]>
-                </description>
-                <type>BOOL</type>
-                <option />
-                <default>true</default>
-            </variable>
         </variablegroup>
         <!-- Profile -->
         <variablegroup name="프로필 설정">
@@ -221,6 +209,66 @@
         <!-- Footer Link -->
         <variablegroup name="Footer SNS 링크 설정">
             <variable>
+                <name>footer-sns-email</name>
+                <label>
+                    <![CDATA[ Email Address ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Email 주소 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-phone</name>
+                <label>
+                    <![CDATA[ Phone Number ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 전화번호 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-github</name>
+                <label>
+                    <![CDATA[ GitHub URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Github SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-instagram</name>
+                <label>
+                    <![CDATA[ Instagram URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Instagram SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-linkedin</name>
+                <label>
+                    <![CDATA[ Linkedin URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Linkedin SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
                 <name>footer-sns-twitter</name>
                 <label>
                     <![CDATA[ Twitter URL ]]>
@@ -245,36 +293,24 @@
                 <default />
             </variable>
             <variable>
-                <name>footer-sns-linkedin</name>
-                <label>
-                    <![CDATA[ LinkedIn URL ]]>
-                </label>
-                <description>
-                    <![CDATA[ Footer 에 위치한 LinkedIn SNS 링크 ]]>
-                </description>
-                <type>STRING</type>
-                <option />
-                <default />
-            </variable>
-            <variable>
-                <name>footer-sns-github</name>
-                <label>
-                    <![CDATA[ GitHub URL ]]>
-                </label>
-                <description>
-                    <![CDATA[ Footer 에 위치한 GitHub SNS 링크 ]]>
-                </description>
-                <type>STRING</type>
-                <option />
-                <default />
-            </variable>
-            <variable>
                 <name>footer-sns-discord</name>
                 <label>
                     <![CDATA[ Discord URL ]]>
                 </label>
                 <description>
                     <![CDATA[ Footer 에 위치한 Discord SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-twitch</name>
+                <label>
+                    <![CDATA[ Twitch URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Twitch SNS 링크 ]]>
                 </description>
                 <type>STRING</type>
                 <option />
@@ -349,6 +385,54 @@
                 </label>
                 <description>
                     <![CDATA[ Footer 에 위치한 Custom 3 URL ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-4-label</name>
+                <label>
+                    <![CDATA[ [Custom 4] Label ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 4 Label ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-4-url</name>
+                <label>
+                    <![CDATA[ [Custom 4] URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 4 URL ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-5-label</name>
+                <label>
+                    <![CDATA[ [Custom 5] Label ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 5 Label ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-5-url</name>
+                <label>
+                    <![CDATA[ [Custom 5] URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 5 URL ]]>
                 </description>
                 <type>STRING</type>
                 <option />

@@ -1,36 +1,62 @@
 footer
   .copyright-container
     a.link-sub.link-primary(href='/', target='_blank') [##_title_##] :: [##_blogger_##]
+    <!-- 아래 부분은 절대 수정 금지 -->
     .skin-copyright
       span Copyright
         a(href='https://memostack.tistory.com/', target='_blank') MemoStack :: Bluemiv
       span Designed by
         a(href='https://memostack.tistory.com/', target='_blank') MemoStack :: Bluemiv
   .site-link-container
-    a.link-item.link-sub.link-primary site1
-    a.link-item.link-sub.link-primary site2
-    a.link-item.link-sub.link-primary site3
-    a.link-item.link-sub.link-primary site4
-    a.link-item.link-sub.link-primary site5
+    s_if_var_footer-custom-1-label
+      s_if_var_footer-custom-1-url
+        a.link-item.link-sub.link-primary(href='[##_var_footer-custom-1-url_##]') [##_var_footer-custom-1-label_##]
+    s_if_var_footer-custom-2-label
+      s_if_var_footer-custom-2-url
+        a.link-item.link-sub.link-primary(href='[##_var_footer-custom-2-url_##]') [##_var_footer-custom-2-label_##]
+    s_if_var_footer-custom-3-label
+      s_if_var_footer-custom-3-url
+        a.link-item.link-sub.link-primary(href='[##_var_footer-custom-3-url_##]') [##_var_footer-custom-3-label_##]
+    s_if_var_footer-custom-4-label
+      s_if_var_footer-custom-4-url
+        a.link-item.link-sub.link-primary(href='[##_var_footer-custom-4-url_##]') [##_var_footer-custom-4-label_##]
+    s_if_var_footer-custom-5-label
+      s_if_var_footer-custom-5-url
+        a.link-item.link-sub.link-primary(href='[##_var_footer-custom-5-url_##]') [##_var_footer-custom-5-label_##]
   .sns-link-container
-    a.link-item.link-sub.link-primary
-      include ../icons/email-icon
-      span email
-    a.link-item.link-sub.link-primary
-      include ../icons/phone-icon
-      span 010-1234-5678
-    a.link-item.link-sub.link-primary
-      include ../icons/github-icon
-      span github
-    a.link-item.link-sub.link-primary
-      include ../icons/instagram-icon
-      span instagram
-    a.link-item.link-sub.link-primary
-      include ../icons/twitter-icon
-      span twitter
-    a.link-item.link-sub.link-primary
-      include ../icons/youtube-icon
-      span twitter
-    a.link-item.link-sub.link-primary
-      include ../icons/twitch-icon
-      span twitch
+    s_if_var_footer-sns-email
+      a.link-item.link-sub.link-primary(href='mailto:[##_var_footer-sns-email_##]')
+        include ../icons/email-icon
+        span [##_var_footer-sns-email_##]
+    s_if_var_footer-sns-phone
+      a.link-item.link-sub.link-primary(href='tel:[##_var_footer-sns-phone_##]')
+        include ../icons/phone-icon
+        span [##_var_footer-sns-phone_##]
+    s_if_var_footer-sns-github
+      a.link-item.link-sub.link-primary(href='[##_var_footer-sns-github_##]', target='_blank')
+        include ../icons/github-icon
+        span Github
+    s_if_var_footer-sns-instagram
+      a.link-item.link-sub.link-primary(href='[##_var_footer-sns-instagram_##]', target='_blank')
+        include ../icons/instagram-icon
+        span Instagram
+    s_if_var_footer-sns-linkedin
+      a.link-item.link-sub.link-primary(href='[##_var_footer-sns-linkedin_##]', target='_blank')
+        include ../icons/linkedin-icon
+        span Linkedin
+    s_if_var_footer-sns-twitter
+      a.link-item.link-sub.link-primary(href='[##_var_footer-sns-twitter_##]', target='_blank')
+        include ../icons/twitter-icon
+        span Twitter
+    s_if_var_footer-sns-youtube
+      a.link-item.link-sub.link-primary(href='[##_var_footer-sns-youtube_##]', target='_blank')
+        include ../icons/youtube-icon
+        span Youtube
+    s_if_var_footer-sns-discord
+      a.link-item.link-sub.link-primary(href='[##_var_footer-sns-discord_##]', target='_blank')
+        include ../icons/discord-icon
+        span Discord
+    s_if_var_footer-sns-twitch
+      a.link-item.link-sub.link-primary(href='[##_var_footer-sns-twitch_##]', target='_blank')
+        include ../icons/twitch-icon
+        span Twitch
