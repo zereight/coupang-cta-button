@@ -6,7 +6,7 @@ s_rp
           s_rp_guest
             p.input-item
               label
-                include ../../icons/user-icon
+                include ../../../icons/user-icon
                 span Name
               input(
                 type='text',
@@ -16,7 +16,7 @@ s_rp
               )
             p.input-item
               label
-                include ../../icons/asterisk-icon
+                include ../../../icons/asterisk-icon
                 span Password
               input(
                 type='password',
@@ -27,7 +27,7 @@ s_rp
               )
             p.input-item
               label
-                include ../../icons/house-icon
+                include ../../../icons/house-icon
                 span Homepage
               input.homepage(
                 type='text',
@@ -37,14 +37,14 @@ s_rp
               )
           p.input-item
             label
-              include ../../icons/lock-icon
+              include ../../../icons/lock-icon
               span Secret
             input.checkbox(type='checkbox', name='[##_rp_input_is_secret_##]')
         p.input-item.textarea-wrapper
           textarea(name='[##_rp_input_comment_##]', placeholder='댓글을 남겨주세요!')
         .btn-wrapper
           button.btn.btn-primary.submit-btn(type='submit', onclick='[##_rp_onclick_submit_##]')
-            include ../../icons/send-icon
+            include ../../../icons/send-icon
             span Submit
     .reply-list-container
       s_rp_container
@@ -60,13 +60,13 @@ s_rp
                   p.desc [##_rp_rep_desc_##]
                   .control
                     a.link-sub.link-secondary(href='#', onclick='[##_rp_rep_onclick_reply_##]')
-                      include ../../icons/chat-quote-icon
+                      include ../../../icons/chat-quote-icon
                       span Reply to
                     a.link-sub.link-secondary(href='#', onclick='[##_rp_rep_onclick_delete_##]')
-                      include ../../icons/gear-icon
+                      include ../../../icons/gear-icon
                       span Edit/Delete
                     span.date
-                      include ../../icons/calendar-icon
+                      include ../../../icons/calendar-icon
                       span [##_rp_rep_date_##]
               s_rp2_container
                 ul.reply-sub-list
@@ -85,14 +85,14 @@ s_rp
                               href='#',
                               onclick='[##_rp_rep_onclick_reply_##]'
                             )
-                              include ../../icons/chat-quote-icon
+                              include ../../../icons/chat-quote-icon
                               span Reply to
                             a.link-sub.link-secondary(
                               href='#',
                               onclick='[##_rp_rep_onclick_delete_##]'
                             )
-                              include ../../icons/gear-icon
+                              include ../../../icons/gear-icon
                               span Edit/Delete
                             span.date
-                              include ../../icons/calendar-icon
+                              include ../../../icons/calendar-icon
                               span [##_rp_rep_date_##]
