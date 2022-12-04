@@ -3,8 +3,8 @@ import { GUESTBOOK_URL, MANAGE_URL, TAG_CLOUD_URL, WRITE_URL } from '../constant
 import { toggleTheme } from '../theme-service';
 
 const runScripts = () => {
-  defEventHandler('#guestbook-btn', 'click', () => openTab(GUESTBOOK_URL));
-  defEventHandler('#tag-cloud-btn', 'click', () => openTab(TAG_CLOUD_URL));
+  defEventHandler('#guestbook-btn', 'click', () => openTab(GUESTBOOK_URL, false));
+  defEventHandler('#tag-cloud-btn', 'click', () => openTab(TAG_CLOUD_URL, false));
   defEventHandler('#theme-btn', 'click', toggleTheme);
   defEventHandler('#write-btn', 'click', () => openTab(WRITE_URL));
   defEventHandler('#manage-btn', 'click', () => openTab(MANAGE_URL));

@@ -1,96 +1,100 @@
-.reply-container
-  .reply-write-form
-    s_guest_input_form
-      s_guest_member
-        s_guest_form
+.guestbook-container
+  h2.guestbook-title
+    include ../../icons/book-icon
+    span Guestbook
+  .reply-container
+    .reply-write-form
+      s_guest_input_form
+        s_guest_member
+          s_guest_form
+            p.input-item
+              label
+                include ../../icons/user-icon
+                span Name
+              input(
+                type='text',
+                name='[##_guest_input_name_##]',
+                value='[##_guest_name_##]',
+                placeholder='이름을 입력해주세요.'
+              )
+            p.input-item
+              label
+                include ../../icons/asterisk-icon
+                span Password
+              input(
+                type='password',
+                maxlength='8',
+                name='[##_guest_input_password_##]',
+                value='[##_guest_password_##]',
+                placeholder='비밀번호를 입력해주세요.'
+              )
+            p.input-item
+              label
+                include ../../icons/house-icon
+                span Homepage
+              input.homepage(
+                type='text',
+                name='[##_guest_input_homepage_##]',
+                value='[##_guest_homepage_##]',
+                placeholder='홈페이지를 입력해주세요.'
+              )
           p.input-item
             label
-              include ../../icons/user-icon
-              span Name
-            input(
-              type='text',
-              name='[##_guest_input_name_##]',
-              value='[##_guest_name_##]',
-              placeholder='이름을 입력해주세요.'
-            )
-          p.input-item
-            label
-              include ../../icons/asterisk-icon
-              span Password
-            input(
-              type='password',
-              maxlength='8',
-              name='[##_guest_input_password_##]',
-              value='[##_guest_password_##]',
-              placeholder='비밀번호를 입력해주세요.'
-            )
-          p.input-item
-            label
-              include ../../icons/house-icon
-              span Homepage
-            input.homepage(
-              type='text',
-              name='[##_guest_input_homepage_##]',
-              value='[##_guest_homepage_##]',
-              placeholder='홈페이지를 입력해주세요.'
-            )
-        p.input-item
-          label
-            include ../../icons/lock-icon
-            span Secret
-          input.checkbox(type='checkbox', name='[##_guest_input_is_secret_##]')
-      p.input-item.textarea-wrapper
-        textarea(name='[##_guest_textarea_body_##]', placeholder='댓글을 남겨주세요!')
-      .btn-wrapper
-        button.btn.btn-primary.submit-btn(type='submit', onclick='[##_guest_onclick_submit_##]')
-          include ../../icons/send-icon
-          span Submit
-  .reply-list-container
-    s_guest_container
-      ul.reply-list
-        s_guest_rep
-          li(id='[##_guest_rep_id_##]')
-            .reply-item(class='[##_guest_rep_class_##]')
-              .left-area
-                .img-wrapper
-                  img(src='[##_guest_rep_logo_##]', alt='reply profile')
-              .right-area
-                p.name-wrapper [##_guest_rep_name_##]
-                p.desc [##_guest_rep_desc_##]
-                .control
-                  a.link-sub.link-secondary(href='#', onclick='[##_guest_rep_onclick_reply_##]')
-                    include ../../icons/chat-quote-icon
-                    span Reply to
-                  a.link-sub.link-secondary(href='#', onclick='[##_guest_rep_onclick_delete_##]')
-                    include ../../icons/gear-icon
-                    span Edit/Delete
-                  span.date
-                    include ../../icons/calendar-icon
-                    span [##_guest_rep_date_##]
-            s_guest_reply_container
-              ul.reply-sub-list
-                s_guest_reply_rep
-                  li(id='[##_guest_rep_id_##]')
-                    .reply-item(class='[##_guest_rep_class_##]')
-                      .left-area
-                        .img-wrapper
-                          img(src='[##_guest_rep_logo_##]', alt='reply profile')
-                      .right-area
-                        p.name-wrapper [##_guest_rep_name_##]
-                        p.desc [##_guest_rep_desc_##]
-                        .control
-                          a.link-sub.link-secondary(
-                            href='#',
-                            onclick='[##_guest_rep_onclick_reply_##]'
-                          )
-                            include ../../icons/chat-quote-icon
-                            span Reply to
-                          a.link-sub.link-secondary(
-                            href='#',
-                            onclick='[##_guest_rep_onclick_delete_##]'
-                          )
-                            include ../../icons/gear-icon
-                            span Edit/Delete
-                          span.date
-                            include ../../icons/calendar-icon
-                            span [##_guest_rep_date_##]
+              include ../../icons/lock-icon
+              span Secret
+            input.checkbox(type='checkbox', name='[##_guest_input_is_secret_##]')
+        p.input-item.textarea-wrapper
+          textarea(name='[##_guest_textarea_body_##]', placeholder='댓글을 남겨주세요!')
+        .btn-wrapper
+          button.btn.btn-primary.submit-btn(type='submit', onclick='[##_guest_onclick_submit_##]')
+            include ../../icons/send-icon
+            span Submit
+    .reply-list-container
+      s_guest_container
+        ul.reply-list
+          s_guest_rep
+            li(id='[##_guest_rep_id_##]')
+              .reply-item(class='[##_guest_rep_class_##]')
+                .left-area
+                  .img-wrapper
+                    img(src='[##_guest_rep_logo_##]', alt='reply profile')
+                .right-area
+                  p.name-wrapper [##_guest_rep_name_##]
+                  p.desc [##_guest_rep_desc_##]
+                  .control
+                    a.link-sub.link-secondary(href='#', onclick='[##_guest_rep_onclick_reply_##]')
+                      include ../../icons/chat-quote-icon
+                      span Reply to
+                    a.link-sub.link-secondary(href='#', onclick='[##_guest_rep_onclick_delete_##]')
+                      include ../../icons/gear-icon
+                      span Edit/Delete
+                    span.date
+                      include ../../icons/calendar-icon
+                      span [##_guest_rep_date_##]
+              s_guest_reply_container
+                ul.reply-sub-list
+                  s_guest_reply_rep
+                    li(id='[##_guest_rep_id_##]')
+                      .reply-item(class='[##_guest_rep_class_##]')
+                        .left-area
+                          .img-wrapper
+                            img(src='[##_guest_rep_logo_##]', alt='reply profile')
+                        .right-area
+                          p.name-wrapper [##_guest_rep_name_##]
+                          p.desc [##_guest_rep_desc_##]
+                          .control
+                            a.link-sub.link-secondary(
+                              href='#',
+                              onclick='[##_guest_rep_onclick_reply_##]'
+                            )
+                              include ../../icons/chat-quote-icon
+                              span Reply to
+                            a.link-sub.link-secondary(
+                              href='#',
+                              onclick='[##_guest_rep_onclick_delete_##]'
+                            )
+                              include ../../icons/gear-icon
+                              span Edit/Delete
+                            span.date
+                              include ../../icons/calendar-icon
+                              span [##_guest_rep_date_##]

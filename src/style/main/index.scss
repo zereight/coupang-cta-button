@@ -3,6 +3,8 @@
 @import 'permalink-reply';
 @import 'protected-article';
 @import 'paging';
+@import 'guestbook';
+@import 'tag-cloud';
 
 main {
   display: flex;
@@ -26,5 +28,6 @@ main {
     flex-direction: column;
     row-gap: $pd-lg;
     padding: 0 $pd-md;
+    margin-bottom: $pd-lg;
   }
 }
