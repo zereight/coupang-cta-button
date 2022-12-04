@@ -1,3 +1,6 @@
+/* Layout */
+
+/* Color */
 $gray0: #f8f9fa;
 $gray1: #f1f3f5;
 $gray2: #e9ecef;
@@ -96,3 +99,11 @@ $primary-box-shadow: 0px 4px 10px 2px rgba(54, 79, 199, 0.2);
 $d-box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.3);
 $d-success-box-shadow: 0px 4px 10px 2px rgba(29, 55, 18, 0.8);
 $d-primary-box-shadow: 0px 4px 10px 2px rgba(22, 29, 64, 0.8);
+
+/* Breakpoint */
+$bp-xs: 320px;
+$bp-sm: 567px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
