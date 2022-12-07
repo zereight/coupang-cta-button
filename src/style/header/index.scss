@@ -11,6 +11,10 @@ header {
   column-gap: $pd-md;
   z-index: 98;
 
+  #sidebar-open-btn {
+    display: none;
+  }
+
   a.title {
     font-size: $fs-lg;
     flex: 1;
@@ -46,6 +50,14 @@ header {
 
     a.title {
       color: $d-font-color;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-lg) {
+  header {
+    #sidebar-open-btn {
+      display: block;
     }
   }
 }

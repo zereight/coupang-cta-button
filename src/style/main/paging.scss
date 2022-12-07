@@ -101,3 +101,15 @@
     }
   }
 }
+
+@media screen and (max-width: $bp-xxl) {
+  .paging-container {
+    max-width: 1150px;
+  }
+}
+
+@media screen and (max-width: $bp-xl) {
+  .paging-container {
+    max-width: 1000px;
+  }
+}

@@ -31,3 +31,23 @@ main {
     margin-bottom: $pd-lg;
   }
 }
+
+@media screen and (max-width: $bp-xxl) {
+  main {
+    .upper-ad-container,
+    .lower-ad-container,
+    .article-container {
+      max-width: 1150px;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-xl) {
+  main {
+    .upper-ad-container,
+    .lower-ad-container,
+    .article-container {
+      max-width: 1000px;
+    }
+  }
+}
