@@ -99,8 +99,12 @@ section {
   display: block;
 }
 
-body {
+html {
   font-size: 18px;
+}
+
+body {
+  font-size: $fs-md;
   line-height: 1;
   color: $font-color;
   background-color: $bg-color;
@@ -111,5 +115,11 @@ body {
   body {
     background-color: $d-bg-color;
     color: $d-font-color;
+  }
+}
+
+@media screen and (max-width: $bp-md) {
+  html {
+    font-size: 16px;
   }
 }

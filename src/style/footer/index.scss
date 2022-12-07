@@ -83,3 +83,15 @@ footer {
     max-width: 1000px;
   }
 }
+
+@media screen and (max-width: $bp-lg) {
+  footer {
+    max-width: 1050px;
+  }
+}
+
+@media screen and (max-width: $bp-md) {
+  footer {
+    max-width: 900px;
+  }
+}

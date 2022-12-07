@@ -563,3 +563,28 @@ main {
     }
   }
 }
+
+@media screen and (max-width: $bp-lg) {
+  main .common-article-container {
+    max-width: 1050px;
+
+    .main-content {
+      max-width: 780px;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-md) {
+  main .common-article-container {
+    max-width: 900px;
+
+    #toc-container {
+      display: none;
+    }
+
+    .main-content {
+      max-width: 900px;
+      width: 100%;
+    }
+  }
+}
