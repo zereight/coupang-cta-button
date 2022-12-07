@@ -9,6 +9,7 @@ footer {
   align-items: flex-start;
   color: $font-sub-color;
   font-size: $fs-sm;
+  box-sizing: border-box;
 
   .copyright-container {
     flex: 1;
@@ -81,6 +82,19 @@ footer {
 @media screen and (max-width: $bp-xl) {
   footer {
     max-width: 1000px;
+
+    .copyright-container {
+      .skin-copyright {
+        flex-direction: column;
+        row-gap: $pd-sm;
+        align-items: flex-start;
+      }
+    }
+
+    .site-link-container,
+    .sns-link-container {
+      width: 200px;
+    }
   }
 }
 
@@ -93,5 +107,10 @@ footer {
 @media screen and (max-width: $bp-md) {
   footer {
     max-width: 900px;
+
+    .site-link-container,
+    .sns-link-container {
+      width: 170px;
+    }
   }
 }
