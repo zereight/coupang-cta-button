@@ -75,7 +75,7 @@
       .reply-item {
         display: flex;
         column-gap: $pd-md;
-        padding: $pd-md;
+        padding: $pd-md 0;
         margin-bottom: $pd-md;
 
         .left-area {
@@ -97,6 +97,7 @@
         }
 
         .right-area {
+          flex: 1;
           padding-top: $pd-md;
           display: flex;
           flex-direction: column;
@@ -272,6 +273,103 @@
 
     #noticeCaptcha {
       color: $d-font-color;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-md) {
+  .reply-container {
+    .reply-write-form form {
+      .input-item {
+        label {
+          min-width: 170px;
+        }
+      }
+    }
+
+    .reply-list-container {
+      .reply-list .reply-item {
+        .left-area {
+          width: 80px;
+
+          .img-wrapper {
+            width: 80px;
+            height: 80px;
+          }
+        }
+
+        .right-area {
+          .control > a > span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp-sm) {
+  .reply-container {
+    .reply-write-form form {
+      .input-item {
+        label {
+          min-width: 120px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp-xs) {
+  .reply-container {
+    .reply-write-form form {
+      .input-item {
+        input {
+          width: 250px;
+        }
+      }
+    }
+
+    .reply-list-container {
+      .reply-list .reply-item {
+        .left-area {
+          width: 70px;
+
+          .img-wrapper {
+            width: 70px;
+            height: 70px;
+          }
+        }
+
+        .right-area {
+          .control {
+            flex-direction: column;
+            row-gap: $pd-xs;
+            align-items: flex-start;
+
+            & > a > span {
+              display: flex;
+            }
+          }
+        }
+      }
+
+      .reply-sub-list {
+        list-style: none;
+        margin-left: $pd-md;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp-xxs) {
+  .reply-container {
+    .reply-write-form form {
+      .input-item {
+        input {
+          width: 200px;
+        }
+      }
     }
   }
 }

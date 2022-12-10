@@ -43,7 +43,7 @@ aside.sidebar {
   aside.sidebar {
     position: fixed;
     top: 0;
-    left: -500px;
+    left: -800px;
     background-color: $bg-color;
     z-index: 99;
     box-shadow: $box-shadow;
@@ -70,5 +70,11 @@ aside.sidebar {
   .dark-theme aside.sidebar {
     background-color: $d-bg-color;
     box-shadow: $d-box-shadow;
+  }
+}
+
+@media screen and (max-width: $bp-xs) {
+  aside.sidebar {
+    width: 100vw;
   }
 }

@@ -61,3 +61,11 @@ header {
     }
   }
 }
+
+@media screen and (max-width: $bp-md) {
+  header {
+    .menu {
+      display: none;
+    }
+  }
+}

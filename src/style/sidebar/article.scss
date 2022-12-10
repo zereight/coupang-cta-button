@@ -4,7 +4,7 @@ aside.sidebar #popular-article {
     display: flex;
     align-items: center;
     column-gap: $pd-sm;
-    padding: $pd-sm;
+    padding: $pd-sm 0;
 
     .img-wrapper {
       transition: $transition;
@@ -49,10 +49,23 @@ aside.sidebar #popular-article {
         column-gap: $pd-sm;
         color: $font-sub-color;
 
-        a {
+        a.sub-info-category {
           display: flex;
           align-items: center;
           column-gap: $pd-xs;
+          width: 130px;
+          word-break: break-all;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+
+        .cnt {
+          display: flex;
+          column-gap: $pd-xs;
+          align-items: center;
         }
       }
     }

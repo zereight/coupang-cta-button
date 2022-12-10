@@ -111,6 +111,8 @@ main {
       justify-content: center;
       width: 100%;
       height: 100%;
+      padding: 0 $pd-sm;
+      box-sizing: border-box;
 
       .date {
         display: flex;
@@ -129,6 +131,7 @@ main {
         font-size: $fs-xl;
         font-weight: bold;
         text-shadow: $text-shadow;
+        line-height: 1.5;
 
         &:hover {
           color: $primary;
@@ -398,6 +401,10 @@ main {
             display: none;
           }
         }
+      }
+
+      p {
+        word-break: break-word;
       }
     }
   }

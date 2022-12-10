@@ -76,6 +76,11 @@ footer {
 @media screen and (max-width: $bp-xxl) {
   footer {
     max-width: 1150px;
+
+    .site-link-container,
+    .sns-link-container {
+      width: 200px;
+    }
   }
 }
 
@@ -89,11 +94,6 @@ footer {
         row-gap: $pd-sm;
         align-items: flex-start;
       }
-    }
-
-    .site-link-container,
-    .sns-link-container {
-      width: 200px;
     }
   }
 }
@@ -110,7 +110,15 @@ footer {
 
     .site-link-container,
     .sns-link-container {
-      width: 170px;
+      width: 180px;
     }
+  }
+}
+
+@media screen and (max-width: $bp-sm) {
+  footer {
+    max-width: 900px;
+    flex-direction: column;
+    row-gap: $pd-lg;
   }
 }

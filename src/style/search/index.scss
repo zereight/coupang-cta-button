@@ -3,6 +3,7 @@
   padding: $pd-sm;
   background-color: $light-gray-background-color;
   border-radius: $radius-sm;
+  width: 240px;
 
   &:focus {
     outline: none;
@@ -119,5 +120,17 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: $bp-lg) {
+  .fake-search-input {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: $bp-sm) {
+  .fake-search-input {
+    width: 100px;
   }
 }
