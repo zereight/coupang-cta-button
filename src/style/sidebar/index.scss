@@ -12,6 +12,12 @@ aside.sidebar {
   row-gap: $pd-xl;
   padding: $pd-md;
 
+  .sidebar-ad-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
   #sidebar-close-btn {
     display: none;
   }
@@ -48,7 +54,7 @@ aside.sidebar {
     z-index: 99;
     box-shadow: $box-shadow;
     height: 100vh;
-    overflow: auto;
+    overflow-y: scroll;
     transition: $transition;
     transition-property: left;
 
