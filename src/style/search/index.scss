@@ -125,7 +125,13 @@
 
 @media screen and (max-width: $bp-lg) {
   .fake-search-input {
-    width: 180px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: $bp-md) {
+  .fake-search-input {
+    width: 150px;
   }
 }
 

@@ -10,8 +10,8 @@ main .index-article-item {
   }
 
   .img-wrapper {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     overflow: hidden;
     background: linear-gradient(45deg, $secondary-light, $primary-light);
 
@@ -111,7 +111,7 @@ main .index-article-item {
     flex-direction: column;
     align-items: flex-start;
     row-gap: $pd-md;
-    padding: $pd-sm;
+    padding: $pd-md $pd-sm;
 
     &:nth-child(even) {
       flex-direction: column;
