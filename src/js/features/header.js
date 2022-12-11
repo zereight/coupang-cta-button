@@ -1,6 +1,23 @@
-import { defEventHandler, openTab } from '../util-service';
+import { defEventHandler, openTab, throttle } from '../util-service';
 import { GUESTBOOK_URL, MANAGE_URL, TAG_CLOUD_URL, WRITE_URL } from '../constants';
 import { renderThemeButton, toggleTheme } from '../theme-service';
+
+const closureHandlerHideHeaderByScrollDown = () => {
+  let prevY = 0;
+
+  return () => {
+    document.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (!header) return;
+
+      const curY = window.scrollY;
+      if (Math.abs(prevY - curY) < 30) return;
+
+      header.style.top = prevY < curY ? '-200px' : '0';
+      prevY = curY;
+    });
+  };
+};
 
 const openSidebar = () => {
   const sidebar = document.querySelector('aside.sidebar');
@@ -15,6 +32,9 @@ const closeSidebar = () => {
 };
 
 const runScripts = () => {
+  const handlerHideHeaderByScrollDown = closureHandlerHideHeaderByScrollDown();
+  handlerHideHeaderByScrollDown();
+
   defEventHandler('#guestbook-btn', 'click', () => openTab(GUESTBOOK_URL, false));
   defEventHandler('#tag-cloud-btn', 'click', () => openTab(TAG_CLOUD_URL, false));
   defEventHandler('#theme-btn', 'click', () => {

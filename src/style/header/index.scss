@@ -10,6 +10,8 @@ header {
   backdrop-filter: blur(7px);
   column-gap: $pd-md;
   z-index: 98;
+  transition: $transition;
+  transition-property: top;
 
   #sidebar-open-btn {
     display: none;

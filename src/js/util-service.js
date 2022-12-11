@@ -22,4 +22,16 @@ export const throttle = (callback, timeout = 100) => {
   };
 };
 
+export const debounce = (callback, timeout = 100) => {
+  let timeoutId;
+  return () => {
+    if (!!timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      callback();
+    }, timeout);
+  };
+};
+
 export const openTab = (link, newTab = true) => window.open(link, newTab ? '_blank' : null);
