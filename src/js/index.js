@@ -1,6 +1,5 @@
 import { initTheme } from './theme-service';
-import { Search, PermalinkArticle, ProgressBar } from './features';
-import Header from './features/header';
+import { Header, FloatingButton, Search, PermalinkArticle, ProgressBar } from './features';
 
 // initialize theme
 initTheme();
@@ -38,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Header.runScripts();
   ProgressBar.runScripts();
   Search.runScripts();
+  FloatingButton.runScripts();
 
   /**
    * sidebar

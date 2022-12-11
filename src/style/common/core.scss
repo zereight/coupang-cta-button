@@ -14,6 +14,23 @@
   margin: 0;
 }
 
+.floating-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: $radius-circle;
+  background-color: $light-gray-background-color;
+  color: $font-color;
+
+  svg {
+    width: $fs-md;
+  }
+
+  &:hover {
+    background-color: $primary-light;
+    box-shadow: $box-shadow;
+  }
+}
+
 .btn-primary {
   background-color: $primary;
   color: $d-font-color;
@@ -196,6 +213,16 @@
 
     &:hover {
       background-color: $dark-gray-background-color;
+    }
+  }
+
+  .floating-btn {
+    background-color: $dark-gray-background-color;
+    color: $d-font-color;
+
+    &:hover {
+      background-color: $d-primary-dark;
+      box-shadow: $d-box-shadow;
     }
   }
 

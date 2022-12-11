@@ -1,5 +1,8 @@
 import { DARK_THEME, LIGHT_THEME, THEME_STORAGE_KEY } from './constants';
 
+const SUN_ICON_CLASS_NAME = 'svg.bi-sun';
+const MOON_ICON_CLASS_NAME = 'svg.bi-moon';
+
 export const initTheme = () => {
   const theme = localStorage.getItem(THEME_STORAGE_KEY);
   if (!theme) {
@@ -25,6 +28,10 @@ export const initTheme = () => {
 export const getTheme = () =>
   localStorage.getItem(THEME_STORAGE_KEY) === DARK_THEME ? DARK_THEME : LIGHT_THEME;
 
+export const isDarkTheme = () => getTheme() === DARK_THEME;
+
+export const isLightTheme = () => getTheme() === LIGHT_THEME;
+
 export const toggleTheme = () => {
   const useDarkTheme = getTheme() === DARK_THEME;
   let state;
@@ -36,4 +43,36 @@ export const toggleTheme = () => {
     state = true;
   }
   document.documentElement.classList.toggle('dark-theme', state);
+};
+
+/**
+ * 테마 상태를 확인 후 테마 버튼을 렌더링 해줌
+ */
+export const renderThemeButton = () => {
+  const sunIcons = document.querySelectorAll(SUN_ICON_CLASS_NAME);
+  const moonIcons = document.querySelectorAll(MOON_ICON_CLASS_NAME);
+
+  if (isDarkTheme()) {
+    if (sunIcons && sunIcons.length > 0) {
+      sunIcons.forEach((icon) => {
+        icon.style.display = 'none';
+      });
+    }
+    if (moonIcons && moonIcons.length > 0) {
+      moonIcons.forEach((icon) => {
+        icon.style.display = 'block';
+      });
+    }
+  } else {
+    if (sunIcons && sunIcons.length > 0) {
+      sunIcons.forEach((icon) => {
+        icon.style.display = 'block';
+      });
+    }
+    if (moonIcons && moonIcons.length > 0) {
+      moonIcons.forEach((icon) => {
+        icon.style.display = 'none';
+      });
+    }
+  }
 };
