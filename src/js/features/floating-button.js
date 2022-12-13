@@ -151,7 +151,7 @@ const runScripts = () => {
   if (isArticlePage()) {
     // like button
     showFloatingButton(FLOATING_LIKE_BUTTON_ID);
-    renderLikeButton();
+    setTimeout(() => renderLikeButton(), 500);
     handleToggleLike();
   }
 };

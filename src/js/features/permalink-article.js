@@ -78,8 +78,20 @@ const hNodeRestylingAndMakeToc = () => {
       curLevelList[level - 1] + 1,
       ...curLevelList.slice(level, curLevelList.length).map((_) => 0),
     ];
-    const tocNumber = `${curLevelList.slice(minLevel - 1, curLevelList.length).join('.')}.`;
-    const headText = [tocNumber, node.innerText].join(' ');
+
+    let trimedZero = false;
+    let tocNumberStr = '';
+    const tocNumberList = curLevelList.slice(minLevel - 1, curLevelList.length);
+    for (let i = tocNumberList.length - 1; i >= 0; i--) {
+      const num = tocNumberList[i];
+      if (!trimedZero && num === 0) {
+        continue;
+      }
+      trimedZero = true;
+      tocNumberStr = `${num}.${tocNumberStr}`;
+    }
+
+    const headText = [tocNumberStr, node.innerText].join(' ');
     const headId = `article-${
       headText
         ?.trim()
