@@ -1,3 +1,5 @@
+import { ignoreErrorWrapper } from '../util-service';
+
 const changeProgressBarWidthByScroll = () => {
   document.addEventListener('scroll', () => {
     const totalHeight = document?.scrollingElement?.scrollHeight;
@@ -13,5 +15,5 @@ const runScripts = () => {
   changeProgressBarWidthByScroll();
 };
 
-const ProgressBar = { runScripts };
+const ProgressBar = { runScripts: ignoreErrorWrapper(runScripts, 'ProgressBar') };
 export default ProgressBar;

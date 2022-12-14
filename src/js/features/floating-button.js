@@ -1,5 +1,6 @@
 import { renderThemeButton, toggleTheme } from '../theme-service';
 import { CATEGORY_URL, GUESTBOOK_URL, NOTICE_URL, TAG_CLOUD_URL } from '../constants';
+import { ignoreErrorWrapper } from '../util-service';
 
 const FLOATING_BUTTON_GROUP_CLASS_NAME = '.floating-btn-group';
 
@@ -157,7 +158,7 @@ const runScripts = () => {
 };
 
 const FloatingButton = {
-  runScripts,
+  runScripts: ignoreErrorWrapper(runScripts, 'FloatingButton'),
 };
 
 export default FloatingButton;

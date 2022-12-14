@@ -1,4 +1,4 @@
-import { copyClipboard } from '../util-service';
+import { copyClipboard, ignoreErrorWrapper } from '../util-service';
 
 const codeNodeRestyling = () => {
   const preNodeList = document.querySelectorAll('.article-body pre');
@@ -122,7 +122,7 @@ const runScripts = () => {
 };
 
 const PermalinkArticle = {
-  runScripts,
+  runScripts: ignoreErrorWrapper(runScripts, 'PermalinkArticle'),
 };
 
 export default PermalinkArticle;

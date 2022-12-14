@@ -1,5 +1,6 @@
 import { initTheme } from './theme-service';
 import { Header, FloatingButton, Search, PermalinkArticle, ProgressBar } from './features';
+import RecommendArticleCard from './features/recommend-article-card';
 
 // initialize theme
 initTheme();
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ProgressBar.runScripts();
   Search.runScripts();
   FloatingButton.runScripts();
+  RecommendArticleCard.runScripts();
 
   /**
    * sidebar

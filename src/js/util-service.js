@@ -35,3 +35,13 @@ export const debounce = (callback, timeout = 100) => {
 };
 
 export const openTab = (link, newTab = true) => window.open(link, newTab ? '_blank' : null);
+
+export const ignoreErrorWrapper =
+  (func, logTitle = '') =>
+  () => {
+    try {
+      func();
+    } catch (e) {
+      console.error(`[${logTitle}] error stack\n`, e);
+    }
+  };

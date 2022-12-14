@@ -1,4 +1,4 @@
-import { defEventHandler, openTab, throttle } from '../util-service';
+import { defEventHandler, ignoreErrorWrapper, openTab, throttle } from '../util-service';
 import { GUESTBOOK_URL, MANAGE_URL, TAG_CLOUD_URL, WRITE_URL } from '../constants';
 import { renderThemeButton, toggleTheme } from '../theme-service';
 
@@ -48,7 +48,7 @@ const runScripts = () => {
 };
 
 const Header = {
-  runScripts,
+  runScripts: ignoreErrorWrapper(runScripts, 'Header'),
 };
 
 export default Header;

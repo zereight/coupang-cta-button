@@ -1,6 +1,6 @@
 .recommend-article-card-container {
   position: fixed;
-  bottom: 100px;
+  bottom: -800px;
   padding: $pd-md;
   width: 340px;
   min-height: 130px;
@@ -11,6 +11,8 @@
   box-shadow: $box-shadow;
   z-index: 60;
   border-radius: $radius-md;
+  transition: $transition;
+  transition-property: bottom;
 
   a.img-wrapper {
     display: block;

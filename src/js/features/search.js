@@ -1,3 +1,5 @@
+import { ignoreErrorWrapper } from '../util-service';
+
 const SEARCH_LAYER_XPATH = '.search-layer';
 const SEARCH_POPUP_XPATH = '.search-popup';
 
@@ -87,5 +89,7 @@ const runScripts = () => {
   document.querySelector('#search-popup-close-btn')?.addEventListener('click', hideSearchPopup);
 };
 
-const Search = { runScripts };
+const Search = {
+  runScripts: ignoreErrorWrapper(runScripts, 'Search'),
+};
 export default Search;
