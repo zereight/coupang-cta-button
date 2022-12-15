@@ -57,6 +57,9 @@ const aNodeRestyling = () => {
 };
 
 const hNodeRestylingAndMakeToc = () => {
+  const tocContainer = document.querySelector('#toc-container');
+  if (!tocContainer) return;
+
   const hNodeList = document.querySelectorAll(
     ['h1', 'h2', 'h3', 'h4']
       .map((h) => `.article-body .tt_article_useless_p_margin ${h}`)
@@ -114,6 +117,8 @@ const hNodeRestylingAndMakeToc = () => {
       )
       .join('\n')}
     </ul>`;
+
+  tocContainer.style.display = 'block';
 };
 
 const runScripts = () => {

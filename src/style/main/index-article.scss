@@ -9,6 +9,18 @@ main .index-article-item {
     flex-direction: row-reverse;
   }
 
+  .article-thumbnail-circle {
+    border-radius: $radius-circle;
+  }
+
+  .article-thumbnail-rectangle {
+    border-radius: 0;
+  }
+
+  .article-thumbnail-round-rectangle {
+    border-radius: $radius-md;
+  }
+
   .img-wrapper {
     width: 200px;
     height: 200px;

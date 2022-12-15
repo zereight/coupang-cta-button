@@ -112,7 +112,7 @@
         <!-- Board -->
         <variablegroup name="본문 설정">
             <variable>
-                <name>board-thumbnail-shape</name>
+                <name>article-thumbnail-shape</name>
                 <label>글 썸네일 모양</label>
                 <description>글 썸네일의 모양을 선택할 수 있습니다.</description>
                 <type>SELECT</type>
@@ -120,24 +120,24 @@
                     <![CDATA[
                     [
                         {
-                            "name":"article-thumbnail-shape-default",
-                            "label":"둥근사각형",
-                            "value":"article-thumbnail-shape-default"
-                        },
-                        {
-                            "name":"article-thumbnail-shape-rectangle",
-                            "label":"사각형",
-                            "value":"article-thumbnail-shape-rectangle"
-                        },
-                        {
-                            "name":"article-thumbnail-shape-circle",
+                            "name":"article-thumbnail-circle",
                             "label":"원형",
-                            "value":"article-thumbnail-shape-circle"
+                            "value":"article-thumbnail-circle"
+                        },
+                        {
+                            "name":"article-thumbnail-rectangle",
+                            "label":"사각형",
+                            "value":"article-thumbnail-rectangle"
+                        },
+                        {
+                            "name":"article-thumbnail-round-rectangle",
+                            "label":"둥근 사각형",
+                            "value":"article-thumbnail-round-rectangle"
                         }
                     ]
                     ]]>
                 </option>
-                <default><![CDATA[ article-thumbnail-shape-default ]]></default>
+                <default><![CDATA[ article-thumbnail-circle ]]></default>
             </variable>
             <variable>
                 <name>article-number-visible</name>
@@ -167,44 +167,29 @@
                     <![CDATA[
                     [
                         {
-                            "name":"noto-sans",
-                            "label":"Noto Sans",
-                            "value":"font-noto-sans"
+                            "name": "SUIT",
+                            "label": "SUIT",
+                            "value": "SUIT"
                         },
                         {
-                            "name":"NotoSerifKR",
-                            "label":"본명조",
-                            "value":"font-noto-serif-kr"
+                            "name": "나눔명조",
+                            "label": "나눔명조",
+                            "value": "NanumMyeongjo"
                         },
                         {
-                            "name":"gmarket-sans",
-                            "label":"Gmarket Sans",
-                            "value":"font-gmarket-sans"
+                            "name": "NanumBarunpen",
+                            "label": "나눔 바른펜",
+                            "value": "NanumBarunpen"
                         },
                         {
-                            "name":"NanumBarunGothic",
-                            "label":"나눔바른고딕",
-                            "value":"font-nanum-barun-gothic"
-                        },
-                        {
-                            "name":"MaruBuri",
-                            "label":"마루 부리",
-                            "value":"font-maru-buri-regular"
-                        },
-                        {
-                            "name":"Cafe24Oneprettynight",
-                            "label":"카페24 고운밤",
-                            "value":"font-cafe24-one-pretty-night"
-                        },
-                        {
-                            "name":"cafe24Ohsquareair",
-                            "label":"카페24 아네모네 에어",
-                            "value":"font-cafe24-ohsquare-air"
+                            "name": "CookieRun",
+                            "label": "쿠키런",
+                            "value": "CookieRun"
                         }
                     ]
                     ]]>
                 </option>
-                <default><![CDATA[ noto-sans ]]></default>
+                <default><![CDATA[ SUIT ]]></default>
             </variable>
             <variable>
                 <name>loading-visible</name>

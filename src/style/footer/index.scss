@@ -2,7 +2,7 @@ footer {
   max-width: 1430px;
   width: 100%;
   margin: 0 auto;
-  padding: $pd-md;
+  padding: $pd-md $pd-md 300px $pd-md;
   display: flex;
   column-gap: $pd-md;
   justify-content: flex-start;
@@ -38,6 +38,15 @@ footer {
           }
         }
       }
+    }
+
+    .font-copyright {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: $pd-sm;
+      font-size: $fs-xs;
+      line-height: 1.5;
     }
   }
 
