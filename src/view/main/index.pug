@@ -1,5 +1,8 @@
 main
   .upper-ad-container [##_revenue_list_upper_##]
+  s_if_var_article-number-visible
+    style
+      | .article-body .number { display: none !important };
   .article-container
     s_article_rep
       include ./index-article/index

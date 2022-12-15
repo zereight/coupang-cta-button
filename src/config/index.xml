@@ -70,72 +70,6 @@
     </cover>
     <!-- Variable -->
     <variables>
-        <variablegroup name="고급 설정">
-            <variable>
-                <name>font-style</name>
-                <label>
-                    <![CDATA[ 폰트 변경 ]]>
-                </label>
-                <description>
-                    <![CDATA[ 폰트를 변경합니다. ]]>
-                </description>
-                <type>SELECT</type>
-                <option>
-                    <![CDATA[
-                    [
-                        {
-                            "name":"noto-sans",
-                            "label":"Noto Sans",
-                            "value":"font-noto-sans"
-                        },
-                        {
-                            "name":"NotoSerifKR",
-                            "label":"본명조",
-                            "value":"font-noto-serif-kr"
-                        },
-                        {
-                            "name":"gmarket-sans",
-                            "label":"Gmarket Sans",
-                            "value":"font-gmarket-sans"
-                        },
-                        {
-                            "name":"NanumBarunGothic",
-                            "label":"나눔바른고딕",
-                            "value":"font-nanum-barun-gothic"
-                        },
-                        {
-                            "name":"MaruBuri",
-                            "label":"마루 부리",
-                            "value":"font-maru-buri-regular"
-                        },
-                        {
-                            "name":"Cafe24Oneprettynight",
-                            "label":"카페24 고운밤",
-                            "value":"font-cafe24-one-pretty-night"
-                        },
-                        {
-                            "name":"cafe24Ohsquareair",
-                            "label":"카페24 아네모네 에어",
-                            "value":"font-cafe24-ohsquare-air"
-                        }
-                    ]
-                    ]]>
-                </option>
-                <default><![CDATA[ noto-sans ]]></default>
-            </variable>
-            <variable>
-                <name>loading-visible</name>
-                <label>
-                    <![CDATA[ 로딩 보이기/숨기기 ]]>
-                </label>
-                <description>
-                    <![CDATA[ 로딩화면을 보이게 하거나 숨깁니다. ]]>
-                </description>
-                <type>BOOL</type>
-                <option />
-                <default>false</default>
-            </variable>
-        </variablegroup>
         <!-- Profile -->
         <variablegroup name="프로필 설정">
             <variable>
@@ -204,6 +138,97 @@
                     ]]>
                 </option>
                 <default><![CDATA[ article-thumbnail-shape-default ]]></default>
+            </variable>
+            <variable>
+                <name>article-number-visible</name>
+                <label>
+                    <![CDATA[ 본문 글 제목에 숫자 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 본문 글 제목에 숫자를 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+            </variable>
+        </variablegroup>
+        <!-- Setting -->
+        <variablegroup name="고급 설정">
+            <variable>
+                <name>font-style</name>
+                <label>
+                    <![CDATA[ 폰트 변경 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 폰트를 변경합니다. ]]>
+                </description>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[
+                    [
+                        {
+                            "name":"noto-sans",
+                            "label":"Noto Sans",
+                            "value":"font-noto-sans"
+                        },
+                        {
+                            "name":"NotoSerifKR",
+                            "label":"본명조",
+                            "value":"font-noto-serif-kr"
+                        },
+                        {
+                            "name":"gmarket-sans",
+                            "label":"Gmarket Sans",
+                            "value":"font-gmarket-sans"
+                        },
+                        {
+                            "name":"NanumBarunGothic",
+                            "label":"나눔바른고딕",
+                            "value":"font-nanum-barun-gothic"
+                        },
+                        {
+                            "name":"MaruBuri",
+                            "label":"마루 부리",
+                            "value":"font-maru-buri-regular"
+                        },
+                        {
+                            "name":"Cafe24Oneprettynight",
+                            "label":"카페24 고운밤",
+                            "value":"font-cafe24-one-pretty-night"
+                        },
+                        {
+                            "name":"cafe24Ohsquareair",
+                            "label":"카페24 아네모네 에어",
+                            "value":"font-cafe24-ohsquare-air"
+                        }
+                    ]
+                    ]]>
+                </option>
+                <default><![CDATA[ noto-sans ]]></default>
+            </variable>
+            <variable>
+                <name>loading-visible</name>
+                <label>
+                    <![CDATA[ 로딩 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 로딩화면을 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+            </variable>
+            <variable>
+                <name>toc-number-visible</name>
+                <label>
+                    <![CDATA[ ToC 숫자 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ ToC 숫자를 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
             </variable>
         </variablegroup>
         <!-- Footer Link -->

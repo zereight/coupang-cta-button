@@ -91,12 +91,13 @@ const hNodeRestylingAndMakeToc = () => {
       tocNumberStr = `${num}.${tocNumberStr}`;
     }
 
-    const headText = [tocNumberStr, node.innerText].join(' ');
+    const headText = `<span class="number">${tocNumberStr}</span> ${node.innerText}`;
     const headId = `article-${
-      headText
-        ?.trim()
-        ?.replace(/\s|\.|\s+\./g, '-')
-        ?.toLowerCase() ?? ''
+      [tocNumberStr, node.innerText]
+        .join(' ')
+        .trim()
+        .replace(/\s|\.|\s+\./g, '-')
+        .toLowerCase() ?? ''
     }`;
     node.innerHTML = `<a id="${headId}" href="#${headId}">${headText}</a>`;
 
