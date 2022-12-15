@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   row-gap: $pd-xs;
+  flex-wrap: wrap;
 
   a {
     color: $font-color;

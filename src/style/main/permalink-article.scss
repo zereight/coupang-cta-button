@@ -588,7 +588,7 @@ main {
     max-width: 900px;
 
     #toc-container {
-      display: none;
+      display: none !important;
     }
 
     .main-content {
