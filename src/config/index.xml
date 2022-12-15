@@ -75,38 +75,38 @@
             <variable>
                 <name>profile-image-visible</name>
                 <label>
-                    <![CDATA[ 블로그 사진 보이기/숨기기 ]]>
+                    <![CDATA[ 블로그 사진 숨기기 ]]>
                 </label>
                 <description>
                     <![CDATA[ 블로그의 사진을 보이게 하거나 숨깁니다. ]]>
                 </description>
                 <type>BOOL</type>
                 <option />
-                <default>true</default>
+                <default>false</default>
             </variable>
             <variable>
                 <name>profile-blogger-visible</name>
                 <label>
-                    <![CDATA[ 블로거명 보이기/숨기기 ]]>
+                    <![CDATA[ 블로거명 숨기기 ]]>
                 </label>
                 <description>
                     <![CDATA[ 블로거의 이름을 보이게 하거나 숨깁니다. ]]>
                 </description>
                 <type>BOOL</type>
                 <option />
-                <default>true</default>
+                <default>false</default>
             </variable>
             <variable>
                 <name>profile-blog-desc-visible</name>
                 <label>
-                    <![CDATA[ 블로그 설명 보이기/숨기기 ]]>
+                    <![CDATA[ 블로그 설명 숨기기 ]]>
                 </label>
                 <description>
                     <![CDATA[ 블로그의 설명을 보이게 하거나 숨깁니다. ]]>
                 </description>
                 <type>BOOL</type>
                 <option />
-                <default>true</default>
+                <default>false</default>
             </variable>
         </variablegroup>
         <!-- Board -->
@@ -150,6 +150,30 @@
                 <type>BOOL</type>
                 <option />
                 <default>false</default>
+            </variable>
+            <variable>
+                <name>intro-card-visible</name>
+                <label>
+                    <![CDATA[ 소개 카드 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 소개 카드를 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+            </variable>
+            <variable>
+                <name>intro-card-desc</name>
+                <label>
+                    <![CDATA[ 소개 카드 인사말 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 소개 카드 인사말 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default>포스팅이 좋았다면 "좋아요❤️" 또는 "구독👍🏻" 해주세요!</default>
             </variable>
         </variablegroup>
         <!-- Setting -->

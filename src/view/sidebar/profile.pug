@@ -1,9 +1,9 @@
 section#profile
-  s_if_var_profile-image-visible
+  s_not_var_profile-image-visible
     .img-wrapper
       img(src='[##_image_##]', alt='profile')
   .info
-    s_if_var_profile-blogger-visible
+    s_not_var_profile-blogger-visible
       .name [##_blogger_##]
-    s_if_var_profile-blog-desc-visible
+    s_not_var_profile-blog-desc-visible
       .desc [##_desc_##]
