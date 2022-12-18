@@ -408,6 +408,18 @@ main {
       p {
         word-break: break-word;
       }
+
+      p,
+      li,
+      a {
+        code {
+          color: $font-color;
+          background-color: $primary-light;
+          border: 1px solid $primary-dark;
+          border-radius: $radius-sm;
+          padding: 0 2px;
+        }
+      }
     }
   }
 }
