@@ -551,6 +551,18 @@ main {
           box-shadow: $d-primary-box-shadow;
         }
       }
+
+      p,
+      li,
+      a {
+        code {
+          color: $font-color;
+          background-color: $d-primary-light;
+          border: 1px solid $d-primary-dark;
+          border-radius: $radius-sm;
+          padding: 0 2px;
+        }
+      }
     }
   }
 }
