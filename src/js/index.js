@@ -1,6 +1,7 @@
 import { initTheme } from './theme-service';
 import { Header, FloatingButton, Search, PermalinkArticle, ProgressBar } from './features';
 import RecommendArticleCard from './features/recommend-article-card';
+import Loading from './features/loading';
 
 // initialize theme
 initTheme();
@@ -35,6 +36,7 @@ const categoryCountRestyling = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  Loading.runScripts();
   Header.runScripts();
   ProgressBar.runScripts();
   Search.runScripts();

@@ -73,7 +73,7 @@
         <!-- Profile -->
         <variablegroup name="프로필 설정">
             <variable>
-                <name>profile-image-visible</name>
+                <name>profile-image-hide</name>
                 <label>
                     <![CDATA[ 블로그 사진 숨기기 ]]>
                 </label>
@@ -85,7 +85,7 @@
                 <default>false</default>
             </variable>
             <variable>
-                <name>profile-blogger-visible</name>
+                <name>profile-blogger-hide</name>
                 <label>
                     <![CDATA[ 블로거명 숨기기 ]]>
                 </label>
@@ -97,7 +97,7 @@
                 <default>false</default>
             </variable>
             <variable>
-                <name>profile-blog-desc-visible</name>
+                <name>profile-blog-desc-hide</name>
                 <label>
                     <![CDATA[ 블로그 설명 숨기기 ]]>
                 </label>
@@ -140,7 +140,7 @@
                 <default><![CDATA[ article-thumbnail-circle ]]></default>
             </variable>
             <variable>
-                <name>article-number-visible</name>
+                <name>article-number-hide</name>
                 <label>
                     <![CDATA[ 본문 글 제목에 숫자 숨기기 ]]>
                 </label>
@@ -152,7 +152,7 @@
                 <default>false</default>
             </variable>
             <variable>
-                <name>intro-card-visible</name>
+                <name>intro-card-hide</name>
                 <label>
                     <![CDATA[ 소개 카드 숨기기 ]]>
                 </label>
@@ -216,7 +216,7 @@
                 <default><![CDATA[ SUIT ]]></default>
             </variable>
             <variable>
-                <name>loading-visible</name>
+                <name>loading-hide</name>
                 <label>
                     <![CDATA[ 로딩 숨기기 ]]>
                 </label>
@@ -228,7 +228,7 @@
                 <default>true</default>
             </variable>
             <variable>
-                <name>toc-number-visible</name>
+                <name>toc-number-hide</name>
                 <label>
                     <![CDATA[ ToC 숫자 숨기기 ]]>
                 </label>
