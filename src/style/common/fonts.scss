@@ -1,0 +1,91 @@
+// D2Coding
+@font-face {
+  font-family: 'D2Coding';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// 나눔스퀘어 네오
+@font-face {
+  font-family: 'NanumMyeongjo';
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjo.ttf')
+      format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NanumMyeongjo';
+  font-weight: 700;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjoBold.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjoBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjoBold.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjoBold.woff')
+      format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/NanumMyeongjo/NanumMyeongjoBold.ttf')
+      format('truetype');
+  font-display: swap;
+}
+
+// 나눔바른펜
+@font-face {
+  font-family: 'NanumBarunpen';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NanumBarunpen';
+  font-weight: 700;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumBarunpen/NanumBarunpen-Bold.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/NanumBarunpen/NanumBarunpen-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/NanumBarunpen/NanumBarunpen-Bold.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/NanumBarunpen/NanumBarunpen-Bold.woff')
+      format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/NanumBarunpen/NanumBarunpen-Bold.ttf')
+      format('truetype');
+  font-display: swap;
+}
+
+// 쿠키런
+@font-face {
+  font-family: 'CookieRun';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunRegular.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunRegular.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunRegular.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunRegular.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunRegular.ttf')
+      format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CookieRun';
+  font-weight: 700;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.ttf') format('truetype');
+  font-display: swap;
+}

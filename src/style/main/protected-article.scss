@@ -1,0 +1,90 @@
+.protected-article-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: $pd-md;
+  border-radius: $radius-md;
+  box-shadow: $box-shadow;
+  padding: $pd-lg;
+
+  .article-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: $pd-md;
+
+    a {
+      font-size: $fs-lg;
+      font-weight: bold;
+    }
+
+    .date {
+      display: flex;
+      align-items: center;
+      font-size: $fs-sm;
+      column-gap: $pd-xs;
+      color: $font-sub-color;
+    }
+  }
+
+  .password-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: $pd-md;
+
+    .password-form-item {
+      display: flex;
+      align-items: center;
+
+      label {
+        display: flex;
+        align-items: center;
+        font-size: $fs-sm;
+        column-gap: $pd-xs;
+        color: $font-sub-color;
+        width: 150px;
+      }
+
+      input {
+        width: 320px;
+        transition: $transition;
+        background-color: $light-gray-background-color;
+        border-radius: $radius-md;
+        padding: $pd-sm;
+        border: none;
+        color: $font-color;
+
+        &:focus {
+          flex: 1;
+          box-shadow: $box-shadow;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.dark-theme .protected-article-container {
+  box-shadow: $d-box-shadow;
+
+  .article-info {
+    .date {
+      color: $d-font-sub-color;
+    }
+  }
+
+  .password-form {
+    .password-form-item {
+      label {
+        color: $d-font-sub-color;
+      }
+
+      input {
+        background-color: $dark-gray-background-color;
+        color: $d-font-color;
+
+        &:focus {
+          box-shadow: $d-box-shadow;
+        }
+      }
+    }
+  }
+}

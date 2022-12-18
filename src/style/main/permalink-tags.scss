@@ -1,0 +1,42 @@
+.permalink-tags {
+  display: flex;
+  align-items: center;
+  row-gap: $pd-xs;
+  flex-wrap: wrap;
+
+  a {
+    color: $font-color;
+    display: inline-block;
+    padding: $pd-xs;
+    font-size: $fs-xs;
+    text-decoration: none;
+    background-color: $light-gray-background-color;
+    transition: $transition;
+    margin-left: $pd-xs;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:before {
+      content: '#';
+    }
+
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+}
+
+.dark-theme {
+  .permalink-tags {
+    a {
+      color: $d-font-color;
+      background-color: $dark-gray-background-color;
+
+      &:hover {
+        background-color: $d-primary;
+      }
+    }
+  }
+}

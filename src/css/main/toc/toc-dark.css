@@ -1,9 +1,0 @@
-#toc-container .toc-wrapper {
-  border-left: dashed 2px var(--dark-gray-color);
-}
-#toc-container .toc-wrapper a.toc {
-  color: var(--text-reverse-sub-color);
-}
-#toc-container .toc-wrapper a.toc:hover {
-  color: var(--primary-color);
-}

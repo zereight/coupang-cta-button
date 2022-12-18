@@ -1,0 +1,24 @@
+.floating-btn-group {
+  position: fixed;
+  bottom: -800px;
+  right: 0;
+  display: flex;
+  padding: $pd-lg;
+  z-index: 50;
+  flex-direction: column;
+  row-gap: $pd-md;
+  transition: $transition;
+  transition-property: bottom;
+
+  #floating-like-btn {
+    display: none;
+  }
+
+  .bi-suit-heart-fill {
+    display: none;
+  }
+
+  .bi-sun {
+    display: none;
+  }
+}
