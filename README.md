@@ -1,18 +1,23 @@
 # Berry Skin
 
-커스텀하게 제작한 티스토리 블로그 스킨입니다.
+티스토리 블로그 플랫폼에서 사용하는 커스텀 스킨입니다.
 
-# How to build
+- 스킨명: Berry Skin
+- Release version: ![Generic badge](https://img.shields.io/badge/Berry-3.0.0-success}.svg)
 
-전체 빌드
+# Quick start
 
 ```
 yarn install
-yarn build
+yarn dev
 ```
 
-pug 빌드
+# How to build
 
 ```
-yarn build:pug
+# develop
+$ yarn build
+
+# production
+$ yarn build:prod
 ```
