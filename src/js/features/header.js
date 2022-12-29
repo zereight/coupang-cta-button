@@ -31,9 +31,19 @@ const closeSidebar = () => {
   sidebar.classList.remove('open-sidebar');
 };
 
+const removeLocalStorageThemeIfDisabledTheme = () => {
+  const themeButton = document.querySelector('#theme-btn');
+  if (!themeButton) {
+    localStorage.removeItem('theme');
+    document.documentElement.classList.remove('dark-theme');
+  }
+};
+
 const runScripts = () => {
   const handlerHideHeaderByScrollDown = closureHandlerHideHeaderByScrollDown();
   handlerHideHeaderByScrollDown();
+
+  removeLocalStorageThemeIfDisabledTheme();
 
   defEventHandler('#guestbook-btn', 'click', () => openTab(GUESTBOOK_URL, false));
   defEventHandler('#tag-cloud-btn', 'click', () => openTab(TAG_CLOUD_URL, false));
