@@ -180,7 +180,7 @@ main {
 
   /* 글 본문 */
   .common-article-container .article-body {
-    .tt_article_useless_p_margin {
+    .contents_style {
       width: 100%;
       box-sizing: border-box;
       line-height: 2;
@@ -470,7 +470,7 @@ main {
 
   /* 글 본문 */
   .common-article-container .article-body {
-    .tt_article_useless_p_margin {
+    .contents_style {
       a {
         color: $d-primary-light;
 
