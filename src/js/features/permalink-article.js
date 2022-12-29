@@ -44,7 +44,7 @@ const codeNodeRestyling = () => {
 };
 
 const aNodeRestyling = () => {
-  const aNodeList = document.querySelectorAll('.article-body .tt_article_useless_p_margin p a');
+  const aNodeList = document.querySelectorAll('.article-body .contents_style p a');
   if (!aNodeList || aNodeList?.length === 0) return;
   aNodeList.forEach((aNode) => {
     const span = document.createElement('span');
@@ -61,9 +61,7 @@ const hNodeRestylingAndMakeToc = () => {
   if (!tocContainer) return;
 
   const hNodeList = document.querySelectorAll(
-    ['h1', 'h2', 'h3', 'h4']
-      .map((h) => `.article-body .tt_article_useless_p_margin ${h}`)
-      .join(', ')
+    ['h1', 'h2', 'h3', 'h4'].map((h) => `.article-body .contents_style ${h}`).join(', ')
   );
   if (!hNodeList || hNodeList?.length === 0) return;
 
