@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
     <information>
-        <name>Berry Skin v3.0.1</name>
-        <version>3.0.1</version>
+        <name>Berry Skin v3.0.2</name>
+        <version>3.0.2</version>
         <description>
             <![CDATA[티스토리 스킨 Berry Skin 입니다. 수정은 가능하나, 재배포는 불가능합니다. 관련 문의사항은 "public.bluemiv@gmail.com"으로 연락주세요.]]>
         </description>
@@ -214,6 +214,18 @@
                     ]]>
                 </option>
                 <default><![CDATA[ SUIT ]]></default>
+            </variable>
+            <variable>
+                <name>toggle-theme-disabled</name>
+                <label>
+                    <![CDATA[ 테마변경 기능 비활성화 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 테마 변경 기능을 비활성화 합니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
             </variable>
             <variable>
                 <name>loading-hide</name>
