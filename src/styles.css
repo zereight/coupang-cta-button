@@ -7,6 +7,10 @@ button {
   background-color: transparent;
 }
 
+.none {
+  opacity: 0;
+}
+
 /* custom */
 
 /* cta button */
@@ -34,6 +38,11 @@ button {
   padding: 10px 40px;
   display: flex;
   align-items: center;
+}
+.cta-button:hover {
+  transform: scale(1.1);
+  /* smooth animation */
+  transition: transform 0.5s ease-in-out;
 }
 
 .cta-skip-count-number {

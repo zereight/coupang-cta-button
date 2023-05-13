@@ -20,7 +20,7 @@ const drawButton = ($parentElement) => {
                 버튼 누르고 바로 보기 <span class="cta-skip-count-number">${SKIP_COUNT_NUMBER}</span>
             </button>
 
-            <div class="skip-text-container">
+            <div class="skip-text-container none">
                 <span class="skip-text">
                     원치 않을 경우 <button class="skip-button" type="button">여기</button>를 눌러주세요
                 </span>
@@ -44,21 +44,23 @@ const drawButton = ($parentElement) => {
   const $skipButton = $container.querySelector(".skip-button");
   $skipButton.addEventListener("click", showContent);
 
-  // 5초뒤에 5초카운트해서 스킵한다.
+  // 3초뒤에 5초카운트해서 스킵한다.
   let count = SKIP_COUNT_NUMBER;
   setTimeout(() => {
     const intervalId = setInterval(() => {
       count--;
 
       if (count === -1) {
-        showContent();
+        showSkipButton();
         clearInterval(intervalId);
       }
 
       const $countNumber = $container.querySelector(".cta-skip-count-number");
-      if ($countNumber) $countNumber.textContent = count;
+      if ($countNumber) {
+        $countNumber.textContent = count >= 0 ? count : "";
+      }
     }, 1000);
-  }, 5000);
+  }, 3000);
 
   $parentElement.appendChild($container);
 };
@@ -85,6 +87,12 @@ const showContent = () => {
   const $content = document.querySelector(".content");
   $content.classList.remove("content-hidden");
   $content.classList.remove("hider");
+};
+
+const showSkipButton = () => {
+  const $skipButtonContainer = $root.querySelector(".skip-text-container");
+
+  $skipButtonContainer.classList.remove("none");
 };
 
 const init = () => {
