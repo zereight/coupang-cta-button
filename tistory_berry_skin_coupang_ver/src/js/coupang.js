@@ -80,10 +80,8 @@ const hideContent = ($content) => {
 const showContent = () => {
   // cta 버튼 클릭이벤트달기
   const $root = document.querySelector(본문ElementSelector);
-  const $ctaButton = $root.querySelector('.cta-button');
-  const $skipButtonContainer = $root.querySelector('.skip-text-container');
-  if ($ctaButton) $ctaButton.classList.add('none');
-  if ($skipButtonContainer) $skipButtonContainer.classList.add('none');
+  const $ctaButtonContainer = $root.querySelector('.cta-container');
+  if ($ctaButtonContainer) $ctaButtonContainer.classList.add('none');
 
   $root.classList.remove('content-hidden');
   $root.classList.remove('hider');
