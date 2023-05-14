@@ -7,14 +7,17 @@ export const initTheme = () => {
   const theme = localStorage.getItem(THEME_STORAGE_KEY);
   if (!theme) {
     // storage 에 설정된 테마가 없는 경우, os 에 따름
-    const useDarkTheme = window?.matchMedia('(prefers-color-scheme: dark)');
-    if (useDarkTheme?.matches) {
-      document.documentElement.classList.add('dark-theme');
-      localStorage.setItem(THEME_STORAGE_KEY, DARK_THEME);
-    } else {
-      document.documentElement.classList.remove('dark-theme');
-      localStorage.setItem(THEME_STORAGE_KEY, LIGHT_THEME);
-    }
+    // const useDarkTheme = window?.matchMedia('(prefers-color-scheme: dark)');
+    // if (useDarkTheme?.matches) {
+    //   document.documentElement.classList.add('dark-theme');
+    //   localStorage.setItem(THEME_STORAGE_KEY, DARK_THEME);
+    // } else {
+    //   document.documentElement.classList.remove('dark-theme');
+    //   localStorage.setItem(THEME_STORAGE_KEY, LIGHT_THEME);
+    // }
+
+    document.documentElement.classList.remove('dark-theme');
+    localStorage.setItem(THEME_STORAGE_KEY, LIGHT_THEME);
   } else {
     // storage 에 설정된 테마가 있는 경우, 해당 테마로 설정
     if (theme === LIGHT_THEME) {
