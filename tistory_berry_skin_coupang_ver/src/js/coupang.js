@@ -15,6 +15,12 @@ const drawButton = ($parentElement) => {
 
   // custom coupang CTA button
   $container.innerHTML = `
+            <div class="cheer-phrase-container">
+              <span class="cheer-phrase">
+                  한번 누르면 2시간동안 보이지 않아요 ㅎㅎ
+              </span>
+            </div>
+
             <button class="cta-button" type="button">
                 버튼 누르고 바로 보기 <span class="cta-skip-count-number">${SKIP_COUNT_NUMBER}</span>
             </button>
