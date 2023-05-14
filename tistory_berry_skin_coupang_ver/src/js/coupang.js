@@ -6,6 +6,7 @@
 const SKIP_COUNT_NUMBER = 5; // 5초 뒤에 광고스킵
 const LOCAL_STORAGE_SKIP_TIME_KET = 'coupang-skip-time'; // 로컬스토리지에 저장할 쿠팡광고 마지막 노출 키값. 2시간동안 안보이게 한다. (약관임)
 const AD_LINK = 'https://link.coupang.com/a/YbkAk';
+const 본문ElementSelector = '.main-content .article-body > .tt_article_useless_p_margin';
 
 const drawButton = ($parentElement) => {
   const $container = document.createElement('div');
@@ -72,7 +73,7 @@ const hideContent = ($content) => {
 
 const showContent = () => {
   // cta 버튼 클릭이벤트달기
-  const $root = document.querySelector('.tt_article_useless_p_margin');
+  const $root = document.querySelector(본문ElementSelector);
   const $ctaButton = $root.querySelector('.cta-button');
   const $skipButtonContainer = $root.querySelector('.skip-text-container');
   if ($ctaButton) $ctaButton.classList.add('none');
@@ -83,14 +84,14 @@ const showContent = () => {
 };
 
 const showSkipButton = () => {
-  const $root = document.querySelector('.article-body');
+  const $root = document.querySelector(본문ElementSelector);
   const $skipButtonContainer = $root.querySelector('.skip-text-container');
 
   $skipButtonContainer.classList.remove('none');
 };
 
 const init = () => {
-  const $content = document.querySelector('.article-body');
+  const $content = document.querySelector(본문ElementSelector);
 
   const recentViewTime = localStorage.getItem(LOCAL_STORAGE_SKIP_TIME_KET);
 
