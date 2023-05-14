@@ -72,7 +72,7 @@ const hideContent = ($content) => {
 
 const showContent = () => {
   // cta 버튼 클릭이벤트달기
-  const $root = document.querySelector('.article-body');
+  const $root = document.querySelector('.tt_article_useless_p_margin');
   const $ctaButton = $root.querySelector('.cta-button');
   const $skipButtonContainer = $root.querySelector('.skip-text-container');
   if ($ctaButton) $ctaButton.classList.add('none');
