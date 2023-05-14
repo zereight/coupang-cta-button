@@ -1,0 +1,86 @@
+@import './profile';
+@import './category';
+@import './notice';
+@import './article';
+@import './recent-comments';
+
+aside.sidebar {
+  width: 340px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  row-gap: $pd-xl;
+  padding: $pd-md;
+
+  .sidebar-ad-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  #sidebar-close-btn {
+    display: none;
+  }
+
+  .sidebar-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: $pd-md;
+
+    &-title {
+      display: flex;
+      align-items: center;
+      column-gap: $pd-sm;
+      color: $font-sub-color;
+
+      svg {
+        font-size: $fs-sm;
+      }
+
+      h3 {
+        font-size: $fs-sm;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp-lg) {
+  aside.sidebar {
+    position: fixed;
+    top: 0;
+    left: -800px;
+    background-color: $bg-color;
+    z-index: 99;
+    box-shadow: $box-shadow;
+    height: 100vh;
+    overflow-y: scroll;
+    transition: $transition;
+    transition-property: left;
+
+    #sidebar-close-btn {
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  aside.sidebar.open-sidebar {
+    left: 0;
+  }
+
+  .dark-theme aside.sidebar {
+    background-color: $d-bg-color;
+    box-shadow: $d-box-shadow;
+  }
+}
+
+@media screen and (max-width: $bp-xs) {
+  aside.sidebar {
+    width: 100vw;
+  }
+}

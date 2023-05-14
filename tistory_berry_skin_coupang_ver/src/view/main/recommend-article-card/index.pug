@@ -1,0 +1,19 @@
+s_article_prev
+  .recommend-article-card-container.prev-recommend-article-card-container
+    s_article_prev_thumbnail
+      a.img-wrapper(href='[##_article_prev_link_##]')
+        img(src='[##_article_prev_thumbnail_link_##]', alt='article prev thumbnail')
+    .info
+      p.card-type 이전 글
+      a.link.link-primary(href='[##_article_prev_link_##]') [##_article_prev_title_##]
+      p.date [##_article_prev_date_##]
+
+s_article_next
+  .recommend-article-card-container.next-recommend-article-card-container
+    .info
+      p.card-type 다음 글
+      a.link.link-primary(href='[##_article_prev_link_##]') [##_article_prev_title_##]
+      p.date [##_article_prev_date_##]
+    s_article_next_thumbnail
+      a.img-wrapper(href='[##_article_prev_link_##]')
+        img(src='[##_article_next_thumbnail_link_##]', alt='article next thumbnail')

@@ -1,0 +1,54 @@
+.intro-card {
+  background: linear-gradient(45deg, $primary, $secondary);
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  margin: $pd-md 0;
+  display: flex;
+  align-items: center;
+  border-radius: $radius-md;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+
+  .img-wrapper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .intro {
+    padding: $pd-lg;
+    display: flex;
+    flex-direction: column;
+    row-gap: $pd-md;
+
+    p {
+      color: $d-font-color;
+    }
+
+    .blogger {
+      font-size: $fs-sm;
+    }
+
+    .desc {
+      font-size: $fs-sm;
+      line-height: 1.5;
+    }
+  }
+}
+
+.dark-theme .intro-card {
+  background: linear-gradient(45deg, $d-primary, $d-secondary);
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+}

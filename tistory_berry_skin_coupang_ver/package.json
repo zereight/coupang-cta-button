@@ -1,0 +1,40 @@
+{
+  "name": "tistory_berry_skin",
+  "version": "3.0.1",
+  "repository": "https://github.com/bluemiv/tistory_berry_skin.git",
+  "author": "TaehongKim <public.bluemiv@gmail.com>",
+  "description": "수정 가능, 재배포 금지",
+  "license": "MIT",
+  "scripts": {
+    "prettier:all": "yarn prettier --write ./src/**/*.(pug|js|ts|scss|css|html) --plugin=@prettier/plugin-pug",
+    "dev": "concurrently \"yarn dev:pug\" \"yarn dev:webpack\"",
+    "dev:pug": "yarn pug -w src/view/skin.pug -o ./build -P",
+    "dev:webpack": "yarn webpack --watch --config webpack.config.js",
+    "build:pug": "yarn pug src/view/skin.pug -o ./build -P",
+    "build:webpack": "yarn webpack --config webpack.config.js",
+    "build": "yarn prettier:all && rm -rf ./build && yarn build:pug && yarn build:webpack",
+    "build:prod": "NODE_ENV=prod && yarn build"
+  },
+  "devDependencies": {
+    "@prettier/plugin-pug": "^2.3.0",
+    "concurrently": "^7.6.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.2",
+    "prettier": "^2.8.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.57.0",
+    "sass-loader": "^13.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "xml-loader": "^1.2.1"
+  },
+  "engines": {
+    "node": ">=18.12.1"
+  },
+  "packageManager": "yarn@3.2.4",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

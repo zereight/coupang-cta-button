@@ -1,0 +1,22 @@
+.guestbook-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: $pd-lg;
+
+  h2.guestbook-title {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: $pd-sm;
+    font-size: $fs-lg;
+    color: $font-sub-color;
+    font-weight: normal;
+  }
+}
+
+.dark-theme .guestbook-container {
+  h2.guestbook-title {
+    color: $d-font-sub-color;
+  }
+}

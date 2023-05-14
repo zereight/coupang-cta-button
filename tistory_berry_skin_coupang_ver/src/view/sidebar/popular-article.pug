@@ -1,0 +1,20 @@
+section#popular-article.sidebar-item
+  .sidebar-item-title
+    include ../icons/fire-icon
+    h3 인기 글
+  .body
+    ul
+      s_rctps_popular_rep
+        li
+          a.img-wrapper(href='[##_rctps_rep_link_##]')
+            s_rctps_rep_thumbnail
+              img(src='[##_rctps_rep_thumbnail_##]', alt='popular article thumbnail')
+          .info
+            a.title.link.link-primary(href='[##_rctps_rep_link_##]') [##_rctps_rep_title_##]
+            .sub-info
+              span.cnt
+                include ../icons/chat-quote-icon
+                span [##_rctps_rep_rp_cnt_##]
+              a.sub-info-category.link-sub.link-secondary(href='[##_rctps_rep_category_link_##]')
+                include ../icons/bookmark-star-icon
+                span [##_rctps_rep_category_##]

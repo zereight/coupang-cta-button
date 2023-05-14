@@ -1,0 +1,21 @@
+main
+  .upper-ad-container [##_revenue_list_upper_##]
+  s_if_var_article-number-hide
+    style
+      | .article-body .number { display: none !important };
+  .article-container
+    s_article_rep
+      include ./index-article/index
+      include ./protected-article/index
+      include ./permalink-article/index
+    s_notice_rep
+      include ./index-notice/index
+      include ./permalink-notice/index
+    s_page_rep
+      include ./page/index
+    s_guest
+      include ./guestbook/index
+    s_tag
+      include ./tag-cloud/index
+  .lower-ad-container [##_revenue_list_lower_##]
+  include ./paging/index

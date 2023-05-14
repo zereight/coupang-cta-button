@@ -1,0 +1,134 @@
+footer {
+  max-width: 1430px;
+  width: 100%;
+  margin: 0 auto;
+  padding: $pd-md $pd-md 300px $pd-md;
+  display: flex;
+  column-gap: $pd-md;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: $font-sub-color;
+  font-size: $fs-sm;
+  box-sizing: border-box;
+
+  .copyright-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: $pd-md;
+
+    .skin-copyright {
+      display: flex;
+      align-items: center;
+      column-gap: $pd-md;
+
+      span {
+        display: flex;
+        column-gap: $pd-sm;
+        align-items: center;
+
+        a {
+          text-decoration: none;
+          color: $primary;
+          transition: $transition;
+
+          &:hover {
+            color: $primary-dark;
+          }
+        }
+      }
+    }
+
+    .font-copyright {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: $pd-sm;
+      font-size: $fs-xs;
+      line-height: 1.5;
+    }
+  }
+
+  .site-link-container,
+  .sns-link-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    row-gap: $pd-sm;
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      column-gap: $pd-xs;
+      font-size: $fs-sm;
+    }
+  }
+}
+
+.dark-theme footer {
+  color: $d-font-sub-color;
+
+  .copyright-container {
+    .skin-copyright {
+      a {
+        color: $d-primary;
+
+        &:hover {
+          color: $d-primary-dark;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp-xxl) {
+  footer {
+    max-width: 1150px;
+
+    .site-link-container,
+    .sns-link-container {
+      width: 220px;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-xl) {
+  footer {
+    max-width: 1000px;
+
+    .copyright-container {
+      .skin-copyright {
+        flex-direction: column;
+        row-gap: $pd-sm;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp-lg) {
+  footer {
+    max-width: 1050px;
+  }
+}
+
+@media screen and (max-width: $bp-md) {
+  footer {
+    max-width: 900px;
+
+    .site-link-container,
+    .sns-link-container {
+      font-size: $fs-xs;
+      width: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-sm) {
+  footer {
+    max-width: 900px;
+    flex-direction: column;
+    row-gap: $pd-lg;
+  }
+}

@@ -1,0 +1,12 @@
+s_index_article_rep
+  .index-article-item
+    a.img-wrapper.img-circle(href='[##_notice_rep_link_##]')
+      s_notice_rep_thumbnail
+        img(src='[##_notice_rep_thumbnail_url_##]', alt='notice article thumbnail')
+    .detail
+      a.title.link.link-primary(href='[##_notice_rep_link_##]') [##_notice_rep_title_##]
+      .sub-detail
+        span.date-info
+          include ../../icons/calendar-icon
+          span.date [##_notice_rep_date_##]
+      p.summary [##_notice_rep_summary_##]

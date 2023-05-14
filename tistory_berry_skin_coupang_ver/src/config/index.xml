@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+    <information>
+        <name>Berry Skin v3.0.2</name>
+        <version>3.0.2</version>
+        <description>
+            <![CDATA[티스토리 스킨 Berry Skin 입니다. 수정은 가능하나, 재배포는 불가능합니다. 관련 문의사항은 "public.bluemiv@gmail.com"으로 연락주세요.]]>
+        </description>
+        <license>
+            <![CDATA[© Memostak :: Bluemiv]]>
+        </license>
+    </information>
+    <author>
+        <name><![CDATA[Bluemiv]]></name>
+        <homepage>https://memostack.tistory.com/</homepage>
+        <email>public.bluemiv@gmail.com</email>
+    </author>
+    <default>
+        <recentEntries>5</recentEntries>
+        <recentComments>5</recentComments>
+        <recentTrackbacks>5</recentTrackbacks>
+        <itemsOnGuestbook>10</itemsOnGuestbook>
+        <tagsInCloud>30</tagsInCloud>
+        <sortInCloud>3</sortInCloud>
+        <expandComment>0</expandComment>
+        <expandTrackback>0</expandTrackback>
+        <lengthOfRecentNotice>25</lengthOfRecentNotice>
+        <lengthOfRecentEntry>27</lengthOfRecentEntry>
+        <lengthOfRecentComment>30</lengthOfRecentComment>
+        <lengthOfRecentTrackback>30</lengthOfRecentTrackback>
+        <lengthOfLink>30</lengthOfLink>
+        <showListOnCategory>1</showListOnCategory>
+        <showListOnArchive>1</showListOnArchive>
+        <commentMessage>
+            <none>댓글이 없습니다.</none>
+            <single>댓글 &lt;span class="cnt"&gt;하나&lt;/span&gt; 달렸습니다.</single>
+        </commentMessage>
+        <trackbackMessage>
+            <none>받은 트랙백이 없고</none>
+            <single>트랙백이 &lt;span class="cnt"&gt;하나&lt;/span&gt;이고</single>
+        </trackbackMessage>
+        <tree>
+            <color>000000</color>
+            <bgColor>ffffff</bgColor>
+            <activeColor>000000</activeColor>
+            <activeBgColor>eeeeee</activeBgColor>
+            <labelLength>27</labelLength>
+            <showValue>1</showValue>
+        </tree>
+        <contentWidth>500</contentWidth>
+    </default>
+    <!-- Legacy -->
+    <liststyle>
+        <item>
+            <label>기본 타입</label>
+            <value>thumbnail</value>
+        </item>
+    </liststyle>
+    <!-- Cover -->
+    <cover>
+        <item>
+            <name>thumbnail</name>
+            <label>
+                <![CDATA[ 기본 타입 ]]>
+            </label>
+            <description>
+                <![CDATA[ 이미지 썸네일과 제목, 본문으로 구성된 리스트 ]]>
+            </description>
+        </item>
+    </cover>
+    <!-- Variable -->
+    <variables>
+        <!-- Profile -->
+        <variablegroup name="프로필 설정">
+            <variable>
+                <name>profile-image-hide</name>
+                <label>
+                    <![CDATA[ 블로그 사진 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 블로그의 사진을 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+            </variable>
+            <variable>
+                <name>profile-blogger-hide</name>
+                <label>
+                    <![CDATA[ 블로거명 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 블로거의 이름을 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+            </variable>
+            <variable>
+                <name>profile-blog-desc-hide</name>
+                <label>
+                    <![CDATA[ 블로그 설명 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 블로그의 설명을 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+            </variable>
+        </variablegroup>
+        <!-- Board -->
+        <variablegroup name="본문 설정">
+            <variable>
+                <name>article-thumbnail-shape</name>
+                <label>글 썸네일 모양</label>
+                <description>글 썸네일의 모양을 선택할 수 있습니다.</description>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[
+                    [
+                        {
+                            "name":"article-thumbnail-circle",
+                            "label":"원형",
+                            "value":"article-thumbnail-circle"
+                        },
+                        {
+                            "name":"article-thumbnail-rectangle",
+                            "label":"사각형",
+                            "value":"article-thumbnail-rectangle"
+                        },
+                        {
+                            "name":"article-thumbnail-round-rectangle",
+                            "label":"둥근 사각형",
+                            "value":"article-thumbnail-round-rectangle"
+                        }
+                    ]
+                    ]]>
+                </option>
+                <default><![CDATA[ article-thumbnail-circle ]]></default>
+            </variable>
+            <variable>
+                <name>article-number-hide</name>
+                <label>
+                    <![CDATA[ 본문 글 제목에 숫자 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 본문 글 제목에 숫자를 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+            </variable>
+            <variable>
+                <name>intro-card-hide</name>
+                <label>
+                    <![CDATA[ 소개 카드 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 소개 카드를 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+            </variable>
+            <variable>
+                <name>intro-card-desc</name>
+                <label>
+                    <![CDATA[ 소개 카드 인사말 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 소개 카드 인사말 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default>포스팅이 좋았다면 "좋아요❤️" 또는 "구독👍🏻" 해주세요!</default>
+            </variable>
+        </variablegroup>
+        <!-- Setting -->
+        <variablegroup name="고급 설정">
+            <variable>
+                <name>font-style</name>
+                <label>
+                    <![CDATA[ 폰트 변경 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 폰트를 변경합니다. ]]>
+                </description>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[
+                    [
+                        {
+                            "name": "SUIT",
+                            "label": "SUIT",
+                            "value": "SUIT"
+                        },
+                        {
+                            "name": "나눔명조",
+                            "label": "나눔명조",
+                            "value": "NanumMyeongjo"
+                        },
+                        {
+                            "name": "NanumBarunpen",
+                            "label": "나눔 바른펜",
+                            "value": "NanumBarunpen"
+                        },
+                        {
+                            "name": "CookieRun",
+                            "label": "쿠키런",
+                            "value": "CookieRun"
+                        }
+                    ]
+                    ]]>
+                </option>
+                <default><![CDATA[ SUIT ]]></default>
+            </variable>
+            <variable>
+                <name>toggle-theme-disabled</name>
+                <label>
+                    <![CDATA[ 테마변경 기능 비활성화 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 테마 변경 기능을 비활성화 합니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+            </variable>
+            <variable>
+                <name>loading-hide</name>
+                <label>
+                    <![CDATA[ 로딩 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ 로딩화면을 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+            </variable>
+            <variable>
+                <name>toc-number-hide</name>
+                <label>
+                    <![CDATA[ ToC 숫자 숨기기 ]]>
+                </label>
+                <description>
+                    <![CDATA[ ToC 숫자를 보이게 하거나 숨깁니다. ]]>
+                </description>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+            </variable>
+        </variablegroup>
+        <!-- Footer Link -->
+        <variablegroup name="Footer SNS 링크 설정">
+            <variable>
+                <name>footer-sns-email</name>
+                <label>
+                    <![CDATA[ Email Address ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Email 주소 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-phone</name>
+                <label>
+                    <![CDATA[ Phone Number ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 전화번호 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-github</name>
+                <label>
+                    <![CDATA[ GitHub URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Github SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-instagram</name>
+                <label>
+                    <![CDATA[ Instagram URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Instagram SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-linkedin</name>
+                <label>
+                    <![CDATA[ Linkedin URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Linkedin SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-twitter</name>
+                <label>
+                    <![CDATA[ Twitter URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Twitter SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-youtube</name>
+                <label>
+                    <![CDATA[ Youtube URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Youtube SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-discord</name>
+                <label>
+                    <![CDATA[ Discord URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Discord SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-sns-twitch</name>
+                <label>
+                    <![CDATA[ Twitch URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Twitch SNS 링크 ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+        </variablegroup>
+        <variablegroup name="Footer 커스텀 링크 설정">
+            <variable>
+                <name>footer-custom-1-label</name>
+                <label>
+                    <![CDATA[ [Custom 1] Label ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 1 Label ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-1-url</name>
+                <label>
+                    <![CDATA[ [Custom 1] URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 1 URL ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-2-label</name>
+                <label>
+                    <![CDATA[ [Custom 2] Label ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 2 Label ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-2-url</name>
+                <label>
+                    <![CDATA[ [Custom 2] URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 2 URL ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-3-label</name>
+                <label>
+                    <![CDATA[ [Custom 3] Label ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 3 Label ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-3-url</name>
+                <label>
+                    <![CDATA[ [Custom 3] URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 3 URL ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-4-label</name>
+                <label>
+                    <![CDATA[ [Custom 4] Label ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 4 Label ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-4-url</name>
+                <label>
+                    <![CDATA[ [Custom 4] URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 4 URL ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-5-label</name>
+                <label>
+                    <![CDATA[ [Custom 5] Label ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 5 Label ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+            <variable>
+                <name>footer-custom-5-url</name>
+                <label>
+                    <![CDATA[ [Custom 5] URL ]]>
+                </label>
+                <description>
+                    <![CDATA[ Footer 에 위치한 Custom 5 URL ]]>
+                </description>
+                <type>STRING</type>
+                <option />
+                <default />
+            </variable>
+        </variablegroup>
+    </variables>
+</skin>
