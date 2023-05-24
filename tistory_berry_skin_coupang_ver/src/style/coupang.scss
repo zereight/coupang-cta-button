@@ -16,10 +16,9 @@ button {
 
 /* cheer phase */
 .cheer-phrase-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  text-align: center;
+
   margin-top: 12px;
   font-size: 10px;
   color: white;
