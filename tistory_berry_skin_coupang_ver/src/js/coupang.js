@@ -5,7 +5,7 @@
 
 const SKIP_COUNT_NUMBER = 5; // 5초 뒤에 광고스킵
 const LOCAL_STORAGE_SKIP_TIME_KET = 'coupang-skip-time'; // 로컬스토리지에 저장할 쿠팡광고 마지막 노출 키값. 2시간동안 안보이게 한다. (약관임)
-const AD_LINK = 'https://link.coupang.com/a/YKQth';
+const AD_LINK = 'https://link.coupang.com/a/ZqXE7';
 const 본문ElementSelector = '.main-content .article-body > .tt_article_useless_p_margin';
 
 const drawButton = ($parentElement) => {
@@ -40,9 +40,7 @@ const drawButton = ($parentElement) => {
   // CTA 버튼 클릭했을때
   $ctaButton.addEventListener('click', () => {
     showContent();
-
     // 현재 광고를 확인한 시간을 저장한다.
-
     localStorage.setItem(LOCAL_STORAGE_SKIP_TIME_KET, Date.now());
 
     window.open(AD_LINK, '_blank');
@@ -50,7 +48,11 @@ const drawButton = ($parentElement) => {
 
   // skip 버튼 클릭했을때
   const $skipButton = $container.querySelector('.skip-button');
-  $skipButton.addEventListener('click', showContent);
+  $skipButton.addEventListener('click', () => {
+    showContent();
+    // 현재 광고를 확인한 시간을 저장한다.
+    localStorage.setItem(LOCAL_STORAGE_SKIP_TIME_KET, Date.now());
+  });
 
   // 3초뒤에 5초카운트해서 스킵한다.
   let count = SKIP_COUNT_NUMBER;
