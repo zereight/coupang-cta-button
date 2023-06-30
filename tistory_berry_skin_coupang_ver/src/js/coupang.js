@@ -5,7 +5,7 @@
 
 const SKIP_COUNT_NUMBER = 5; // 5초 뒤에 광고스킵
 const LOCAL_STORAGE_SKIP_TIME_KET = 'coupang-skip-time'; // 로컬스토리지에 저장할 쿠팡광고 마지막 노출 키값. 2시간동안 안보이게 한다. (약관임)
-const AD_LINK = 'https://link.coupang.com/a/ZqXE7';
+const AD_LINK = 'https://link.coupang.com/a/2jv53';
 const 본문ElementSelector = '.main-content .article-body > .tt_article_useless_p_margin';
 
 const drawButton = ($parentElement) => {
